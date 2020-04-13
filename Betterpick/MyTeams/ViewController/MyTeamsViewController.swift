@@ -1,5 +1,5 @@
 //
-//  RootViewController.swift
+//  MyTeamsViewController.swift
 //  Betterpick
 //
 //  Created by David Bielik on 13/04/2020.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+class MyTeamsViewController: UIViewController {
 
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
 
+        view.backgroundColor = .blue
+    }
 }
