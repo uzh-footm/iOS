@@ -12,24 +12,43 @@ class TabBarStackView: UIStackView {
 
     // MARK: - Properties
     var buttons: [UIButton] = []
-    // Static
+    lazy var tabBarGestureHandler = TabBarGestureHandler(numberOfTabs: tabs.count, view: self)
+    // MARK: Private
+    private let tabs: Tabs
     private let buttonSelectedColor = UIColor.primary
     private let buttonDeselectedColor = UIColor.tabBarButtonDeselected
+    // MARK: Actions
+    public var onButtonTapAction: ((Int) -> Void)? {
+        didSet {
+            tabBarGestureHandler.onTabGestureCompleted = onButtonTapAction
+        }
+    }
 
     // MARK: - Initialization
     init(tabs: Tabs) {
+        self.tabs = tabs
         super.init(frame: .zero)
+
         translatesAutoresizingMaskIntoConstraints = false
         axis = .horizontal
         distribution = .fillEqually
         alignment = .center
-        setupSubviews(tabs: tabs)
+
+        // Setup
+        tabBarGestureHandler.onTabGestureStarting = startForwardAnimationFor
+        tabBarGestureHandler.onTabGestureEnding = startBackwardAnimationFor(tabIndex:useSpring:)
+        setupSubviews()
+        // Add gesture recognizers
+        addGestureRecognizers()
     }
 
-    required init(coder: NSCoder) { super.init(coder: coder) }
+    required init(coder: NSCoder) {
+        tabs = []
+        super.init(coder: coder)
+    }
 
     // MARK: - Private
-    private func setupSubviews(tabs: Tabs) {
+    private func setupSubviews() {
         // swiftlint:disable identifier_name
         for (i, tab) in tabs.enumerated() {
         // swiftlint:enable identifier_name
@@ -46,6 +65,7 @@ class TabBarStackView: UIStackView {
             // If the button is both, selected && highlighted, show selected image.
             button.setImage(selectedImg, for: [.selected, .highlighted])
             button.imageView?.contentMode = .scaleAspectFit
+            button.imageView?.isUserInteractionEnabled = false
             // Add it to our stack of views
             addArrangedSubview(button)
             // Add the button to our button array
@@ -53,7 +73,37 @@ class TabBarStackView: UIStackView {
         }
     }
 
+    /// Adds gesture recognizers for handling the tap animations properly
+    private func addGestureRecognizers() {
+        for button in buttons {
+            let shortPressGestureRecognizer = TabBarPressGestureRecognizer(target: tabBarGestureHandler, action: #selector(tabBarGestureHandler.pressGestureHandler), pressType: .short, button: button)
+            let longPressGestureRecognizer = TabBarPressGestureRecognizer(target: tabBarGestureHandler, action: #selector(tabBarGestureHandler.pressGestureHandler), pressType: .long, button: button)
+            button.addGestureRecognizer(shortPressGestureRecognizer)
+            button.addGestureRecognizer(longPressGestureRecognizer)
+        }
+    }
+
+    private func startForwardAnimationFor(tabIndex: Int) {
+        let button = buttons[tabIndex]
+        UIView.animate(withDuration: 0.15, delay: 0, options: [.curveEaseOut, .allowUserInteraction, .beginFromCurrentState], animations: {
+            button.transform = button.transform.scaledBy(x: 0.75, y: 0.75)
+        }, completion: nil)
+    }
+
+    private func startBackwardAnimationFor(tabIndex: Int, useSpring: Bool = true) {
+        let button = buttons[tabIndex]
+        let animation: (() -> Void) = {
+            button.transform = .identity
+        }
+        guard useSpring else {
+            UIView.animate(withDuration: 0.1, delay: 0, options: [.curveEaseIn, .beginFromCurrentState, .allowUserInteraction], animations: animation, completion: nil)
+            return
+        }
+        UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.1, options: [.allowUserInteraction, .beginFromCurrentState], animations: animation, completion: nil)
+    }
+
     // MARK: - Public
+    /// Update appearance of buttons based on the `button.isSelected` property.
     public func updateAppearance(selectedIndex: Int) {
         // Deselect previously selected tab
         for button in buttons where button.isSelected {

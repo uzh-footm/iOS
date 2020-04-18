@@ -14,6 +14,10 @@ class MyTeamsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .blue
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemGray2
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }

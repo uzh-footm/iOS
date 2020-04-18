@@ -23,7 +23,7 @@ class TabBarViewController: UIViewController {
 
     lazy var tabBarStackView: TabBarStackView = {
         let stackView = TabBarStackView(tabs: viewModel.tabs)
-        stackView.buttons.forEach { $0.addTarget(self, action: #selector(didPressTabBarButton(button:)), for: .touchUpInside) }
+        stackView.onButtonTapAction = handleTabBarButtonPress
         return stackView
     }()
 
@@ -120,8 +120,8 @@ class TabBarViewController: UIViewController {
     }
 
     // MARK: Touch Events
-    @objc private func didPressTabBarButton(button: UIButton) {
-        let selectedTab = viewModel.tabs[button.tag]
+    private func handleTabBarButtonPress(tag: Int) {
+        let selectedTab = viewModel.tabs[tag]
         viewModel.updateTab(to: selectedTab)
     }
 }

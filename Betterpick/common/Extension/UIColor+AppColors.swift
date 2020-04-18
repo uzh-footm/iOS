@@ -30,7 +30,7 @@ extension UIColor {
 
     // MARK: Colors
     public static var primary: UIColor = #colorLiteral(red: 0.3843137255, green: 0.7882352941, blue: 0.3529411765, alpha: 1)
-    public static var tabBarButtonDeselected = #colorLiteral(red: 0.1960784314, green: 0.1960784314, blue: 0.1960784314, alpha: 1)
+    public static var tabBarButtonDeselected: UIColor = #colorLiteral(red: 0.7843137255, green: 0.7843137255, blue: 0.7843137255, alpha: 1)
 
     // Sub iOS 13.0 backwards compatible colors
     public static var background: UIColor = {

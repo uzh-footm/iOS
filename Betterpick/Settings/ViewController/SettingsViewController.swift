@@ -14,6 +14,10 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .red
+        if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemGray4
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }
