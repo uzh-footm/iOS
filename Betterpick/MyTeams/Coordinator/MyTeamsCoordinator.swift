@@ -8,15 +8,13 @@
 
 import UIKit
 
-class MyTeamsCoordinator: TabbedCoordinator {
+class MyTeamsCoordinator: ChildCoordinator {
 
     // MARK: - Properties
     let myTeamsViewController: UIViewController
 
     // TabbedCoordinator implemenation
-    var viewController: UIViewController {
-        return myTeamsViewController
-    }
+    var viewController: UIViewController { return myTeamsViewController }
 
     // MARK: - Initialization
     init(myTeamsViewController: MyTeamsViewController) {

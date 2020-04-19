@@ -13,11 +13,8 @@ class MyTeamsViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if #available(iOS 13.0, *) {
-            view.backgroundColor = .systemGray2
-        } else {
-            // Fallback on earlier versions
-        }
+        view.backgroundColor = .background
+        title = "MyTeams"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }

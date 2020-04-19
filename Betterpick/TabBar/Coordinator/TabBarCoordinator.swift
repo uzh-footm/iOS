@@ -45,8 +45,7 @@ extension TabBarCoordinator: TabBarViewControllerDelegate {
             case .discover:
                 childCoordinator = DiscoverNavigationCoordinator()
             case .myTeams:
-                let myTeamsVC = MyTeamsViewController()
-                childCoordinator = MyTeamsCoordinator(myTeamsViewController: myTeamsVC)
+                childCoordinator = MyTeamsNavigationCoordinator()
             case .settings:
                 let settingsVC = SettingsViewController()
                 childCoordinator = SettingsCoordinator(settingsViewController: settingsVC)

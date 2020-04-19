@@ -38,6 +38,7 @@
 		8920969224450D9200DF93BB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920969124450D9200DF93BB /* SettingsViewController.swift */; };
 		892096952445152200DF93BB /* TabBarStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096942445152200DF93BB /* TabBarStackView.swift */; };
 		892D22F9244C6A2E00F0F263 /* Reselectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D22F8244C6A2E00F0F263 /* Reselectable.swift */; };
+		892D22FB244C6D7300F0F263 /* MyTeamsNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D22FA244C6D7300F0F263 /* MyTeamsNavigationCoordinator.swift */; };
 		8975EE62244BB2100052696C /* TabPressActionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE61244BB2100052696C /* TabPressActionData.swift */; };
 		8975EE66244BB2710052696C /* TabBarPressGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE65244BB2710052696C /* TabBarPressGestureRecognizer.swift */; };
 		8975EE68244BB5A70052696C /* TabBarGestureHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE67244BB5A70052696C /* TabBarGestureHandler.swift */; };
@@ -97,6 +98,7 @@
 		8920969124450D9200DF93BB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		892096942445152200DF93BB /* TabBarStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarStackView.swift; sourceTree = "<group>"; };
 		892D22F8244C6A2E00F0F263 /* Reselectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reselectable.swift; sourceTree = "<group>"; };
+		892D22FA244C6D7300F0F263 /* MyTeamsNavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamsNavigationCoordinator.swift; sourceTree = "<group>"; };
 		8975EE61244BB2100052696C /* TabPressActionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPressActionData.swift; sourceTree = "<group>"; };
 		8975EE65244BB2710052696C /* TabBarPressGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPressGestureRecognizer.swift; sourceTree = "<group>"; };
 		8975EE67244BB5A70052696C /* TabBarGestureHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarGestureHandler.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				8920968B24450D6C00DF93BB /* MyTeamsCoordinator.swift */,
+				892D22FA244C6D7300F0F263 /* MyTeamsNavigationCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -692,6 +695,7 @@
 				8920967B2444F44100DF93BB /* TabbedCoordinator.swift in Sources */,
 				8975EE62244BB2100052696C /* TabPressActionData.swift in Sources */,
 				892D22F9244C6A2E00F0F263 /* Reselectable.swift in Sources */,
+				892D22FB244C6D7300F0F263 /* MyTeamsNavigationCoordinator.swift in Sources */,
 				8920966B2444E16E00DF93BB /* HairlineView.swift in Sources */,
 				892096832444FA8A00DF93BB /* DiscoverViewController.swift in Sources */,
 				892096772444EBE500DF93BB /* Size.swift in Sources */,
