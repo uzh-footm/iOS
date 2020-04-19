@@ -15,6 +15,5 @@ class MyTeamsViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .background
         title = "MyTeams"
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }

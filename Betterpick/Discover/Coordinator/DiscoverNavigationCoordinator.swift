@@ -20,7 +20,7 @@ class DiscoverNavigationCoordinator: NavigationCoordinator, TabbedCoordinator {
     }
 
     // MARK: - Initialization
-    init(navigationController: UINavigationController = UINavigationController()) {
+    init(navigationController: UINavigationController = LargeTitleNavigationController()) {
         self.discoverCoordinator = DiscoverCoordinator(discoverViewController: discoverViewController)
         super.init(navigationController: navigationController, rootChildCoordinator: discoverCoordinator)
     }
