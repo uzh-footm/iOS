@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// A `UIView` subclass that expects autolayout constraints.
+/// `translatesAutoresizingMaskIntoConstraints` is set to `false` by default.
 class ConstrainableView: UIView {
 
     // MARK: - Inherited
@@ -33,7 +35,8 @@ class ConstrainableView: UIView {
     }
 
     // MARK: - Open
-    /// Override this function if you want to provide custom view logic (layout). Called after initialization. Default implementation does nothing.
+    /// Override this function if you want to provide custom view logic (layout). Called after initialization.
+    /// Default implementation does nothing.
     open func setupSubviews() {
 
     }

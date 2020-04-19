@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// A `UIView` subclass that is very thin. (1px or 2px depending on the `UIScreen.main.scale`
 class HairlineView: ConstrainableView {
     override func setupSubviews() {
         backgroundColor = .customOpaqueSeparator
