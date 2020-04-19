@@ -79,7 +79,7 @@ class TabBarViewController: UIViewController {
         containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         containerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
 
-        // collection view container
+        // stackview container
         let buttonsContainerView = UIView()
         buttonsContainerView.backgroundColor = .background
         view.add(subview: buttonsContainerView)
@@ -88,7 +88,7 @@ class TabBarViewController: UIViewController {
         buttonsContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         buttonsContainerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -Size.Tab.height).isActive = true
 
-        // collection view
+        // stackview view
         view.add(subview: tabBarStackView)
         tabBarStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tabBarStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true

@@ -5,6 +5,8 @@
 //Copyright © 2020 dvdblk. All rights reserved.
 //
 
-protocol Coordinator {
+import Foundation
+
+protocol Coordinator: AnyObject {
     func start()
 }

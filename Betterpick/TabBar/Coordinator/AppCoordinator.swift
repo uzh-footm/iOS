@@ -10,10 +10,10 @@ import UIKit
 class AppCoordinator: Coordinator {
 
     // MARK: - Properties
-    // UI
+    // MARK: UI
     let window: UIWindow
     let rootViewController = UIViewController()
-    // Coordinators
+    // MARK: Coordinators
     var tabBarCoordinator: TabBarCoordinator!
 
     // MARK: - Initialization

@@ -43,8 +43,7 @@ extension TabBarCoordinator: TabBarViewControllerDelegate {
             let childCoordinator: TabbedCoordinator
             switch tab {
             case .discover:
-                let discoverVC = DiscoverViewController()
-                childCoordinator = DiscoverCoordinator(discoverViewController: discoverVC)
+                childCoordinator = DiscoverNavigationCoordinator()
             case .myTeams:
                 let myTeamsVC = MyTeamsViewController()
                 childCoordinator = MyTeamsCoordinator(myTeamsViewController: myTeamsVC)
@@ -69,6 +68,8 @@ extension TabBarCoordinator: TabBarViewControllerDelegate {
     }
 
     func didReselect(tab: Tab) {
-
+        guard let childCoordinator = childCoordinators[tab] else { return }
+        guard let reselectableViewController = childCoordinator.viewController as? Reselectable else { return }
+        reselectableViewController.reselect()
     }
 }

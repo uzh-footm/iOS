@@ -31,16 +31,19 @@
 		8920967B2444F44100DF93BB /* TabbedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920967A2444F44100DF93BB /* TabbedCoordinator.swift */; };
 		8920967D2444F4F400DF93BB /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920967C2444F4F400DF93BB /* TabBarCoordinator.swift */; };
 		892096832444FA8A00DF93BB /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096822444FA8A00DF93BB /* DiscoverViewController.swift */; };
-		892096862445081B00DF93BB /* DiscoverCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096852445081B00DF93BB /* DiscoverCoordinator.swift */; };
+		892096862445081B00DF93BB /* DiscoverNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096852445081B00DF93BB /* DiscoverNavigationCoordinator.swift */; };
 		8920968C24450D6C00DF93BB /* MyTeamsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920968B24450D6C00DF93BB /* MyTeamsCoordinator.swift */; };
 		8920968E24450D7B00DF93BB /* MyTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920968D24450D7B00DF93BB /* MyTeamsViewController.swift */; };
 		8920969024450D8900DF93BB /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920968F24450D8900DF93BB /* SettingsCoordinator.swift */; };
 		8920969224450D9200DF93BB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920969124450D9200DF93BB /* SettingsViewController.swift */; };
 		892096952445152200DF93BB /* TabBarStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096942445152200DF93BB /* TabBarStackView.swift */; };
+		892D22F9244C6A2E00F0F263 /* Reselectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D22F8244C6A2E00F0F263 /* Reselectable.swift */; };
 		8975EE62244BB2100052696C /* TabPressActionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE61244BB2100052696C /* TabPressActionData.swift */; };
 		8975EE66244BB2710052696C /* TabBarPressGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE65244BB2710052696C /* TabBarPressGestureRecognizer.swift */; };
 		8975EE68244BB5A70052696C /* TabBarGestureHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE67244BB5A70052696C /* TabBarGestureHandler.swift */; };
 		8975EE6A244BC66C0052696C /* TabBarGestureHandler+UIGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE69244BC66C0052696C /* TabBarGestureHandler+UIGestureRecognizerDelegate.swift */; };
+		89955BE7244BDED000B8B59A /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89955BE6244BDED000B8B59A /* NavigationCoordinator.swift */; };
+		89955BE9244BE1CB00B8B59A /* ChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89955BE8244BE1CB00B8B59A /* ChildCoordinator.swift */; };
 		89A2A7C7244473BC006149A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7C6244473BC006149A6 /* AppDelegate.swift */; };
 		89A2A7C9244473BC006149A6 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7C8244473BC006149A6 /* TabBarViewController.swift */; };
 		89A2A7CB244473BC006149A6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7CA244473BC006149A6 /* Coordinator.swift */; };
@@ -50,6 +53,7 @@
 		89A2A7D5244473BE006149A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A2A7D3244473BE006149A6 /* LaunchScreen.storyboard */; };
 		89A2A7E0244473BE006149A6 /* BetterpickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7DF244473BE006149A6 /* BetterpickTests.swift */; };
 		89A2A7EB244473BE006149A6 /* BetterpickUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7EA244473BE006149A6 /* BetterpickUITests.swift */; };
+		89B544A4244BE2ED000C1C4B /* DiscoverCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */; };
 		EE889C336B30CC1DB7950553 /* Pods_Betterpick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BDDDBB269B5B7E5A59B3C9 /* Pods_Betterpick.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,16 +90,19 @@
 		8920967A2444F44100DF93BB /* TabbedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedCoordinator.swift; sourceTree = "<group>"; };
 		8920967C2444F4F400DF93BB /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		892096822444FA8A00DF93BB /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
-		892096852445081B00DF93BB /* DiscoverCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCoordinator.swift; sourceTree = "<group>"; };
+		892096852445081B00DF93BB /* DiscoverNavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverNavigationCoordinator.swift; sourceTree = "<group>"; };
 		8920968B24450D6C00DF93BB /* MyTeamsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamsCoordinator.swift; sourceTree = "<group>"; };
 		8920968D24450D7B00DF93BB /* MyTeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTeamsViewController.swift; sourceTree = "<group>"; };
 		8920968F24450D8900DF93BB /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		8920969124450D9200DF93BB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		892096942445152200DF93BB /* TabBarStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarStackView.swift; sourceTree = "<group>"; };
+		892D22F8244C6A2E00F0F263 /* Reselectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reselectable.swift; sourceTree = "<group>"; };
 		8975EE61244BB2100052696C /* TabPressActionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPressActionData.swift; sourceTree = "<group>"; };
 		8975EE65244BB2710052696C /* TabBarPressGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPressGestureRecognizer.swift; sourceTree = "<group>"; };
 		8975EE67244BB5A70052696C /* TabBarGestureHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarGestureHandler.swift; sourceTree = "<group>"; };
 		8975EE69244BC66C0052696C /* TabBarGestureHandler+UIGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarGestureHandler+UIGestureRecognizerDelegate.swift"; sourceTree = "<group>"; };
+		89955BE6244BDED000B8B59A /* NavigationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NavigationCoordinator.swift; path = Betterpick/Common/Coordinator/NavigationCoordinator.swift; sourceTree = SOURCE_ROOT; };
+		89955BE8244BE1CB00B8B59A /* ChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChildCoordinator.swift; path = Betterpick/Common/Coordinator/ChildCoordinator.swift; sourceTree = SOURCE_ROOT; };
 		89A2A7C3244473BC006149A6 /* Betterpick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Betterpick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A2A7C6244473BC006149A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89A2A7C8244473BC006149A6 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +118,7 @@
 		89A2A7E6244473BE006149A6 /* BetterpickUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetterpickUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A2A7EA244473BE006149A6 /* BetterpickUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterpickUITests.swift; sourceTree = "<group>"; };
 		89A2A7EC244473BE006149A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCoordinator.swift; sourceTree = "<group>"; };
 		BC477A0B0893D8FED9EA1D3A /* Pods-Betterpick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.debug.xcconfig"; sourceTree = "<group>"; };
 		C1F863D70B87FE751FD53E2A /* Pods-BetterpickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterpickTests.release.xcconfig"; path = "Target Support Files/Pods-BetterpickTests/Pods-BetterpickTests.release.xcconfig"; sourceTree = "<group>"; };
 		CBAB40D4DBF1D81129D7EA19 /* Pods-BetterpickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterpickTests.debug.xcconfig"; path = "Target Support Files/Pods-BetterpickTests/Pods-BetterpickTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -185,7 +193,7 @@
 			children = (
 				892096692444E11F00DF93BB /* View */,
 				892096642444C66400DF93BB /* Struct */,
-				8920963D2444B45D00DF93BB /* Protocol */,
+				8920963D2444B45D00DF93BB /* Coordinator */,
 				892096342444AF3500DF93BB /* Extension */,
 			);
 			path = common;
@@ -200,12 +208,14 @@
 			path = Discover;
 			sourceTree = "<group>";
 		};
-		8920963D2444B45D00DF93BB /* Protocol */ = {
+		8920963D2444B45D00DF93BB /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
 				89A2A7CA244473BC006149A6 /* Coordinator.swift */,
+				89955BE8244BE1CB00B8B59A /* ChildCoordinator.swift */,
+				89955BE6244BDED000B8B59A /* NavigationCoordinator.swift */,
 			);
-			path = Protocol;
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		8920963E2444B4AF00DF93BB /* MyTeams */ = {
@@ -271,6 +281,7 @@
 			children = (
 				8920967A2444F44100DF93BB /* TabbedCoordinator.swift */,
 				892096572444BED700DF93BB /* TabBarViewControllerDelegate.swift */,
+				892D22F8244C6A2E00F0F263 /* Reselectable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -311,7 +322,8 @@
 		892096842445080D00DF93BB /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				892096852445081B00DF93BB /* DiscoverCoordinator.swift */,
+				89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */,
+				892096852445081B00DF93BB /* DiscoverNavigationCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -663,9 +675,11 @@
 				89A2A7D0244473BC006149A6 /* Betterpick.xcdatamodeld in Sources */,
 				892096582444BED700DF93BB /* TabBarViewControllerDelegate.swift in Sources */,
 				8920968C24450D6C00DF93BB /* MyTeamsCoordinator.swift in Sources */,
+				89955BE9244BE1CB00B8B59A /* ChildCoordinator.swift in Sources */,
 				8920969024450D8900DF93BB /* SettingsCoordinator.swift in Sources */,
 				8975EE6A244BC66C0052696C /* TabBarGestureHandler+UIGestureRecognizerDelegate.swift in Sources */,
-				892096862445081B00DF93BB /* DiscoverCoordinator.swift in Sources */,
+				89955BE7244BDED000B8B59A /* NavigationCoordinator.swift in Sources */,
+				892096862445081B00DF93BB /* DiscoverNavigationCoordinator.swift in Sources */,
 				892096372444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */,
 				8920967D2444F4F400DF93BB /* TabBarCoordinator.swift in Sources */,
 				8975EE68244BB5A70052696C /* TabBarGestureHandler.swift in Sources */,
@@ -677,6 +691,7 @@
 				8920969224450D9200DF93BB /* SettingsViewController.swift in Sources */,
 				8920967B2444F44100DF93BB /* TabbedCoordinator.swift in Sources */,
 				8975EE62244BB2100052696C /* TabPressActionData.swift in Sources */,
+				892D22F9244C6A2E00F0F263 /* Reselectable.swift in Sources */,
 				8920966B2444E16E00DF93BB /* HairlineView.swift in Sources */,
 				892096832444FA8A00DF93BB /* DiscoverViewController.swift in Sources */,
 				892096772444EBE500DF93BB /* Size.swift in Sources */,
@@ -684,6 +699,7 @@
 				8975EE66244BB2710052696C /* TabBarPressGestureRecognizer.swift in Sources */,
 				892096952445152200DF93BB /* TabBarStackView.swift in Sources */,
 				8920965D2444C1C600DF93BB /* Tab.swift in Sources */,
+				89B544A4244BE2ED000C1C4B /* DiscoverCoordinator.swift in Sources */,
 				89A2A7C7244473BC006149A6 /* AppDelegate.swift in Sources */,
 				89A2A7CB244473BC006149A6 /* Coordinator.swift in Sources */,
 			);
