@@ -14,13 +14,14 @@ struct Size {
     static let componentHeight: CGFloat = 44
     static let componentWidthRelativeToScreenWidth: CGFloat = 0.8
 
-    static let iconSize: CGFloat = 32
+    static let smallerIconSize: CGFloat = 20
+    static let iconSize: CGFloat = 24
     static let standardMargin: CGFloat = 16
     static let extendedMargin: CGFloat = 18
+    static let doubleStandardMargin: CGFloat = 2 * standardMargin
 
     struct Image {
         static let tabBarIcon: CGFloat = 30
-        static let unreadNotificationAlert: CGFloat = 8
         static let indicator: CGFloat = 16
     }
 
@@ -33,7 +34,7 @@ struct Size {
     }
 
     struct Navigator {
-        static let height: CGFloat = 48
+        static let height: CGFloat = 44
         static let separatorHeight: CGFloat = 1
     }
 

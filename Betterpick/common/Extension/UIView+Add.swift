@@ -9,7 +9,8 @@
 import UIKit
 
 extension UIView {
-    /// Convenience function for adding a subview that is going to be managed by autolayout
+    /// Convenience function for adding a subview that is going to be managed by autolayout.
+    /// - parameter subview: the subview that will be added to `self` and has its `translatesAutoresizingMaskIntoConstraints` set to `false`
     func add(subview: UIView) {
         addSubview(subview)
         subview.translatesAutoresizingMaskIntoConstraints = false

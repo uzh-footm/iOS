@@ -12,7 +12,7 @@ class DiscoverNavigationCoordinator: NavigationCoordinator, TabbedCoordinator {
 
     // MARK: - Properties
     let discoverCoordinator: DiscoverCoordinator
-    let discoverViewController = DiscoverViewController()
+    let discoverViewController: DiscoverViewController
 
     // MARK: TabbedCoordinator
     var viewController: UIViewController {
@@ -21,6 +21,7 @@ class DiscoverNavigationCoordinator: NavigationCoordinator, TabbedCoordinator {
 
     // MARK: - Initialization
     init(navigationController: UINavigationController = LargeTitleNavigationController()) {
+        discoverViewController = DiscoverViewController(viewModel: DiscoverViewModel())
         self.discoverCoordinator = DiscoverCoordinator(discoverViewController: discoverViewController)
         super.init(navigationController: navigationController, rootChildCoordinator: discoverCoordinator)
     }
