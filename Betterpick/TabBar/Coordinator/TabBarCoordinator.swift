@@ -8,7 +8,12 @@
 
 import UIKit
 
-class TabBarCoordinator: Coordinator {
+class TabBarCoordinator: SectioningCoordinator {
+    typealias SectionDefiningEnum = Tab
+
+    var containerViewController: (UIViewController & ChildViewControllerContainerProviding) {
+        return tabBarViewController
+    }
 
     let tabBarViewController: TabBarViewController
     var activeCoordinator: TabbedCoordinator?
@@ -21,12 +26,24 @@ class TabBarCoordinator: Coordinator {
     // MARK: - Coordinator
     func start() {
         tabBarViewController.delegate = self
-        setInitial(tab: .discover)
+
+        // Set initial tab
+        tabBarViewController.viewModel.updateTab(to: .discover)
     }
 
-    // MARK: - Private
-    private func setInitial(tab: Tab) {
-        tabBarViewController.viewModel.updateTab(to: tab)
+    // MARK: - SectioningCoordinator
+    func createChildCoordinatorFrom(section: Tab) -> SectionedCoordinator {
+        let childCoordinator: ChildCoordinator
+        switch section {
+        case .discover:
+            childCoordinator = DiscoverNavigationCoordinator()
+        case .myTeams:
+            childCoordinator = MyTeamsNavigationCoordinator()
+        case .settings:
+            let settingsVC = SettingsViewController()
+            childCoordinator = SettingsCoordinator(settingsViewController: settingsVC)
+        }
+        return childCoordinator
     }
 }
 
@@ -34,36 +51,7 @@ class TabBarCoordinator: Coordinator {
 extension TabBarCoordinator: TabBarViewControllerDelegate {
 
     func didSelect(tab: Tab) {
-        let selectedCoordinator: TabbedCoordinator
-        if let existingChildCoordinator = childCoordinators[tab] {
-            // coordinator instantiated previously
-            selectedCoordinator = existingChildCoordinator
-        } else {
-            // create a new child coordinator in case it's the first time we see it
-            let childCoordinator: TabbedCoordinator
-            switch tab {
-            case .discover:
-                childCoordinator = DiscoverNavigationCoordinator()
-            case .myTeams:
-                childCoordinator = MyTeamsNavigationCoordinator()
-            case .settings:
-                let settingsVC = SettingsViewController()
-                childCoordinator = SettingsCoordinator(settingsViewController: settingsVC)
-            }
-            childCoordinators[tab] = childCoordinator
-            // and start it...
-            childCoordinator.start()
-            selectedCoordinator = childCoordinator
-        }
-
-        // Remove previously active coordinator's view controller if needed
-        if let currentlyActiveCoordinator = activeCoordinator {
-            let activeVC = currentlyActiveCoordinator.viewController
-            tabBarViewController.remove(childViewController: activeVC)
-        }
-        // Set new active coordinator
-        activeCoordinator = selectedCoordinator
-        tabBarViewController.embed(viewController: selectedCoordinator.viewController)
+        changeSection(to: tab)
     }
 
     func didReselect(tab: Tab) {

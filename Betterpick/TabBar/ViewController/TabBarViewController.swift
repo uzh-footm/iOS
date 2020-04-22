@@ -54,18 +54,6 @@ class TabBarViewController: UIViewController {
         updateTabBarStackViewSize()
     }
 
-    /// Embed a  view controller inside the container view
-    func embed(viewController tabbedVC: UIViewController) {
-        // Add the child view controller
-        add(childViewController: tabbedVC, superview: containerView)
-        // Embed it inside our container view
-        tabbedVC.view.translatesAutoresizingMaskIntoConstraints = false
-        tabbedVC.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
-        tabbedVC.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
-        tabbedVC.view.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
-        tabbedVC.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
-    }
-
     // MARK: - Private
     private func prepareViewModel() {
 

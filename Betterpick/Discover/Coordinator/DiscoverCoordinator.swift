@@ -8,14 +8,21 @@
 
 import UIKit
 
-class DiscoverCoordinator: ChildCoordinator {
+class DiscoverCoordinator: SectioningCoordinator, ChildCoordinator {
+
+    typealias SectionDefiningEnum = DiscoverSection
 
     // MARK: - Properties
     let discoverViewController: DiscoverViewController
     var searchCoordinator: SearchCoordinator?
+    // MARK: SectioningCoordinator
+    var activeCoordinator: SectionedCoordinator?
+    var childCoordinators: [DiscoverSection: SectionedCoordinator] = [:]
 
     // MARK: ChildCoordinator
-    var viewController: UIViewController { return discoverViewController }
+    var containerViewController: UIViewController & ChildViewControllerContainerProviding {
+        return discoverViewController
+    }
 
     // MARK: - Initialization
     init(discoverViewController: DiscoverViewController) {
@@ -24,12 +31,26 @@ class DiscoverCoordinator: ChildCoordinator {
 
     // MARK: - Lifecycle
     func start() {
-        discoverViewController.onSearchAction = { [unowned self] in
-            self.startSearchFlow()
+        discoverViewController.onSearchAction = startSearchFlow
+        discoverViewController.onChangeSectionAction = changeSection
+        let initialSection = discoverViewController.viewModel.currentSection
+        changeSection(to: initialSection)
+    }
+
+    func createChildCoordinatorFrom(section: DiscoverSection) -> SectionedCoordinator {
+        switch section {
+        case .players:
+            let playerListVC = PlayerListViewController()
+            return PlayerListCoordinator(playerListViewController: playerListVC)
+        case .teams:
+            let teamListVM = TeamListViewModel()
+            let teamListVC = TeamListViewController(viewModel: teamListVM)
+            return TeamListCoordinator(teamListViewController: teamListVC)
         }
     }
 
     // MARK: - Action Handlers
+    // MARK: Search
     func startSearchFlow() {
         // Guard that we are not doing another search right now
         guard searchCoordinator == nil else { return }

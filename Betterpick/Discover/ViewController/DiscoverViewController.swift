@@ -13,9 +13,6 @@ class DiscoverViewController: UIViewController {
     // MARK: - Properties
     let viewModel: DiscoverViewModel
 
-    // MARK: Actions
-    var onSearchAction: (() -> Void)?
-
     // MARK: UI Elements
     lazy var segmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl()
@@ -24,16 +21,24 @@ class DiscoverViewController: UIViewController {
         for (index, section) in viewModel.sections.enumerated() {
             segmentedControl.insertSegment(withTitle: section.sectionTitle, at: index, animated: false)
         }
-        segmentedControl.selectedSegmentIndex = viewModel.currentSection.rawValue
+        segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: Size.Font.action)], for: .normal)
         segmentedControl.addTarget(self, action: #selector(didChangeSegmentedControlValue), for: .valueChanged)
         return segmentedControl
     }()
 
     lazy var searchButton: ActionButton = {
         let searchButton = ActionButton.createActionButton(image: #imageLiteral(resourceName: "search"))
+        searchButton.tintColor = .black
         searchButton.addTarget(self, action: #selector(didPressSearchButton), for: .touchUpInside)
         return searchButton
     }()
+
+    /// Container view used for the viewcontrollers (sections) controlled by `segmentedControl`
+    let sectionContainerView = UIView()
+
+    // MARK: Actions
+    var onSearchAction: (() -> Void)?
+    var onChangeSectionAction: ((DiscoverSection) -> Void)?
 
     // MARK: - Initialization
     init(viewModel: DiscoverViewModel) {
@@ -56,6 +61,13 @@ class DiscoverViewController: UIViewController {
 
         // Subview Setup
         setupSubviews()
+
+        // ViewModel setup
+        viewModel.onViewModelUpdate = { [unowned self] section in
+            self.updateAppearance()
+            self.onChangeSectionAction?(section)
+        }
+        updateAppearance()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -76,7 +88,7 @@ class DiscoverViewController: UIViewController {
     private func setupSubviews() {
         // SegmentedControl
         view.addSubview(segmentedControl)
-        segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Size.doubleStandardMargin).isActive = true
+        segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Size.standardMargin).isActive = true
         segmentedControl.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor).isActive = true
         segmentedControl.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor).isActive = true
 
@@ -86,6 +98,16 @@ class DiscoverViewController: UIViewController {
         searchButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor).isActive = true
         searchButton.heightAnchor.constraint(equalToConstant: Size.iconSize).isActive = true
         searchButton.widthAnchor.constraint(equalTo: searchButton.heightAnchor).isActive = true
+
+        view.add(subview: sectionContainerView)
+        sectionContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        sectionContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        sectionContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        sectionContainerView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: Size.standardMargin).isActive = true
+    }
+
+    private func updateAppearance() {
+        segmentedControl.selectedSegmentIndex = viewModel.currentSection.rawValue
     }
 
     // MARK: Event Handling
@@ -93,7 +115,8 @@ class DiscoverViewController: UIViewController {
         onSearchAction?()
     }
 
-    @objc private func didChangeSegmentedControlValue() {
-
+    @objc private func didChangeSegmentedControlValue(_ sender: UISegmentedControl) {
+        let selectedIndex = sender.selectedSegmentIndex
+        viewModel.update(section: selectedIndex)
     }
 }

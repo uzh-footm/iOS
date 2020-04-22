@@ -13,10 +13,18 @@ class DiscoverViewModel {
     // MARK: - Properties
     // MARK: Model
     let sections = DiscoverSection.allCases
-    let currentSection: DiscoverSection
+    var currentSection: DiscoverSection { didSet { onViewModelUpdate?(currentSection) } }
+
+    // MARK: Actions
+    var onViewModelUpdate: ((DiscoverSection) -> Void)?
 
     // MARK: - Initialization
     init(initialSection: DiscoverSection = .teams) {
         self.currentSection = initialSection
+    }
+
+    // MARK: - Public
+    public func update(section index: Int) {
+        currentSection = DiscoverSection(rawValue: index) ?? .teams
     }
 }
