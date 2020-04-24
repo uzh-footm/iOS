@@ -36,7 +36,7 @@ class BetterpickAPIManager {
     }
 
     // MARK: - Open
-    open func betterpickApiRequest<Body>(endpoint: CustomStringConvertible, method: HTTPMethod, body: Body?, parameters: HTTPParameters?) -> URLRequest where Body: Encodable {
+    open func apiRequest(endpoint: CustomStringConvertible, method: HTTPMethod, parameters: HTTPParameters?) -> URLRequest {
         var url = URL(string: endpoint.description, relativeTo: baseURL) ?? baseURL
         if let requestParameters = parameters {
             for parameter in requestParameters {
@@ -45,9 +45,6 @@ class BetterpickAPIManager {
         }
         var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: requestTimeout)
         request.httpMethod = method.rawValue
-        if let requestBody = body {
-            request.addBody(requestBody)
-        }
         request.timeoutInterval = requestTimeout
         return request
     }
@@ -72,5 +69,28 @@ class BetterpickAPIManager {
     func perform<ResponseBody: Decodable>(requestContext: BetterpickAPIRequestContext<ResponseBody>, managerCompletion: @escaping Callback<ResponseBody>) {
         let apiCompletionHandler = createApiCompletionHandler(managerCompletion: managerCompletion)
         apiHandler.perform(requestContext: requestContext, completionHandler: apiCompletionHandler)
+    }
+
+    // MARK: - Requests
+    // MARK: GET /leagues
+    func leagues(leagueID: String? = nil, completion: @escaping Callback<GetLeaguesResponseBody>) {
+        let endpoint = "/leagues"
+        let parameters: HTTPParameters?
+        if let leagueID = leagueID {
+            parameters = ["id": leagueID]
+        } else {
+            parameters = nil
+        }
+        let request = apiRequest(endpoint: endpoint, method: .get, parameters: parameters)
+        let requestContext = BetterpickAPIRequestContext(responseBodyType: GetLeaguesResponseBody.self, apiRequest: request)
+        perform(requestContext: requestContext, managerCompletion: completion)
+    }
+
+    // MARK: GET /leagues/{leagueID}
+    func league(leagueID: String, completion: @escaping Callback<GetLeagueResponseBody>) {
+        let endpoint = "/leagues/\(leagueID)"
+        let request = apiRequest(endpoint: endpoint, method: .get, parameters: nil)
+        let requestContext = BetterpickAPIRequestContext(responseBodyType: GetLeagueResponseBody.self, apiRequest: request)
+        perform(requestContext: requestContext, managerCompletion: completion)
     }
 }
