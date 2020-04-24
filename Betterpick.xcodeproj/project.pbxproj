@@ -49,7 +49,6 @@
 		892D2314244D1F9B00F0F263 /* TeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2313244D1F9B00F0F263 /* TeamListViewController.swift */; };
 		892D2316244D1FDA00F0F263 /* TeamListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2315244D1FDA00F0F263 /* TeamListViewModel.swift */; };
 		892D2318244D20CF00F0F263 /* TeamPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2317244D20CF00F0F263 /* TeamPreview.swift */; };
-		892D231A244D20D700F0F263 /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2319244D20D700F0F263 /* League.swift */; };
 		892D231E244D2ACF00F0F263 /* TeamListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D231D244D2ACF00F0F263 /* TeamListCoordinator.swift */; };
 		892D2320244D346500F0F263 /* TabBarViewController+ChildViewControllerContainerProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D231F244D346500F0F263 /* TabBarViewController+ChildViewControllerContainerProviding.swift */; };
 		892D2322244D351D00F0F263 /* SectioningCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2321244D351D00F0F263 /* SectioningCoordinator.swift */; };
@@ -76,6 +75,9 @@
 		89A2A7E0244473BE006149A6 /* BetterpickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7DF244473BE006149A6 /* BetterpickTests.swift */; };
 		89A2A7EB244473BE006149A6 /* BetterpickUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7EA244473BE006149A6 /* BetterpickUITests.swift */; };
 		89B544A4244BE2ED000C1C4B /* DiscoverCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */; };
+		89F0EBEA24507A61000DA92B /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2319244D20D700F0F263 /* League.swift */; };
+		89F0EBEC24509395000DA92B /* UITableView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EBEB24509395000DA92B /* UITableView+Util.swift */; };
+		89F0EBEF245098E9000DA92B /* TeamListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EBEE245098E9000DA92B /* TeamListTableViewCell.swift */; };
 		EE889C336B30CC1DB7950553 /* Pods_Betterpick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BDDDBB269B5B7E5A59B3C9 /* Pods_Betterpick.framework */; };
 /* End PBXBuildFile section */
 
@@ -163,6 +165,8 @@
 		89A2A7EA244473BE006149A6 /* BetterpickUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterpickUITests.swift; sourceTree = "<group>"; };
 		89A2A7EC244473BE006149A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCoordinator.swift; sourceTree = "<group>"; };
+		89F0EBEB24509395000DA92B /* UITableView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+Util.swift"; path = "Betterpick/Common/Extension/UITableView+Util.swift"; sourceTree = SOURCE_ROOT; };
+		89F0EBEE245098E9000DA92B /* TeamListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListTableViewCell.swift; sourceTree = "<group>"; };
 		BC477A0B0893D8FED9EA1D3A /* Pods-Betterpick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.debug.xcconfig"; sourceTree = "<group>"; };
 		C1F863D70B87FE751FD53E2A /* Pods-BetterpickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterpickTests.release.xcconfig"; path = "Target Support Files/Pods-BetterpickTests/Pods-BetterpickTests.release.xcconfig"; sourceTree = "<group>"; };
 		CBAB40D4DBF1D81129D7EA19 /* Pods-BetterpickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterpickTests.debug.xcconfig"; path = "Target Support Files/Pods-BetterpickTests/Pods-BetterpickTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 				892096652444C6C900DF93BB /* UIColor+AppColors.swift */,
 				892096722444E64000DF93BB /* UIView+Add.swift */,
 				892D232F244D431500F0F263 /* ChildCoordinator+SectioningCoordinator.swift */,
+				89F0EBEB24509395000DA92B /* UITableView+Util.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -461,6 +466,7 @@
 		892D230A244CEFD900F0F263 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				89F0EBED245098E2000DA92B /* Cells */,
 				892D230B244CEFEB00F0F263 /* CustomTextField.swift */,
 			);
 			path = View;
@@ -563,6 +569,14 @@
 				89A2A7CE244473BC006149A6 /* Betterpick.xcdatamodeld */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89F0EBED245098E2000DA92B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				89F0EBEE245098E9000DA92B /* TeamListTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -794,13 +808,13 @@
 				892D232A244D379D00F0F263 /* DiscoverViewController+ChildViewControllerContainerProviding.swift in Sources */,
 				892D2322244D351D00F0F263 /* SectioningCoordinator.swift in Sources */,
 				89955BE9244BE1CB00B8B59A /* ChildCoordinator.swift in Sources */,
-				892D231A244D20D700F0F263 /* League.swift in Sources */,
 				892D232C244D3D5500F0F263 /* PlayerListCoordinator.swift in Sources */,
 				892D2331244F4DE400F0F263 /* TappableLabel.swift in Sources */,
 				8920969024450D8900DF93BB /* SettingsCoordinator.swift in Sources */,
 				892D2300244C73BB00F0F263 /* DiscoverViewModel.swift in Sources */,
 				8975EE6A244BC66C0052696C /* TabBarGestureHandler+UIGestureRecognizerDelegate.swift in Sources */,
 				89955BE7244BDED000B8B59A /* NavigationCoordinator.swift in Sources */,
+				89F0EBEC24509395000DA92B /* UITableView+Util.swift in Sources */,
 				892096862445081B00DF93BB /* DiscoverNavigationCoordinator.swift in Sources */,
 				892D2325244D355300F0F263 /* ChildViewControllerContainerProviding.swift in Sources */,
 				892096372444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */,
@@ -808,6 +822,7 @@
 				8975EE68244BB5A70052696C /* TabBarGestureHandler.swift in Sources */,
 				892D22FE244C704D00F0F263 /* NavigationViewController.swift in Sources */,
 				892096662444C6C900DF93BB /* UIColor+AppColors.swift in Sources */,
+				89F0EBEA24507A61000DA92B /* League.swift in Sources */,
 				89A2A7C9244473BC006149A6 /* TabBarViewController.swift in Sources */,
 				8920968E24450D7B00DF93BB /* MyTeamsViewController.swift in Sources */,
 				892D230F244CFABE00F0F263 /* DiscoverViewController.swift in Sources */,
@@ -828,6 +843,7 @@
 				8975EE66244BB2710052696C /* TabBarPressGestureRecognizer.swift in Sources */,
 				892096952445152200DF93BB /* TabBarStackView.swift in Sources */,
 				892D2307244CE26600F0F263 /* SearchViewController.swift in Sources */,
+				89F0EBEF245098E9000DA92B /* TeamListTableViewCell.swift in Sources */,
 				892D2309244CE2A300F0F263 /* SearchCoordinator.swift in Sources */,
 				892D2314244D1F9B00F0F263 /* TeamListViewController.swift in Sources */,
 				892D2316244D1FDA00F0F263 /* TeamListViewModel.swift in Sources */,

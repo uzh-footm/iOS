@@ -28,7 +28,6 @@ class DiscoverViewController: UIViewController {
 
     lazy var searchButton: ActionButton = {
         let searchButton = ActionButton.createActionButton(image: #imageLiteral(resourceName: "search"))
-        searchButton.tintColor = .black
         searchButton.addTarget(self, action: #selector(didPressSearchButton), for: .touchUpInside)
         return searchButton
     }()

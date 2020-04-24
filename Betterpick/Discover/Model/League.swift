@@ -11,5 +11,4 @@ import Foundation
 struct League: Codable {
     let name: String
     let leagueId: String
-    let nationality: String
 }

@@ -23,6 +23,7 @@ struct Size {
     struct Image {
         static let tabBarIcon: CGFloat = 30
         static let indicator: CGFloat = 16
+        static let teamLogo: CGFloat = 30
     }
 
     struct Cell {

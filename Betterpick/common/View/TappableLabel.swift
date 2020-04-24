@@ -43,6 +43,7 @@ class TappableLabel: UILabel {
     // MARK: - Private
     private func setup() {
         translatesAutoresizingMaskIntoConstraints = false
+        lineBreakMode = .byTruncatingMiddle
         // Enable user interaction
         isUserInteractionEnabled = true
         textColor = .systemGray

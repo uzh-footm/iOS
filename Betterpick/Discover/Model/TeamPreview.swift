@@ -9,9 +9,8 @@
 import Foundation
 
 /// Represents a Team with only the necessary information.
-struct TeamPreview: Decodable {
+struct TeamPreview: Codable {
     let teamId: String
     let name: String
-    let nationality: String
     let logoURL: URL
 }
