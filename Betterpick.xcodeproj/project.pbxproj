@@ -78,6 +78,20 @@
 		89F0EBEA24507A61000DA92B /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2319244D20D700F0F263 /* League.swift */; };
 		89F0EBEC24509395000DA92B /* UITableView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EBEB24509395000DA92B /* UITableView+Util.swift */; };
 		89F0EBEF245098E9000DA92B /* TeamListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EBEE245098E9000DA92B /* TeamListTableViewCell.swift */; };
+		89F0EC1524536184000DA92B /* BetterpickAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC1424536184000DA92B /* BetterpickAPIHandler.swift */; };
+		89F0EC17245361A9000DA92B /* URLSession+BetterpickAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC16245361A9000DA92B /* URLSession+BetterpickAPIHandler.swift */; };
+		89F0EC19245362F5000DA92B /* BetterpickAPIRequestContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC18245362F5000DA92B /* BetterpickAPIRequestContext.swift */; };
+		89F0EC1B245363E9000DA92B /* BetterpickAPIRequestErrorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC1A245363E9000DA92B /* BetterpickAPIRequestErrorContext.swift */; };
+		89F0EC1D24536483000DA92B /* BetterpickAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC1C24536483000DA92B /* BetterpickAPIError.swift */; };
+		89F0EC20245365C3000DA92B /* BetterpickAPIResponseContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC1F245365C3000DA92B /* BetterpickAPIResponseContext.swift */; };
+		89F0EC22245372F0000DA92B /* BetterpickAPIStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC21245372F0000DA92B /* BetterpickAPIStatusCode.swift */; };
+		89F0EC2524537323000DA92B /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC2424537323000DA92B /* HTTPStatusCode.swift */; };
+		89F0EC2724537336000DA92B /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC2624537336000DA92B /* HTTPMethod.swift */; };
+		89F0EC2924537349000DA92B /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC2824537349000DA92B /* HTTPHeader.swift */; };
+		89F0EC2B24537699000DA92B /* HTTPParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC2A24537699000DA92B /* HTTPParameters.swift */; };
+		89F0EC2D24537826000DA92B /* URL+Append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC2C24537826000DA92B /* URL+Append.swift */; };
+		89F0EC2E2453786A000DA92B /* BetterpickAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC12245360A1000DA92B /* BetterpickAPIManager.swift */; };
+		89F0EC3024537CE6000DA92B /* URLRequest+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC2F24537CE6000DA92B /* URLRequest+Add.swift */; };
 		EE889C336B30CC1DB7950553 /* Pods_Betterpick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BDDDBB269B5B7E5A59B3C9 /* Pods_Betterpick.framework */; };
 /* End PBXBuildFile section */
 
@@ -167,6 +181,20 @@
 		89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCoordinator.swift; sourceTree = "<group>"; };
 		89F0EBEB24509395000DA92B /* UITableView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+Util.swift"; path = "Betterpick/Common/Extension/UITableView+Util.swift"; sourceTree = SOURCE_ROOT; };
 		89F0EBEE245098E9000DA92B /* TeamListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListTableViewCell.swift; sourceTree = "<group>"; };
+		89F0EC12245360A1000DA92B /* BetterpickAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BetterpickAPIManager.swift; path = Betterpick/Common/Networking/BetterpickAPIManager.swift; sourceTree = SOURCE_ROOT; };
+		89F0EC1424536184000DA92B /* BetterpickAPIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BetterpickAPIHandler.swift; path = Betterpick/Common/Networking/BetterpickAPIHandler.swift; sourceTree = SOURCE_ROOT; };
+		89F0EC16245361A9000DA92B /* URLSession+BetterpickAPIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "URLSession+BetterpickAPIHandler.swift"; path = "Betterpick/common/Extension/URL/URLSession+BetterpickAPIHandler.swift"; sourceTree = SOURCE_ROOT; };
+		89F0EC18245362F5000DA92B /* BetterpickAPIRequestContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BetterpickAPIRequestContext.swift; path = Betterpick/common/Networking/Context/BetterpickAPIRequestContext.swift; sourceTree = SOURCE_ROOT; };
+		89F0EC1A245363E9000DA92B /* BetterpickAPIRequestErrorContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BetterpickAPIRequestErrorContext.swift; path = Betterpick/common/Networking/Context/BetterpickAPIRequestErrorContext.swift; sourceTree = SOURCE_ROOT; };
+		89F0EC1C24536483000DA92B /* BetterpickAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BetterpickAPIError.swift; path = Betterpick/Common/Networking/BetterpickAPIError.swift; sourceTree = SOURCE_ROOT; };
+		89F0EC1F245365C3000DA92B /* BetterpickAPIResponseContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BetterpickAPIResponseContext.swift; path = Betterpick/Common/Networking/Context/BetterpickAPIResponseContext.swift; sourceTree = SOURCE_ROOT; };
+		89F0EC21245372F0000DA92B /* BetterpickAPIStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BetterpickAPIStatusCode.swift; path = Betterpick/Common/Networking/BetterpickAPIStatusCode.swift; sourceTree = SOURCE_ROOT; };
+		89F0EC2424537323000DA92B /* HTTPStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPStatusCode.swift; path = Betterpick/Common/Networking/HTTP/HTTPStatusCode.swift; sourceTree = SOURCE_ROOT; };
+		89F0EC2624537336000DA92B /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Betterpick/Common/Networking/HTTP/HTTPMethod.swift; sourceTree = SOURCE_ROOT; };
+		89F0EC2824537349000DA92B /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPHeader.swift; path = Betterpick/Common/Networking/HTTP/HTTPHeader.swift; sourceTree = SOURCE_ROOT; };
+		89F0EC2A24537699000DA92B /* HTTPParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPParameters.swift; path = Betterpick/Common/Networking/HTTP/HTTPParameters.swift; sourceTree = SOURCE_ROOT; };
+		89F0EC2C24537826000DA92B /* URL+Append.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "URL+Append.swift"; path = "Betterpick/common/Extension/URL/URL+Append.swift"; sourceTree = SOURCE_ROOT; };
+		89F0EC2F24537CE6000DA92B /* URLRequest+Add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "URLRequest+Add.swift"; path = "Betterpick/common/Extension/URL/URLRequest+Add.swift"; sourceTree = SOURCE_ROOT; };
 		BC477A0B0893D8FED9EA1D3A /* Pods-Betterpick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.debug.xcconfig"; sourceTree = "<group>"; };
 		C1F863D70B87FE751FD53E2A /* Pods-BetterpickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterpickTests.release.xcconfig"; path = "Target Support Files/Pods-BetterpickTests/Pods-BetterpickTests.release.xcconfig"; sourceTree = "<group>"; };
 		CBAB40D4DBF1D81129D7EA19 /* Pods-BetterpickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterpickTests.debug.xcconfig"; path = "Target Support Files/Pods-BetterpickTests/Pods-BetterpickTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -229,6 +257,7 @@
 		892096342444AF3500DF93BB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				89F0EC3224537D02000DA92B /* URL */,
 				892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */,
 				892096652444C6C900DF93BB /* UIColor+AppColors.swift */,
 				892096722444E64000DF93BB /* UIView+Add.swift */,
@@ -241,6 +270,7 @@
 		892096352444AF4700DF93BB /* common */ = {
 			isa = PBXGroup;
 			children = (
+				89F0EC112453607E000DA92B /* Networking */,
 				892096692444E11F00DF93BB /* View */,
 				892D22FC244C703D00F0F263 /* ViewController */,
 				892096642444C66400DF93BB /* Struct */,
@@ -579,6 +609,50 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		89F0EC112453607E000DA92B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				89F0EC12245360A1000DA92B /* BetterpickAPIManager.swift */,
+				89F0EC1424536184000DA92B /* BetterpickAPIHandler.swift */,
+				89F0EC1C24536483000DA92B /* BetterpickAPIError.swift */,
+				89F0EC21245372F0000DA92B /* BetterpickAPIStatusCode.swift */,
+				89F0EC1E245365AE000DA92B /* Context */,
+				89F0EC2324537314000DA92B /* HTTP */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		89F0EC1E245365AE000DA92B /* Context */ = {
+			isa = PBXGroup;
+			children = (
+				89F0EC18245362F5000DA92B /* BetterpickAPIRequestContext.swift */,
+				89F0EC1A245363E9000DA92B /* BetterpickAPIRequestErrorContext.swift */,
+				89F0EC1F245365C3000DA92B /* BetterpickAPIResponseContext.swift */,
+			);
+			path = Context;
+			sourceTree = "<group>";
+		};
+		89F0EC2324537314000DA92B /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				89F0EC2424537323000DA92B /* HTTPStatusCode.swift */,
+				89F0EC2624537336000DA92B /* HTTPMethod.swift */,
+				89F0EC2824537349000DA92B /* HTTPHeader.swift */,
+				89F0EC2A24537699000DA92B /* HTTPParameters.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		89F0EC3224537D02000DA92B /* URL */ = {
+			isa = PBXGroup;
+			children = (
+				89F0EC16245361A9000DA92B /* URLSession+BetterpickAPIHandler.swift */,
+				89F0EC2C24537826000DA92B /* URL+Append.swift */,
+				89F0EC2F24537CE6000DA92B /* URLRequest+Add.swift */,
+			);
+			path = URL;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -802,11 +876,16 @@
 				8920964F2444B92400DF93BB /* TabBarViewModel.swift in Sources */,
 				89A2A7D0244473BC006149A6 /* Betterpick.xcdatamodeld in Sources */,
 				892D2327244D357C00F0F263 /* SectionedCoordinator.swift in Sources */,
+				89F0EC1524536184000DA92B /* BetterpickAPIHandler.swift in Sources */,
+				89F0EC3024537CE6000DA92B /* URLRequest+Add.swift in Sources */,
+				89F0EC22245372F0000DA92B /* BetterpickAPIStatusCode.swift in Sources */,
 				892D2320244D346500F0F263 /* TabBarViewController+ChildViewControllerContainerProviding.swift in Sources */,
 				892096582444BED700DF93BB /* TabBarViewControllerDelegate.swift in Sources */,
 				8920968C24450D6C00DF93BB /* MyTeamsCoordinator.swift in Sources */,
+				89F0EC19245362F5000DA92B /* BetterpickAPIRequestContext.swift in Sources */,
 				892D232A244D379D00F0F263 /* DiscoverViewController+ChildViewControllerContainerProviding.swift in Sources */,
 				892D2322244D351D00F0F263 /* SectioningCoordinator.swift in Sources */,
+				89F0EC2B24537699000DA92B /* HTTPParameters.swift in Sources */,
 				89955BE9244BE1CB00B8B59A /* ChildCoordinator.swift in Sources */,
 				892D232C244D3D5500F0F263 /* PlayerListCoordinator.swift in Sources */,
 				892D2331244F4DE400F0F263 /* TappableLabel.swift in Sources */,
@@ -816,13 +895,17 @@
 				89955BE7244BDED000B8B59A /* NavigationCoordinator.swift in Sources */,
 				89F0EBEC24509395000DA92B /* UITableView+Util.swift in Sources */,
 				892096862445081B00DF93BB /* DiscoverNavigationCoordinator.swift in Sources */,
+				89F0EC1B245363E9000DA92B /* BetterpickAPIRequestErrorContext.swift in Sources */,
 				892D2325244D355300F0F263 /* ChildViewControllerContainerProviding.swift in Sources */,
+				89F0EC2724537336000DA92B /* HTTPMethod.swift in Sources */,
+				89F0EC2D24537826000DA92B /* URL+Append.swift in Sources */,
 				892096372444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */,
 				8920967D2444F4F400DF93BB /* TabBarCoordinator.swift in Sources */,
 				8975EE68244BB5A70052696C /* TabBarGestureHandler.swift in Sources */,
 				892D22FE244C704D00F0F263 /* NavigationViewController.swift in Sources */,
 				892096662444C6C900DF93BB /* UIColor+AppColors.swift in Sources */,
 				89F0EBEA24507A61000DA92B /* League.swift in Sources */,
+				89F0EC2924537349000DA92B /* HTTPHeader.swift in Sources */,
 				89A2A7C9244473BC006149A6 /* TabBarViewController.swift in Sources */,
 				8920968E24450D7B00DF93BB /* MyTeamsViewController.swift in Sources */,
 				892D230F244CFABE00F0F263 /* DiscoverViewController.swift in Sources */,
@@ -830,7 +913,9 @@
 				892D231E244D2ACF00F0F263 /* TeamListCoordinator.swift in Sources */,
 				89A2A7CD244473BC006149A6 /* AppCoordinator.swift in Sources */,
 				8920969224450D9200DF93BB /* SettingsViewController.swift in Sources */,
+				89F0EC2E2453786A000DA92B /* BetterpickAPIManager.swift in Sources */,
 				8920967B2444F44100DF93BB /* TabbedCoordinator.swift in Sources */,
+				89F0EC20245365C3000DA92B /* BetterpickAPIResponseContext.swift in Sources */,
 				8975EE62244BB2100052696C /* TabPressActionData.swift in Sources */,
 				892D22F9244C6A2E00F0F263 /* Reselectable.swift in Sources */,
 				892D232E244D3DB000F0F263 /* PlayerListViewController.swift in Sources */,
@@ -839,7 +924,9 @@
 				892D22FB244C6D7300F0F263 /* MyTeamsNavigationCoordinator.swift in Sources */,
 				8920966B2444E16E00DF93BB /* HairlineView.swift in Sources */,
 				892096772444EBE500DF93BB /* Size.swift in Sources */,
+				89F0EC2524537323000DA92B /* HTTPStatusCode.swift in Sources */,
 				892096732444E64000DF93BB /* UIView+Add.swift in Sources */,
+				89F0EC17245361A9000DA92B /* URLSession+BetterpickAPIHandler.swift in Sources */,
 				8975EE66244BB2710052696C /* TabBarPressGestureRecognizer.swift in Sources */,
 				892096952445152200DF93BB /* TabBarStackView.swift in Sources */,
 				892D2307244CE26600F0F263 /* SearchViewController.swift in Sources */,
@@ -854,6 +941,7 @@
 				89A2A7C7244473BC006149A6 /* AppDelegate.swift in Sources */,
 				89A2A7CB244473BC006149A6 /* Coordinator.swift in Sources */,
 				892D2312244D0AE900F0F263 /* ActionButton.swift in Sources */,
+				89F0EC1D24536483000DA92B /* BetterpickAPIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
