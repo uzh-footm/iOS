@@ -12,7 +12,6 @@ class TappableLabel: UILabel {
 
     // MARK: - Properties
     var hypertextRange: NSRange?
-    private let fontSize: CGFloat
 
     // MARK: Animation
     private struct Animation {
@@ -28,14 +27,12 @@ class TappableLabel: UILabel {
     var onHypertextTapped: (() -> Void)?
 
     // MARK: - Inherited
-    init(fontSize: CGFloat) {
-        self.fontSize = fontSize
+    init() {
         super.init(frame: .zero)
         setup()
     }
 
     required init?(coder aDecoder: NSCoder) {
-        self.fontSize = Size.Font.default
         super.init(coder: aDecoder)
         setup()
     }
@@ -88,13 +85,17 @@ class TappableLabel: UILabel {
     }
 
     private func setLinkedAttributedText(text: String, link: String, color: UIColor) {
-        let attributedString = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: fontSize)])
+        let attributedString = NSMutableAttributedString(string: text, attributes: [
+            NSAttributedString.Key.font: font ?? UIFont.systemFont(ofSize: Size.Font.default),
+            NSAttributedString.Key.foregroundColor: UIColor.customSecondaryLabel
+        ])
         let rangeOfLinkedText = attributedString.mutableString.range(of: link)
 
         guard rangeOfLinkedText.location != NSNotFound else { return }
         hypertextRange = rangeOfLinkedText
         attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: rangeOfLinkedText)
-        attributedString.addAttribute(NSAttributedString.Key.font, value: UIFont.systemFont(ofSize: Size.Font.action, weight: .semibold), range: rangeOfLinkedText)
+        let actionFont = UIFont.systemFont(ofSize: Size.Font.action, weight: .semibold)
+        attributedString.addAttribute(NSAttributedString.Key.font, value: actionFont, range: rangeOfLinkedText)
         attributedText = attributedString
     }
 

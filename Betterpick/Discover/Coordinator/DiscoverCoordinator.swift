@@ -18,6 +18,8 @@ class DiscoverCoordinator: SectioningCoordinator, ChildCoordinator {
     // MARK: SectioningCoordinator
     var activeCoordinator: SectionedCoordinator?
     var childCoordinators: [DiscoverSection: SectionedCoordinator] = [:]
+    // MARK: PlayerSelecting & TeamSelecting
+    weak var teamAndPlayerSelectingCoordinator: (PlayerSelecting & TeamSelecting)?
 
     // MARK: ChildCoordinator
     var containerViewController: UIViewController & ChildViewControllerContainerProviding {
@@ -41,10 +43,13 @@ class DiscoverCoordinator: SectioningCoordinator, ChildCoordinator {
         switch section {
         case .players:
             let playerListVC = PlayerListViewController()
-            return PlayerListCoordinator(playerListViewController: playerListVC)
+            let playerListCoordinator = PlayerListCoordinator(playerListViewController: playerListVC)
+            // FIXME: player selecting
+            return playerListCoordinator
         case .teams:
             let teamListVM = TeamListViewModel()
             let teamListVC = TeamListViewController(viewModel: teamListVM)
+            teamListVC.coordinator = teamAndPlayerSelectingCoordinator
             return TeamListCoordinator(teamListViewController: teamListVC)
         }
     }

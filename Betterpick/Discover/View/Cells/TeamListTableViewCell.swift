@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class TeamListTableViewCell: UITableViewCell {
     // MARK: - Properties
@@ -15,7 +16,7 @@ class TeamListTableViewCell: UITableViewCell {
 
     // MARK: Views
     let teamLogoImageView = UIImageView()
-    let teamNameLabel = UILabel()
+    let teamNameLabel = UILabel(style: .primary)
 
     // MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -29,9 +30,12 @@ class TeamListTableViewCell: UITableViewCell {
 
     // MARK: Inherited
     func setup() {
-        contentView.layoutMargins = UIEdgeInsets(top: Size.Cell.extendedSideMargin/2, left: Size.Cell.extendedSideMargin, bottom: Size.Cell.extendedSideMargin/2, right: 0)
+        if #available(iOS 13, *) {} else {
+            contentView.layoutMargins = UIEdgeInsets(top: Size.Cell.narrowVerticalMargin, left: Size.Cell.extendedSideMargin, bottom: Size.Cell.narrowVerticalMargin, right: 0)
+        }
         accessoryType = .disclosureIndicator
         backgroundColor = .background
+        teamLogoImageView.contentMode = .scaleAspectFit
         layout()
     }
 
@@ -42,10 +46,18 @@ class TeamListTableViewCell: UITableViewCell {
         teamLogoImageView.heightAnchor.constraint(equalToConstant: Size.Image.teamLogo).isActive = true
         teamLogoImageView.widthAnchor.constraint(equalTo: teamLogoImageView.heightAnchor).isActive = true
         // To make automatic dimension row height on the tableview work correctly
-        let imageTopConstraint = teamLogoImageView.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor)
+        let imageTopConstraint: NSLayoutConstraint
+        let imageBottomConstraint: NSLayoutConstraint
+        if #available(iOS 13, *) {
+            imageTopConstraint = teamLogoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0)
+            imageBottomConstraint = teamLogoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Size.Cell.narrowVerticalMargin)
+        } else {
+            imageTopConstraint = teamLogoImageView.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor)
+            imageBottomConstraint = teamLogoImageView.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor)
+        }
         imageTopConstraint.priority = UILayoutPriority(rawValue: 999)
         imageTopConstraint.isActive = true
-        teamLogoImageView.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor).isActive = true
+        imageBottomConstraint.isActive = true
 
         contentView.add(subview: teamNameLabel)
         teamNameLabel.leadingAnchor.constraint(equalTo: teamLogoImageView.trailingAnchor, constant: Size.Cell.extendedSideMargin/2).isActive = true
@@ -56,5 +68,6 @@ class TeamListTableViewCell: UITableViewCell {
     // MARK: - Public
     public func configure(from teamPreview: TeamPreview) {
         teamNameLabel.text = teamPreview.name
+        teamLogoImageView.sd_setImage(with: teamPreview.logoURL, placeholderImage: #imageLiteral(resourceName: "teams_48pt"), options: [], completed: nil)
     }
 }

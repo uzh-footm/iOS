@@ -23,15 +23,19 @@ class ActionButton: UIButton {
 
     // MARK: - Public
     /// Returns an `ActionButton` with `UIButton.Type = system`.
-    public static func createActionButton(image: UIImage, edgeInsetConstant: CGFloat? = nil) -> ActionButton {
+    public static func createActionButton(image: UIImage) -> ActionButton {
         let button = ActionButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(image.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = .primary
         button.imageView?.contentMode = .scaleAspectFit
-        if let edgeInset = edgeInsetConstant {
-            button.contentEdgeInsets = UIEdgeInsets.init(top: edgeInset, left: edgeInset, bottom: edgeInset, right: edgeInset)
-        }
+        return button
+    }
+
+    public static func createActionBarButtonItem(image: UIImage, target: Any?, action: Selector?) -> UIBarButtonItem {
+        let barImage = image.withRenderingMode(.alwaysTemplate)
+        let button = UIBarButtonItem(image: barImage, style: .plain, target: target, action: action)
+        button.tintColor = .primary
         return button
     }
 }

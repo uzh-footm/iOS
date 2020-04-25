@@ -23,11 +23,12 @@ struct Size {
     struct Image {
         static let tabBarIcon: CGFloat = 30
         static let indicator: CGFloat = 16
-        static let teamLogo: CGFloat = 30
+        static let teamLogo: CGFloat = 48
     }
 
     struct Cell {
         static let height: CGFloat = 48
+        static let narrowVerticalMargin: CGFloat = 4
         static let narrowSideMargin: CGFloat = 12
         static let sideMargin: CGFloat = 16
         static let extendedSideMargin: CGFloat = 18
@@ -37,6 +38,7 @@ struct Size {
     struct Navigator {
         static let height: CGFloat = 44
         static let separatorHeight: CGFloat = 1
+        static let barButtonBottomMargin: CGFloat = 12
     }
 
     struct Tab {
@@ -45,6 +47,6 @@ struct Size {
 
     struct Font {
         static let `default`: CGFloat = 14
-        static let action: CGFloat = 15
+        static let action: CGFloat = 16
     }
 }

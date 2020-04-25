@@ -9,26 +9,48 @@
 import UIKit
 
 /// Displays a list of teams from a given League / Nationality
-class TeamListViewController: UIViewController {
+class TeamListViewController: UIViewController, EmptyStatePresenting {
 
     // MARK: - Properties
     let viewModel: TeamListViewModel
+    weak var coordinator: TeamSelecting?
 
     // MARK: UI Elements
     /// Displays information about the competition that is displayed by the tableview
-    let competitionInfoLabel = TappableLabel(fontSize: Size.Font.default)
+    lazy var competitionInfoLabel: TappableResponderLabel = {
+        let label = TappableResponderLabel()
+        label.set(style: .primary)
+        label.delegate = self
+        return label
+    }()
+
+    lazy var competitionPickerView: ToolbarPickerView = {
+        let picker = ToolbarPickerView()
+        picker.delegate = self
+        picker.dataSource = self
+        picker.toolbarDelegate = self
+        return picker
+    }()
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.dontShowEmptyCells()
-        tableView.separatorInset = .zero
+        tableView.removeLastSeparatorAndDontShowEmptyCells()
+        //tableView.separatorInset = .zero
         tableView.backgroundColor = .background
         tableView.register(TeamListTableViewCell.self, forCellReuseIdentifier: TeamListTableViewCell.reuseIdentifier)
         return tableView
     }()
+
+    // MARK: EmptyStatePresenting
+    typealias EmptyStateView = FetchingView
+    var emptyStateView: FetchingView?
+    var emptyStateSuperview: UIView {
+        // If the viewModel already loaded the leagues, use the tableview as the superview for the spinner, otherwise use the entire view to also hide the league pickerview
+        return viewModel.isDisplayingLeagues ? tableView : view
+    }
 
     // MARK: - Initialization
     init(viewModel: TeamListViewModel) {
@@ -47,7 +69,23 @@ class TeamListViewController: UIViewController {
 
         setupSubviews()
 
-        updateUI()
+        // Label
+        competitionInfoLabel.onHypertextTapped = { [unowned self] in
+            self.competitionInfoLabel.becomeFirstResponder()
+        }
+
+        updateViewStateAppearance()
+
+        // ViewModel setup
+        viewModel.onStateUpdate = {
+            self.updateViewStateAppearance()
+        }
+        viewModel.startFetchingAfterInitial()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        competitionInfoLabel.resignFirstResponder()
     }
 
     // MARK: - Private
@@ -79,9 +117,22 @@ class TeamListViewController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
 
-    private func updateUI() {
-        let hypertext = "Bundesliga"
+    private func updateLabel(hypertext: String) {
         competitionInfoLabel.set(hypertext: hypertext, in: "Showing teams from \(hypertext)")
+    }
+
+    private func updateViewStateAppearance() {
+        switch viewModel.state {
+        case .displaying(_, .fetching(let league)):
+            addEmptyState()
+            updateLabel(hypertext: league.name)
+        case .displaying(_, .displaying(let league)):
+            removeEmptyState()
+            tableView.reloadData()
+            updateLabel(hypertext: league.name)
+        default:
+            addEmptyState()
+        }
     }
 }
 
@@ -89,32 +140,68 @@ class TeamListViewController: UIViewController {
 extension TeamListViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return viewModel.collection.count
-        return 1
+        return viewModel.numberOfTeams()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: ServiceTableViewCell.reuseIdentifier, for: indexPath) as? ServiceTableViewCell else {
-//            return UITableViewCell()
-//        }
-//        let service = viewModel.collection[indexPath.row]
-//        cell.configure(from: service)
-//        return cell
-        return UITableViewCell()
+        guard let teams = viewModel.currentLeague?.teams, let cell = tableView.dequeueReusableCell(withIdentifier: TeamListTableViewCell.reuseIdentifier, for: indexPath) as? TeamListTableViewCell else {
+            return UITableViewCell()
+        }
+        let team = teams[indexPath.row]
+        cell.configure(from: team)
+        return cell
     }
 }
 
 // MARK: - UITableViewDelegate
 extension TeamListViewController: UITableViewDelegate {
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        if tableView.refreshControl?.isRefreshing ?? false {
-//            viewModel.fetchUserServices()
-//        }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let teams = viewModel.currentLeague?.teams else { return }
+        coordinator?.select(team: teams[indexPath.row])
+    }
+}
+
+// MARK: - UIPickerViewDelegate
+extension TeamListViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let service = viewModel.collection[indexPath.row]
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        delegate?.didSelect(service: service)
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return viewModel.league(at: row)?.name
+    }
+}
+
+// MARK: - UIPickerViewDataSource
+extension TeamListViewController: UIPickerViewDataSource {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return viewModel.numberOfLeagues()
+    }
+
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+}
+
+extension TeamListViewController: ToolbarPickerViewDelegate {
+    func didTapDone() {
+        let row = competitionPickerView.selectedRow(inComponent: 0)
+        viewModel.fetchLeague(at: row)
+        competitionInfoLabel.resignFirstResponder()
+    }
+
+    func didTapCancel() {
+        competitionInfoLabel.resignFirstResponder()
+    }
+}
+
+extension TeamListViewController: TappableResponderLabelDelegate {
+    var responderInputView: UIView {
+        return competitionPickerView
+    }
+
+    var responderAccessoryView: UIView? {
+        return competitionPickerView.toolbar
     }
 }

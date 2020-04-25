@@ -8,7 +8,14 @@
 
 import Foundation
 
-struct League: Codable {
+class League: Codable {
     let name: String
     let leagueId: String
+
+    var teams: [TeamPreview]?
+
+    init(name: String, leagueId: String) {
+        self.name = name
+        self.leagueId = leagueId
+    }
 }

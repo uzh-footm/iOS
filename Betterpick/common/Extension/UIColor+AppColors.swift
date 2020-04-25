@@ -45,4 +45,12 @@ extension UIColor {
         guard #available(iOS 13, *) else { return #colorLiteral(red: 0.7764705882, green: 0.7764705882, blue: 0.7843137255, alpha: 1) }
         return .opaqueSeparator
     }()
+    public static var customLabel: UIColor = {
+        guard #available(iOS 13, *) else { return .black }
+        return .label
+    }()
+    public static var customSecondaryLabel: UIColor = {
+        guard #available(iOS 13, *) else { return UIColor(r: 140, g: 140, b: 141) }
+        return .secondaryLabel
+    }()
 }

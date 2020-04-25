@@ -23,7 +23,7 @@ class NavigationCoordinator: NSObject, Coordinator {
     }
 
     // MARK: - Lifecycle
-    func start() {
+    open func start() {
         let rootViewController = rootChildCoordinator.viewController
         navigationController.delegate = self
         navigationController.setViewControllers([rootViewController], animated: false)

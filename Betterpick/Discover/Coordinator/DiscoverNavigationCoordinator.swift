@@ -20,9 +20,35 @@ class DiscoverNavigationCoordinator: NavigationCoordinator, TabbedCoordinator {
     }
 
     // MARK: - Initialization
-    init(navigationController: UINavigationController = LargeTitleNavigationController()) {
+    init(navigationController: UINavigationController = LargeTitleNavigationController.initWithLargeNavBar()) {
         discoverViewController = DiscoverViewController(viewModel: DiscoverViewModel())
         self.discoverCoordinator = DiscoverCoordinator(discoverViewController: discoverViewController)
         super.init(navigationController: navigationController, rootChildCoordinator: discoverCoordinator)
+    }
+
+    override func start() {
+        discoverCoordinator.teamAndPlayerSelectingCoordinator = self
+        super.start()
+    }
+
+    // MARK: - Action Handlers
+    // MARK: TeamDetail
+    func startTeamDetailFlow(_ team: TeamPreview) {
+        // Close the search VC if needed
+        discoverCoordinator.finishSearchFlow()
+        let teamVC = TeamViewController()
+        navigationController.pushViewController(teamVC, animated: true)
+    }
+}
+
+extension DiscoverNavigationCoordinator: PlayerSelecting {
+    func select(player: PlayerPreview) {
+        //startPlayerDetailFlow(player)
+    }
+}
+
+extension DiscoverNavigationCoordinator: TeamSelecting {
+    func select(team: TeamPreview) {
+        startTeamDetailFlow(team)
     }
 }

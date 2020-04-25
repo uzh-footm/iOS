@@ -21,7 +21,5 @@ class TeamListCoordinator: SectionedCoordinator {
     }
 
     // MARK: - Lifecycle
-    func start() {
-
-    }
+    func start() {}
 }

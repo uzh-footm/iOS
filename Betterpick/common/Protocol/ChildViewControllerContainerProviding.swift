@@ -19,9 +19,6 @@ extension ChildViewControllerContainerProviding where Self: UIViewController {
         add(childViewController: viewC, superview: childViewControllerContainerView)
         // Embed it inside our container view
         viewC.view.translatesAutoresizingMaskIntoConstraints = false
-        viewC.view.leadingAnchor.constraint(equalTo: childViewControllerContainerView.leadingAnchor).isActive = true
-        viewC.view.trailingAnchor.constraint(equalTo: childViewControllerContainerView.trailingAnchor).isActive = true
-        viewC.view.topAnchor.constraint(equalTo: childViewControllerContainerView.topAnchor).isActive = true
-        viewC.view.bottomAnchor.constraint(equalTo: childViewControllerContainerView.bottomAnchor).isActive = true
+        viewC.view.embed(in: childViewControllerContainerView)
     }
 }

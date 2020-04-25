@@ -8,18 +8,76 @@
 
 import UIKit
 
-class DiscoverViewController: UIViewController {
+protocol NavigationBarProviding {
+    func hideNavigationBar()
+    func showNavigationBar()
+}
+
+extension NavigationBarProviding where Self: UINavigationController {
+    func hideNavigationBar() {
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithTransparentBackground()
+            appearance.backgroundColor = .clear
+            navigationBar.standardAppearance = appearance
+            navigationBar.compactAppearance = appearance
+            navigationBar.scrollEdgeAppearance = appearance
+        } else {
+            navigationBar.shadowImage = UIImage()
+            navigationBar.setBackgroundImage(UIImage(), for: .default)
+            navigationBar.barTintColor = .clear
+        }
+        navigationBar.isTranslucent = true
+    }
+
+    func showNavigationBar() {
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithDefaultBackground()
+            appearance.backgroundColor = .background
+            navigationBar.standardAppearance = appearance
+            navigationBar.compactAppearance = appearance
+            navigationBar.scrollEdgeAppearance = appearance
+        } else {
+            navigationBar.shadowImage = nil
+            navigationBar.barTintColor = .background
+        }
+        navigationBar.isTranslucent = false
+    }
+}
+
+protocol NavigationBarDisplaying {}
+
+extension NavigationBarDisplaying where Self: UIViewController {
+    func hideNavigationBar() {
+        guard let navigationController = navigationController as? NavigationBarProviding else { return }
+        navigationController.hideNavigationBar()
+    }
+
+    func showNavigationBar() {
+        guard let navigationController = navigationController as? NavigationBarProviding else { return }
+        navigationController.showNavigationBar()
+    }
+}
+
+class DiscoverViewController: UIViewController, NavigationBarDisplaying {
 
     // MARK: - Properties
     let viewModel: DiscoverViewModel
 
     // MARK: UI Elements
+    let titleLabel = UILabel(style: .largeTitle)
+
     lazy var segmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl()
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         // Insert the sections
         for (index, section) in viewModel.sections.enumerated() {
             segmentedControl.insertSegment(withTitle: section.sectionTitle, at: index, animated: false)
+        }
+        if #available(iOS 13.0, *) {} else {
+            // Tint color defaults to blue on iOS 12, so set it to black
+            segmentedControl.tintColor = .black
         }
         segmentedControl.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: Size.Font.action)], for: .normal)
         segmentedControl.addTarget(self, action: #selector(didChangeSegmentedControlValue), for: .valueChanged)
@@ -53,10 +111,13 @@ class DiscoverViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Removes Back button from the next viewcontroller
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.largeTitleDisplayMode = .never
 
         // View Setup
         view.backgroundColor = .background
-        title = "Discover"
+        titleLabel.text = "Discover"
 
         // Subview Setup
         setupSubviews()
@@ -69,31 +130,27 @@ class DiscoverViewController: UIViewController {
         updateAppearance()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        // Enable search button interaction
-        navigationController?.navigationBar.isUserInteractionEnabled = false
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        // Enable navigation bar interaction in other view controllers
-        navigationController?.navigationBar.isUserInteractionEnabled = true
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideNavigationBar()
     }
 
     // MARK: - Private
     private func setupSubviews() {
+        // Title Label
+        view.add(subview: titleLabel)
+        titleLabel.embedSidesInMargins(in: view)
+        titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+
         // SegmentedControl
-        view.addSubview(segmentedControl)
-        segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: Size.standardMargin).isActive = true
+        view.add(subview: segmentedControl)
+        segmentedControl.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: Size.standardMargin).isActive = true
         segmentedControl.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor).isActive = true
         segmentedControl.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor).isActive = true
 
         // Search Button
         view.add(subview: searchButton)
-        searchButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -Size.standardMargin).isActive = true
+        searchButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
         searchButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor).isActive = true
         searchButton.heightAnchor.constraint(equalToConstant: Size.iconSize).isActive = true
         searchButton.widthAnchor.constraint(equalTo: searchButton.heightAnchor).isActive = true

@@ -12,7 +12,7 @@ class AppCoordinator: Coordinator {
     // MARK: - Properties
     // MARK: UI
     let window: UIWindow
-    let rootViewController = UIViewController()
+    let rootViewController = RootViewController()
     // MARK: Coordinators
     var tabBarCoordinator: TabBarCoordinator!
 

@@ -20,7 +20,7 @@ class MyTeamsNavigationCoordinator: NavigationCoordinator, TabbedCoordinator {
     }
 
     // MARK: - Initialization
-    init(navigationController: UINavigationController = LargeTitleNavigationController()) {
+    init(navigationController: UINavigationController = LargeTitleNavigationController.initWithLargeNavBar()) {
         self.myTeamsCoordinator = MyTeamsCoordinator(myTeamsViewController: myTeamsViewController)
         super.init(navigationController: navigationController, rootChildCoordinator: myTeamsCoordinator)
     }

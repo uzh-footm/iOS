@@ -25,8 +25,8 @@ class BetterpickAPIManager {
 
     // MARK: - Properties
     // MARK: Constant
-    private let requestTimeout: TimeInterval = 20
-    private let baseURL = URL(string: "https://betterpick.dvdblk.com/api/v1")!
+    private static let requestTimeout: TimeInterval = 20
+    private static let baseURL = URL(string: "https://betterpick.dvdblk.com/api/v1")!
 
     let apiHandler: BetterpickAPIHandler
 
@@ -37,15 +37,14 @@ class BetterpickAPIManager {
 
     // MARK: - Open
     open func apiRequest(endpoint: CustomStringConvertible, method: HTTPMethod, parameters: HTTPParameters?) -> URLRequest {
-        var url = URL(string: endpoint.description, relativeTo: baseURL) ?? baseURL
+        var url = URL(string: endpoint.description, relativeTo: BetterpickAPIManager.baseURL) ?? BetterpickAPIManager.baseURL
         if let requestParameters = parameters {
             for parameter in requestParameters {
                 url = url.append(parameter.key, value: parameter.value.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed))
             }
         }
-        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: requestTimeout)
+        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: BetterpickAPIManager.requestTimeout)
         request.httpMethod = method.rawValue
-        request.timeoutInterval = requestTimeout
         return request
     }
 
@@ -73,15 +72,9 @@ class BetterpickAPIManager {
 
     // MARK: - Requests
     // MARK: GET /leagues
-    func leagues(leagueID: String? = nil, completion: @escaping Callback<GetLeaguesResponseBody>) {
+    func leagues(completion: @escaping Callback<GetLeaguesResponseBody>) {
         let endpoint = "/leagues"
-        let parameters: HTTPParameters?
-        if let leagueID = leagueID {
-            parameters = ["id": leagueID]
-        } else {
-            parameters = nil
-        }
-        let request = apiRequest(endpoint: endpoint, method: .get, parameters: parameters)
+        let request = apiRequest(endpoint: endpoint, method: .get, parameters: nil)
         let requestContext = BetterpickAPIRequestContext(responseBodyType: GetLeaguesResponseBody.self, apiRequest: request)
         perform(requestContext: requestContext, managerCompletion: completion)
     }
