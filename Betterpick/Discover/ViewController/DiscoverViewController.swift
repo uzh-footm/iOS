@@ -60,7 +60,7 @@ extension NavigationBarDisplaying where Self: UIViewController {
     }
 }
 
-class DiscoverViewController: UIViewController, NavigationBarDisplaying {
+class DiscoverViewController: UIViewController, NavigationBarDisplaying, Reselectable {
 
     // MARK: - Properties
     let viewModel: DiscoverViewModel

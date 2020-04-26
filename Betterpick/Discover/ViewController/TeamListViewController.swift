@@ -32,16 +32,29 @@ class TeamListViewController: UIViewController, EmptyStatePresenting {
         return picker
     }()
 
+    let competitionLabelSeparator: HairlineView = {
+        let sep = HairlineView()
+        sep.isHidden = true
+        return sep
+    }()
+
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = Size.Image.teamLogo + Size.Cell.narrowVerticalMargin * 2
         tableView.removeLastSeparatorAndDontShowEmptyCells()
-        //tableView.separatorInset = .zero
         tableView.backgroundColor = .background
         tableView.register(TeamListTableViewCell.self, forCellReuseIdentifier: TeamListTableViewCell.reuseIdentifier)
         return tableView
+    }()
+
+    // MARK: Animation
+    lazy var separatorAnimator: TeamsListSeparatorAnimator = {
+        let animator = TeamsListSeparatorAnimator()
+        animator.separator = self.competitionLabelSeparator
+        return animator
     }()
 
     // MARK: EmptyStatePresenting
@@ -90,7 +103,7 @@ class TeamListViewController: UIViewController, EmptyStatePresenting {
 
     // MARK: - Private
     private func setupSubviews() {
-        // Separator
+        // Top Separator
         let separator = HairlineView()
         separator.backgroundColor = tableView.separatorColor
         view.add(subview: separator)
@@ -115,93 +128,37 @@ class TeamListViewController: UIViewController, EmptyStatePresenting {
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+
+        // League Info Label and TableView separator
+        view.add(subview: competitionLabelSeparator)
+        competitionLabelSeparator.embedSides(in: view)
+        competitionLabelSeparator.bottomAnchor.constraint(equalTo: tableView.topAnchor).isActive = true
     }
 
-    private func updateLabel(hypertext: String) {
-        competitionInfoLabel.set(hypertext: hypertext, in: "Showing teams from \(hypertext)")
+    private func updateLabel(league: League) {
+        let hypertext = league.name
+        let prefix: String
+        if let numTeams = league.teams?.count {
+            prefix = "Showing \(numTeams) teams"
+        } else {
+            prefix = "Showing teams"
+        }
+        competitionInfoLabel.set(hypertext: hypertext, in: "\(prefix) from \(hypertext)")
     }
 
     private func updateViewStateAppearance() {
         switch viewModel.state {
         case .displaying(_, .fetching(let league)):
             addEmptyState()
-            updateLabel(hypertext: league.name)
+            updateLabel(league: league)
         case .displaying(_, .displaying(let league)):
             removeEmptyState()
             tableView.reloadData()
-            updateLabel(hypertext: league.name)
+            view.layoutIfNeeded()
+            tableView.setContentOffset(.zero, animated: false)
+            updateLabel(league: league)
         default:
             addEmptyState()
         }
-    }
-}
-
-// MARK: - UITableViewDataSource
-extension TeamListViewController: UITableViewDataSource {
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfTeams()
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let teams = viewModel.currentLeague?.teams, let cell = tableView.dequeueReusableCell(withIdentifier: TeamListTableViewCell.reuseIdentifier, for: indexPath) as? TeamListTableViewCell else {
-            return UITableViewCell()
-        }
-        let team = teams[indexPath.row]
-        cell.configure(from: team)
-        return cell
-    }
-}
-
-// MARK: - UITableViewDelegate
-extension TeamListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        guard let teams = viewModel.currentLeague?.teams else { return }
-        coordinator?.select(team: teams[indexPath.row])
-    }
-}
-
-// MARK: - UIPickerViewDelegate
-extension TeamListViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-
-    }
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return viewModel.league(at: row)?.name
-    }
-}
-
-// MARK: - UIPickerViewDataSource
-extension TeamListViewController: UIPickerViewDataSource {
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return viewModel.numberOfLeagues()
-    }
-
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-}
-
-extension TeamListViewController: ToolbarPickerViewDelegate {
-    func didTapDone() {
-        let row = competitionPickerView.selectedRow(inComponent: 0)
-        viewModel.fetchLeague(at: row)
-        competitionInfoLabel.resignFirstResponder()
-    }
-
-    func didTapCancel() {
-        competitionInfoLabel.resignFirstResponder()
-    }
-}
-
-extension TeamListViewController: TappableResponderLabelDelegate {
-    var responderInputView: UIView {
-        return competitionPickerView
-    }
-
-    var responderAccessoryView: UIView? {
-        return competitionPickerView.toolbar
     }
 }

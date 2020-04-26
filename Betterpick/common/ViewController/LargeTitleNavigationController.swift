@@ -33,7 +33,9 @@ class LargeTitleNavigationController: UINavigationController, NavigationBarProvi
 }
 
 extension LargeTitleNavigationController: Reselectable {
-    func reselect() {
+    func reselect() -> Bool {
+        guard viewControllers.count > 1 else { return false }
         popToRootViewController(animated: true)
+        return true
     }
 }

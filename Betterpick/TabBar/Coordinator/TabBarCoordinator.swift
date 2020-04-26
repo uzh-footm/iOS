@@ -57,6 +57,7 @@ extension TabBarCoordinator: TabBarViewControllerDelegate {
     func didReselect(tab: Tab) {
         guard let childCoordinator = childCoordinators[tab] else { return }
         guard let reselectableViewController = childCoordinator.viewController as? Reselectable else { return }
-        reselectableViewController.reselect()
+        guard !reselectableViewController.reselect() else { return }
+        reselectableViewController.reselectChildViewControllers()
     }
 }

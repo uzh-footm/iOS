@@ -49,7 +49,7 @@ class TeamListTableViewCell: UITableViewCell {
         let imageTopConstraint: NSLayoutConstraint
         let imageBottomConstraint: NSLayoutConstraint
         if #available(iOS 13, *) {
-            imageTopConstraint = teamLogoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0)
+            imageTopConstraint = teamLogoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Size.Cell.narrowVerticalMargin)
             imageBottomConstraint = teamLogoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Size.Cell.narrowVerticalMargin)
         } else {
             imageTopConstraint = teamLogoImageView.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor)
