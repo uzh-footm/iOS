@@ -16,7 +16,7 @@ class TeamListTableViewCell: UITableViewCell {
 
     // MARK: Views
     let teamLogoImageView = UIImageView()
-    let teamNameLabel = UILabel(style: .primary)
+    let teamNameLabel = UILabel(style: .cellTitle)
 
     // MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

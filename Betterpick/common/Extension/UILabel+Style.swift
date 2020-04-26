@@ -38,7 +38,7 @@ extension UILabel {
         // Cells
         case .cellTitle:
             textColor = .customLabel
-            font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+            font = UIFont.systemFont(ofSize: Size.Font.action, weight: .medium)
         }
     }
 }
