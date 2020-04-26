@@ -58,6 +58,10 @@ extension NavigationBarDisplaying where Self: UIViewController {
         guard let navigationController = navigationController as? NavigationBarProviding else { return }
         navigationController.showNavigationBar()
     }
+
+    func hideBackBarButtonText() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
 }
 
 class DiscoverViewController: UIViewController, NavigationBarDisplaying, Reselectable {

@@ -36,7 +36,8 @@ class DiscoverNavigationCoordinator: NavigationCoordinator, TabbedCoordinator {
     func startTeamDetailFlow(_ team: TeamPreview) {
         // Close the search VC if needed
         discoverCoordinator.finishSearchFlow()
-        let teamVC = TeamViewController()
+        let teamVM = TeamViewModel(teamPreview: team)
+        let teamVC = TeamViewController(viewModel: teamVM)
         navigationController.pushViewController(teamVC, animated: true)
     }
 }
