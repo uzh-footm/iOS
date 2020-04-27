@@ -8,6 +8,8 @@
 
 import Foundation
 
+// Disable Swiftlint for the ID property
+// swiftlint:disable identifier_name
 struct Player: Decodable {
     let id: Int
     let name: String

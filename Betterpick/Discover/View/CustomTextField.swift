@@ -47,6 +47,7 @@ class CustomTextField: UITextField {
         translatesAutoresizingMaskIntoConstraints = false
         clearButtonMode = .whileEditing
         autocapitalizationType = .words
+        returnKeyType = .search
         font = UIFont.systemFont(ofSize: CustomTextField.fontSize)
         tintColor = .primary
     }

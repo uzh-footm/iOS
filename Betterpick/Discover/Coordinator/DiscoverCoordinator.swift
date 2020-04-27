@@ -60,7 +60,9 @@ class DiscoverCoordinator: SectioningCoordinator, ChildCoordinator {
         // Guard that we are not doing another search right now
         guard searchCoordinator == nil else { return }
         // Create a new SearchViewController and its Coordinator
-        let searchVC = SearchViewController()
+        let searchVM = SearchViewModel()
+        let searchVC = SearchViewController(viewModel: searchVM)
+        searchVC.selectingCoordinator = teamAndPlayerSelectingCoordinator
         searchVC.modalPresentationStyle = .fullScreen
         searchVC.onFinishedSearching = { [unowned self] in
             self.finishSearchFlow()
