@@ -27,10 +27,12 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
     ]
 
     // MARK: - Inherited
+    // MARK: GET /leagues
     override func leagues(completion: @escaping BetterpickAPIManager.Callback<GetLeaguesResponseBody>) {
         returnSuccessAfter(duration: 1, completion: completion, response: GetLeaguesResponseBody(leagues: leagues))
     }
 
+    // MARK: GET /leagues/{leagueID}
     override func league(leagueID: String, completion: @escaping BetterpickAPIManager.Callback<GetLeagueResponseBody>) {
         let teamTuples = [
             ("FC Augsburg", "https://www.bundesliga.com/assets/clublogo/fca.png"),
@@ -58,5 +60,22 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
             teams.append(team)
         }
         returnSuccessAfter(duration: 0.5, completion: completion, response: GetLeagueResponseBody(teams: teams))
+    }
+
+    // Generating Random String
+    private func randomString(length: Int) -> String {
+        let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+        return String((0..<length).map { _ in letters.randomElement()! })
+    }
+
+    // MARK: GET /players/clubs/{clubID}
+    override func club(clubID: String, completion: @escaping Callback<GetClubResponseBody>) {
+        var playerPreviews = [PlayerPreview]()
+        for index in 0..<Int.random(in: 28..<34) {
+            let randomPosition = PlayerPosition.allCases.randomElement()!
+            let preview = PlayerPreview(playerId: String(index), name: "\(randomString(length: Int.random(in: 3..<12))) \(randomString(length: Int.random(in: 3..<12)))", photoURL: URL(string: "https://www.bundesliga.com/assets/clublogo/fcb.png")!, squadNumber: Int.random(in: 1..<40), position: randomPosition, nation: randomString(length: 10))
+            playerPreviews.append(preview)
+        }
+        returnSuccessAfter(duration: 0.6, completion: completion, response: GetClubResponseBody(players: playerPreviews))
     }
 }

@@ -38,18 +38,31 @@ class DiscoverNavigationCoordinator: NavigationCoordinator, TabbedCoordinator {
         discoverCoordinator.finishSearchFlow()
         let teamVM = TeamViewModel(teamPreview: team)
         let teamVC = TeamViewController(viewModel: teamVM)
-        navigationController.pushViewController(teamVC, animated: true)
+        teamVC.playerSelectingCoordinator = self
+        let teamCoordinator = TeamCoordinator(viewController: teamVC)
+        add(childCoordinator: teamCoordinator, push: true)
+    }
+
+    // MARK: PlayerDetail
+    func startPlayerDetailFlow(_ playerPreview: PlayerPreview) {
+        // Close the search VC if needed
+        discoverCoordinator.finishSearchFlow()
+        let playerDetailVM = PlayerDetailViewModel(playerPreview: playerPreview)
+        let playerDetailVC = PlayerDetailViewController(viewModel: playerDetailVM)
+        navigationController.pushViewController(playerDetailVC, animated: true)
     }
 }
 
-extension DiscoverNavigationCoordinator: PlayerSelecting {
-    func select(player: PlayerPreview) {
-        //startPlayerDetailFlow(player)
-    }
-}
-
+// MARK: - TeamSelecting
 extension DiscoverNavigationCoordinator: TeamSelecting {
     func select(team: TeamPreview) {
         startTeamDetailFlow(team)
+    }
+}
+
+// MARK: - PlayerSelecting
+extension DiscoverNavigationCoordinator: PlayerSelecting {
+    func select(player: PlayerPreview) {
+        startPlayerDetailFlow(player)
     }
 }

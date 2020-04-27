@@ -31,9 +31,11 @@ class NavigationCoordinator: NSObject, Coordinator {
     }
 
     /// Adds a child coordinator to the `childCoordinators` stack and starts it via `start()`
-    func add(childCoordinator: ChildCoordinator) {
+    func add(childCoordinator: ChildCoordinator, push: Bool = false) {
         childCoordinators.append(childCoordinator)
         childCoordinator.start()
+        guard push else { return }
+        navigationController.pushViewController(childCoordinator.viewController, animated: true)
     }
 
     /// Removes a child coordinator from the coordinator hierarchy

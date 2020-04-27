@@ -10,6 +10,9 @@ import UIKit
 
 class PlayerListViewController: UIViewController {
 
+    // MARK: - Properties
+    weak var playerSelectingCoordinator: PlayerSelecting?
+
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -44,7 +44,7 @@ class DiscoverCoordinator: SectioningCoordinator, ChildCoordinator {
         case .players:
             let playerListVC = PlayerListViewController()
             let playerListCoordinator = PlayerListCoordinator(playerListViewController: playerListVC)
-            // FIXME: player selecting
+            playerListVC.playerSelectingCoordinator = teamAndPlayerSelectingCoordinator
             return playerListCoordinator
         case .teams:
             let teamListVM = TeamListViewModel()
