@@ -104,11 +104,11 @@ class BetterpickAPIManager {
     }
 
     // MARK: GET /search?name={name}
-    func search(name: String, completion: @escaping Callback<SearchResult>) {
+    func search(name: String, completion: @escaping Callback<GetSearchResponseBody>) {
         let endpoint = "/search"
         let parameters = ["name": name]
         let request = apiRequest(endpoint: endpoint, method: .get, parameters: parameters)
-        let requestContext = BetterpickAPIRequestContext(responseBodyType: SearchResult.self, apiRequest: request)
+        let requestContext = BetterpickAPIRequestContext(responseBodyType: GetSearchResponseBody.self, apiRequest: request)
         perform(requestContext: requestContext, managerCompletion: completion)
     }
 }
