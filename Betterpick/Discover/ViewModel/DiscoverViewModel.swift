@@ -27,4 +27,8 @@ class DiscoverViewModel {
     public func update(section index: Int) {
         currentSection = DiscoverSection(rawValue: index) ?? .teams
     }
+
+    public var title: String {
+        return "Discover"
+    }
 }

@@ -60,12 +60,12 @@ class DiscoverViewController: UIViewController, NavigationBarDisplaying, Reselec
     override func viewDidLoad() {
         super.viewDidLoad()
         // Removes Back button from the next viewcontroller
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        hideBackBarButtonText()
         navigationItem.largeTitleDisplayMode = .never
 
         // View Setup
         view.backgroundColor = .background
-        titleLabel.text = "Discover"
+        titleLabel.text = viewModel.title
 
         // Subview Setup
         setupSubviews()
