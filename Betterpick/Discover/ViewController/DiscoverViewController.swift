@@ -159,11 +159,19 @@ class DiscoverViewController: UIViewController, NavigationBarDisplaying, Reselec
         searchButton.heightAnchor.constraint(equalToConstant: Size.iconSize).isActive = true
         searchButton.widthAnchor.constraint(equalTo: searchButton.heightAnchor).isActive = true
 
+        // Section Container
         view.add(subview: sectionContainerView)
         sectionContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         sectionContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         sectionContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         sectionContainerView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: Size.standardMargin).isActive = true
+
+        // Top Separator
+        let separator = HairlineView()
+        view.add(subview: separator)
+        separator.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor).isActive = true
+        separator.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor).isActive = true
+        separator.topAnchor.constraint(equalTo: sectionContainerView.topAnchor).isActive = true
     }
 
     private func updateAppearance() {

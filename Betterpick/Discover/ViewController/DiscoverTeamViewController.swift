@@ -103,14 +103,6 @@ class DiscoverTeamViewController: UIViewController, EmptyStatePresenting {
 
     // MARK: - Private
     private func setupSubviews() {
-        // Top Separator
-        let separator = HairlineView()
-        separator.backgroundColor = tableView.separatorColor
-        view.add(subview: separator)
-        separator.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor).isActive = true
-        separator.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor).isActive = true
-        separator.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
-
         // League Info Label
         view.add(subview: competitionInfoLabel)
         competitionInfoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
