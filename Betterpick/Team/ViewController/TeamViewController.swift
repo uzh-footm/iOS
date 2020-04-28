@@ -49,7 +49,7 @@ class TeamViewController: UIViewController, NavigationBarDisplaying, EmptyStateP
 
         // ViewModel
         viewModel.onStateUpdate = updateViewStateAppearance
-        viewModel.startInitialFetch()
+        viewModel.startInitialFetching()
 
         updateViewStateAppearance()
     }

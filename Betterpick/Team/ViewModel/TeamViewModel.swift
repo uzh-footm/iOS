@@ -8,62 +8,28 @@
 
 import Foundation
 
-class TeamViewModel {
-
-    enum ViewState {
-        case fetching
-        case displaying
-        case error(Error)
-    }
+class TeamViewModel: FetchingViewModel<GetClubResponseBody, Team> {
 
     // MARK: - Properties
     let team: Team
-    let apiManager: BetterpickAPIManager
-
-    // MARK: ViewState
-    private(set) var state: ViewState = .fetching {
-        didSet { handleStateChange(old: oldValue, new: state) }
-    }
-
-    // MARK: Actions
-    var onStateUpdate: (() -> Void)?
 
     // MARK: - Initialization
     init(teamPreview: TeamPreview, apiManager: BetterpickAPIManager = BetterpickAPIManagerFactory.createAPIManager()) {
         self.team = Team(from: teamPreview)
-        self.apiManager = apiManager
+        super.init(apiManager: apiManager)
     }
 
-    // MARK: - Private
-    private func startFetchingTeam() {
-        apiManager.club(clubID: team.teamId) { [weak self] result in
-            switch result {
-            case .error(let error):
-                self?.state = .error(error)
-            case .success(let clubBody):
-                self?.team.squad = Team.createSquad(previews: clubBody.players)
-                self?.state = .displaying
-            }
-        }
+    // MARK: - Inherited
+    override func startFetching(completion: @escaping BetterpickAPIManager.Callback<GetClubResponseBody>) {
+        apiManager.club(clubID: team.teamId, completion: completion)
     }
 
-    private func handleStateChange(old: ViewState, new: ViewState) {
-        switch (old, new) {
-        case (.fetching, .fetching):
-            // Initial fetch
-            startFetchingTeam()
-        default:
-            break
-        }
-        // Notify the view
-        onStateUpdate?()
+    override func responseBodyToModel(_ responseBody: GetClubResponseBody) -> Team? {
+        team.squad = Team.createSquad(previews: responseBody.players)
+        return team
     }
 
     // MARK: - Public
-    public func startInitialFetch() {
-        state = .fetching
-    }
-
     public func getSquad() -> Team.Squad? {
         guard case .displaying = state else { return nil }
         return team.squad
@@ -86,15 +52,5 @@ class TeamViewModel {
     public func player(at indexPath: IndexPath) -> PlayerPreview? {
         guard let positionPlayers = getPlayersAt(sectionIndex: indexPath.section) else { return nil }
         return positionPlayers[indexPath.row]
-    }
-}
-
-extension String {
-    func capitalizingFirstLetter() -> String {
-        return prefix(1).capitalized + dropFirst()
-    }
-
-    mutating func capitalizeFirstLetter() {
-        self = self.capitalizingFirstLetter()
     }
 }

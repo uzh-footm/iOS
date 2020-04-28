@@ -42,7 +42,8 @@ class DiscoverCoordinator: SectioningCoordinator, ChildCoordinator {
     func createChildCoordinatorFrom(section: DiscoverSection) -> SectionedCoordinator {
         switch section {
         case .players:
-            let discoverPlayerVC = DiscoverPlayerViewController()
+            let discoverPlayerVM = DiscoverPlayerViewModel()
+            let discoverPlayerVC = DiscoverPlayerViewController(viewModel: discoverPlayerVM)
             let discoverPlayerCoordinator = DiscoverPlayerCoordinator(discoverPlayerViewController: discoverPlayerVC)
             discoverPlayerVC.playerSelectingCoordinator = teamAndPlayerSelectingCoordinator
             return discoverPlayerCoordinator
