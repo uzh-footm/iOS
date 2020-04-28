@@ -8,7 +8,7 @@
 
 import UIKit
 
-/// Handles the animation of a Separator `UIView` depending on the `scrollView.contentOffset.y`
+/// Handles the hiding/showing animation of a Separator `UIView` depending on the `scrollView.contentOffset.y`
 class DiscoverTeamSeparatorAnimator {
 
     // MARK: - Properties
