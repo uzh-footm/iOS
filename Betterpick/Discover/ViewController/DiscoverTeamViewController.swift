@@ -1,5 +1,5 @@
 //
-//  TeamListViewController.swift
+//  DiscoverTeamViewController.swift
 //  Betterpick
 //
 //  Created by David Bielik on 20/04/2020.
@@ -9,10 +9,10 @@
 import UIKit
 
 /// Displays a list of teams from a given League / Nationality
-class TeamListViewController: UIViewController, EmptyStatePresenting {
+class DiscoverTeamViewController: UIViewController, EmptyStatePresenting {
 
     // MARK: - Properties
-    let viewModel: TeamListViewModel
+    let viewModel: DiscoverTeamViewModel
     weak var coordinator: TeamSelecting?
 
     // MARK: UI Elements
@@ -34,7 +34,7 @@ class TeamListViewController: UIViewController, EmptyStatePresenting {
 
     let competitionLabelSeparator: HairlineView = {
         let sep = HairlineView()
-        sep.isHidden = true
+        sep.alpha = 0
         return sep
     }()
 
@@ -46,13 +46,13 @@ class TeamListViewController: UIViewController, EmptyStatePresenting {
         tableView.estimatedRowHeight = Size.Image.teamLogo + Size.Cell.narrowVerticalMargin * 2
         tableView.removeLastSeparatorAndDontShowEmptyCells()
         tableView.backgroundColor = .background
-        tableView.register(TeamListTableViewCell.self, forCellReuseIdentifier: TeamListTableViewCell.reuseIdentifier)
+        tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.reuseIdentifier)
         return tableView
     }()
 
     // MARK: Animation
-    lazy var separatorAnimator: TeamsListSeparatorAnimator = {
-        let animator = TeamsListSeparatorAnimator()
+    lazy var separatorAnimator: DiscoverTeamSeparatorAnimator = {
+        let animator = DiscoverTeamSeparatorAnimator()
         animator.separator = self.competitionLabelSeparator
         return animator
     }()
@@ -66,13 +66,13 @@ class TeamListViewController: UIViewController, EmptyStatePresenting {
     }
 
     // MARK: - Initialization
-    init(viewModel: TeamListViewModel) {
+    init(viewModel: DiscoverTeamViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
 
     required init?(coder: NSCoder) {
-        viewModel = TeamListViewModel()
+        viewModel = DiscoverTeamViewModel()
         super.init(nibName: nil, bundle: nil)
     }
 

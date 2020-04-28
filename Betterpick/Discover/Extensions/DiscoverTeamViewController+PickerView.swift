@@ -1,5 +1,5 @@
 //
-//  TeamListViewController+PickerView.swift
+//  DiscoverTeamViewController+PickerView.swift
 //  Betterpick
 //
 //  Created by David Bielik on 26/04/2020.
@@ -9,7 +9,7 @@
 import UIKit
 
 // MARK: - UIPickerViewDelegate
-extension TeamListViewController: UIPickerViewDelegate {
+extension DiscoverTeamViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 
     }
@@ -20,7 +20,7 @@ extension TeamListViewController: UIPickerViewDelegate {
 }
 
 // MARK: - UIPickerViewDataSource
-extension TeamListViewController: UIPickerViewDataSource {
+extension DiscoverTeamViewController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return viewModel.numberOfLeagues()
     }
@@ -31,7 +31,7 @@ extension TeamListViewController: UIPickerViewDataSource {
 }
 
 // MARK: - ToolbarPickerViewDelegate
-extension TeamListViewController: ToolbarPickerViewDelegate {
+extension DiscoverTeamViewController: ToolbarPickerViewDelegate {
     func didTapDone() {
         let row = competitionPickerView.selectedRow(inComponent: 0)
         viewModel.fetchLeague(at: row)

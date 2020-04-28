@@ -1,5 +1,5 @@
 //
-//  TeamListViewModel.swift
+//  DiscoverTeamViewModel.swift
 //  Betterpick
 //
 //  Created by David Bielik on 20/04/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TeamListViewModel {
+class DiscoverTeamViewModel {
 
     enum ViewState {
         /// Initial state of the view

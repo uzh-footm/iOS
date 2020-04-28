@@ -1,5 +1,5 @@
 //
-//  TeamListViewController+Reselectable.swift
+//  DiscoverTeamViewController+Reselectable.swift
 //  Betterpick
 //
 //  Created by David Bielik on 26/04/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension TeamListViewController: Reselectable {
+extension DiscoverTeamViewController: Reselectable {
     func reselect() -> Bool {
         tableView.setContentOffset(.zero, animated: true)
         return true

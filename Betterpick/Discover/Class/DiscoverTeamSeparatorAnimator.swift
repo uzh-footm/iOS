@@ -1,5 +1,5 @@
 //
-//  TeamListSeparatorAnimator.swift
+//  DiscoverTeamSeparatorAnimator.swift
 //  Betterpick
 //
 //  Created by David Bielik on 26/04/2020.
@@ -9,10 +9,15 @@
 import UIKit
 
 /// Handles the animation of a Separator `UIView` depending on the `scrollView.contentOffset.y`
-class TeamsListSeparatorAnimator {
+class DiscoverTeamSeparatorAnimator {
 
     // MARK: - Properties
-    weak var separator: UIView?
+    weak var separator: UIView? {
+        didSet {
+            self.hidden = separator?.alpha == 0
+        }
+    }
+    private var hidden: Bool = false
 
     // MARK: - Private
     /// We don't need to trigger the computation every time the delegate invokes the method.
@@ -26,15 +31,16 @@ class TeamsListSeparatorAnimator {
         let shouldShowSeparator = scrollView.contentOffset.y > 0
         let shouldHideSeparator = !shouldShowSeparator
 
-        if shouldShowSeparator, separator?.isHidden ?? false {
-            UIView.animate(withDuration: 0.4) {
-                self.separator?.isHidden = false
+        if shouldShowSeparator, hidden {
+            hidden = false
+            UIView.animate(withDuration: 0.15) {
+                self.separator?.alpha = 1
             }
-        } else if shouldHideSeparator, !(separator?.isHidden ?? true) {
-            UIView.animate(withDuration: 0.4) {
-                self.separator?.isHidden = true
+        } else if shouldHideSeparator, !hidden {
+            hidden = true
+            UIView.animate(withDuration: 0.15) {
+                self.separator?.alpha = 0
             }
         }
-        guard scrollView.contentOffset.y > 0, let sep = separator, sep.isHidden else { return }
     }
 }

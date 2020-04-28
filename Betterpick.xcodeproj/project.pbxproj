@@ -46,16 +46,16 @@
 		892D230C244CEFEB00F0F263 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D230B244CEFEB00F0F263 /* CustomTextField.swift */; };
 		892D230F244CFABE00F0F263 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096822444FA8A00DF93BB /* DiscoverViewController.swift */; };
 		892D2312244D0AE900F0F263 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2311244D0AE900F0F263 /* ActionButton.swift */; };
-		892D2316244D1FDA00F0F263 /* TeamListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2315244D1FDA00F0F263 /* TeamListViewModel.swift */; };
+		892D2316244D1FDA00F0F263 /* DiscoverTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2315244D1FDA00F0F263 /* DiscoverTeamViewModel.swift */; };
 		892D2318244D20CF00F0F263 /* TeamPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2317244D20CF00F0F263 /* TeamPreview.swift */; };
-		892D231E244D2ACF00F0F263 /* TeamListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D231D244D2ACF00F0F263 /* TeamListCoordinator.swift */; };
+		892D231E244D2ACF00F0F263 /* DiscoverTeamCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D231D244D2ACF00F0F263 /* DiscoverTeamCoordinator.swift */; };
 		892D2320244D346500F0F263 /* TabBarViewController+ChildViewControllerContainerProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D231F244D346500F0F263 /* TabBarViewController+ChildViewControllerContainerProviding.swift */; };
 		892D2322244D351D00F0F263 /* SectioningCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2321244D351D00F0F263 /* SectioningCoordinator.swift */; };
 		892D2325244D355300F0F263 /* ChildViewControllerContainerProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2324244D355300F0F263 /* ChildViewControllerContainerProviding.swift */; };
 		892D2327244D357C00F0F263 /* SectionedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2326244D357C00F0F263 /* SectionedCoordinator.swift */; };
 		892D232A244D379D00F0F263 /* DiscoverViewController+ChildViewControllerContainerProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2329244D379D00F0F263 /* DiscoverViewController+ChildViewControllerContainerProviding.swift */; };
-		892D232C244D3D5500F0F263 /* PlayerListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D232B244D3D5500F0F263 /* PlayerListCoordinator.swift */; };
-		892D232E244D3DB000F0F263 /* PlayerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D232D244D3DB000F0F263 /* PlayerListViewController.swift */; };
+		892D232C244D3D5500F0F263 /* DiscoverPlayerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D232B244D3D5500F0F263 /* DiscoverPlayerCoordinator.swift */; };
+		892D232E244D3DB000F0F263 /* DiscoverPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D232D244D3DB000F0F263 /* DiscoverPlayerViewController.swift */; };
 		892D2330244D431500F0F263 /* ChildCoordinator+SectioningCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D232F244D431500F0F263 /* ChildCoordinator+SectioningCoordinator.swift */; };
 		892D2331244F4DE400F0F263 /* TappableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D231B244D235500F0F263 /* TappableLabel.swift */; };
 		8975EE62244BB2100052696C /* TabPressActionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE61244BB2100052696C /* TabPressActionData.swift */; };
@@ -67,7 +67,7 @@
 		899BF1152453B8A700F68E30 /* EmptyStatePresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1142453B8A700F68E30 /* EmptyStatePresenting.swift */; };
 		899BF1182453B9A500F68E30 /* UIView+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1172453B9A500F68E30 /* UIView+Embed.swift */; };
 		899BF11A2453BB2200F68E30 /* FetchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1192453BB2200F68E30 /* FetchingView.swift */; };
-		899BF11D245447CD00F68E30 /* TeamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2313244D1F9B00F0F263 /* TeamListViewController.swift */; };
+		899BF11D245447CD00F68E30 /* DiscoverTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2313244D1F9B00F0F263 /* DiscoverTeamViewController.swift */; };
 		899BF11E2454508800F68E30 /* TappableResponderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF11B2454443300F68E30 /* TappableResponderLabel.swift */; };
 		899BF1212454523400F68E30 /* TeamSelecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1202454523400F68E30 /* TeamSelecting.swift */; };
 		899BF1232454523B00F68E30 /* PlayerSelecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1222454523B00F68E30 /* PlayerSelecting.swift */; };
@@ -75,11 +75,10 @@
 		899BF12C245469DB00F68E30 /* LargeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF12B245469DB00F68E30 /* LargeNavigationBar.swift */; };
 		899BF12E2454B49600F68E30 /* UILabel+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF12D2454B49600F68E30 /* UILabel+Style.swift */; };
 		899BF1302454BC3B00F68E30 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF12F2454BC3B00F68E30 /* RootViewController.swift */; };
-		899BF1332455083000F68E30 /* TeamListSeparatorAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1322455083000F68E30 /* TeamListSeparatorAnimator.swift */; };
-		899BF1352455085F00F68E30 /* TeamListViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1342455085F00F68E30 /* TeamListViewController+TableView.swift */; };
-		899BF1372455089A00F68E30 /* TeamListViewController+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1362455089A00F68E30 /* TeamListViewController+PickerView.swift */; };
-		899BF139245508B600F68E30 /* TeamListViewController+Reselectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF138245508B600F68E30 /* TeamListViewController+Reselectable.swift */; };
-		899BF13B245508D200F68E30 /* TeamListViewController+TappableResponderLabelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF13A245508D200F68E30 /* TeamListViewController+TappableResponderLabelDelegate.swift */; };
+		899BF1352455085F00F68E30 /* DiscoverTeamViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1342455085F00F68E30 /* DiscoverTeamViewController+TableView.swift */; };
+		899BF1372455089A00F68E30 /* DiscoverTeamViewController+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1362455089A00F68E30 /* DiscoverTeamViewController+PickerView.swift */; };
+		899BF139245508B600F68E30 /* DiscoverTeamViewController+Reselectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF138245508B600F68E30 /* DiscoverTeamViewController+Reselectable.swift */; };
+		899BF13B245508D200F68E30 /* DiscoverTeamViewController+TappableResponderLabelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF13A245508D200F68E30 /* DiscoverTeamViewController+TappableResponderLabelDelegate.swift */; };
 		899BF13E24550ED400F68E30 /* TeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF13D24550ED300F68E30 /* TeamViewModel.swift */; };
 		899BF14024550EE100F68E30 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF13F24550EE100F68E30 /* Team.swift */; };
 		899BF1422455146200F68E30 /* GetClubResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1412455146200F68E30 /* GetClubResponseBody.swift */; };
@@ -93,6 +92,7 @@
 		899BF1582457913600F68E30 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1572457913600F68E30 /* SearchViewModel.swift */; };
 		899BF15A2457916800F68E30 /* SearchViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1592457916800F68E30 /* SearchViewController+TableView.swift */; };
 		899BF15C2457951400F68E30 /* GetSearchResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF15B2457951400F68E30 /* GetSearchResponseBody.swift */; };
+		899BF15D2457AC4D00F68E30 /* DiscoverTeamSeparatorAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1322455083000F68E30 /* DiscoverTeamSeparatorAnimator.swift */; };
 		89A2A7C7244473BC006149A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7C6244473BC006149A6 /* AppDelegate.swift */; };
 		89A2A7C9244473BC006149A6 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7C8244473BC006149A6 /* TabBarViewController.swift */; };
 		89A2A7CB244473BC006149A6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7CA244473BC006149A6 /* Coordinator.swift */; };
@@ -105,7 +105,7 @@
 		89B544A4244BE2ED000C1C4B /* DiscoverCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */; };
 		89F0EBEA24507A61000DA92B /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2319244D20D700F0F263 /* League.swift */; };
 		89F0EBEC24509395000DA92B /* UITableView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EBEB24509395000DA92B /* UITableView+Util.swift */; };
-		89F0EBEF245098E9000DA92B /* TeamListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EBEE245098E9000DA92B /* TeamListTableViewCell.swift */; };
+		89F0EBEF245098E9000DA92B /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EBEE245098E9000DA92B /* TeamTableViewCell.swift */; };
 		89F0EC1524536184000DA92B /* BetterpickAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC1424536184000DA92B /* BetterpickAPIHandler.swift */; };
 		89F0EC17245361A9000DA92B /* URLSession+BetterpickAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC16245361A9000DA92B /* URLSession+BetterpickAPIHandler.swift */; };
 		89F0EC19245362F5000DA92B /* BetterpickAPIRequestContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC18245362F5000DA92B /* BetterpickAPIRequestContext.swift */; };
@@ -176,19 +176,19 @@
 		892D2308244CE2A300F0F263 /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 		892D230B244CEFEB00F0F263 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		892D2311244D0AE900F0F263 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActionButton.swift; path = Betterpick/Common/View/ActionButton.swift; sourceTree = SOURCE_ROOT; };
-		892D2313244D1F9B00F0F263 /* TeamListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListViewController.swift; sourceTree = "<group>"; };
-		892D2315244D1FDA00F0F263 /* TeamListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListViewModel.swift; sourceTree = "<group>"; };
+		892D2313244D1F9B00F0F263 /* DiscoverTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTeamViewController.swift; sourceTree = "<group>"; };
+		892D2315244D1FDA00F0F263 /* DiscoverTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTeamViewModel.swift; sourceTree = "<group>"; };
 		892D2317244D20CF00F0F263 /* TeamPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamPreview.swift; sourceTree = "<group>"; };
 		892D2319244D20D700F0F263 /* League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = League.swift; sourceTree = "<group>"; };
 		892D231B244D235500F0F263 /* TappableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TappableLabel.swift; path = Betterpick/Common/View/TappableLabel.swift; sourceTree = SOURCE_ROOT; };
-		892D231D244D2ACF00F0F263 /* TeamListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListCoordinator.swift; sourceTree = "<group>"; };
+		892D231D244D2ACF00F0F263 /* DiscoverTeamCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTeamCoordinator.swift; sourceTree = "<group>"; };
 		892D231F244D346500F0F263 /* TabBarViewController+ChildViewControllerContainerProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarViewController+ChildViewControllerContainerProviding.swift"; sourceTree = "<group>"; };
 		892D2321244D351D00F0F263 /* SectioningCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SectioningCoordinator.swift; path = Betterpick/Common/Coordinator/SectioningCoordinator.swift; sourceTree = SOURCE_ROOT; };
 		892D2324244D355300F0F263 /* ChildViewControllerContainerProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChildViewControllerContainerProviding.swift; path = Betterpick/Common/Protocol/ChildViewControllerContainerProviding.swift; sourceTree = SOURCE_ROOT; };
 		892D2326244D357C00F0F263 /* SectionedCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SectionedCoordinator.swift; path = Betterpick/Common/Coordinator/SectionedCoordinator.swift; sourceTree = SOURCE_ROOT; };
 		892D2329244D379D00F0F263 /* DiscoverViewController+ChildViewControllerContainerProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiscoverViewController+ChildViewControllerContainerProviding.swift"; sourceTree = "<group>"; };
-		892D232B244D3D5500F0F263 /* PlayerListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListCoordinator.swift; sourceTree = "<group>"; };
-		892D232D244D3DB000F0F263 /* PlayerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListViewController.swift; sourceTree = "<group>"; };
+		892D232B244D3D5500F0F263 /* DiscoverPlayerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverPlayerCoordinator.swift; sourceTree = "<group>"; };
+		892D232D244D3DB000F0F263 /* DiscoverPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverPlayerViewController.swift; sourceTree = "<group>"; };
 		892D232F244D431500F0F263 /* ChildCoordinator+SectioningCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "ChildCoordinator+SectioningCoordinator.swift"; path = "Betterpick/Common/Extension/ChildCoordinator+SectioningCoordinator.swift"; sourceTree = SOURCE_ROOT; };
 		8975EE61244BB2100052696C /* TabPressActionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPressActionData.swift; sourceTree = "<group>"; };
 		8975EE65244BB2710052696C /* TabBarPressGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPressGestureRecognizer.swift; sourceTree = "<group>"; };
@@ -207,11 +207,11 @@
 		899BF12B245469DB00F68E30 /* LargeNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LargeNavigationBar.swift; path = Betterpick/Common/View/LargeNavigationBar.swift; sourceTree = SOURCE_ROOT; };
 		899BF12D2454B49600F68E30 /* UILabel+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UILabel+Style.swift"; path = "Betterpick/Common/Extension/UILabel+Style.swift"; sourceTree = SOURCE_ROOT; };
 		899BF12F2454BC3B00F68E30 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		899BF1322455083000F68E30 /* TeamListSeparatorAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListSeparatorAnimator.swift; sourceTree = "<group>"; };
-		899BF1342455085F00F68E30 /* TeamListViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamListViewController+TableView.swift"; sourceTree = "<group>"; };
-		899BF1362455089A00F68E30 /* TeamListViewController+PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamListViewController+PickerView.swift"; sourceTree = "<group>"; };
-		899BF138245508B600F68E30 /* TeamListViewController+Reselectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamListViewController+Reselectable.swift"; sourceTree = "<group>"; };
-		899BF13A245508D200F68E30 /* TeamListViewController+TappableResponderLabelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamListViewController+TappableResponderLabelDelegate.swift"; sourceTree = "<group>"; };
+		899BF1322455083000F68E30 /* DiscoverTeamSeparatorAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTeamSeparatorAnimator.swift; sourceTree = "<group>"; };
+		899BF1342455085F00F68E30 /* DiscoverTeamViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiscoverTeamViewController+TableView.swift"; sourceTree = "<group>"; };
+		899BF1362455089A00F68E30 /* DiscoverTeamViewController+PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiscoverTeamViewController+PickerView.swift"; sourceTree = "<group>"; };
+		899BF138245508B600F68E30 /* DiscoverTeamViewController+Reselectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiscoverTeamViewController+Reselectable.swift"; sourceTree = "<group>"; };
+		899BF13A245508D200F68E30 /* DiscoverTeamViewController+TappableResponderLabelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiscoverTeamViewController+TappableResponderLabelDelegate.swift"; sourceTree = "<group>"; };
 		899BF13D24550ED300F68E30 /* TeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamViewModel.swift; sourceTree = "<group>"; };
 		899BF13F24550EE100F68E30 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		899BF1412455146200F68E30 /* GetClubResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetClubResponseBody.swift; path = Betterpick/Common/Networking/ResponseBody/GetClubResponseBody.swift; sourceTree = SOURCE_ROOT; };
@@ -241,7 +241,7 @@
 		89A2A7EC244473BE006149A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCoordinator.swift; sourceTree = "<group>"; };
 		89F0EBEB24509395000DA92B /* UITableView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+Util.swift"; path = "Betterpick/Common/Extension/UITableView+Util.swift"; sourceTree = SOURCE_ROOT; };
-		89F0EBEE245098E9000DA92B /* TeamListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListTableViewCell.swift; sourceTree = "<group>"; };
+		89F0EBEE245098E9000DA92B /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		89F0EC12245360A1000DA92B /* BetterpickAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BetterpickAPIManager.swift; path = Betterpick/common/Networking/Manager/BetterpickAPIManager.swift; sourceTree = SOURCE_ROOT; };
 		89F0EC1424536184000DA92B /* BetterpickAPIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BetterpickAPIHandler.swift; path = Betterpick/Common/Networking/BetterpickAPIHandler.swift; sourceTree = SOURCE_ROOT; };
 		89F0EC16245361A9000DA92B /* URLSession+BetterpickAPIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "URLSession+BetterpickAPIHandler.swift"; path = "Betterpick/common/Extension/URL/URLSession+BetterpickAPIHandler.swift"; sourceTree = SOURCE_ROOT; };
@@ -486,8 +486,8 @@
 			children = (
 				892096822444FA8A00DF93BB /* DiscoverViewController.swift */,
 				892D2306244CE26600F0F263 /* SearchViewController.swift */,
-				892D2313244D1F9B00F0F263 /* TeamListViewController.swift */,
-				892D232D244D3DB000F0F263 /* PlayerListViewController.swift */,
+				892D2313244D1F9B00F0F263 /* DiscoverTeamViewController.swift */,
+				892D232D244D3DB000F0F263 /* DiscoverPlayerViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -498,8 +498,8 @@
 				892096852445081B00DF93BB /* DiscoverNavigationCoordinator.swift */,
 				89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */,
 				892D2308244CE2A300F0F263 /* SearchCoordinator.swift */,
-				892D231D244D2ACF00F0F263 /* TeamListCoordinator.swift */,
-				892D232B244D3D5500F0F263 /* PlayerListCoordinator.swift */,
+				892D231D244D2ACF00F0F263 /* DiscoverTeamCoordinator.swift */,
+				892D232B244D3D5500F0F263 /* DiscoverPlayerCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -557,7 +557,7 @@
 			isa = PBXGroup;
 			children = (
 				892D22FF244C73BB00F0F263 /* DiscoverViewModel.swift */,
-				892D2315244D1FDA00F0F263 /* TeamListViewModel.swift */,
+				892D2315244D1FDA00F0F263 /* DiscoverTeamViewModel.swift */,
 				899BF1572457913600F68E30 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
@@ -598,10 +598,10 @@
 			isa = PBXGroup;
 			children = (
 				892D2329244D379D00F0F263 /* DiscoverViewController+ChildViewControllerContainerProviding.swift */,
-				899BF1342455085F00F68E30 /* TeamListViewController+TableView.swift */,
-				899BF1362455089A00F68E30 /* TeamListViewController+PickerView.swift */,
-				899BF138245508B600F68E30 /* TeamListViewController+Reselectable.swift */,
-				899BF13A245508D200F68E30 /* TeamListViewController+TappableResponderLabelDelegate.swift */,
+				899BF1342455085F00F68E30 /* DiscoverTeamViewController+TableView.swift */,
+				899BF1362455089A00F68E30 /* DiscoverTeamViewController+PickerView.swift */,
+				899BF138245508B600F68E30 /* DiscoverTeamViewController+Reselectable.swift */,
+				899BF13A245508D200F68E30 /* DiscoverTeamViewController+TappableResponderLabelDelegate.swift */,
 				899BF1592457916800F68E30 /* SearchViewController+TableView.swift */,
 			);
 			path = Extensions;
@@ -676,7 +676,7 @@
 		899BF1312455080B00F68E30 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				899BF1322455083000F68E30 /* TeamListSeparatorAnimator.swift */,
+				899BF1322455083000F68E30 /* DiscoverTeamSeparatorAnimator.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -784,7 +784,7 @@
 		89F0EBED245098E2000DA92B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				89F0EBEE245098E9000DA92B /* TeamListTableViewCell.swift */,
+				89F0EBEE245098E9000DA92B /* TeamTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1142,8 +1142,8 @@
 				89F0EC3B2453A9A8000DA92B /* BetterpickAPIManagerMock.swift in Sources */,
 				899BF15A2457916800F68E30 /* SearchViewController+TableView.swift in Sources */,
 				89955BE9244BE1CB00B8B59A /* ChildCoordinator.swift in Sources */,
-				892D232C244D3D5500F0F263 /* PlayerListCoordinator.swift in Sources */,
-				899BF1352455085F00F68E30 /* TeamListViewController+TableView.swift in Sources */,
+				892D232C244D3D5500F0F263 /* DiscoverPlayerCoordinator.swift in Sources */,
+				899BF1352455085F00F68E30 /* DiscoverTeamViewController+TableView.swift in Sources */,
 				899BF1492457415600F68E30 /* PlayerDetailViewModel.swift in Sources */,
 				892D2331244F4DE400F0F263 /* TappableLabel.swift in Sources */,
 				8920969024450D8900DF93BB /* SettingsCoordinator.swift in Sources */,
@@ -1151,10 +1151,9 @@
 				8975EE6A244BC66C0052696C /* TabBarGestureHandler+UIGestureRecognizerDelegate.swift in Sources */,
 				89955BE7244BDED000B8B59A /* NavigationCoordinator.swift in Sources */,
 				89F0EBEC24509395000DA92B /* UITableView+Util.swift in Sources */,
-				899BF11D245447CD00F68E30 /* TeamListViewController.swift in Sources */,
+				899BF11D245447CD00F68E30 /* DiscoverTeamViewController.swift in Sources */,
 				892096862445081B00DF93BB /* DiscoverNavigationCoordinator.swift in Sources */,
 				89F0EC1B245363E9000DA92B /* BetterpickAPIRequestErrorContext.swift in Sources */,
-				899BF1332455083000F68E30 /* TeamListSeparatorAnimator.swift in Sources */,
 				892D2325244D355300F0F263 /* ChildViewControllerContainerProviding.swift in Sources */,
 				89F0EC2724537336000DA92B /* HTTPMethod.swift in Sources */,
 				89F0EC2D24537826000DA92B /* URL+Append.swift in Sources */,
@@ -1166,11 +1165,12 @@
 				899BF13E24550ED400F68E30 /* TeamViewModel.swift in Sources */,
 				8975EE68244BB5A70052696C /* TabBarGestureHandler.swift in Sources */,
 				892D22FE244C704D00F0F263 /* LargeTitleNavigationController.swift in Sources */,
-				899BF13B245508D200F68E30 /* TeamListViewController+TappableResponderLabelDelegate.swift in Sources */,
+				899BF13B245508D200F68E30 /* DiscoverTeamViewController+TappableResponderLabelDelegate.swift in Sources */,
+				899BF15D2457AC4D00F68E30 /* DiscoverTeamSeparatorAnimator.swift in Sources */,
 				892096662444C6C900DF93BB /* UIColor+AppColors.swift in Sources */,
 				899BF1582457913600F68E30 /* SearchViewModel.swift in Sources */,
 				89F0EBEA24507A61000DA92B /* League.swift in Sources */,
-				899BF1372455089A00F68E30 /* TeamListViewController+PickerView.swift in Sources */,
+				899BF1372455089A00F68E30 /* DiscoverTeamViewController+PickerView.swift in Sources */,
 				89F0EC2924537349000DA92B /* HTTPHeader.swift in Sources */,
 				899BF1302454BC3B00F68E30 /* RootViewController.swift in Sources */,
 				89A2A7C9244473BC006149A6 /* TabBarViewController.swift in Sources */,
@@ -1179,7 +1179,7 @@
 				892D230F244CFABE00F0F263 /* DiscoverViewController.swift in Sources */,
 				899BF14724573F8600F68E30 /* PlayerPreviewTableViewCell.swift in Sources */,
 				8920966F2444E1CF00DF93BB /* ConstrainableView.swift in Sources */,
-				892D231E244D2ACF00F0F263 /* TeamListCoordinator.swift in Sources */,
+				892D231E244D2ACF00F0F263 /* DiscoverTeamCoordinator.swift in Sources */,
 				89A2A7CD244473BC006149A6 /* AppCoordinator.swift in Sources */,
 				8920969224450D9200DF93BB /* SettingsViewController.swift in Sources */,
 				8920967B2444F44100DF93BB /* TabbedCoordinator.swift in Sources */,
@@ -1190,10 +1190,10 @@
 				89F0EC36245387FB000DA92B /* BetterpickAPIManager.swift in Sources */,
 				892D22F9244C6A2E00F0F263 /* Reselectable.swift in Sources */,
 				899BF11A2453BB2200F68E30 /* FetchingView.swift in Sources */,
-				892D232E244D3DB000F0F263 /* PlayerListViewController.swift in Sources */,
+				892D232E244D3DB000F0F263 /* DiscoverPlayerViewController.swift in Sources */,
 				892D230C244CEFEB00F0F263 /* CustomTextField.swift in Sources */,
 				892D2318244D20CF00F0F263 /* TeamPreview.swift in Sources */,
-				899BF139245508B600F68E30 /* TeamListViewController+Reselectable.swift in Sources */,
+				899BF139245508B600F68E30 /* DiscoverTeamViewController+Reselectable.swift in Sources */,
 				892D22FB244C6D7300F0F263 /* MyTeamsNavigationCoordinator.swift in Sources */,
 				899BF1212454523400F68E30 /* TeamSelecting.swift in Sources */,
 				8920966B2444E16E00DF93BB /* HairlineView.swift in Sources */,
@@ -1208,9 +1208,9 @@
 				892096952445152200DF93BB /* TabBarStackView.swift in Sources */,
 				892D2307244CE26600F0F263 /* SearchViewController.swift in Sources */,
 				89F0EC342453825E000DA92B /* GetLeaguesResponseBody.swift in Sources */,
-				89F0EBEF245098E9000DA92B /* TeamListTableViewCell.swift in Sources */,
+				89F0EBEF245098E9000DA92B /* TeamTableViewCell.swift in Sources */,
 				892D2309244CE2A300F0F263 /* SearchCoordinator.swift in Sources */,
-				892D2316244D1FDA00F0F263 /* TeamListViewModel.swift in Sources */,
+				892D2316244D1FDA00F0F263 /* DiscoverTeamViewModel.swift in Sources */,
 				899BF1232454523B00F68E30 /* PlayerSelecting.swift in Sources */,
 				892D2304244C76CA00F0F263 /* DiscoverSection.swift in Sources */,
 				892D2330244D431500F0F263 /* ChildCoordinator+SectioningCoordinator.swift in Sources */,

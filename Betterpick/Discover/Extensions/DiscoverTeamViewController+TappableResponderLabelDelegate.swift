@@ -1,5 +1,5 @@
 //
-//  TeamListViewController+TappableResponderLabelDelegate.swift
+//  DiscoverTeamViewController+TappableResponderLabelDelegate.swift
 //  Betterpick
 //
 //  Created by David Bielik on 26/04/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension TeamListViewController: TappableResponderLabelDelegate {
+extension DiscoverTeamViewController: TappableResponderLabelDelegate {
     var responderInputView: UIView {
         return competitionPickerView
     }

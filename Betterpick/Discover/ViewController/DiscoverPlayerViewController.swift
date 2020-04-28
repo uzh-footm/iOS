@@ -1,5 +1,5 @@
 //
-//  PlayerListViewController.swift
+//  DiscoverPlayerViewController.swift
 //  Betterpick
 //
 //  Created by David Bielik on 20/04/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayerListViewController: UIViewController {
+class DiscoverPlayerViewController: UIViewController {
 
     // MARK: - Properties
     weak var playerSelectingCoordinator: PlayerSelecting?

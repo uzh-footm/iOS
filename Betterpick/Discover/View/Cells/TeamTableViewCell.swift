@@ -1,5 +1,5 @@
 //
-//  TeamListTableViewCell.swift
+//  TeamTableViewCell.swift
 //  Betterpick
 //
 //  Created by David Bielik on 22/04/2020.
@@ -9,10 +9,10 @@
 import UIKit
 import SDWebImage
 
-class TeamListTableViewCell: UITableViewCell {
+class TeamTableViewCell: UITableViewCell {
     // MARK: - Properties
     // MARK: Static
-    static let reuseIdentifier = "TeamListTableViewCell"
+    static let reuseIdentifier = "TeamTableViewCell"
 
     // MARK: Views
     let teamLogoImageView = UIImageView()
