@@ -109,4 +109,9 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
         let searchResult = GetSearchResponseBody(players: searchResultPlayers, clubs: Array(searchResultClubs))
         returnSuccessAfter(duration: 0.4, completion: completion, response: searchResult)
     }
+
+    override func players(filterData: PlayerFilterData, completion: @escaping BetterpickAPIManager.Callback<GetPlayersResponseBody>) {
+        let result = GetPlayersResponseBody(players: getPlayers())
+        returnSuccessAfter(completion: completion, response: result)
+    }
 }

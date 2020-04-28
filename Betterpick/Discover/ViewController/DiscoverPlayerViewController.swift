@@ -24,6 +24,7 @@ struct PlayerFilterData: Encodable {
 
 class DiscoverPlayerViewModel: FetchingViewModel<GetPlayersResponseBody, [PlayerPreview]> {
 
+    // MARK: - Properties
     var playerFilterData: PlayerFilterData {
         didSet {
             // Fetch every time we change the filter data
@@ -31,10 +32,12 @@ class DiscoverPlayerViewModel: FetchingViewModel<GetPlayersResponseBody, [Player
         }
     }
 
+    // MARK: - Initialization
     init() {
         self.playerFilterData = PlayerFilterData.default()
     }
 
+    // MARK: - Inherited
     override func startFetching(completion: @escaping BetterpickAPIManager.Callback<GetPlayersResponseBody>) {
         apiManager.players(filterData: playerFilterData, completion: completion)
     }
@@ -42,13 +45,29 @@ class DiscoverPlayerViewModel: FetchingViewModel<GetPlayersResponseBody, [Player
     override func responseBodyToModel(_ responseBody: GetPlayersResponseBody) -> [PlayerPreview]? {
         return responseBody.players
     }
+
+    // MARK: - Public
+    public func numberOfPlayers() -> Int {
+        guard case .displaying(let players) = state else { return 0 }
+        return players.count
+    }
+
+    public func player(at row: Int) -> PlayerPreview? {
+        guard case .displaying(let players) = state else { return nil }
+        return players[row]
+    }
 }
 
-class DiscoverPlayerViewController: UIViewController {
+class DiscoverPlayerViewController: UIViewController, EmptyStatePresenting {
 
     // MARK: - Properties
     let viewModel: DiscoverPlayerViewModel
     weak var playerSelectingCoordinator: PlayerSelecting?
+
+    // MARK: EmptyStatePresenting
+    typealias EmptyStateView = FetchingView
+    var emptyStateSuperview: UIView { return view }
+    var emptyStateView: FetchingView?
 
     // MARK: - Initialization
     init(viewModel: DiscoverPlayerViewModel) {
@@ -67,7 +86,7 @@ class DiscoverPlayerViewController: UIViewController {
         tableView.estimatedRowHeight = Size.Image.teamLogo + Size.Cell.narrowVerticalMargin * 2
         tableView.removeLastSeparatorAndDontShowEmptyCells()
         tableView.backgroundColor = .background
-        tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.reuseIdentifier)
+        tableView.register(PlayerPreviewTableViewCell.self, forCellReuseIdentifier: PlayerPreviewTableViewCell.reuseIdentifier)
         return tableView
     }()
 
@@ -78,6 +97,12 @@ class DiscoverPlayerViewController: UIViewController {
         view.backgroundColor = .primary
 
         setupSubviews()
+
+        // ViewModel
+        viewModel.onStateUpdate = updateViewStateAppearance
+        viewModel.startInitialFetching()
+
+        updateViewStateAppearance()
     }
 
     // MARK: - Private
@@ -86,29 +111,37 @@ class DiscoverPlayerViewController: UIViewController {
         tableView.embed(in: view)
     }
 
+    private func updateViewStateAppearance() {
+        switch viewModel.state {
+        case .fetching:
+            addEmptyState()
+        case .displaying:
+            removeEmptyState()
+            tableView.reloadData()
+        default:
+            addEmptyState()
+        }
+    }
 }
 
 extension DiscoverPlayerViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-//        guard let teams = viewModel.currentLeague?.teams else { return }
-//        coordinator?.select(team: teams[indexPath.row])
+        guard let player = viewModel.player(at: indexPath.row) else { return }
+        playerSelectingCoordinator?.select(player: player)
     }
 }
 
 extension DiscoverPlayerViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return viewModel.numberOfTeams()
-        return 0
+        return viewModel.numberOfPlayers()
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let teams = viewModel.currentLeague?.teams, let cell = tableView.dequeueReusableCell(withIdentifier: TeamTableViewCell.reuseIdentifier, for: indexPath) as? TeamTableViewCell else {
-//            return UITableViewCell()
-//        }
-//        let team = teams[indexPath.row]
-//        cell.configure(from: team)
-//        return cell
-        return UITableViewCell()
+        guard let player = viewModel.player(at: indexPath.row), let cell = tableView.dequeueReusableCell(withIdentifier: PlayerPreviewTableViewCell.reuseIdentifier, for: indexPath) as? PlayerPreviewTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configure(from: player)
+        return cell
     }
 }
