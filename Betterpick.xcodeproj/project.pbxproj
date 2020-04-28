@@ -93,6 +93,8 @@
 		899BF15A2457916800F68E30 /* SearchViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1592457916800F68E30 /* SearchViewController+TableView.swift */; };
 		899BF15C2457951400F68E30 /* GetSearchResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF15B2457951400F68E30 /* GetSearchResponseBody.swift */; };
 		899BF15D2457AC4D00F68E30 /* DiscoverTeamSeparatorAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1322455083000F68E30 /* DiscoverTeamSeparatorAnimator.swift */; };
+		899BF15F2458548700F68E30 /* NavigationBarProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF15E2458548700F68E30 /* NavigationBarProviding.swift */; };
+		899BF161245854C700F68E30 /* NavigationBarDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF160245854C700F68E30 /* NavigationBarDisplaying.swift */; };
 		89A2A7C7244473BC006149A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7C6244473BC006149A6 /* AppDelegate.swift */; };
 		89A2A7C9244473BC006149A6 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7C8244473BC006149A6 /* TabBarViewController.swift */; };
 		89A2A7CB244473BC006149A6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7CA244473BC006149A6 /* Coordinator.swift */; };
@@ -224,6 +226,8 @@
 		899BF1572457913600F68E30 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		899BF1592457916800F68E30 /* SearchViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+TableView.swift"; sourceTree = "<group>"; };
 		899BF15B2457951400F68E30 /* GetSearchResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetSearchResponseBody.swift; path = Betterpick/Common/Networking/ResponseBody/GetSearchResponseBody.swift; sourceTree = SOURCE_ROOT; };
+		899BF15E2458548700F68E30 /* NavigationBarProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarProviding.swift; sourceTree = "<group>"; };
+		899BF160245854C700F68E30 /* NavigationBarDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarDisplaying.swift; sourceTree = "<group>"; };
 		89A2A7C3244473BC006149A6 /* Betterpick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Betterpick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A2A7C6244473BC006149A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89A2A7C8244473BC006149A6 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -639,6 +643,8 @@
 			children = (
 				899BF1202454523400F68E30 /* TeamSelecting.swift */,
 				899BF1222454523B00F68E30 /* PlayerSelecting.swift */,
+				899BF15E2458548700F68E30 /* NavigationBarProviding.swift */,
+				899BF160245854C700F68E30 /* NavigationBarDisplaying.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -1176,6 +1182,7 @@
 				89A2A7C9244473BC006149A6 /* TabBarViewController.swift in Sources */,
 				899BF12E2454B49600F68E30 /* UILabel+Style.swift in Sources */,
 				8920968E24450D7B00DF93BB /* MyTeamsViewController.swift in Sources */,
+				899BF15F2458548700F68E30 /* NavigationBarProviding.swift in Sources */,
 				892D230F244CFABE00F0F263 /* DiscoverViewController.swift in Sources */,
 				899BF14724573F8600F68E30 /* PlayerPreviewTableViewCell.swift in Sources */,
 				8920966F2444E1CF00DF93BB /* ConstrainableView.swift in Sources */,
@@ -1218,6 +1225,7 @@
 				899BF1152453B8A700F68E30 /* EmptyStatePresenting.swift in Sources */,
 				89B544A4244BE2ED000C1C4B /* DiscoverCoordinator.swift in Sources */,
 				899BF1422455146200F68E30 /* GetClubResponseBody.swift in Sources */,
+				899BF161245854C700F68E30 /* NavigationBarDisplaying.swift in Sources */,
 				89A2A7C7244473BC006149A6 /* AppDelegate.swift in Sources */,
 				89A2A7CB244473BC006149A6 /* Coordinator.swift in Sources */,
 				892D2312244D0AE900F0F263 /* ActionButton.swift in Sources */,
