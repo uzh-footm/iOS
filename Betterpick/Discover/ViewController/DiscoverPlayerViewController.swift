@@ -8,8 +8,40 @@
 
 import UIKit
 
-class DiscoverPlayerViewModel {
+struct PlayerFilterData: Encodable {
 
+    enum SortBy: String, Encodable {
+        case asc
+        case desc
+    }
+
+    var sortBy: SortBy
+
+    static func `default`() -> PlayerFilterData {
+        return PlayerFilterData(sortBy: .asc)
+    }
+}
+
+class DiscoverPlayerViewModel: FetchingViewModel<GetPlayersResponseBody, [PlayerPreview]> {
+
+    var playerFilterData: PlayerFilterData {
+        didSet {
+            // Fetch every time we change the filter data
+            startInitialFetching()
+        }
+    }
+
+    init() {
+        self.playerFilterData = PlayerFilterData.default()
+    }
+
+    override func startFetching(completion: @escaping BetterpickAPIManager.Callback<GetPlayersResponseBody>) {
+        apiManager.players(filterData: playerFilterData, completion: completion)
+    }
+
+    override func responseBodyToModel(_ responseBody: GetPlayersResponseBody) -> [PlayerPreview]? {
+        return responseBody.players
+    }
 }
 
 class DiscoverPlayerViewController: UIViewController {

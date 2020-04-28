@@ -111,4 +111,13 @@ class BetterpickAPIManager {
         let requestContext = BetterpickAPIRequestContext(responseBodyType: GetSearchResponseBody.self, apiRequest: request)
         perform(requestContext: requestContext, managerCompletion: completion)
     }
+
+    // MARK: GET /players
+    func players(filterData: PlayerFilterData, completion: @escaping Callback<GetPlayersResponseBody>) {
+        let endpoint = "/players"
+        let parameters = filterData.dictionary as? HTTPParameters
+        let request = apiRequest(endpoint: endpoint, method: .get, parameters: parameters)
+        let requestContext = BetterpickAPIRequestContext(responseBodyType: GetPlayersResponseBody.self, apiRequest: request)
+        perform(requestContext: requestContext, managerCompletion: completion)
+    }
 }

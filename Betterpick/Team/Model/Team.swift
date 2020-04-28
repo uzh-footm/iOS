@@ -27,7 +27,7 @@ class Team {
         var squad = Squad()
         for position in PlayerPosition.allCases {
             var playersAtPosition: [PlayerPreview] = []
-            for player in previews where player.position == position {
+            for player in previews where player.roughPosition == position {
                 playersAtPosition.append(player)
             }
             squad[position] = playersAtPosition

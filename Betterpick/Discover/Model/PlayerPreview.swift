@@ -8,18 +8,15 @@
 
 import Foundation
 
-enum PlayerPosition: String, CaseIterable, Decodable {
-    case goalkeeper
-    case defence
-    case middle
-    case attack
-}
-
 struct PlayerPreview: Decodable {
     let playerId: String
     let name: String
     let photoURL: URL
     let squadNumber: Int
-    let position: PlayerPosition
+    let position: ExactPlayerPosition
     let nation: String
+
+    var roughPosition: PlayerPosition {
+        return PlayerPosition(exact: position)
+    }
 }

@@ -66,7 +66,7 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
         ]
         var playerPreviews = [PlayerPreview]()
         for index in 0..<Int.random(in: range) {
-            let randomPosition = PlayerPosition.allCases.randomElement()!
+            let randomPosition = ExactPlayerPosition.allCases.randomElement()!
             let preview = PlayerPreview(playerId: String(index), name: "\(randomString(length: Int.random(in: 3..<12))) \(randomString(length: Int.random(in: 3..<12)))", photoURL: URL(string: photos.shuffled().first!)!, squadNumber: Int.random(in: 1..<40), position: randomPosition, nation: randomString(length: 10))
             playerPreviews.append(preview)
         }
