@@ -19,7 +19,7 @@ class DiscoverTeamViewController: UIViewController, FetchingStatePresenting {
     /// Displays information about the competition that is displayed by the tableview
     lazy var competitionInfoLabel: TappableResponderLabel = {
         let label = TappableResponderLabel()
-        label.set(style: .primary)
+        label.set(style: .secondary)
         label.delegate = self
         return label
     }()
