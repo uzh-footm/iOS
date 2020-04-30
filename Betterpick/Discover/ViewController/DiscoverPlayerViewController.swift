@@ -8,77 +8,15 @@
 
 import UIKit
 
-struct PlayerFilterData: Encodable {
-
-    enum SortBy: String, Encodable {
-        case asc
-        case desc
-    }
-
-    var sortBy: SortBy
-
-    static func `default`() -> PlayerFilterData {
-        return PlayerFilterData(sortBy: .asc)
-    }
-}
-
-class DiscoverPlayerViewModel: FetchingViewModel<GetPlayersResponseBody, [PlayerPreview]> {
+class DiscoverPlayerViewController: VMViewController<DiscoverPlayerViewModel>, FetchingStatePresenting {
 
     // MARK: - Properties
-    var playerFilterData: PlayerFilterData {
-        didSet {
-            // Fetch every time we change the filter data
-            start()
-        }
-    }
-
-    let nationalities: [Nationality]
-
-    // MARK: - Initialization
-    init(nationalities: [Nationality]) {
-        self.playerFilterData = PlayerFilterData.default()
-        self.nationalities = nationalities
-    }
-
-    // MARK: - Inherited
-    override func startFetching(completion: @escaping BetterpickAPIManager.Callback<GetPlayersResponseBody>) {
-        apiManager.players(filterData: playerFilterData, completion: completion)
-    }
-
-    override func responseBodyToModel(_ responseBody: GetPlayersResponseBody) -> [PlayerPreview]? {
-        return responseBody.players
-    }
-
-    // MARK: - Public
-    public func numberOfPlayers() -> Int {
-        guard case .displaying(let players) = state else { return 0 }
-        return players.count
-    }
-
-    public func player(at row: Int) -> PlayerPreview? {
-        guard case .displaying(let players) = state else { return nil }
-        return players[row]
-    }
-}
-
-class DiscoverPlayerViewController: UIViewController, FetchingStatePresenting {
-
-    // MARK: - Properties
-    let viewModel: DiscoverPlayerViewModel
     weak var playerSelectingCoordinator: PlayerSelecting?
 
     // MARK: FetchingStatePresenting
     typealias FetchingStateView = FetchingView
     var fetchingStateSuperview: UIView { return view }
     var fetchingStateView: FetchingView?
-
-    // MARK: - Initialization
-    init(viewModel: DiscoverPlayerViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) { fatalError() }
 
     // MARK: UI
     lazy var tableView: UITableView = {

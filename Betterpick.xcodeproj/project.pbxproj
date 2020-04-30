@@ -117,6 +117,8 @@
 		89EFF1152459B0B20047EF8D /* Nationality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF1142459B0B20047EF8D /* Nationality.swift */; };
 		89EFF1172459CEC60047EF8D /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF1162459CEC60047EF8D /* RootViewModel.swift */; };
 		89EFF1192459CED70047EF8D /* LeagueAndNationalityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF1182459CED70047EF8D /* LeagueAndNationalityData.swift */; };
+		89EFF11B245B298C0047EF8D /* DiscoverPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF11A245B298B0047EF8D /* DiscoverPlayerViewModel.swift */; };
+		89EFF11D245B29A10047EF8D /* PlayerFilterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF11C245B29A10047EF8D /* PlayerFilterData.swift */; };
 		89F0EBEA24507A61000DA92B /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2319244D20D700F0F263 /* League.swift */; };
 		89F0EBEC24509395000DA92B /* UITableView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EBEB24509395000DA92B /* UITableView+Util.swift */; };
 		89F0EBEF245098E9000DA92B /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EBEE245098E9000DA92B /* TeamTableViewCell.swift */; };
@@ -268,6 +270,8 @@
 		89EFF1142459B0B20047EF8D /* Nationality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nationality.swift; sourceTree = "<group>"; };
 		89EFF1162459CEC60047EF8D /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		89EFF1182459CED70047EF8D /* LeagueAndNationalityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueAndNationalityData.swift; sourceTree = "<group>"; };
+		89EFF11A245B298B0047EF8D /* DiscoverPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverPlayerViewModel.swift; sourceTree = "<group>"; };
+		89EFF11C245B29A10047EF8D /* PlayerFilterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFilterData.swift; sourceTree = "<group>"; };
 		89F0EBEB24509395000DA92B /* UITableView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+Util.swift"; path = "Betterpick/Common/Extension/UITableView+Util.swift"; sourceTree = SOURCE_ROOT; };
 		89F0EBEE245098E9000DA92B /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		89F0EC12245360A1000DA92B /* BetterpickAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BetterpickAPIManager.swift; path = Betterpick/common/Networking/Manager/BetterpickAPIManager.swift; sourceTree = SOURCE_ROOT; };
@@ -391,8 +395,8 @@
 			children = (
 				892D2302244C76C400F0F263 /* Model */,
 				892D230A244CEFD900F0F263 /* View */,
-				892096812444F9E900DF93BB /* ViewController */,
 				892D2301244C73C100F0F263 /* ViewModel */,
+				892096812444F9E900DF93BB /* ViewController */,
 				892096842445080D00DF93BB /* Coordinator */,
 				899BF1312455080B00F68E30 /* Class */,
 				899BF11F2454521E00F68E30 /* Protocol */,
@@ -594,6 +598,7 @@
 				892D22FF244C73BB00F0F263 /* DiscoverViewModel.swift */,
 				892D2315244D1FDA00F0F263 /* DiscoverTeamViewModel.swift */,
 				899BF1572457913600F68E30 /* SearchViewModel.swift */,
+				89EFF11A245B298B0047EF8D /* DiscoverPlayerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -606,6 +611,7 @@
 				899BF1242454525400F68E30 /* PlayerPreview.swift */,
 				892D2319244D20D700F0F263 /* League.swift */,
 				899BF1532457910B00F68E30 /* SearchResult.swift */,
+				89EFF11C245B29A10047EF8D /* PlayerFilterData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1195,6 +1201,7 @@
 				89F0EC3B2453A9A8000DA92B /* BetterpickAPIManagerMock.swift in Sources */,
 				899BF15A2457916800F68E30 /* SearchViewController+TableView.swift in Sources */,
 				89955BE9244BE1CB00B8B59A /* ChildCoordinator.swift in Sources */,
+				89EFF11B245B298C0047EF8D /* DiscoverPlayerViewModel.swift in Sources */,
 				892D232C244D3D5500F0F263 /* DiscoverPlayerCoordinator.swift in Sources */,
 				899BF1352455085F00F68E30 /* DiscoverTeamViewController+TableView.swift in Sources */,
 				899BF1492457415600F68E30 /* PlayerDetailViewModel.swift in Sources */,
@@ -1214,6 +1221,7 @@
 				899BF1542457910B00F68E30 /* SearchResult.swift in Sources */,
 				89F0EC3824538A81000DA92B /* GetLeagueResponseBody.swift in Sources */,
 				89EFF1152459B0B20047EF8D /* Nationality.swift in Sources */,
+				89EFF11D245B29A10047EF8D /* PlayerFilterData.swift in Sources */,
 				892096372444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */,
 				8920967D2444F4F400DF93BB /* TabBarCoordinator.swift in Sources */,
 				899BF13E24550ED400F68E30 /* TeamViewModel.swift in Sources */,
