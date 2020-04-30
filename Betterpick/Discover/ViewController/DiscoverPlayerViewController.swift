@@ -13,12 +13,19 @@ class DiscoverPlayerViewController: VMViewController<DiscoverPlayerViewModel>, F
     // MARK: - Properties
     weak var playerSelectingCoordinator: PlayerSelecting?
 
+    // MARK: Actions
+    var onFilterAction: (() -> Void)?
+
     // MARK: FetchingStatePresenting
     typealias FetchingStateView = FetchingView
     var fetchingStateSuperview: UIView { return view }
     var fetchingStateView: FetchingView?
 
     // MARK: UI
+    let playerFilterDataInformationLabel = UILabel(style: .secondary)
+
+    lazy var playerFilterActionButton = ActionButton.createActionButton(image: #imageLiteral(resourceName: "filter_slider"), target: self, action: #selector(didPressPlayerFilterActionButton))
+
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.dataSource = self
@@ -35,21 +42,39 @@ class DiscoverPlayerViewController: VMViewController<DiscoverPlayerViewModel>, F
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .primary
-
         setupSubviews()
 
         // ViewModel
         viewModel.onStateUpdate = updateViewStateAppearance
+        viewModel.onPlayerFilterDataUpdated = updateAppearance
         viewModel.start()
 
         updateViewStateAppearance()
+        updateAppearance()
     }
 
     // MARK: - Private
     private func setupSubviews() {
+        // Label
+        view.add(subview: playerFilterDataInformationLabel)
+        playerFilterDataInformationLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor).isActive = true
+        playerFilterDataInformationLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: Size.standardMargin).isActive = true
+
+        // Button
+        view.add(subview: playerFilterActionButton)
+        playerFilterActionButton.centerYAnchor.constraint(equalTo: playerFilterDataInformationLabel.centerYAnchor).isActive = true
+        playerFilterActionButton.heightAnchor.constraint(equalToConstant: Size.iconSize).isActive = true
+        playerFilterActionButton.widthAnchor.constraint(equalTo: playerFilterActionButton.heightAnchor).isActive = true
+        playerFilterActionButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor).isActive = true
+
+        // Label + Button
+        playerFilterDataInformationLabel.trailingAnchor.constraint(equalTo: playerFilterActionButton.leadingAnchor).isActive = true
+
+        // Table view
         view.add(subview: tableView)
-        tableView.embed(in: view)
+        tableView.embedSides(in: view)
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: playerFilterDataInformationLabel.bottomAnchor, constant: Size.standardMargin).isActive = true
     }
 
     private func updateViewStateAppearance() {
@@ -62,6 +87,15 @@ class DiscoverPlayerViewController: VMViewController<DiscoverPlayerViewModel>, F
         default:
             addFetchingStateView()
         }
+    }
+
+    private func updateAppearance() {
+        playerFilterDataInformationLabel.text = viewModel.playerFilterData.description
+    }
+
+    // MARK: Event Handlers
+    @objc private func didPressPlayerFilterActionButton() {
+        onFilterAction?()
     }
 }
 

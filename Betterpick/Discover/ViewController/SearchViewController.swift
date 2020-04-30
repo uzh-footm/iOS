@@ -21,11 +21,7 @@ class SearchViewController: UIViewController {
         return textField
     }()
 
-    lazy var backButton: ActionButton = {
-        let backButton = ActionButton.createActionButton(image: #imageLiteral(resourceName: "chevron_left"))
-        backButton.addTarget(self, action: #selector(didPressBackButton), for: .touchUpInside)
-        return backButton
-    }()
+    lazy var backButton: ActionButton = ActionButton.createActionButton(image: #imageLiteral(resourceName: "chevron_left"), target: self, action: #selector(didPressBackButton))
 
     lazy var resultsTableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)

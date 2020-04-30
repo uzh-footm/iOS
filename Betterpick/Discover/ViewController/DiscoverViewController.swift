@@ -35,11 +35,7 @@ class DiscoverViewController: VMViewController<DiscoverViewModel>, NavigationBar
         return segmentedControl
     }()
 
-    lazy var searchButton: ActionButton = {
-        let searchButton = ActionButton.createActionButton(image: #imageLiteral(resourceName: "search"))
-        searchButton.addTarget(self, action: #selector(didPressSearchButton), for: .touchUpInside)
-        return searchButton
-    }()
+    lazy var searchButton: ActionButton = ActionButton.createActionButton(image: #imageLiteral(resourceName: "search"), target: self, action: #selector(didPressSearchButton))
 
     /// Container view used for the viewcontrollers (sections) controlled by `segmentedControl`
     let sectionContainerView = UIView()

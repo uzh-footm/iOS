@@ -119,6 +119,9 @@
 		89EFF1192459CED70047EF8D /* LeagueAndNationalityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF1182459CED70047EF8D /* LeagueAndNationalityData.swift */; };
 		89EFF11B245B298C0047EF8D /* DiscoverPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF11A245B298B0047EF8D /* DiscoverPlayerViewModel.swift */; };
 		89EFF11D245B29A10047EF8D /* PlayerFilterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF11C245B29A10047EF8D /* PlayerFilterData.swift */; };
+		89EFF11F245B4BEE0047EF8D /* PlayerFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF11E245B4BED0047EF8D /* PlayerFilterViewController.swift */; };
+		89EFF121245B4C190047EF8D /* PlayerFilterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF120245B4C190047EF8D /* PlayerFilterCoordinator.swift */; };
+		89EFF123245B4C660047EF8D /* PlayerFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF122245B4C660047EF8D /* PlayerFilterViewModel.swift */; };
 		89F0EBEA24507A61000DA92B /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2319244D20D700F0F263 /* League.swift */; };
 		89F0EBEC24509395000DA92B /* UITableView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EBEB24509395000DA92B /* UITableView+Util.swift */; };
 		89F0EBEF245098E9000DA92B /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EBEE245098E9000DA92B /* TeamTableViewCell.swift */; };
@@ -272,6 +275,9 @@
 		89EFF1182459CED70047EF8D /* LeagueAndNationalityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagueAndNationalityData.swift; sourceTree = "<group>"; };
 		89EFF11A245B298B0047EF8D /* DiscoverPlayerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverPlayerViewModel.swift; sourceTree = "<group>"; };
 		89EFF11C245B29A10047EF8D /* PlayerFilterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFilterData.swift; sourceTree = "<group>"; };
+		89EFF11E245B4BED0047EF8D /* PlayerFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFilterViewController.swift; sourceTree = "<group>"; };
+		89EFF120245B4C190047EF8D /* PlayerFilterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFilterCoordinator.swift; sourceTree = "<group>"; };
+		89EFF122245B4C660047EF8D /* PlayerFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFilterViewModel.swift; sourceTree = "<group>"; };
 		89F0EBEB24509395000DA92B /* UITableView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+Util.swift"; path = "Betterpick/Common/Extension/UITableView+Util.swift"; sourceTree = SOURCE_ROOT; };
 		89F0EBEE245098E9000DA92B /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		89F0EC12245360A1000DA92B /* BetterpickAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BetterpickAPIManager.swift; path = Betterpick/common/Networking/Manager/BetterpickAPIManager.swift; sourceTree = SOURCE_ROOT; };
@@ -526,6 +532,7 @@
 				892D2306244CE26600F0F263 /* SearchViewController.swift */,
 				892D2313244D1F9B00F0F263 /* DiscoverTeamViewController.swift */,
 				892D232D244D3DB000F0F263 /* DiscoverPlayerViewController.swift */,
+				89EFF11E245B4BED0047EF8D /* PlayerFilterViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -538,6 +545,7 @@
 				892D2308244CE2A300F0F263 /* SearchCoordinator.swift */,
 				892D231D244D2ACF00F0F263 /* DiscoverTeamCoordinator.swift */,
 				892D232B244D3D5500F0F263 /* DiscoverPlayerCoordinator.swift */,
+				89EFF120245B4C190047EF8D /* PlayerFilterCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -599,6 +607,7 @@
 				892D2315244D1FDA00F0F263 /* DiscoverTeamViewModel.swift */,
 				899BF1572457913600F68E30 /* SearchViewModel.swift */,
 				89EFF11A245B298B0047EF8D /* DiscoverPlayerViewModel.swift */,
+				89EFF122245B4C660047EF8D /* PlayerFilterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1198,6 +1207,7 @@
 				892D232A244D379D00F0F263 /* DiscoverViewController+ChildViewControllerContainerProviding.swift in Sources */,
 				892D2322244D351D00F0F263 /* SectioningCoordinator.swift in Sources */,
 				89F0EC2B24537699000DA92B /* HTTPParameters.swift in Sources */,
+				89EFF123245B4C660047EF8D /* PlayerFilterViewModel.swift in Sources */,
 				89F0EC3B2453A9A8000DA92B /* BetterpickAPIManagerMock.swift in Sources */,
 				899BF15A2457916800F68E30 /* SearchViewController+TableView.swift in Sources */,
 				89955BE9244BE1CB00B8B59A /* ChildCoordinator.swift in Sources */,
@@ -1215,6 +1225,7 @@
 				892096862445081B00DF93BB /* DiscoverNavigationCoordinator.swift in Sources */,
 				89F0EC1B245363E9000DA92B /* BetterpickAPIRequestErrorContext.swift in Sources */,
 				892D2325244D355300F0F263 /* ChildViewControllerContainerProviding.swift in Sources */,
+				89EFF11F245B4BEE0047EF8D /* PlayerFilterViewController.swift in Sources */,
 				89F0EC2724537336000DA92B /* HTTPMethod.swift in Sources */,
 				89F0EC2D24537826000DA92B /* URL+Append.swift in Sources */,
 				899BF11E2454508800F68E30 /* TappableResponderLabel.swift in Sources */,
@@ -1286,6 +1297,7 @@
 				892D2304244C76CA00F0F263 /* DiscoverSection.swift in Sources */,
 				892D2330244D431500F0F263 /* ChildCoordinator+SectioningCoordinator.swift in Sources */,
 				8920965D2444C1C600DF93BB /* Tab.swift in Sources */,
+				89EFF121245B4C190047EF8D /* PlayerFilterCoordinator.swift in Sources */,
 				899BF1152453B8A700F68E30 /* EmptyStatePresenting.swift in Sources */,
 				89B544A4244BE2ED000C1C4B /* DiscoverCoordinator.swift in Sources */,
 				899BF1422455146200F68E30 /* GetClubResponseBody.swift in Sources */,

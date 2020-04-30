@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PlayerFilterData: Encodable {
+struct PlayerFilterData: Encodable, Equatable {
 
     enum SortBy: String, Encodable {
         case asc
@@ -19,5 +19,13 @@ struct PlayerFilterData: Encodable {
 
     static func `default`() -> PlayerFilterData {
         return PlayerFilterData(sortBy: .asc)
+    }
+}
+
+// MARK: - CustomStringConvertible
+extension PlayerFilterData: CustomStringConvertible {
+    var description: String {
+        let bestWorst = sortBy == .asc ? "worst" : "best"
+        return "Showing \(bestWorst) players."
     }
 }

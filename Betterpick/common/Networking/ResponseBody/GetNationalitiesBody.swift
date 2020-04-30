@@ -11,4 +11,3 @@ import Foundation
 struct GetNationalitiesBody: Decodable {
     let nationalities: [Nationality]
 }
-

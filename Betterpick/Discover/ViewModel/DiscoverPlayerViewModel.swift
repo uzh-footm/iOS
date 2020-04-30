@@ -13,12 +13,18 @@ class DiscoverPlayerViewModel: FetchingViewModel<GetPlayersResponseBody, [Player
     // MARK: - Properties
     var playerFilterData: PlayerFilterData {
         didSet {
+            // Check if the value has changed
+            guard oldValue != playerFilterData else { return }
+            onPlayerFilterDataUpdated?()
             // Fetch every time we change the filter data
             start()
         }
     }
 
     let nationalities: [Nationality]
+
+    // MARK: Actions
+    var onPlayerFilterDataUpdated: (() -> Void)?
 
     // MARK: - Initialization
     init(nationalities: [Nationality]) {
@@ -44,5 +50,9 @@ class DiscoverPlayerViewModel: FetchingViewModel<GetPlayersResponseBody, [Player
     public func player(at row: Int) -> PlayerPreview? {
         guard case .displaying(let players) = state else { return nil }
         return players[row]
+    }
+
+    public func set(playerFilterData: PlayerFilterData) {
+        self.playerFilterData = playerFilterData
     }
 }

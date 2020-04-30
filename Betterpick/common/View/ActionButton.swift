@@ -23,12 +23,15 @@ class ActionButton: UIButton {
 
     // MARK: - Public
     /// Returns an `ActionButton` with `UIButton.Type = system`.
-    public static func createActionButton(image: UIImage) -> ActionButton {
+    public static func createActionButton(image: UIImage, target: Any?, action: Selector?) -> ActionButton {
         let button = ActionButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(image.withRenderingMode(.alwaysTemplate), for: .normal)
         button.tintColor = .primary
         button.imageView?.contentMode = .scaleAspectFit
+        if let selector = action {
+            button.addTarget(target, action: selector, for: .touchUpInside)
+        }
         return button
     }
 
