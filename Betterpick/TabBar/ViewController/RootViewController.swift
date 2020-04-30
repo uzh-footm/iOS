@@ -8,12 +8,36 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+class RootViewController: VMViewController<RootViewModel>, FetchingStatePresenting {
+
+    // MARK: - Properties
+    // MARK: FetchingStatePresenting
+    typealias FetchingStateView = FetchingView
+    var fetchingStateSuperview: UIView { return view }
+    var fetchingStateView: FetchingStateView?
+
+    // MARK: Actions
+    var onDataLoaded: ((LeagueAndNationalityData) -> Void)?
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .background
+
+        // ViewModel
+        viewModel.onStateUpdate = updateViewStateAppearance
+        viewModel.onDataLoaded = onDataLoaded
+        viewModel.start()
+    }
+
+    // MARK: - Private
+    private func updateViewStateAppearance() {
+        switch viewModel.state {
+        case .fetching, .error:
+            addFetchingStateView()
+        case .displaying:
+            removeFetchingStateView()
+        }
     }
 }

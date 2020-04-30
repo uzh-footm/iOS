@@ -79,6 +79,14 @@ class BetterpickAPIManager {
         perform(requestContext: requestContext, managerCompletion: completion)
     }
 
+    // MARK: GET /nationalities
+    func nationalities(completion: @escaping Callback<GetNationalitiesBody>) {
+        let endpoint = "/nationalities"
+        let request = apiRequest(endpoint: endpoint, method: .get, parameters: nil)
+        let requestContext = BetterpickAPIRequestContext(responseBodyType: GetNationalitiesBody.self, apiRequest: request)
+        perform(requestContext: requestContext, managerCompletion: completion)
+    }
+
     // MARK: GET /leagues/{leagueID}
     func league(leagueID: String, completion: @escaping Callback<GetLeagueResponseBody>) {
         let endpoint = "/leagues/\(leagueID)"

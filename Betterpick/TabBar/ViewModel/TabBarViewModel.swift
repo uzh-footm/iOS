@@ -11,6 +11,7 @@ import Foundation
 class TabBarViewModel {
 
     // MARK: - Properties
+    let leagueAndNationalityData: LeagueAndNationalityData
     // MARK: Model
     private(set) var currentTab: Tab? = nil {
         didSet {
@@ -30,6 +31,11 @@ class TabBarViewModel {
     // MARK: Callbacks
     var onTabChange: ((Tab) -> Void)?
     var onTabReselect: ((Tab) -> Void)?
+
+    // MARK: - Initialization
+    init(data: LeagueAndNationalityData) {
+        self.leagueAndNationalityData = data
+    }
 
     // MARK: - Internal
     /// Tab setter for clarity

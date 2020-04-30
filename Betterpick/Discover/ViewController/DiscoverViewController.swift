@@ -8,13 +8,16 @@
 
 import UIKit
 
-class DiscoverViewController: UIViewController, NavigationBarDisplaying, Reselectable {
+class DiscoverViewController: VMViewController<DiscoverViewModel>, NavigationBarDisplaying, Reselectable, FetchingStatePresenting {
 
     // MARK: - Properties
-    let viewModel: DiscoverViewModel
-
     // MARK: UI Elements
     let titleLabel = UILabel(style: .largeTitle)
+
+    // MARK: FetchingStatePresenting
+    typealias FetchingStateView = FetchingView
+    var fetchingStateSuperview: UIView { return view }
+    var fetchingStateView: FetchingView?
 
     lazy var segmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl()
@@ -45,17 +48,6 @@ class DiscoverViewController: UIViewController, NavigationBarDisplaying, Reselec
     var onSearchAction: (() -> Void)?
     var onChangeSectionAction: ((DiscoverSection) -> Void)?
 
-    // MARK: - Initialization
-    init(viewModel: DiscoverViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        viewModel = DiscoverViewModel()
-        super.init(coder: coder)
-    }
-
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,8 +63,9 @@ class DiscoverViewController: UIViewController, NavigationBarDisplaying, Reselec
         setupSubviews()
 
         // ViewModel setup
-        viewModel.onViewModelUpdate = { [unowned self] section in
+        viewModel.onSectionUpdate = { [unowned self] section in
             self.updateAppearance()
+            // Notify coordinator
             self.onChangeSectionAction?(section)
         }
         updateAppearance()

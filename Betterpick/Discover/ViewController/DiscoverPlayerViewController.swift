@@ -28,13 +28,16 @@ class DiscoverPlayerViewModel: FetchingViewModel<GetPlayersResponseBody, [Player
     var playerFilterData: PlayerFilterData {
         didSet {
             // Fetch every time we change the filter data
-            startInitialFetching()
+            start()
         }
     }
 
+    let nationalities: [Nationality]
+
     // MARK: - Initialization
-    init() {
+    init(nationalities: [Nationality]) {
         self.playerFilterData = PlayerFilterData.default()
+        self.nationalities = nationalities
     }
 
     // MARK: - Inherited
@@ -58,16 +61,16 @@ class DiscoverPlayerViewModel: FetchingViewModel<GetPlayersResponseBody, [Player
     }
 }
 
-class DiscoverPlayerViewController: UIViewController, EmptyStatePresenting {
+class DiscoverPlayerViewController: UIViewController, FetchingStatePresenting {
 
     // MARK: - Properties
     let viewModel: DiscoverPlayerViewModel
     weak var playerSelectingCoordinator: PlayerSelecting?
 
-    // MARK: EmptyStatePresenting
-    typealias EmptyStateView = FetchingView
-    var emptyStateSuperview: UIView { return view }
-    var emptyStateView: FetchingView?
+    // MARK: FetchingStatePresenting
+    typealias FetchingStateView = FetchingView
+    var fetchingStateSuperview: UIView { return view }
+    var fetchingStateView: FetchingView?
 
     // MARK: - Initialization
     init(viewModel: DiscoverPlayerViewModel) {
@@ -100,7 +103,7 @@ class DiscoverPlayerViewController: UIViewController, EmptyStatePresenting {
 
         // ViewModel
         viewModel.onStateUpdate = updateViewStateAppearance
-        viewModel.startInitialFetching()
+        viewModel.start()
 
         updateViewStateAppearance()
     }
@@ -114,12 +117,12 @@ class DiscoverPlayerViewController: UIViewController, EmptyStatePresenting {
     private func updateViewStateAppearance() {
         switch viewModel.state {
         case .fetching:
-            addEmptyState()
+            addFetchingStateView()
         case .displaying:
-            removeEmptyState()
+            removeFetchingStateView()
             tableView.reloadData()
         default:
-            addEmptyState()
+            addFetchingStateView()
         }
     }
 }

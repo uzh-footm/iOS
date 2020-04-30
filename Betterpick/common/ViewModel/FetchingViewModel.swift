@@ -21,9 +21,10 @@ class FetchingViewModel<FetchingResponseBody: Decodable, Model> {
     let apiManager: BetterpickAPIManager
 
     // MARK: ViewState
-    private(set) var state: ViewState = .fetching {
+    var state: ViewState = .fetching {
         didSet { handleStateChange(old: oldValue, new: state) }
     }
+    private var isInitialFetch = true
 
     // MARK: Actions
     var onStateUpdate: (() -> Void)?
@@ -38,15 +39,16 @@ class FetchingViewModel<FetchingResponseBody: Decodable, Model> {
         switch (old, new) {
         case (.fetching, .fetching):
             // Initial fetch
-            startFetching { [weak self] result in
-                switch result {
-                case .error(let error):
-                    self?.state = .error(error)
-                case .success(let responseBody):
-                    guard let model = self?.responseBodyToModel(responseBody) else { return }
-                    self?.state = .displaying(model)
-                }
+            onInitialFetching()
+        case (.fetching, .displaying(let model)):
+            if isInitialFetch {
+                onFinishedInitialFetching(model: model)
+                isInitialFetch = false
+            } else {
+                onFinishedFetching(model: model)
             }
+        case (.displaying, .fetching):
+            onRefetching()
         default:
             break
         }
@@ -66,9 +68,39 @@ class FetchingViewModel<FetchingResponseBody: Decodable, Model> {
         return nil
     }
 
+    // MARK: On State Change Notifications
+    /// Called when the viewModel starts the initial fetching.
+    open func onInitialFetching() {
+
+    }
+
+    /// Called when the initial fetching is finished
+    open func onFinishedInitialFetching(model: Model) {
+
+    }
+
+    /// Called when the fetching is finished
+    open func onFinishedFetching(model: Model) {
+
+    }
+
+    /// Called when the viewModel refetches the views.
+    open func onRefetching() {
+
+    }
+
     // MARK: - Public
     /// Call this function after the view loads or whenever you want to start fetching.
-    public final func startInitialFetching() {
+    public final func start() {
         state = .fetching
+        startFetching { [weak self] result in
+            switch result {
+            case .error(let error):
+                self?.state = .error(error)
+            case .success(let responseBody):
+                guard let model = self?.responseBodyToModel(responseBody) else { return }
+                self?.state = .displaying(model)
+            }
+        }
     }
 }

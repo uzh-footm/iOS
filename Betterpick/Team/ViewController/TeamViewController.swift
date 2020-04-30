@@ -9,16 +9,16 @@
 import UIKit
 import Combine
 
-class TeamViewController: UIViewController, NavigationBarDisplaying, EmptyStatePresenting {
+class TeamViewController: UIViewController, NavigationBarDisplaying, FetchingStatePresenting {
 
     // MARK: - Properties
     let viewModel: TeamViewModel
     weak var playerSelectingCoordinator: PlayerSelecting?
 
-    // MARK: EmptyStatePresenting
-    typealias EmptyStateView = FetchingView
-    var emptyStateView: FetchingView?
-    var emptyStateSuperview: UIView { return tableView }
+    // MARK: FetchingStatePresenting
+    typealias FetchingStateView = FetchingView
+    var fetchingStateView: FetchingView?
+    var fetchingStateSuperview: UIView { return tableView }
 
     // MARK: UI
     lazy var tableView: UITableView = {
@@ -49,7 +49,7 @@ class TeamViewController: UIViewController, NavigationBarDisplaying, EmptyStateP
 
         // ViewModel
         viewModel.onStateUpdate = updateViewStateAppearance
-        viewModel.startInitialFetching()
+        viewModel.start()
 
         updateViewStateAppearance()
     }
@@ -65,12 +65,12 @@ class TeamViewController: UIViewController, NavigationBarDisplaying, EmptyStateP
 
         switch viewModel.state {
         case .fetching:
-            addEmptyState()
+            addFetchingStateView()
         case .displaying:
-            removeEmptyState()
+            removeFetchingStateView()
             tableView.reloadData()
         default:
-            addEmptyState()
+            addFetchingStateView()
         }
     }
 }

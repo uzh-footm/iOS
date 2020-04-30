@@ -11,21 +11,28 @@ import Foundation
 class DiscoverViewModel {
 
     // MARK: - Properties
+    let leagueAndNationalityData: LeagueAndNationalityData
+    private static let initialSection: DiscoverSection = .teams
+
     // MARK: Model
     let sections = DiscoverSection.allCases
-    var currentSection: DiscoverSection { didSet { onViewModelUpdate?(currentSection) } }
+    var currentSection: DiscoverSection = DiscoverViewModel.initialSection {
+        didSet {
+            onSectionUpdate?(currentSection)
+        }
+    }
 
     // MARK: Actions
-    var onViewModelUpdate: ((DiscoverSection) -> Void)?
+    var onSectionUpdate: ((DiscoverSection) -> Void)?
 
     // MARK: - Initialization
-    init(initialSection: DiscoverSection = .teams) {
-        self.currentSection = initialSection
+    init(leagueAndNationalityData: LeagueAndNationalityData) {
+        self.leagueAndNationalityData = leagueAndNationalityData
     }
 
     // MARK: - Public
     public func update(section index: Int) {
-        currentSection = DiscoverSection(rawValue: index) ?? .teams
+        currentSection = DiscoverSection(rawValue: index) ?? DiscoverViewModel.initialSection
     }
 
     public var title: String {

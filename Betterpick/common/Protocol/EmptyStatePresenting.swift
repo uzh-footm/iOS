@@ -1,5 +1,5 @@
 //
-//  EmptyStatePresenting.swift
+//  FetchingStatePresenting.swift
 //  Betterpick
 //
 //  Created by David Bielik on 25/04/2020.
@@ -8,27 +8,27 @@
 
 import UIKit
 
-protocol EmptyStatePresenting: class {
-    associatedtype EmptyStateView: UIView
-    var emptyStateView: EmptyStateView? { get set }
-    var emptyStateSuperview: UIView { get }
-    func addEmptyState() -> EmptyStateView?
-    func removeEmptyState()
+protocol FetchingStatePresenting: class {
+    associatedtype FetchingStateView: UIView
+    var fetchingStateView: FetchingStateView? { get set }
+    var fetchingStateSuperview: UIView { get }
+    func addFetchingStateView() -> FetchingStateView?
+    func removeFetchingStateView()
 }
 
-extension EmptyStatePresenting where Self: UIViewController {
+extension FetchingStatePresenting where Self: UIViewController {
     @discardableResult
-    func addEmptyState() -> EmptyStateView? {
-        guard emptyStateView == nil else { return nil }
-        let empty = EmptyStateView()
-        emptyStateView = empty
-        view.insertSubview(empty, aboveSubview: emptyStateSuperview)
-        empty.embed(in: emptyStateSuperview)
-        return emptyStateView
+    func addFetchingStateView() -> FetchingStateView? {
+        guard fetchingStateView == nil else { return nil }
+        let empty = FetchingStateView()
+        fetchingStateView = empty
+        view.insertSubview(empty, aboveSubview: fetchingStateSuperview)
+        empty.embed(in: fetchingStateSuperview)
+        return fetchingStateView
     }
 
-    func removeEmptyState() {
-        emptyStateView?.removeFromSuperview()
-        emptyStateView = nil
+    func removeFetchingStateView() {
+        fetchingStateView?.removeFromSuperview()
+        fetchingStateView = nil
     }
 }

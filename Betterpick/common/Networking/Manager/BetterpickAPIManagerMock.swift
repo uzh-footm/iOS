@@ -79,6 +79,16 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
         returnSuccessAfter(duration: 1, completion: completion, response: GetLeaguesResponseBody(leagues: leagues))
     }
 
+    // MARK: GET /nationalities
+    override func nationalities(completion: @escaping BetterpickAPIManager.Callback<GetNationalitiesBody>) {
+        let nationalities = [
+            Nationality(name: "Germany", logoURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg")!),
+            Nationality(name: "Slovakia", logoURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/1920px-Flag_of_Slovakia.svg.png")!),
+            Nationality(name: "Greece", logoURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg")!)
+        ]
+        returnSuccessAfter(completion: completion, response: GetNationalitiesBody(nationalities: nationalities))
+    }
+
     // MARK: GET /leagues/{leagueID}
     override func league(leagueID: String, completion: @escaping BetterpickAPIManager.Callback<GetLeagueResponseBody>) {
 

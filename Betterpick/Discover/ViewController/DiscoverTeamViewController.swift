@@ -9,7 +9,7 @@
 import UIKit
 
 /// Displays a list of teams from a given League / Nationality
-class DiscoverTeamViewController: UIViewController, EmptyStatePresenting {
+class DiscoverTeamViewController: UIViewController, FetchingStatePresenting {
 
     // MARK: - Properties
     let viewModel: DiscoverTeamViewModel
@@ -57,13 +57,10 @@ class DiscoverTeamViewController: UIViewController, EmptyStatePresenting {
         return animator
     }()
 
-    // MARK: EmptyStatePresenting
-    typealias EmptyStateView = FetchingView
-    var emptyStateView: FetchingView?
-    var emptyStateSuperview: UIView {
-        // If the viewModel already loaded the leagues, use the tableview as the superview for the spinner, otherwise use the entire view to also hide the league pickerview
-        return viewModel.isDisplayingLeagues ? tableView : view
-    }
+    // MARK: FetchingStatePresenting
+    typealias FetchingStateView = FetchingView
+    var fetchingStateView: FetchingView?
+    var fetchingStateSuperview: UIView { return tableView }
 
     // MARK: - Initialization
     init(viewModel: DiscoverTeamViewModel) {
@@ -71,10 +68,7 @@ class DiscoverTeamViewController: UIViewController, EmptyStatePresenting {
         super.init(nibName: nil, bundle: nil)
     }
 
-    required init?(coder: NSCoder) {
-        viewModel = DiscoverTeamViewModel()
-        super.init(nibName: nil, bundle: nil)
-    }
+    required init?(coder: NSCoder) { fatalError() }
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -93,7 +87,7 @@ class DiscoverTeamViewController: UIViewController, EmptyStatePresenting {
         viewModel.onStateUpdate = {
             self.updateViewStateAppearance()
         }
-        viewModel.startFetchingAfterInitial()
+        viewModel.start()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -140,17 +134,18 @@ class DiscoverTeamViewController: UIViewController, EmptyStatePresenting {
 
     private func updateViewStateAppearance() {
         switch viewModel.state {
-        case .displaying(_, .fetching(let league)):
-            addEmptyState()
-            updateLabel(league: league)
-        case .displaying(_, .displaying(let league)):
-            removeEmptyState()
+        case .fetching:
+            if let selectedLeague = viewModel.selectedLeague {
+                updateLabel(league: selectedLeague)
+            }
+            addFetchingStateView()
+        case .displaying:
+            removeFetchingStateView()
             tableView.reloadData()
             view.layoutIfNeeded()
             tableView.setContentOffset(.zero, animated: false)
-            updateLabel(league: league)
-        default:
-            addEmptyState()
+        case .error:
+            addFetchingStateView()
         }
     }
 }

@@ -8,6 +8,14 @@
 
 import UIKit
 
+class SectionCoordinator: SectionedCoordinator {
+    var viewController: UIViewController {
+        return UIViewController()
+    }
+
+    func start() {}
+}
+
 class DiscoverCoordinator: SectioningCoordinator, ChildCoordinator {
 
     typealias SectionDefiningEnum = DiscoverSection
@@ -42,13 +50,15 @@ class DiscoverCoordinator: SectioningCoordinator, ChildCoordinator {
     func createChildCoordinatorFrom(section: DiscoverSection) -> SectionedCoordinator {
         switch section {
         case .players:
-            let discoverPlayerVM = DiscoverPlayerViewModel()
+            let nationalities = discoverViewController.viewModel.leagueAndNationalityData.nationalities
+            let discoverPlayerVM = DiscoverPlayerViewModel(nationalities: nationalities)
             let discoverPlayerVC = DiscoverPlayerViewController(viewModel: discoverPlayerVM)
             let discoverPlayerCoordinator = DiscoverPlayerCoordinator(discoverPlayerViewController: discoverPlayerVC)
             discoverPlayerVC.playerSelectingCoordinator = teamAndPlayerSelectingCoordinator
             return discoverPlayerCoordinator
         case .teams:
-            let discoverTeamVM = DiscoverTeamViewModel()
+            let leagues = discoverViewController.viewModel.leagueAndNationalityData.leagues
+            let discoverTeamVM = DiscoverTeamViewModel(leagues: leagues)
             let discoverTeamVC = DiscoverTeamViewController(viewModel: discoverTeamVM)
             discoverTeamVC.coordinator = teamAndPlayerSelectingCoordinator
             return DiscoverTeamCoordinator(discoverTeamViewController: discoverTeamVC)
