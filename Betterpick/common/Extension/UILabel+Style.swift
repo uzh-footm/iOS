@@ -16,6 +16,7 @@ extension UILabel {
         case largeTitle
         // Cells
         case cellTitle
+        case cellCenteredAction
     }
 
     convenience init(style: Style) {
@@ -39,6 +40,10 @@ extension UILabel {
         case .cellTitle:
             textColor = .customLabel
             font = UIFont.systemFont(ofSize: Size.Font.action, weight: .medium)
+        case .cellCenteredAction:
+            textColor = .primary
+            textAlignment = .center
+            font = UIFont.systemFont(ofSize: Size.Font.action)
         }
     }
 }

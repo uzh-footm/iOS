@@ -17,8 +17,8 @@ class DiscoverTeamViewController: UIViewController, FetchingStatePresenting {
 
     // MARK: UI Elements
     /// Displays information about the competition that is displayed by the tableview
-    lazy var competitionInfoLabel: TappableResponderLabel = {
-        let label = TappableResponderLabel()
+    lazy var competitionInfoLabel: TappablePickerResponderLabel = {
+        let label = TappablePickerResponderLabel()
         label.set(style: .secondary)
         label.delegate = self
         return label
@@ -29,6 +29,7 @@ class DiscoverTeamViewController: UIViewController, FetchingStatePresenting {
         picker.delegate = self
         picker.dataSource = self
         picker.toolbarDelegate = self
+        picker.title = "Competitions"
         return picker
     }()
 
@@ -45,7 +46,8 @@ class DiscoverTeamViewController: UIViewController, FetchingStatePresenting {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = Size.Image.teamLogo + Size.Cell.narrowVerticalMargin * 2
         tableView.removeLastSeparatorAndDontShowEmptyCells()
-        tableView.backgroundColor = .background
+        tableView.backgroundColor = .graySystemFill
+        tableView.showsHorizontalScrollIndicator = false
         tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.reuseIdentifier)
         return tableView
     }()
@@ -90,6 +92,7 @@ class DiscoverTeamViewController: UIViewController, FetchingStatePresenting {
         viewModel.start()
     }
 
+    // MARK: Pickerview
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         competitionInfoLabel.resignFirstResponder()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension DiscoverTeamViewController: TappableResponderLabelDelegate {
+extension DiscoverTeamViewController: CustomResponderViewDelegate {
     var responderInputView: UIView {
         return competitionPickerView
     }

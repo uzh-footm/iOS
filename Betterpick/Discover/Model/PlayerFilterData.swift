@@ -10,22 +10,41 @@ import Foundation
 
 struct PlayerFilterData: Encodable, Equatable {
 
-    enum SortBy: String, Encodable {
-        case asc
+    enum SortOrder: Int, Encodable, CaseIterable, CustomStringConvertible {
         case desc
+        case asc
+
+        var bestOrWorst: String {
+            return self == .asc ? "worst" : "best"
+        }
+
+        var description: String {
+            return "Show \(bestOrWorst) players first"
+        }
     }
 
-    var sortBy: SortBy
+    // MARK: - Sort Section
+    // Sort
+    var sortOrder: SortOrder = .desc
 
-    static func `default`() -> PlayerFilterData {
-        return PlayerFilterData(sortBy: .asc)
-    }
+    // MARK: - Player Section
+    // Nationality
+    /// nil value represents 'Any nationality'
+    var nationality: Nationality?
+    // Position
+    /// nil value represents 'Any position'
+    var position: PlayerPosition?
+    /// nil value represents 'Any { Goalkeeper | Defender | Midfielder | Striker }
+    /// depends on position
+    var exactPosition: ExactPlayerPosition?
+    // OVR
+    var ovrGreatherThanOrEqual: Int = 10
+    var ovrLessThanOrEqual: Int = 90
 }
 
 // MARK: - CustomStringConvertible
 extension PlayerFilterData: CustomStringConvertible {
     var description: String {
-        let bestWorst = sortBy == .asc ? "worst" : "best"
-        return "Showing \(bestWorst) players."
+        return "Showing \(sortOrder.bestOrWorst) players."
     }
 }

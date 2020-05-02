@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Nationality: Decodable {
+struct Nationality: Codable, Equatable {
     let name: String
     let logoURL: URL
 

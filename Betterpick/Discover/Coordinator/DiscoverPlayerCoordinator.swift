@@ -26,8 +26,10 @@ class DiscoverPlayerCoordinator: NSObject, SectionedCoordinator {
     }
 
     // MARK: - Private
-    private func commonFinishPlayerFilterFlow(playerFilterData: PlayerFilterData) {
-        discoverPlayerViewController.viewModel.set(playerFilterData: playerFilterData)
+    private func commonFinishPlayerFilterFlow(playerFilterData: PlayerFilterData?) {
+        if let data = playerFilterData {
+            discoverPlayerViewController.viewModel.set(playerFilterData: data)
+        }
         playerFilterCoordinator = nil
     }
 
@@ -41,16 +43,19 @@ class DiscoverPlayerCoordinator: NSObject, SectionedCoordinator {
         guard playerFilterCoordinator == nil else { return }
         // Create a new PlayerFilterViewController and its Coordinator
         let currentFilterData = discoverPlayerViewController.viewModel.playerFilterData
-        let playerFilterVM = PlayerFilterViewModel(playerFilterData: currentFilterData)
+        let nationalities = discoverPlayerViewController.viewModel.nationalities
+        let playerFilterVM = PlayerFilterViewModel(playerFilterData: currentFilterData, nationalities: nationalities)
         let playerFilterVC = PlayerFilterViewController(viewModel: playerFilterVM)
-        playerFilterVC.modalPresentationStyle = .pageSheet
         playerFilterVC.onFinishedFiltering = finishPlayerFilterFlow
-        playerFilterVC.presentationController?.delegate = self
-        playerFilterCoordinator = PlayerFilterCoordinator(playerFilterViewController: playerFilterVC)
-        viewController.present(playerFilterVC, animated: true, completion: nil)
+        let playerFilterCoordinator = PlayerFilterCoordinator(playerFilterViewController: playerFilterVC)
+        self.playerFilterCoordinator = playerFilterCoordinator
+        playerFilterCoordinator.viewController.modalPresentationStyle = .pageSheet
+        playerFilterCoordinator.viewController.presentationController?.delegate = self
+        playerFilterCoordinator.start()
+        viewController.present(playerFilterCoordinator.viewController, animated: true, completion: nil)
     }
 
-    func finishPlayerFilterFlow(playerFilterData: PlayerFilterData) {
+    func finishPlayerFilterFlow(playerFilterData: PlayerFilterData?) {
         // Guard that some filter coordinator is already being presented
         guard let activePlayerFilterCoordinator = playerFilterCoordinator else { return }
         activePlayerFilterCoordinator.viewController.dismiss(animated: true, completion: nil)
@@ -62,8 +67,8 @@ class DiscoverPlayerCoordinator: NSObject, SectionedCoordinator {
 extension DiscoverPlayerCoordinator: UIAdaptivePresentationControllerDelegate {
     func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
         // If the PlayerFilterViewController was dismissed interactively (e.g. the user panning the VC down)
-        if let playerFilterVC = presentationController.presentedViewController as? PlayerFilterViewController, playerFilterCoordinator != nil {
-            let playerFilterData = playerFilterVC.viewModel.playerFilterData
+        if let activeCoordinator = playerFilterCoordinator, activeCoordinator.viewController === presentationController.presentedViewController {
+            let playerFilterData = activeCoordinator.playerFilterViewController.viewModel.playerFilterData
             commonFinishPlayerFilterFlow(playerFilterData: playerFilterData)
         }
     }

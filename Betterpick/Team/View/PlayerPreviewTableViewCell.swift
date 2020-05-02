@@ -38,6 +38,11 @@ class PlayerPreviewTableViewCell: UITableViewCell {
         layout()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        playerPhotoImageView.sd_cancelCurrentImageLoad()
+    }
+
     // MARK: Private
     private func layout() {
         contentView.add(subview: playerPhotoImageView)

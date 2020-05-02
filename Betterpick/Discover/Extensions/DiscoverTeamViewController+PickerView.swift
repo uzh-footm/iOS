@@ -32,13 +32,13 @@ extension DiscoverTeamViewController: UIPickerViewDataSource {
 
 // MARK: - ToolbarPickerViewDelegate
 extension DiscoverTeamViewController: ToolbarPickerViewDelegate {
-    func didTapDone() {
+    func didTapDone(_ pickerView: ToolbarPickerView) {
         let row = competitionPickerView.selectedRow(inComponent: 0)
         viewModel.fetchLeague(at: row)
         competitionInfoLabel.resignFirstResponder()
     }
 
-    func didTapCancel() {
+    func didTapCancel(_ pickerView: ToolbarPickerView) {
         competitionInfoLabel.resignFirstResponder()
     }
 }

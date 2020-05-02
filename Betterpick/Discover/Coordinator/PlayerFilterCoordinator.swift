@@ -9,13 +9,19 @@
 import UIKit
 
 class PlayerFilterCoordinator: ChildCoordinator {
-    let playerFilterViewController: PlayerFilterViewController
 
-    var viewController: UIViewController { return playerFilterViewController }
+    // MARK: - Properties
+    let playerFilterViewController: PlayerFilterViewController
+    let navigationController = PlayerFilterNavigationController()
+
+    // MARK: ChildCoordinator
+    var viewController: UIViewController { return navigationController }
 
     init(playerFilterViewController: PlayerFilterViewController) {
         self.playerFilterViewController = playerFilterViewController
     }
 
-    func start() {}
+    func start() {
+        navigationController.setViewControllers([playerFilterViewController], animated: false)
+    }
 }

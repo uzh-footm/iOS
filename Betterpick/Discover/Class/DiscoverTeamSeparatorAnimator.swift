@@ -20,7 +20,7 @@ class DiscoverTeamSeparatorAnimator {
     private var hidden: Bool = false
 
     // MARK: - Private
-    /// We don't need to trigger the computation every time the delegate invokes the method.
+    // We don't need to trigger the computation every time the delegate invokes the method.
     private func shouldConsiderScroll(contentOffset: CGPoint) -> Bool {
         return Int(contentOffset.y) % 3 == 0
     }
@@ -28,7 +28,7 @@ class DiscoverTeamSeparatorAnimator {
     // MARK: - Public
     public func handleScrollViewDidScroll(_ scrollView: UIScrollView) {
         guard shouldConsiderScroll(contentOffset: scrollView.contentOffset) else { return }
-        let shouldShowSeparator = scrollView.contentOffset.y > 0
+        let shouldShowSeparator = scrollView.contentOffset.y != 0
         let shouldHideSeparator = !shouldShowSeparator
 
         if shouldShowSeparator, hidden {
@@ -38,9 +38,9 @@ class DiscoverTeamSeparatorAnimator {
             }
         } else if shouldHideSeparator, !hidden {
             hidden = true
-            UIView.animate(withDuration: 0.15) {
+            UIView.animate(withDuration: 0.2, delay: 1, options: [], animations: {
                 self.separator?.alpha = 0
-            }
+            }, completion: nil)
         }
     }
 }

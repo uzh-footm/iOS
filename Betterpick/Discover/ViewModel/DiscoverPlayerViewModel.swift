@@ -28,7 +28,7 @@ class DiscoverPlayerViewModel: FetchingViewModel<GetPlayersResponseBody, [Player
 
     // MARK: - Initialization
     init(nationalities: [Nationality]) {
-        self.playerFilterData = PlayerFilterData.default()
+        self.playerFilterData = PlayerFilterData()
         self.nationalities = nationalities
     }
 

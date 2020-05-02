@@ -11,7 +11,7 @@ import UIKit
 // MARK: - Custom Application Colors
 extension UIColor {
 
-    // MARK: Initializers
+    // MARK: - Initializers
     // swiftlint:disable identifier_name
     private convenience init(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat = 1.0) {
         let divisor: CGFloat = 255
@@ -28,27 +28,39 @@ extension UIColor {
         return UIColor { $0.userInterfaceStyle == .dark ? dark : light }
     }
 
-    // MARK: Colors
+    // MARK: - Colors
     public static var primary: UIColor = #colorLiteral(red: 0.3843137255, green: 0.7882352941, blue: 0.3529411765, alpha: 1)
     public static var tabBarButtonDeselected: UIColor = #colorLiteral(red: 0.7843137255, green: 0.7843137255, blue: 0.7843137255, alpha: 1)
 
+    // MARK: Backgrounds
     // Sub iOS 13.0 backwards compatible colors
     public static var background: UIColor = {
         guard #available(iOS 13, *) else { return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) }
         return .systemBackground
     }()
+
+    public static var graySystemFill: UIColor = {
+        guard #available(iOS 13, *) else { return #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9411764706, alpha: 1) }
+        return .tertiarySystemFill
+    }()
+
+    // MARK: Separators
     public static var customSeparator: UIColor = {
         guard #available(iOS 13, *) else { return #colorLiteral(red: 0.2352941176, green: 0.2352941176, blue: 0.262745098, alpha: 0.29) }
         return .separator
     }()
+
     public static var customOpaqueSeparator: UIColor = {
         guard #available(iOS 13, *) else { return #colorLiteral(red: 0.7764705882, green: 0.7764705882, blue: 0.7843137255, alpha: 1) }
         return .opaqueSeparator
     }()
+
+    // MARK: Labels
     public static var customLabel: UIColor = {
         guard #available(iOS 13, *) else { return .black }
         return .label
     }()
+
     public static var customSecondaryLabel: UIColor = {
         guard #available(iOS 13, *) else { return UIColor(r: 140, g: 140, b: 141) }
         return .secondaryLabel

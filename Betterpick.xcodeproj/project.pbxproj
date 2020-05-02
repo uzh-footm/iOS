@@ -66,7 +66,7 @@
 		899BF1152453B8A700F68E30 /* EmptyStatePresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1142453B8A700F68E30 /* EmptyStatePresenting.swift */; };
 		899BF1182453B9A500F68E30 /* UIView+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1172453B9A500F68E30 /* UIView+Embed.swift */; };
 		899BF11A2453BB2200F68E30 /* FetchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1192453BB2200F68E30 /* FetchingView.swift */; };
-		899BF11E2454508800F68E30 /* TappableResponderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF11B2454443300F68E30 /* TappableResponderLabel.swift */; };
+		899BF11E2454508800F68E30 /* TappablePickerResponderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF11B2454443300F68E30 /* TappablePickerResponderLabel.swift */; };
 		899BF1212454523400F68E30 /* TeamSelecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1202454523400F68E30 /* TeamSelecting.swift */; };
 		899BF1232454523B00F68E30 /* PlayerSelecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1222454523B00F68E30 /* PlayerSelecting.swift */; };
 		899BF1252454525400F68E30 /* PlayerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1242454525400F68E30 /* PlayerPreview.swift */; };
@@ -119,9 +119,25 @@
 		89EFF1192459CED70047EF8D /* LeagueAndNationalityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF1182459CED70047EF8D /* LeagueAndNationalityData.swift */; };
 		89EFF11B245B298C0047EF8D /* DiscoverPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF11A245B298B0047EF8D /* DiscoverPlayerViewModel.swift */; };
 		89EFF11D245B29A10047EF8D /* PlayerFilterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF11C245B29A10047EF8D /* PlayerFilterData.swift */; };
-		89EFF11F245B4BEE0047EF8D /* PlayerFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF11E245B4BED0047EF8D /* PlayerFilterViewController.swift */; };
 		89EFF121245B4C190047EF8D /* PlayerFilterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF120245B4C190047EF8D /* PlayerFilterCoordinator.swift */; };
 		89EFF123245B4C660047EF8D /* PlayerFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF122245B4C660047EF8D /* PlayerFilterViewModel.swift */; };
+		89EFF125245B5EAD0047EF8D /* PlayerFilterNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF124245B5EAD0047EF8D /* PlayerFilterNavigationController.swift */; };
+		89EFF127245C36D30047EF8D /* CustomResponderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF126245C36D30047EF8D /* CustomResponderViewDelegate.swift */; };
+		89EFF129245C36F50047EF8D /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF128245C36F50047EF8D /* ToolbarPickerView.swift */; };
+		89EFF12B245C375E0047EF8D /* ToolbarPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF12A245C375E0047EF8D /* ToolbarPickerViewDelegate.swift */; };
+		89EFF12D245C3B1A0047EF8D /* PickerResponderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF12C245C3B1A0047EF8D /* PickerResponderTableViewCell.swift */; };
+		89EFF131245C3C910047EF8D /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF130245C3C910047EF8D /* Reusable.swift */; };
+		89EFF132245C40790047EF8D /* PlayerFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF11E245B4BED0047EF8D /* PlayerFilterViewController.swift */; };
+		89EFF134245C46380047EF8D /* PlayerFilterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF133245C46380047EF8D /* PlayerFilterSection.swift */; };
+		89EFF136245C9A130047EF8D /* PickerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF135245C9A130047EF8D /* PickerHandler.swift */; };
+		89EFF138245C9A280047EF8D /* NationalityPickerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF137245C9A280047EF8D /* NationalityPickerHandler.swift */; };
+		89EFF13A245C9A850047EF8D /* PositionPickerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF139245C9A850047EF8D /* PositionPickerHandler.swift */; };
+		89EFF13C245C9B280047EF8D /* PlayerFilterViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF13B245C9B280047EF8D /* PlayerFilterViewController+TableView.swift */; };
+		89EFF13E245C9B620047EF8D /* PlayerFIlterViewController+ToolbarPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF13D245C9B620047EF8D /* PlayerFIlterViewController+ToolbarPickerViewDelegate.swift */; };
+		89EFF13F245CA1910047EF8D /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF12E245C3B560047EF8D /* ReusableCell.swift */; };
+		89EFF141245CEF9B0047EF8D /* CaseIterable+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF140245CEF9B0047EF8D /* CaseIterable+Util.swift */; };
+		89EFF143245CEFB10047EF8D /* Collection+NilInsertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF142245CEFB10047EF8D /* Collection+NilInsertions.swift */; };
+		89EFF145245CF0300047EF8D /* PositionComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF144245CF0300047EF8D /* PositionComponentData.swift */; };
 		89F0EBEA24507A61000DA92B /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2319244D20D700F0F263 /* League.swift */; };
 		89F0EBEC24509395000DA92B /* UITableView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EBEB24509395000DA92B /* UITableView+Util.swift */; };
 		89F0EBEF245098E9000DA92B /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EBEE245098E9000DA92B /* TeamTableViewCell.swift */; };
@@ -218,7 +234,7 @@
 		899BF1142453B8A700F68E30 /* EmptyStatePresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmptyStatePresenting.swift; path = Betterpick/Common/Protocol/EmptyStatePresenting.swift; sourceTree = SOURCE_ROOT; };
 		899BF1172453B9A500F68E30 /* UIView+Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIView+Embed.swift"; path = "Betterpick/Common/Extension/UIView/UIView+Embed.swift"; sourceTree = SOURCE_ROOT; };
 		899BF1192453BB2200F68E30 /* FetchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchingView.swift; sourceTree = "<group>"; };
-		899BF11B2454443300F68E30 /* TappableResponderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TappableResponderLabel.swift; path = Betterpick/Common/View/TappableResponderLabel.swift; sourceTree = SOURCE_ROOT; };
+		899BF11B2454443300F68E30 /* TappablePickerResponderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TappablePickerResponderLabel.swift; path = Betterpick/Common/View/TappablePickerResponderLabel.swift; sourceTree = SOURCE_ROOT; };
 		899BF1202454523400F68E30 /* TeamSelecting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSelecting.swift; sourceTree = "<group>"; };
 		899BF1222454523B00F68E30 /* PlayerSelecting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSelecting.swift; sourceTree = "<group>"; };
 		899BF1242454525400F68E30 /* PlayerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPreview.swift; sourceTree = "<group>"; };
@@ -278,6 +294,22 @@
 		89EFF11E245B4BED0047EF8D /* PlayerFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFilterViewController.swift; sourceTree = "<group>"; };
 		89EFF120245B4C190047EF8D /* PlayerFilterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFilterCoordinator.swift; sourceTree = "<group>"; };
 		89EFF122245B4C660047EF8D /* PlayerFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFilterViewModel.swift; sourceTree = "<group>"; };
+		89EFF124245B5EAD0047EF8D /* PlayerFilterNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFilterNavigationController.swift; sourceTree = "<group>"; };
+		89EFF126245C36D30047EF8D /* CustomResponderViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomResponderViewDelegate.swift; path = Betterpick/Common/Protocol/CustomResponderViewDelegate.swift; sourceTree = SOURCE_ROOT; };
+		89EFF128245C36F50047EF8D /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToolbarPickerView.swift; path = Betterpick/Common/View/ToolbarPickerView.swift; sourceTree = SOURCE_ROOT; };
+		89EFF12A245C375E0047EF8D /* ToolbarPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ToolbarPickerViewDelegate.swift; path = Betterpick/Common/Protocol/ToolbarPickerViewDelegate.swift; sourceTree = SOURCE_ROOT; };
+		89EFF12C245C3B1A0047EF8D /* PickerResponderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickerResponderTableViewCell.swift; path = Betterpick/Common/View/PickerResponderTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		89EFF12E245C3B560047EF8D /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReusableCell.swift; path = Betterpick/common/Extension/ReusableCell.swift; sourceTree = SOURCE_ROOT; };
+		89EFF130245C3C910047EF8D /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Reusable.swift; path = Betterpick/Common/Protocol/Reusable.swift; sourceTree = SOURCE_ROOT; };
+		89EFF133245C46380047EF8D /* PlayerFilterSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFilterSection.swift; sourceTree = "<group>"; };
+		89EFF135245C9A130047EF8D /* PickerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerHandler.swift; sourceTree = "<group>"; };
+		89EFF137245C9A280047EF8D /* NationalityPickerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationalityPickerHandler.swift; sourceTree = "<group>"; };
+		89EFF139245C9A850047EF8D /* PositionPickerHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionPickerHandler.swift; sourceTree = "<group>"; };
+		89EFF13B245C9B280047EF8D /* PlayerFilterViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerFilterViewController+TableView.swift"; sourceTree = "<group>"; };
+		89EFF13D245C9B620047EF8D /* PlayerFIlterViewController+ToolbarPickerViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerFIlterViewController+ToolbarPickerViewDelegate.swift"; sourceTree = "<group>"; };
+		89EFF140245CEF9B0047EF8D /* CaseIterable+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CaseIterable+Util.swift"; path = "Betterpick/Common/Extension/CaseIterable+Util.swift"; sourceTree = SOURCE_ROOT; };
+		89EFF142245CEFB10047EF8D /* Collection+NilInsertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Collection+NilInsertions.swift"; path = "Betterpick/Common/Extension/Collection+NilInsertions.swift"; sourceTree = SOURCE_ROOT; };
+		89EFF144245CF0300047EF8D /* PositionComponentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionComponentData.swift; sourceTree = "<group>"; };
 		89F0EBEB24509395000DA92B /* UITableView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+Util.swift"; path = "Betterpick/Common/Extension/UITableView+Util.swift"; sourceTree = SOURCE_ROOT; };
 		89F0EBEE245098E9000DA92B /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
 		89F0EC12245360A1000DA92B /* BetterpickAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BetterpickAPIManager.swift; path = Betterpick/common/Networking/Manager/BetterpickAPIManager.swift; sourceTree = SOURCE_ROOT; };
@@ -368,6 +400,7 @@
 		892096342444AF3500DF93BB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				89EFF12E245C3B560047EF8D /* ReusableCell.swift */,
 				899BF1162453B99600F68E30 /* UIView */,
 				89F0EC3224537D02000DA92B /* URL */,
 				892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */,
@@ -377,6 +410,8 @@
 				899BF12D2454B49600F68E30 /* UILabel+Style.swift */,
 				899BF1652458692B00F68E30 /* String+Capitalize.swift */,
 				899BF16B24587D3300F68E30 /* Encodable+Dictionary.swift */,
+				89EFF140245CEF9B0047EF8D /* CaseIterable+Util.swift */,
+				89EFF142245CEFB10047EF8D /* Collection+NilInsertions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -519,8 +554,10 @@
 				8920966E2444E1CF00DF93BB /* ConstrainableView.swift */,
 				892D2311244D0AE900F0F263 /* ActionButton.swift */,
 				892D231B244D235500F0F263 /* TappableLabel.swift */,
-				899BF11B2454443300F68E30 /* TappableResponderLabel.swift */,
+				899BF11B2454443300F68E30 /* TappablePickerResponderLabel.swift */,
 				899BF12B245469DB00F68E30 /* LargeNavigationBar.swift */,
+				89EFF128245C36F50047EF8D /* ToolbarPickerView.swift */,
+				89EFF12C245C3B1A0047EF8D /* PickerResponderTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -533,6 +570,7 @@
 				892D2313244D1F9B00F0F263 /* DiscoverTeamViewController.swift */,
 				892D232D244D3DB000F0F263 /* DiscoverPlayerViewController.swift */,
 				89EFF11E245B4BED0047EF8D /* PlayerFilterViewController.swift */,
+				89EFF124245B5EAD0047EF8D /* PlayerFilterNavigationController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -621,6 +659,8 @@
 				892D2319244D20D700F0F263 /* League.swift */,
 				899BF1532457910B00F68E30 /* SearchResult.swift */,
 				89EFF11C245B29A10047EF8D /* PlayerFilterData.swift */,
+				89EFF133245C46380047EF8D /* PlayerFilterSection.swift */,
+				89EFF144245CF0300047EF8D /* PositionComponentData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -640,6 +680,9 @@
 			children = (
 				892D2324244D355300F0F263 /* ChildViewControllerContainerProviding.swift */,
 				899BF1142453B8A700F68E30 /* EmptyStatePresenting.swift */,
+				89EFF126245C36D30047EF8D /* CustomResponderViewDelegate.swift */,
+				89EFF12A245C375E0047EF8D /* ToolbarPickerViewDelegate.swift */,
+				89EFF130245C3C910047EF8D /* Reusable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -653,6 +696,8 @@
 				899BF138245508B600F68E30 /* DiscoverTeamViewController+Reselectable.swift */,
 				899BF13A245508D200F68E30 /* DiscoverTeamViewController+TappableResponderLabelDelegate.swift */,
 				899BF1592457916800F68E30 /* SearchViewController+TableView.swift */,
+				89EFF13B245C9B280047EF8D /* PlayerFilterViewController+TableView.swift */,
+				89EFF13D245C9B620047EF8D /* PlayerFIlterViewController+ToolbarPickerViewDelegate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -731,6 +776,9 @@
 			isa = PBXGroup;
 			children = (
 				899BF1322455083000F68E30 /* DiscoverTeamSeparatorAnimator.swift */,
+				89EFF135245C9A130047EF8D /* PickerHandler.swift */,
+				89EFF137245C9A280047EF8D /* NationalityPickerHandler.swift */,
+				89EFF139245C9A850047EF8D /* PositionPickerHandler.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -1192,9 +1240,13 @@
 				899BF14B2457417900F68E30 /* PlayerDetailViewController.swift in Sources */,
 				89EFF1172459CEC60047EF8D /* RootViewModel.swift in Sources */,
 				899BF14024550EE100F68E30 /* Team.swift in Sources */,
+				89EFF131245C3C910047EF8D /* Reusable.swift in Sources */,
+				89EFF129245C36F50047EF8D /* ToolbarPickerView.swift in Sources */,
 				899BF170245889CB00F68E30 /* PlayerPosition.swift in Sources */,
 				899BF15C2457951400F68E30 /* GetSearchResponseBody.swift in Sources */,
 				892D2327244D357C00F0F263 /* SectionedCoordinator.swift in Sources */,
+				89EFF138245C9A280047EF8D /* NationalityPickerHandler.swift in Sources */,
+				89EFF13F245CA1910047EF8D /* ReusableCell.swift in Sources */,
 				899BF12C245469DB00F68E30 /* LargeNavigationBar.swift in Sources */,
 				89F0EC1524536184000DA92B /* BetterpickAPIHandler.swift in Sources */,
 				899BF1732458A8E000F68E30 /* DiscoverTeamViewModel.swift in Sources */,
@@ -1210,6 +1262,8 @@
 				89EFF123245B4C660047EF8D /* PlayerFilterViewModel.swift in Sources */,
 				89F0EC3B2453A9A8000DA92B /* BetterpickAPIManagerMock.swift in Sources */,
 				899BF15A2457916800F68E30 /* SearchViewController+TableView.swift in Sources */,
+				89EFF12B245C375E0047EF8D /* ToolbarPickerViewDelegate.swift in Sources */,
+				89EFF134245C46380047EF8D /* PlayerFilterSection.swift in Sources */,
 				89955BE9244BE1CB00B8B59A /* ChildCoordinator.swift in Sources */,
 				89EFF11B245B298C0047EF8D /* DiscoverPlayerViewModel.swift in Sources */,
 				892D232C244D3D5500F0F263 /* DiscoverPlayerCoordinator.swift in Sources */,
@@ -1223,20 +1277,23 @@
 				89955BE7244BDED000B8B59A /* NavigationCoordinator.swift in Sources */,
 				89F0EBEC24509395000DA92B /* UITableView+Util.swift in Sources */,
 				892096862445081B00DF93BB /* DiscoverNavigationCoordinator.swift in Sources */,
+				89EFF127245C36D30047EF8D /* CustomResponderViewDelegate.swift in Sources */,
 				89F0EC1B245363E9000DA92B /* BetterpickAPIRequestErrorContext.swift in Sources */,
 				892D2325244D355300F0F263 /* ChildViewControllerContainerProviding.swift in Sources */,
-				89EFF11F245B4BEE0047EF8D /* PlayerFilterViewController.swift in Sources */,
 				89F0EC2724537336000DA92B /* HTTPMethod.swift in Sources */,
 				89F0EC2D24537826000DA92B /* URL+Append.swift in Sources */,
-				899BF11E2454508800F68E30 /* TappableResponderLabel.swift in Sources */,
+				899BF11E2454508800F68E30 /* TappablePickerResponderLabel.swift in Sources */,
 				899BF1542457910B00F68E30 /* SearchResult.swift in Sources */,
 				89F0EC3824538A81000DA92B /* GetLeagueResponseBody.swift in Sources */,
 				89EFF1152459B0B20047EF8D /* Nationality.swift in Sources */,
 				89EFF11D245B29A10047EF8D /* PlayerFilterData.swift in Sources */,
+				89EFF141245CEF9B0047EF8D /* CaseIterable+Util.swift in Sources */,
 				892096372444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */,
+				89EFF143245CEFB10047EF8D /* Collection+NilInsertions.swift in Sources */,
 				8920967D2444F4F400DF93BB /* TabBarCoordinator.swift in Sources */,
 				899BF13E24550ED400F68E30 /* TeamViewModel.swift in Sources */,
 				8975EE68244BB5A70052696C /* TabBarGestureHandler.swift in Sources */,
+				89EFF13A245C9A850047EF8D /* PositionPickerHandler.swift in Sources */,
 				892D22FE244C704D00F0F263 /* LargeTitleNavigationController.swift in Sources */,
 				899BF16A24586D5C00F68E30 /* GetPlayersResponseBody.swift in Sources */,
 				899BF13B245508D200F68E30 /* DiscoverTeamViewController+TappableResponderLabelDelegate.swift in Sources */,
@@ -1255,6 +1312,7 @@
 				8920968E24450D7B00DF93BB /* MyTeamsViewController.swift in Sources */,
 				899BF15F2458548700F68E30 /* NavigationBarProviding.swift in Sources */,
 				892D230F244CFABE00F0F263 /* DiscoverViewController.swift in Sources */,
+				89EFF12D245C3B1A0047EF8D /* PickerResponderTableViewCell.swift in Sources */,
 				899BF14724573F8600F68E30 /* PlayerPreviewTableViewCell.swift in Sources */,
 				8920966F2444E1CF00DF93BB /* ConstrainableView.swift in Sources */,
 				892D231E244D2ACF00F0F263 /* DiscoverTeamCoordinator.swift in Sources */,
@@ -1267,15 +1325,20 @@
 				8975EE62244BB2100052696C /* TabPressActionData.swift in Sources */,
 				899BF1182453B9A500F68E30 /* UIView+Embed.swift in Sources */,
 				89F0EC36245387FB000DA92B /* BetterpickAPIManager.swift in Sources */,
+				89EFF13C245C9B280047EF8D /* PlayerFilterViewController+TableView.swift in Sources */,
 				892D22F9244C6A2E00F0F263 /* Reselectable.swift in Sources */,
+				89EFF125245B5EAD0047EF8D /* PlayerFilterNavigationController.swift in Sources */,
 				899BF16824586BA900F68E30 /* SimpleFetchingViewModel.swift in Sources */,
 				899BF11A2453BB2200F68E30 /* FetchingView.swift in Sources */,
 				892D232E244D3DB000F0F263 /* DiscoverPlayerViewController.swift in Sources */,
+				89EFF13E245C9B620047EF8D /* PlayerFIlterViewController+ToolbarPickerViewDelegate.swift in Sources */,
+				89EFF132245C40790047EF8D /* PlayerFilterViewController.swift in Sources */,
 				892D230C244CEFEB00F0F263 /* CustomTextField.swift in Sources */,
 				892D2318244D20CF00F0F263 /* TeamPreview.swift in Sources */,
 				899BF139245508B600F68E30 /* DiscoverTeamViewController+Reselectable.swift in Sources */,
 				892D22FB244C6D7300F0F263 /* MyTeamsNavigationCoordinator.swift in Sources */,
 				899BF1212454523400F68E30 /* TeamSelecting.swift in Sources */,
+				89EFF145245CF0300047EF8D /* PositionComponentData.swift in Sources */,
 				8920966B2444E16E00DF93BB /* HairlineView.swift in Sources */,
 				892096772444EBE500DF93BB /* Size.swift in Sources */,
 				899BF1752458AB1A00F68E30 /* DiscoverTeamViewController.swift in Sources */,
@@ -1290,6 +1353,7 @@
 				892D2307244CE26600F0F263 /* SearchViewController.swift in Sources */,
 				89F0EC342453825E000DA92B /* GetLeaguesResponseBody.swift in Sources */,
 				89F0EBEF245098E9000DA92B /* TeamTableViewCell.swift in Sources */,
+				89EFF136245C9A130047EF8D /* PickerHandler.swift in Sources */,
 				892D2309244CE2A300F0F263 /* SearchCoordinator.swift in Sources */,
 				899BF1662458692B00F68E30 /* String+Capitalize.swift in Sources */,
 				89EFF1132459AD5A0047EF8D /* VMViewController.swift in Sources */,

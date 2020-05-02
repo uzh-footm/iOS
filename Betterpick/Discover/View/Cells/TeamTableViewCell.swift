@@ -39,6 +39,11 @@ class TeamTableViewCell: UITableViewCell {
         layout()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        teamLogoImageView.sd_cancelCurrentImageLoad()
+    }
+
     // MARK: Private
     private func layout() {
         contentView.add(subview: teamLogoImageView)

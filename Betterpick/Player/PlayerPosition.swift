@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum PlayerPosition: String, Hashable, CaseIterable, Decodable {
+enum PlayerPosition: String, Hashable, CaseIterable, Codable {
     case goalkeeper
     case defence
     case middle
@@ -22,6 +22,24 @@ enum PlayerPosition: String, Hashable, CaseIterable, Decodable {
         case _ where ExactPlayerPosition.attack.contains(position): self = .attack
         // FIXME: Possible fixme to introduce a failable initializer
         default: self = .goalkeeper
+        }
+    }
+
+    var positionText: String {
+        switch self {
+        case .goalkeeper: return "Goalkeeper"
+        case .defence: return "Defender"
+        case .middle: return "Midfielder"
+        case .attack: return "Attacker"
+        }
+    }
+
+    var exactPositions: [ExactPlayerPosition] {
+        switch self {
+        case .goalkeeper: return ExactPlayerPosition.goalkeeper
+        case .defence: return ExactPlayerPosition.defence
+        case .middle: return ExactPlayerPosition.middle
+        case .attack: return ExactPlayerPosition.attack
         }
     }
 }

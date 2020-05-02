@@ -9,7 +9,7 @@
 import Foundation
 
 // swiftlint:disable identifier_name
-enum ExactPlayerPosition: String, CaseIterable, Decodable {
+enum ExactPlayerPosition: String, CaseIterable, Codable {
     // Goalkeeper
     case GK
     // Defence
@@ -34,6 +34,7 @@ enum ExactPlayerPosition: String, CaseIterable, Decodable {
     case LW
     case RW
 
+    // MARK: - ExactPositions
     static var goalkeeper: [ExactPlayerPosition] {
         return [.GK]
     }

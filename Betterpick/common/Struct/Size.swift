@@ -20,6 +20,8 @@ struct Size {
     static let extendedMargin: CGFloat = 18
     static let doubleStandardMargin: CGFloat = 2 * standardMargin
 
+    static let toolbarHeight: CGFloat = 35
+
     struct Image {
         static let tabBarIcon: CGFloat = 30
         static let indicator: CGFloat = 16
