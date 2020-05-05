@@ -44,6 +44,8 @@ class PlayerFilterViewController: VMViewController<PlayerFilterViewModel> {
         return picker
     }()
 
+    weak var rangeCell: RangeSliderTableViewCell?
+
     // MARK: Private
     /// Tracks the last `selectedIndexPath` on the `tableView`
     var lastSelectedIndexPath: IndexPath?
@@ -57,6 +59,8 @@ class PlayerFilterViewController: VMViewController<PlayerFilterViewModel> {
         setupPickerViewHiding()
 
         setupNavBar()
+
+        setupViewModel()
 
         setupSubviews()
     }
@@ -82,9 +86,19 @@ class PlayerFilterViewController: VMViewController<PlayerFilterViewModel> {
         title = "Player filters"
     }
 
+    private func setupViewModel() {
+        viewModel.onOvrRangeUpdate = { [weak self] in
+            self?.updateRangeCellAppearance()
+        }
+    }
+
     private func setupSubviews() {
         view.add(subview: tableView)
         tableView.embed(in: view)
+    }
+
+    func updateRangeCellAppearance() {
+        rangeCell?.valueLabel.text = viewModel.ovrRangeText()
     }
 
     // MARK: Event Handlers
@@ -98,11 +112,17 @@ class PlayerFilterViewController: VMViewController<PlayerFilterViewModel> {
         view.endEditing(true)
     }
 
+    // MARK: PickerView
     @objc private func didPressDoneButton() {
         onFinishedFiltering?(viewModel.playerFilterData)
     }
 
     @objc private func didPressCancelButton() {
         onFinishedFiltering?(nil)
+    }
+
+    // MARK: RangeSlider
+    @objc func didChangeSliderValue(_ rangeSlider: RangeSlider) {
+        viewModel.setOvrRange(rangeSlider.lowerValue, rangeSlider.upperValue)
     }
 }

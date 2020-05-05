@@ -16,6 +16,9 @@ class PlayerFilterViewModel {
     let nationalities: [Nationality]
     let positionComponentData = PositionComponentData()
 
+    // MARK: Actions
+    var onOvrRangeUpdate: (() -> Void)?
+
     // MARK: - Initialization
     init(playerFilterData: PlayerFilterData, nationalities: [Nationality]) {
         self.playerFilterData = playerFilterData
@@ -67,6 +70,7 @@ class PlayerFilterViewModel {
         return playerFilterData.nationality?.name ?? "Any"
     }
 
+    // MARK: Position
     public func detailTextForPosition() -> String {
         guard let position = playerFilterData.position else { return "Any" }
         if let exactPosition = playerFilterData.exactPosition {
@@ -93,10 +97,6 @@ class PlayerFilterViewModel {
         return 0
     }
 
-    public func setNationality(from nationalityRow: Int) {
-        playerFilterData.nationality = nationalities[nationalityRow]
-    }
-
     public func setPosition(from positionRow: Int, exactPositionRow: Int) {
         let position = positionComponentData.positions[positionRow]
         playerFilterData.position = position
@@ -106,6 +106,36 @@ class PlayerFilterViewModel {
         case .some(let position):
             let exactPositions = positionComponentData.exactPositions[position]
             playerFilterData.exactPosition = exactPositions?[exactPositionRow]
+        }
+    }
+
+    // MARK: Nationality
+    public func setNationality(from nationalityRow: Int) {
+        playerFilterData.nationality = nationalities[nationalityRow]
+    }
+
+    // MARK: OVR Range
+    public func setOvrRange(_ lower: Double, _ upper: Double) {
+        let minOvr = PlayerFilterData.minimumOvr
+        let maxOvr = PlayerFilterData.maximumOvr
+        let diff = abs(maxOvr - minOvr)
+        let lowerOvr = minOvr + Int(lower * Double(diff))
+        let upperOvr = minOvr + Int(upper * Double(diff))
+        playerFilterData.ovrGreatherThanOrEqual = lowerOvr
+        playerFilterData.ovrLessThanOrEqual = upperOvr
+        onOvrRangeUpdate?()
+    }
+
+    public func ovrRangeText() -> String {
+        let lower = playerFilterData.ovrGreatherThanOrEqual
+        let upper = playerFilterData.ovrLessThanOrEqual
+        if lower == upper {
+            return "\(lower)"
+        } else {
+            let lowerText: String = lower == PlayerFilterData.minimumOvr ? "Any" : "\(lower)"
+            let upperText: String = upper == PlayerFilterData.maximumOvr ? "Any" : "\(upper)"
+            guard lowerText != upperText else { return "Any" }
+            return "\(lowerText) - \(upperText)"
         }
     }
 }

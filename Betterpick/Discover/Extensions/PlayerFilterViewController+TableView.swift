@@ -26,7 +26,7 @@ extension PlayerFilterViewController: UITableViewDelegate {
                 self.tableView.reloadData()
             }, completion: nil)
         }
-        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
 
@@ -67,7 +67,14 @@ extension PlayerFilterViewController: UITableViewDataSource {
                 positionPickerView.toolbarDelegate = self
                 return cell
             case .ovrRange:
-                return UITableViewCell()
+                let cell = RangeSliderTableViewCell()
+                // Add ValueChanged action
+                cell.rangeSlider.addTarget(self, action: #selector(didChangeSliderValue), for: .valueChanged)
+                cell.valueInfoLabel.text = "OVR"
+                cell.valueLabel.text = ""
+                rangeCell = cell
+                updateRangeCellAppearance()
+                return cell
             }
         case .reset:
             let cell = UITableViewCell()

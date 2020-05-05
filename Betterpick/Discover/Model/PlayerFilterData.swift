@@ -28,18 +28,21 @@ struct PlayerFilterData: Encodable, Equatable {
     var sortOrder: SortOrder = .desc
 
     // MARK: - Player Section
-    // Nationality
+    // MARK: Nationality
     /// nil value represents 'Any nationality'
     var nationality: Nationality?
-    // Position
+    // MARK: Position
     /// nil value represents 'Any position'
     var position: PlayerPosition?
     /// nil value represents 'Any { Goalkeeper | Defender | Midfielder | Striker }
     /// depends on position
     var exactPosition: ExactPlayerPosition?
-    // OVR
-    var ovrGreatherThanOrEqual: Int = 10
-    var ovrLessThanOrEqual: Int = 90
+    // MARK: OVR
+    var ovrGreatherThanOrEqual: Int = PlayerFilterData.minimumOvr
+    var ovrLessThanOrEqual: Int = PlayerFilterData.maximumOvr
+
+    static var minimumOvr: Int = 40
+    static var maximumOvr: Int = 100
 }
 
 // MARK: - CustomStringConvertible

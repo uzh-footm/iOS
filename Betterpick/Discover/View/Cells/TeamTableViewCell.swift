@@ -26,6 +26,7 @@ class TeamTableViewCell: UITableViewCell {
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setup()
     }
 
     // MARK: Inherited
