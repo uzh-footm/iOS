@@ -115,9 +115,6 @@ class RangeSlider: UIControl {
 
     // MARK: - Private
     private func setup() {
-        lowerValue = minimumValue
-        upperValue = maximumValue
-
         layer.backgroundColor = UIColor.clear.cgColor
         layer.masksToBounds = false
 

@@ -68,6 +68,10 @@ extension PlayerFilterViewController: UITableViewDataSource {
                 return cell
             case .ovrRange:
                 let cell = RangeSliderTableViewCell()
+                // FIXME: Move to some OVR Range model
+                cell.rangeSlider.lowerValue = Double(viewModel.playerFilterData.ovrGreatherThanOrEqual - PlayerFilterData.minimumOvr) / Double(abs(PlayerFilterData.maximumOvr - PlayerFilterData.minimumOvr))
+                cell.rangeSlider.upperValue = Double(viewModel.playerFilterData.ovrLessThanOrEqual - PlayerFilterData.minimumOvr) / Double(abs(PlayerFilterData.maximumOvr - PlayerFilterData.minimumOvr))
+                // ENDFIXME
                 // Add ValueChanged action
                 cell.rangeSlider.addTarget(self, action: #selector(didChangeSliderValue), for: .valueChanged)
                 cell.valueInfoLabel.text = "OVR"
