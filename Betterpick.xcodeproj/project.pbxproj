@@ -12,6 +12,8 @@
 		890387D52461C46800533CDA /* DiscoverChildBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890387D42461C46800533CDA /* DiscoverChildBaseViewController.swift */; };
 		8903C03824644226009B152B /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF12E245C3B560047EF8D /* ReusableCell.swift */; };
 		8903C03A24645813009B152B /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C03924645813009B152B /* SectionHeaderView.swift */; };
+		8903C03E24646539009B152B /* TeamViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C03B24646517009B152B /* TeamViewController+TableView.swift */; };
+		8903C04024646B2D009B152B /* SearchResultSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C03F24646B2D009B152B /* SearchResultSectionHeaderView.swift */; };
 		892096372444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */; };
 		892096382444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */; };
 		892096392444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */; };
@@ -189,6 +191,8 @@
 		73C23E61CF56173C0675FB28 /* Pods-Betterpick-BetterpickUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickUITests.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		890387D42461C46800533CDA /* DiscoverChildBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverChildBaseViewController.swift; sourceTree = "<group>"; };
 		8903C03924645813009B152B /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SectionHeaderView.swift; path = Betterpick/Common/View/SectionHeaderView.swift; sourceTree = SOURCE_ROOT; };
+		8903C03B24646517009B152B /* TeamViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamViewController+TableView.swift"; sourceTree = "<group>"; };
+		8903C03F24646B2D009B152B /* SearchResultSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultSectionHeaderView.swift; sourceTree = "<group>"; };
 		892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+childAddRemove.swift"; sourceTree = "<group>"; };
 		8920964E2444B92400DF93BB /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		892096572444BED700DF93BB /* TabBarViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -401,6 +405,14 @@
 				BAA279EEE9DF97179BB03126 /* Pods-BetterpickTests.mock.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		8903C03D24646523009B152B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8903C03B24646517009B152B /* TeamViewController+TableView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		892096342444AF3500DF93BB /* Extension */ = {
@@ -680,6 +692,7 @@
 				89F0EBED245098E2000DA92B /* Cells */,
 				892D230B244CEFEB00F0F263 /* CustomTextField.swift */,
 				899BF1192453BB2200F68E30 /* FetchingView.swift */,
+				8903C03F24646B2D009B152B /* SearchResultSectionHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -756,6 +769,7 @@
 				899BF13C24550EC500F68E30 /* ViewModel */,
 				899BF128245456A400F68E30 /* ViewController */,
 				899BF14C2457434900F68E30 /* Coordinator */,
+				8903C03D24646523009B152B /* Extensions */,
 			);
 			path = Team;
 			sourceTree = "<group>";
@@ -1287,6 +1301,7 @@
 				899BF17224589CE200F68E30 /* GetNationalitiesBody.swift in Sources */,
 				89955BE7244BDED000B8B59A /* NavigationCoordinator.swift in Sources */,
 				89F0EBEC24509395000DA92B /* UITableView+Util.swift in Sources */,
+				8903C04024646B2D009B152B /* SearchResultSectionHeaderView.swift in Sources */,
 				892096862445081B00DF93BB /* DiscoverNavigationCoordinator.swift in Sources */,
 				89EFF127245C36D30047EF8D /* CustomResponderViewDelegate.swift in Sources */,
 				89F0EC1B245363E9000DA92B /* BetterpickAPIRequestErrorContext.swift in Sources */,
@@ -1356,6 +1371,7 @@
 				89F0EC2524537323000DA92B /* HTTPStatusCode.swift in Sources */,
 				89F0EC3D2453A9B4000DA92B /* BetterpickAPIManagerFactory.swift in Sources */,
 				892096732444E64000DF93BB /* UIView+Add.swift in Sources */,
+				8903C03E24646539009B152B /* TeamViewController+TableView.swift in Sources */,
 				899BF15224574F5200F68E30 /* Player.swift in Sources */,
 				899BF1252454525400F68E30 /* PlayerPreview.swift in Sources */,
 				89F0EC17245361A9000DA92B /* URLSession+BetterpickAPIHandler.swift in Sources */,

@@ -19,6 +19,17 @@ extension SearchViewController: UITableViewDelegate {
             selectingCoordinator?.select(team: club)
         }
     }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = tableView.dequeue(headerFooter: SearchResultSectionHeaderView.self) else { return nil }
+        header.text = viewModel.titleFor(section: section)
+        header.results = tableView.numberOfRows(inSection: section)
+        return header
+    }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return Size.TableView.headerHeight
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -31,12 +42,17 @@ extension SearchViewController: UITableViewDataSource {
         return viewModel.numberOfSections()
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        guard section < viewModel.numberOfSections() else { return nil }
-        return viewModel.titleFor(section: section)
-    }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let model = viewModel.previews(at: indexPath)
+        if let player = model as? PlayerPreview, let cell = tableView.dequeue(reusableCell: PlayerPreviewTableViewCell.self, for: indexPath) {
+            cell.configure(from: player)
+            return cell
+        }
+
+        if let club = model as? TeamPreview, let cell = tableView.dequeue(reusableCell: TeamTableViewCell.self, for: indexPath) {
+            cell.configure(from: club)
+            return cell
+        }
         return UITableViewCell()
     }
 }

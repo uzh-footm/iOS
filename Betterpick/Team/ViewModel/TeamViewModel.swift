@@ -46,7 +46,7 @@ class TeamViewModel: FetchingViewModel<GetClubResponseBody, Team> {
 
     public func titleForPosition(at sectionIndex: Int) -> String {
         guard let squad = getSquad() else { return "" }
-        return squad[sectionIndex].position.rawValue.capitalizingFirstLetter()
+        return squad[sectionIndex].position.rawValue.uppercased()
     }
 
     public func player(at indexPath: IndexPath) -> PlayerPreview? {

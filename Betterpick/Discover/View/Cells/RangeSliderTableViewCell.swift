@@ -50,7 +50,9 @@ class RangeSliderTableViewCell: UITableViewCell {
         valueInfoLabel.setContentHuggingPriority(.init(250), for: .horizontal)
         valueLabel.setContentHuggingPriority(.init(251), for: .horizontal)
         valueLabel.setContentCompressionResistancePriority(.init(1000), for: .horizontal)
-        valueInfoLabel.trailingAnchor.constraint(equalTo: valueLabel.leadingAnchor, constant: -Size.standardMargin).isActive = true
+        let inBetweenLabelsConstraint = valueLabel.leadingAnchor.constraint(greaterThanOrEqualTo: valueInfoLabel.trailingAnchor, constant: Size.standardMargin)
+        inBetweenLabelsConstraint.priority = .init(255)
+        inBetweenLabelsConstraint.isActive = true
 
         // Range Slider
         contentView.add(subview: rangeSlider)

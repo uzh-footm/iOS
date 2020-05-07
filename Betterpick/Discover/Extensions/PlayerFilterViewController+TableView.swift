@@ -22,6 +22,8 @@ extension PlayerFilterViewController: UITableViewDelegate {
             }
         case .reset:
             viewModel.resetFilterData()
+            nationalityPickerView.resetSelection()
+            positionPickerView.resetSelection()
             UIView.transition(with: tableView, duration: 0.4, options: .transitionCrossDissolve, animations: {
                 self.tableView.reloadData()
             }, completion: nil)

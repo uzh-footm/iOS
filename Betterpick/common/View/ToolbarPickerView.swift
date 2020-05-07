@@ -65,4 +65,12 @@ class ToolbarPickerView: UIPickerView {
     @objc private func didTapCancel() {
         self.toolbarDelegate?.didTapCancel(self)
     }
+
+    // MARK: - Public
+    public func resetSelection(animated: Bool = false) {
+        let row = 0
+        let component = row
+        selectRow(row, inComponent: component, animated: animated)
+        delegate?.pickerView?(self, didSelectRow: row, inComponent: component)
+    }
 }

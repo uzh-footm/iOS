@@ -43,7 +43,7 @@ extension UILabel {
             font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         case .sectionTitle:
             textColor = .customLabel
-            font = UIFont.systemFont(ofSize: 18, weight: .medium)
+            font = UIFont.systemFont(ofSize: 14, weight: .medium)
         // Cells
         case .cellTitle:
             textColor = .customLabel

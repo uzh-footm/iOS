@@ -9,7 +9,7 @@
 import UIKit
 import SDWebImage
 
-class TeamTableViewCell: UITableViewCell {
+class TeamTableViewCell: UITableViewCell, Reusable {
     // MARK: - Properties
     // MARK: Static
     static let reuseIdentifier = "TeamTableViewCell"

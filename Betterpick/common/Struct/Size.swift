@@ -39,6 +39,10 @@ struct Size {
         static let wideSideMargin: CGFloat = 40
     }
 
+    struct TableView {
+        static let headerHeight: CGFloat = 24
+    }
+
     struct Navigator {
         static let height: CGFloat = 44
         static let separatorHeight: CGFloat = 1

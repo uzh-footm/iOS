@@ -61,12 +61,8 @@ class SearchViewModel {
         return previews(at: indexPath.section)?[indexPath.row]
     }
 
-    func titleFor(section: Int) -> String? {
-        guard let searchResult = searchResult else { return nil }
-        if searchResult.previews(at: section).isEmpty {
-            return nil
-        } else {
-            return searchResult.title(at: section)
-        }
+    func titleFor(section: Int) -> String {
+        guard let searchResult = searchResult else { return "" }
+        return searchResult.title(at: section)
     }
 }

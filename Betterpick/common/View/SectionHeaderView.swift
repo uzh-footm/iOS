@@ -15,27 +15,45 @@ class SectionHeaderView: UITableViewHeaderFooterView, Reusable {
 
     static let reuseIdentifier: String = "SectionHeaderView"
 
-    var text: String = "" {
+    // MARK: Public
+    public var text: String = "" {
         didSet {
             label.text = text
+        }
+    }
+
+    public var labelStyle: UILabel.Style = .sectionTitle {
+        didSet {
+            label.set(style: labelStyle)
         }
     }
 
     // MARK: - Initialization
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
-        setupSubviews()
+        privateSetup()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupSubviews()
+        privateSetup()
     }
 
     // MARK: - Private
+    private func privateSetup() {
+        setupSubviews()
+        setup()
+    }
+
     private func setupSubviews() {
         add(subview: label)
         label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         label.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).isActive = true
+    }
+
+    // MARK: - Open
+    /// Override this function to provide customization (e.g. adding subviews / constraints) for this View
+    open func setup() {
+
     }
 }
