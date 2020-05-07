@@ -9,10 +9,9 @@
 import UIKit
 
 /// Displays a list of teams from a given League / Nationality
-class DiscoverTeamViewController: UIViewController, FetchingStatePresenting {
+class DiscoverTeamViewController: DiscoverChildBaseViewController<DiscoverTeamViewModel>, FetchingStatePresenting, TableViewReselectable {
 
     // MARK: - Properties
-    let viewModel: DiscoverTeamViewModel
     weak var coordinator: TeamSelecting?
 
     // MARK: UI Elements
@@ -33,50 +32,11 @@ class DiscoverTeamViewController: UIViewController, FetchingStatePresenting {
         return picker
     }()
 
-    let competitionLabelSeparator: HairlineView = {
-        let sep = HairlineView()
-        sep.alpha = 0
-        return sep
-    }()
-
-    lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = Size.Image.teamLogo + Size.Cell.narrowVerticalMargin * 2
-        tableView.removeLastSeparatorAndDontShowEmptyCells()
-        tableView.backgroundColor = .graySystemFill
-        tableView.showsHorizontalScrollIndicator = false
-        tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.reuseIdentifier)
-        return tableView
-    }()
-
-    // MARK: Animation
-    lazy var separatorAnimator: DiscoverTeamSeparatorAnimator = {
-        let animator = DiscoverTeamSeparatorAnimator()
-        animator.separator = self.competitionLabelSeparator
-        return animator
-    }()
-
-    // MARK: FetchingStatePresenting
-    typealias FetchingStateView = FetchingView
-    var fetchingStateView: FetchingView?
-    var fetchingStateSuperview: UIView { return tableView }
-
-    // MARK: - Initialization
-    init(viewModel: DiscoverTeamViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) { fatalError() }
-
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupSubviews()
+        tableViewSetup()
 
         // Label
         competitionInfoLabel.onHypertextTapped = { [unowned self] in
@@ -99,29 +59,22 @@ class DiscoverTeamViewController: UIViewController, FetchingStatePresenting {
     }
 
     // MARK: - Private
-    private func setupSubviews() {
-        // League Info Label
-        view.add(subview: competitionInfoLabel)
-        competitionInfoLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    private func tableViewSetup() {
+        tableView.dataSource = self
+        tableView.estimatedRowHeight = Size.Image.teamLogo + Size.Cell.narrowVerticalMargin * 2
+        tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.reuseIdentifier)
+    }
+
+    final override func setup(discoverHeaderView headerView: UIView) {
+        headerView.add(subview: competitionInfoLabel)
+        competitionInfoLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor).isActive = true
         let labelLeading = competitionInfoLabel.leadingAnchor.constraint(greaterThanOrEqualTo: view.layoutMarginsGuide.leadingAnchor, constant: Size.standardMargin)
         labelLeading.priority = UILayoutPriority.init(rawValue: 999)
         labelLeading.isActive = true
         let labelTrailing = competitionInfoLabel.trailingAnchor.constraint(lessThanOrEqualTo: view.layoutMarginsGuide.trailingAnchor, constant: Size.standardMargin)
         labelTrailing.priority = UILayoutPriority.init(rawValue: 999)
         labelTrailing.isActive = true
-        competitionInfoLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: Size.standardMargin).isActive = true
-
-        // Table view
-        view.add(subview: tableView)
-        tableView.topAnchor.constraint(equalTo: competitionInfoLabel.bottomAnchor, constant: Size.standardMargin).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-
-        // League Info Label and TableView separator
-        view.add(subview: competitionLabelSeparator)
-        competitionLabelSeparator.embedSides(in: view)
-        competitionLabelSeparator.bottomAnchor.constraint(equalTo: tableView.topAnchor).isActive = true
+        competitionInfoLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
     }
 
     private func updateLabel(league: League) {
@@ -150,5 +103,12 @@ class DiscoverTeamViewController: UIViewController, FetchingStatePresenting {
         case .error:
             addFetchingStateView()
         }
+    }
+
+    // MARK: - UITableViewDelegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let teams = viewModel.currentLeague?.teams else { return }
+        coordinator?.select(team: teams[indexPath.row])
     }
 }

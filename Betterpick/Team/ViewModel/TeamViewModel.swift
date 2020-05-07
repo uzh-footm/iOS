@@ -37,16 +37,16 @@ class TeamViewModel: FetchingViewModel<GetClubResponseBody, Team> {
 
     public func getPlayersAt(sectionIndex: Int) -> [PlayerPreview]? {
         guard let squad = getSquad() else { return nil }
-        let position = PlayerPosition.allCases[sectionIndex]
-        return squad[position]
+        return squad[sectionIndex].players
     }
 
     public func numberOfPlayersForPosition(at sectionIndex: Int) -> Int {
         return getPlayersAt(sectionIndex: sectionIndex)?.count ?? 0
     }
 
-    public func titleForPosition(at sectionIndex: Int) -> String? {
-        return PlayerPosition.allCases[sectionIndex].rawValue.capitalizingFirstLetter()
+    public func titleForPosition(at sectionIndex: Int) -> String {
+        guard let squad = getSquad() else { return "" }
+        return squad[sectionIndex].position.rawValue.capitalizingFirstLetter()
     }
 
     public func player(at indexPath: IndexPath) -> PlayerPreview? {

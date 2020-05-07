@@ -14,6 +14,8 @@ extension UILabel {
         case primary
         case secondary
         case largeTitle
+        case title
+        case sectionTitle
         // Cells
         case cellTitle
         case cellCenteredAction
@@ -36,6 +38,12 @@ extension UILabel {
         case .largeTitle:
             textColor = .customLabel
             font = UIFont.systemFont(ofSize: 34, weight: .bold)
+        case .title:
+            textColor = .customLabel
+            font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+        case .sectionTitle:
+            textColor = .customLabel
+            font = UIFont.systemFont(ofSize: 18, weight: .medium)
         // Cells
         case .cellTitle:
             textColor = .customLabel

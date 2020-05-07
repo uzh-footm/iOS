@@ -12,7 +12,7 @@ class DiscoverViewModel {
 
     // MARK: - Properties
     let leagueAndNationalityData: LeagueAndNationalityData
-    private static let initialSection: DiscoverSection = .players
+    private static let initialSection: DiscoverSection = .teams
 
     // MARK: Model
     let sections = DiscoverSection.allCases

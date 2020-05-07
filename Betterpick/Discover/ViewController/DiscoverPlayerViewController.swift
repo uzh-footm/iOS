@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DiscoverPlayerViewController: VMViewController<DiscoverPlayerViewModel>, FetchingStatePresenting {
+class DiscoverPlayerViewController: DiscoverChildBaseViewController<DiscoverPlayerViewModel>, FetchingStatePresenting, TableViewReselectable {
 
     // MARK: - Properties
     weak var playerSelectingCoordinator: PlayerSelecting?
@@ -16,33 +16,16 @@ class DiscoverPlayerViewController: VMViewController<DiscoverPlayerViewModel>, F
     // MARK: Actions
     var onFilterAction: (() -> Void)?
 
-    // MARK: FetchingStatePresenting
-    typealias FetchingStateView = FetchingView
-    var fetchingStateSuperview: UIView { return view }
-    var fetchingStateView: FetchingView?
-
     // MARK: UI
     let playerFilterDataInformationLabel = UILabel(style: .secondary)
 
     lazy var playerFilterActionButton = ActionButton.createActionButton(image: #imageLiteral(resourceName: "filter_slider"), target: self, action: #selector(didPressPlayerFilterActionButton))
 
-    lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = Size.Image.teamLogo + Size.Cell.narrowVerticalMargin * 2
-        tableView.removeLastSeparatorAndDontShowEmptyCells()
-        tableView.backgroundColor = .background
-        tableView.register(PlayerPreviewTableViewCell.self, forCellReuseIdentifier: PlayerPreviewTableViewCell.reuseIdentifier)
-        return tableView
-    }()
-
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupSubviews()
+        setupTableView()
 
         // ViewModel
         viewModel.onStateUpdate = updateViewStateAppearance
@@ -54,27 +37,27 @@ class DiscoverPlayerViewController: VMViewController<DiscoverPlayerViewModel>, F
     }
 
     // MARK: - Private
-    private func setupSubviews() {
+    private func setupTableView() {
+        tableView.dataSource = self
+        tableView.estimatedRowHeight = Size.Image.teamLogo + Size.Cell.narrowVerticalMargin * 2
+        tableView.register(PlayerPreviewTableViewCell.self, forCellReuseIdentifier: PlayerPreviewTableViewCell.reuseIdentifier)
+    }
+
+    final override func setup(discoverHeaderView headerView: UIView) {
         // Label
-        view.add(subview: playerFilterDataInformationLabel)
-        playerFilterDataInformationLabel.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor).isActive = true
-        playerFilterDataInformationLabel.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: Size.standardMargin).isActive = true
+        headerView.add(subview: playerFilterDataInformationLabel)
+        playerFilterDataInformationLabel.leadingAnchor.constraint(equalTo: headerView.layoutMarginsGuide.leadingAnchor).isActive = true
+        playerFilterDataInformationLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor).isActive = true
 
         // Button
         view.add(subview: playerFilterActionButton)
         playerFilterActionButton.centerYAnchor.constraint(equalTo: playerFilterDataInformationLabel.centerYAnchor).isActive = true
         playerFilterActionButton.heightAnchor.constraint(equalToConstant: Size.iconSize).isActive = true
         playerFilterActionButton.widthAnchor.constraint(equalTo: playerFilterActionButton.heightAnchor).isActive = true
-        playerFilterActionButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor).isActive = true
+        playerFilterActionButton.trailingAnchor.constraint(equalTo: headerView.layoutMarginsGuide.trailingAnchor).isActive = true
 
         // Label + Button
         playerFilterDataInformationLabel.trailingAnchor.constraint(equalTo: playerFilterActionButton.leadingAnchor).isActive = true
-
-        // Table view
-        view.add(subview: tableView)
-        tableView.embedSides(in: view)
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: playerFilterDataInformationLabel.bottomAnchor, constant: Size.standardMargin).isActive = true
     }
 
     private func updateViewStateAppearance() {
@@ -97,10 +80,9 @@ class DiscoverPlayerViewController: VMViewController<DiscoverPlayerViewModel>, F
     @objc private func didPressPlayerFilterActionButton() {
         onFilterAction?()
     }
-}
 
-extension DiscoverPlayerViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    // MARK: - UITableViewDelegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         guard let player = viewModel.player(at: indexPath.row) else { return }
         playerSelectingCoordinator?.select(player: player)

@@ -20,11 +20,24 @@ extension Reselectable {
     }
 
     @discardableResult
+    /// Reselects all the childviewcontrollers that are also `Reselectable`
+    /// - returns: `true` if any of the Reselectable child VCs got reselected, `false` otherwise
     func reselectChildViewControllers() -> Bool {
         for childVC in children {
             guard let reselectableVC = childVC as? Reselectable, reselectableVC.reselect() else { continue }
             return true
         }
         return false
+    }
+}
+
+protocol TableViewReselectable: Reselectable {
+    var tableView: UITableView { get }
+}
+
+extension TableViewReselectable {
+    func reselect() -> Bool {
+        tableView.setContentOffset(.zero, animated: true)
+        return true
     }
 }

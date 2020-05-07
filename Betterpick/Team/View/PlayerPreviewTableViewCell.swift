@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlayerPreviewTableViewCell: UITableViewCell {
+class PlayerPreviewTableViewCell: UITableViewCell, Reusable {
     // MARK: - Properties
     // MARK: Static
     static let reuseIdentifier = "PlayerPreviewTableViewCell"

@@ -9,7 +9,7 @@
 import Foundation
 
 class Team {
-    typealias Squad = [PlayerPosition: [PlayerPreview]]
+    typealias Squad = [(position: PlayerPosition, players: [PlayerPreview])]
 
     let teamId: String
     let name: String
@@ -30,7 +30,8 @@ class Team {
             for player in previews where player.roughPosition == position {
                 playersAtPosition.append(player)
             }
-            squad[position] = playersAtPosition
+            guard !playersAtPosition.isEmpty else { continue }
+            squad.append((position, playersAtPosition))
         }
         return squad
     }
