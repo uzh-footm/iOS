@@ -124,5 +124,6 @@ class PlayerFilterViewController: VMViewController<PlayerFilterViewModel> {
     // MARK: RangeSlider
     @objc func didChangeSliderValue(_ rangeSlider: RangeSlider) {
         viewModel.setOvrRange(rangeSlider.lowerValue, rangeSlider.upperValue)
+        rangeCell?.setNeedsLayout()
     }
 }
