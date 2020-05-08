@@ -24,6 +24,7 @@ class SearchViewController: VMViewController<SearchViewModel> {
 
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
+        table.keyboardDismissMode = .onDrag
         table.dataSource = self
         table.delegate = self
         table.backgroundColor = .background
