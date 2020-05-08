@@ -28,12 +28,14 @@ class RangeSlider: UIControl {
     var lowerValue: Double = 0.2 {
         didSet {
             updateLayerFrames()
+            generateFeedbackIfNeeded(oldValue: oldValue, newValue: lowerValue, boundaryValue: minimumValue, otherValue: upperValue)
         }
     }
 
     var upperValue: Double = 0.8 {
         didSet {
             updateLayerFrames()
+            generateFeedbackIfNeeded(oldValue: oldValue, newValue: upperValue, boundaryValue: maximumValue, otherValue: lowerValue)
         }
     }
 
@@ -72,8 +74,11 @@ class RangeSlider: UIControl {
         }
     }
 
+    // MARK: Fileprivate
+    // last touch location in the view
     fileprivate var previouslocation = CGPoint()
 
+    // CALayers
     fileprivate let trackLayer = RangeSliderTrackLayer()
     fileprivate let lowerThumbShadowLayer = RangeSliderThumbShadowLayer()
     fileprivate let lowerThumbLayer = RangeSliderThumbLayer()
@@ -84,6 +89,7 @@ class RangeSlider: UIControl {
         return bounds.height - 12
     }
 
+    // MARK: Overrides
     override public var frame: CGRect {
         didSet {
             updateLayerFrames()
@@ -93,6 +99,9 @@ class RangeSlider: UIControl {
     override var intrinsicContentSize: CGSize {
         return CGSize(width: UIView.noIntrinsicMetric, height: 36)
     }
+
+    // MARK: Haptic Feedback
+    private let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
 
     // MARK: - Initialization
     override init(frame: CGRect) {
@@ -162,6 +171,16 @@ class RangeSlider: UIControl {
         CATransaction.commit()
     }
 
+    /// Generates haptic feedback
+    private func generateFeedbackIfNeeded(oldValue: Double, newValue: Double, boundaryValue: Double, otherValue: Double) {
+        guard isTracking, oldValue != newValue, newValue == otherValue || newValue == boundaryValue else { return }
+        if #available(iOS 13, *) {
+            impactFeedbackGenerator.impactOccurred(intensity: 0.8)
+        } else {
+            impactFeedbackGenerator.impactOccurred()
+        }
+    }
+
     func positionForValue(_ value: Double) -> Double {
         return Double(bounds.width - thumbWidth) * (value - minimumValue) /
             (maximumValue - minimumValue) + Double(thumbWidth/2.0)
@@ -186,7 +205,11 @@ class RangeSlider: UIControl {
             upperThumbLayer.highlighted = true
         }
 
-        return lowerThumbLayer.highlighted || upperThumbLayer.highlighted
+        let beginTracking = lowerThumbLayer.highlighted || upperThumbLayer.highlighted
+        if beginTracking {
+            impactFeedbackGenerator.prepare()
+        }
+        return beginTracking
     }
 
     override public func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
