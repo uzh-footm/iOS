@@ -17,7 +17,12 @@ class DiscoverPlayerViewController: DiscoverChildBaseViewController<DiscoverPlay
     var onFilterAction: (() -> Void)?
 
     // MARK: UI
-    let playerFilterDataInformationLabel = UILabel(style: .secondary)
+    let playerFilterDataInformationLabel: UILabel = {
+        let label = UILabel(style: .secondary)
+        label.adjustsFontSizeToFitWidth = true
+        label.minimumScaleFactor = 0.5
+        return label
+    }()
 
     lazy var playerFilterActionButton = ActionButton.createActionButton(image: #imageLiteral(resourceName: "filter_slider"), target: self, action: #selector(didPressPlayerFilterActionButton))
 

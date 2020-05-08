@@ -41,13 +41,43 @@ struct PlayerFilterData: Encodable, Equatable {
     var ovrGreatherThanOrEqual: Int = PlayerFilterData.minimumOvr
     var ovrLessThanOrEqual: Int = PlayerFilterData.maximumOvr
 
+    var ovrRangeText: String {
+        let lower = ovrGreatherThanOrEqual
+        let upper = ovrLessThanOrEqual
+        if lower == upper {
+            return "\(lower)"
+        } else {
+            let lowerText: String = lower == PlayerFilterData.minimumOvr ? PlayerFilterData.ovrDefaultText : "\(lower)"
+            let upperText: String = upper == PlayerFilterData.maximumOvr ? PlayerFilterData.ovrDefaultText : "\(upper)"
+            guard lowerText != upperText else { return PlayerFilterData.ovrDefaultText }
+            return "\(lowerText) - \(upperText)"
+        }
+    }
+
     static var minimumOvr: Int = 40
     static var maximumOvr: Int = 100
+    static let ovrDefaultText = "Any"
 }
 
 // MARK: - CustomStringConvertible
 extension PlayerFilterData: CustomStringConvertible {
     var description: String {
-        return "Showing \(sortOrder.bestOrWorst) players."
+        var playersText = "players"
+        if let exactPosition = exactPosition {
+            playersText = "'\(exactPosition.rawValue)'"
+        } else if let position = position {
+            playersText = position.positionText.lowercased() + "s"
+        }
+
+        var nationOrDot = "."
+        if let nationality = nationality {
+            nationOrDot = " from \(nationality.name)."
+        }
+
+        var ovrText = ""
+        if ovrRangeText != PlayerFilterData.ovrDefaultText {
+            ovrText = " (\(ovrRangeText))"
+        }
+        return "Showing \(sortOrder.bestOrWorst) \(playersText)\(nationOrDot)\(ovrText)"
     }
 }

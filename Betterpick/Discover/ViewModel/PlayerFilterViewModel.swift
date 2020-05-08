@@ -127,15 +127,6 @@ class PlayerFilterViewModel {
     }
 
     public func ovrRangeText() -> String {
-        let lower = playerFilterData.ovrGreatherThanOrEqual
-        let upper = playerFilterData.ovrLessThanOrEqual
-        if lower == upper {
-            return "\(lower)"
-        } else {
-            let lowerText: String = lower == PlayerFilterData.minimumOvr ? "Any" : "\(lower)"
-            let upperText: String = upper == PlayerFilterData.maximumOvr ? "Any" : "\(upper)"
-            guard lowerText != upperText else { return "Any" }
-            return "\(lowerText) - \(upperText)"
-        }
+        return playerFilterData.ovrRangeText
     }
 }
