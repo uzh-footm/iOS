@@ -14,7 +14,7 @@ class RangeSliderTableViewCell: UITableViewCell {
     // MARK: UI
     let valueInfoLabel = UILabel(style: .cellTitle)
 
-    let valueLabel = UILabel(style: .secondary)
+    let valueLabel = UILabel(style: .cellValue1)
 
     let rangeSlider = RangeSlider()
 

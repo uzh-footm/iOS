@@ -18,6 +18,7 @@ extension UILabel {
         case sectionTitle
         // Cells
         case cellTitle
+        case cellValue1
         case cellCenteredAction
         case cellPrimary
         case cellSecondary
@@ -51,7 +52,10 @@ extension UILabel {
         // Cells
         case .cellTitle:
             textColor = .customLabel
-            font = UIFont.systemFont(ofSize: Size.Font.action, weight: .medium)
+            font = UIFont.systemFont(ofSize: Size.Font.action)
+        case .cellValue1:
+            textColor = .customSecondaryLabel
+            font = UIFont.systemFont(ofSize: Size.Font.action)
         case .cellCenteredAction:
             textColor = .primary
             textAlignment = .center
