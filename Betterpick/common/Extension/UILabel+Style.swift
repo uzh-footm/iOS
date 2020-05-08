@@ -19,6 +19,10 @@ extension UILabel {
         // Cells
         case cellTitle
         case cellCenteredAction
+        case cellPrimary
+        case cellSecondary
+        // Special
+        case ovr
     }
 
     convenience init(style: Style) {
@@ -52,6 +56,19 @@ extension UILabel {
             textColor = .primary
             textAlignment = .center
             font = UIFont.systemFont(ofSize: Size.Font.action)
+        case .cellPrimary:
+            textColor = .customLabel
+            font = UIFont.systemFont(ofSize: 13)
+            numberOfLines = 1
+        case .cellSecondary:
+            textColor = .customSecondaryLabel
+            font = UIFont.systemFont(ofSize: 13)
+            numberOfLines = 1
+        // Special
+        case .ovr:
+            textColor = .white
+            textAlignment = .center
+            font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         }
     }
 }

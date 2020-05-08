@@ -15,6 +15,8 @@ struct PlayerPreview: Decodable {
     let squadNumber: Int
     let position: ExactPlayerPosition
     let nation: String
+    let ovr: Int
+    let club: String
 
     var roughPosition: PlayerPosition {
         return PlayerPosition(exact: position)

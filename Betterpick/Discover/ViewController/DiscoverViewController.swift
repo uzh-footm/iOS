@@ -89,7 +89,7 @@ class DiscoverViewController: VMViewController<DiscoverViewModel>, NavigationBar
         view.add(subview: searchButton)
         searchButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
         searchButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor).isActive = true
-        searchButton.heightAnchor.constraint(equalToConstant: Size.iconSize).isActive = true
+        searchButton.heightAnchor.constraint(equalToConstant: Size.Image.iconSize).isActive = true
         searchButton.widthAnchor.constraint(equalTo: searchButton.heightAnchor).isActive = true
 
         // Section Container

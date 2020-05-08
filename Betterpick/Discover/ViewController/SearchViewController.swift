@@ -70,7 +70,7 @@ class SearchViewController: VMViewController<SearchViewModel> {
         view.add(subview: backButton)
         backButton.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor).isActive = true
         backButton.centerYAnchor.constraint(equalTo: fakeNavigationBar.centerYAnchor).isActive = true
-        backButton.heightAnchor.constraint(equalToConstant: Size.smallerIconSize).isActive = true
+        backButton.heightAnchor.constraint(equalToConstant: Size.Image.smallerIconSize).isActive = true
         backButton.widthAnchor.constraint(equalTo: backButton.heightAnchor).isActive = true
 
         // TextField

@@ -38,7 +38,7 @@ class TeamViewController: VMViewController<TeamViewModel>, NavigationBarDisplayi
         // Removes tableFooterView
         table.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0.5))
         table.sectionFooterHeight = Size.TableView.headerHeight
-        table.register(reusableHeaderFooter: SectionHeaderView.self)
+        table.register(reusableHeaderFooter: PositionSectionHeaderView.self)
         table.register(reusableCell: PlayerPreviewTableViewCell.self)
         return table
     }()

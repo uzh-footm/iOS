@@ -6,7 +6,7 @@
 //  Copyright © 2020 dvdblk. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum PlayerPosition: String, Hashable, CaseIterable, Codable {
     case goalkeeper
@@ -40,6 +40,15 @@ enum PlayerPosition: String, Hashable, CaseIterable, Codable {
         case .defence: return ExactPlayerPosition.defence
         case .middle: return ExactPlayerPosition.middle
         case .attack: return ExactPlayerPosition.attack
+        }
+    }
+
+    var color: UIColor {
+        switch self {
+        case .goalkeeper: return .positionGoalkeeper
+        case .defence: return .positionDefence
+        case .middle: return .positionMiddle
+        case .attack: return .positionAttack
         }
     }
 }

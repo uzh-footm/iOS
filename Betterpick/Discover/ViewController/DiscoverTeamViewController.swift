@@ -61,7 +61,7 @@ class DiscoverTeamViewController: DiscoverChildBaseViewController<DiscoverTeamVi
     // MARK: - Private
     private func tableViewSetup() {
         tableView.dataSource = self
-        tableView.estimatedRowHeight = Size.Image.teamLogo + Size.Cell.narrowVerticalMargin * 2
+        tableView.estimatedRowHeight = Size.Image.teamLogo + Size.Cell.verticalMargin * 2
         tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.reuseIdentifier)
     }
 

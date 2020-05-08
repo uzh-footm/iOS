@@ -14,8 +14,10 @@ class PlayerPreviewTableViewCell: UITableViewCell, Reusable {
     static let reuseIdentifier = "PlayerPreviewTableViewCell"
 
     // MARK: Views
-    let playerPhotoImageView = UIImageView()
-    let playerNameLabel = UILabel(style: .cellTitle)
+    let playerPhotoImageView = RoundedImageView()
+    let playerNameLabel = UILabel(style: .cellPrimary)
+    let overallValueLabel = OverallValueLabel()
+    let playerDataStackView = PlayerPreviewDataStackView()
 
     // MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -30,7 +32,7 @@ class PlayerPreviewTableViewCell: UITableViewCell, Reusable {
     // MARK: Inherited
     func setup() {
         if #available(iOS 13, *) {} else {
-            contentView.layoutMargins = UIEdgeInsets(top: Size.Cell.narrowVerticalMargin, left: Size.Cell.extendedSideMargin, bottom: Size.Cell.narrowVerticalMargin, right: 0)
+            contentView.layoutMargins = UIEdgeInsets(top: Size.Cell.verticalMargin, left: Size.Cell.extendedSideMargin, bottom: Size.Cell.verticalMargin, right: 0)
         }
         accessoryType = .disclosureIndicator
         backgroundColor = .background
@@ -47,14 +49,14 @@ class PlayerPreviewTableViewCell: UITableViewCell, Reusable {
     private func layout() {
         contentView.add(subview: playerPhotoImageView)
         playerPhotoImageView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor).isActive = true
-        playerPhotoImageView.heightAnchor.constraint(equalToConstant: Size.Image.teamLogo).isActive = true
+        playerPhotoImageView.heightAnchor.constraint(equalToConstant: Size.Image.playerPhoto).isActive = true
         playerPhotoImageView.widthAnchor.constraint(equalTo: playerPhotoImageView.heightAnchor).isActive = true
         // To make automatic dimension row height on the tableview work correctly
         let imageTopConstraint: NSLayoutConstraint
         let imageBottomConstraint: NSLayoutConstraint
         if #available(iOS 13, *) {
-            imageTopConstraint = playerPhotoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Size.Cell.narrowVerticalMargin)
-            imageBottomConstraint = playerPhotoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Size.Cell.narrowVerticalMargin)
+            imageTopConstraint = playerPhotoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Size.Cell.verticalMargin)
+            imageBottomConstraint = playerPhotoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Size.Cell.verticalMargin)
         } else {
             imageTopConstraint = playerPhotoImageView.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor)
             imageBottomConstraint = playerPhotoImageView.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor)
@@ -63,15 +65,51 @@ class PlayerPreviewTableViewCell: UITableViewCell, Reusable {
         imageTopConstraint.isActive = true
         imageBottomConstraint.isActive = true
 
-        contentView.add(subview: playerNameLabel)
-        playerNameLabel.leadingAnchor.constraint(equalTo: playerPhotoImageView.trailingAnchor, constant: Size.Cell.extendedSideMargin/2).isActive = true
-        playerNameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        playerNameLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor).isActive = true
+        // OVR label
+        contentView.add(subview: overallValueLabel)
+        overallValueLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        overallValueLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor).isActive = true
+
+        // Label + Data container
+        let labelAndDataContainerView = UIView()
+        contentView.add(subview: labelAndDataContainerView)
+        labelAndDataContainerView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+        labelAndDataContainerView.leadingAnchor.constraint(equalTo: playerPhotoImageView.trailingAnchor, constant: Size.Cell.extendedSideMargin/2).isActive = true
+        labelAndDataContainerView.trailingAnchor.constraint(equalTo: overallValueLabel.leadingAnchor, constant: -Size.standardMargin).isActive = true
+
+        // Player Name label
+        labelAndDataContainerView.add(subview: playerNameLabel)
+        playerNameLabel.embedSides(in: labelAndDataContainerView)
+        playerNameLabel.topAnchor.constraint(equalTo: labelAndDataContainerView.topAnchor).isActive = true
+
+        // Player Data stack view
+        labelAndDataContainerView.add(subview: playerDataStackView)
+        playerDataStackView.embedSides(in: labelAndDataContainerView)
+        playerDataStackView.bottomAnchor.constraint(equalTo: labelAndDataContainerView.bottomAnchor).isActive = true
+
+        playerDataStackView.topAnchor.constraint(equalTo: playerNameLabel.bottomAnchor).isActive = true
     }
 
     // MARK: - Public
-    public func configure(from playerPreview: PlayerPreview) {
+    public func configure(from playerPreview: PlayerPreview, context: PlayerPreviewDisplayContext = []) {
         playerNameLabel.text = playerPreview.name
+        // StackView
+        var stackViewTextData = [String]()
+        if context.contains(.showsExactPosition) {
+            stackViewTextData.append(playerPreview.position.rawValue)
+        }
+        if context.contains(.showsClub) {
+            stackViewTextData.append(playerPreview.club)
+        }
+        if context.contains(.showsNationality) {
+            stackViewTextData.append(playerPreview.nation)
+        }
+        playerDataStackView.textData = stackViewTextData
+        // OVR
+        if context.contains(.showsOvr) {
+            overallValueLabel.ovr = playerPreview.ovr
+        }
+        // Image
         playerPhotoImageView.sd_setImage(with: playerPreview.photoURL, placeholderImage: #imageLiteral(resourceName: "baseline_settings_black_48pt"), options: [], completed: nil)
     }
 }

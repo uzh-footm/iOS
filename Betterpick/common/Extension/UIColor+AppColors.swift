@@ -29,8 +29,9 @@ extension UIColor {
     }
 
     // MARK: - Colors
-    public static var primary: UIColor = #colorLiteral(red: 0.3843137255, green: 0.7882352941, blue: 0.3529411765, alpha: 1)
-    public static var tabBarButtonDeselected: UIColor = #colorLiteral(red: 0.7843137255, green: 0.7843137255, blue: 0.7843137255, alpha: 1)
+    public static let primary: UIColor = #colorLiteral(red: 0.3843137255, green: 0.7882352941, blue: 0.3529411765, alpha: 1)
+    public static let tabBarButtonDeselected: UIColor = #colorLiteral(red: 0.7843137255, green: 0.7843137255, blue: 0.7843137255, alpha: 1)
+    public static let outlineGray: UIColor = UIColor(r: 140, g: 140, b: 141)
 
     // MARK: Backgrounds
     // Sub iOS 13.0 backwards compatible colors
@@ -62,7 +63,21 @@ extension UIColor {
     }()
 
     public static var customSecondaryLabel: UIColor = {
-        guard #available(iOS 13, *) else { return UIColor(r: 140, g: 140, b: 141) }
+        guard #available(iOS 13, *) else { return outlineGray }
         return .secondaryLabel
     }()
+
+    // MARK: Positions
+    public static let positionGoalkeeper: UIColor = #colorLiteral(red: 1, green: 0.6443301376, blue: 0, alpha: 1)
+    public static let positionDefence: UIColor = #colorLiteral(red: 0.9259597081, green: 0.9016723093, blue: 0.06182791736, alpha: 1)
+    public static let positionMiddle: UIColor = #colorLiteral(red: 0.2024282716, green: 0.7287436548, blue: 0.0695014862, alpha: 1)
+    public static let positionAttack: UIColor = #colorLiteral(red: 0.3410514721, green: 0.6519633679, blue: 1, alpha: 1)
+
+    // MARK: OVR
+    // 0 - worst, 5 - best
+    public static let ovr0: UIColor = #colorLiteral(red: 0.9215686275, green: 0.3019607843, blue: 0.3058823529, alpha: 1)
+    public static let ovr1: UIColor = #colorLiteral(red: 0.9411764706, green: 0.6549019608, blue: 0.2745098039, alpha: 1)
+    public static let ovr2: UIColor = #colorLiteral(red: 0.9099896113, green: 0.868210565, blue: 0.1895468792, alpha: 1)
+    public static let ovr3: UIColor = #colorLiteral(red: 0.5764705882, green: 0.6823529412, blue: 0.3411764706, alpha: 1)
+    public static let ovr4: UIColor = #colorLiteral(red: 0.4, green: 0.7921568627, blue: 0.2941176471, alpha: 1)
 }

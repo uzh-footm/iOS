@@ -17,8 +17,9 @@ extension TeamViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let header = tableView.dequeue(headerFooter: SectionHeaderView.self) else { return nil }
-        header.text = viewModel.titleForPosition(at: section)
+        guard let header = tableView.dequeue(headerFooter: PositionSectionHeaderView.self), let position = viewModel.position(at: section) else { return nil }
+        header.text = viewModel.titleFor(position: position)
+        header.positionColor = position.color
         return header
     }
 
@@ -42,7 +43,7 @@ extension TeamViewController: UITableViewDataSource {
         guard let player = viewModel.player(at: indexPath), let cell = tableView.dequeue(reusableCell: PlayerPreviewTableViewCell.self, for: indexPath) else {
             return UITableViewCell()
         }
-        cell.configure(from: player)
+        cell.configure(from: player, context: [.showsExactPosition, .showsNationality, .showsOvr])
         return cell
     }
 }

@@ -16,7 +16,7 @@ class TeamTableViewCell: UITableViewCell, Reusable {
 
     // MARK: Views
     let teamLogoImageView = UIImageView()
-    let teamNameLabel = UILabel(style: .cellTitle)
+    let teamNameLabel = UILabel(style: .cellPrimary)
 
     // MARK: - Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -32,7 +32,7 @@ class TeamTableViewCell: UITableViewCell, Reusable {
     // MARK: Inherited
     func setup() {
         if #available(iOS 13, *) {} else {
-            contentView.layoutMargins = UIEdgeInsets(top: Size.Cell.narrowVerticalMargin, left: Size.Cell.extendedSideMargin, bottom: Size.Cell.narrowVerticalMargin, right: 0)
+            contentView.layoutMargins = UIEdgeInsets(top: Size.Cell.tinyVerticalMargin, left: Size.Cell.extendedSideMargin, bottom: Size.Cell.tinyVerticalMargin, right: 0)
         }
         accessoryType = .disclosureIndicator
         backgroundColor = .background
@@ -55,8 +55,8 @@ class TeamTableViewCell: UITableViewCell, Reusable {
         let imageTopConstraint: NSLayoutConstraint
         let imageBottomConstraint: NSLayoutConstraint
         if #available(iOS 13, *) {
-            imageTopConstraint = teamLogoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Size.Cell.narrowVerticalMargin)
-            imageBottomConstraint = teamLogoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Size.Cell.narrowVerticalMargin)
+            imageTopConstraint = teamLogoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Size.Cell.tinyVerticalMargin)
+            imageBottomConstraint = teamLogoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Size.Cell.tinyVerticalMargin)
         } else {
             imageTopConstraint = teamLogoImageView.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor)
             imageBottomConstraint = teamLogoImageView.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor)

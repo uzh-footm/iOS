@@ -8,13 +8,23 @@
 
 import UIKit
 
-class SearchResultSectionHeaderView: SectionHeaderView {
+class SearchResultSectionHeaderView: CustomTableViewHeaderFooterView, Reusable {
 
     // MARK: - Properties
+    let label = UILabel(style: .sectionTitle)
     let resultsCountLabel = UILabel(style: .secondary)
 
+    // MARK: Reusable
+    static var reuseIdentifier: String = "SearchResultSectionHeaderView"
+
     // MARK: - Inherited
-    override func setup() {
+    override func setupSubviews() {
+        // Left side label
+        add(subview: label)
+        label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        label.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor).isActive = true
+
+        // Right side label
         add(subview: resultsCountLabel)
         resultsCountLabel.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor).isActive = true
         resultsCountLabel.firstBaselineAnchor.constraint(equalTo: label.firstBaselineAnchor).isActive = true
@@ -30,6 +40,12 @@ class SearchResultSectionHeaderView: SectionHeaderView {
     public var results: Int = 0 {
         didSet {
             resultsCountLabel.text = "\(results) results"
+        }
+    }
+
+    public var text: String = "" {
+        didSet {
+            label.text = text
         }
     }
 }

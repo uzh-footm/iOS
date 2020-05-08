@@ -8,18 +8,15 @@
 
 import UIKit
 
-class PlayerDetailViewController: UIViewController {
+class PlayerDetailViewController: VMViewController<PlayerDetailViewModel>, FetchingStatePresenting {
 
     // MARK: - Properties
-    let viewModel: PlayerDetailViewModel
+    // MARK: UI
 
-    // MARK: - Initialization
-    init(viewModel: PlayerDetailViewModel) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) { fatalError() }
+    // MARK: FetchingStatePresenting
+    typealias FetchingStateView = FetchingView
+    var fetchingStateSuperview: UIView { return view }
+    var fetchingStateView: FetchingView?
 
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -34,6 +31,13 @@ class PlayerDetailViewController: UIViewController {
 
     // MARK: - Private
     private func updateViewStateAppearance() {
-        title = viewModel.playerPreview.name
+        switch viewModel.state {
+        case .fetching:
+            addFetchingStateView()
+        case .displaying(let player):
+            removeFetchingStateView()
+        case .error:
+            addFetchingStateView()
+        }
     }
 }

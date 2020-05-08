@@ -11,9 +11,14 @@
 		87D64E99B1BC0694840064E5 /* Pods_Betterpick_BetterpickUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2CFEF3D628B84ED40B0938 /* Pods_Betterpick_BetterpickUITests.framework */; };
 		890387D52461C46800533CDA /* DiscoverChildBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890387D42461C46800533CDA /* DiscoverChildBaseViewController.swift */; };
 		8903C03824644226009B152B /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF12E245C3B560047EF8D /* ReusableCell.swift */; };
-		8903C03A24645813009B152B /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C03924645813009B152B /* SectionHeaderView.swift */; };
 		8903C03E24646539009B152B /* TeamViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C03B24646517009B152B /* TeamViewController+TableView.swift */; };
 		8903C04024646B2D009B152B /* SearchResultSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C03F24646B2D009B152B /* SearchResultSectionHeaderView.swift */; };
+		8903C042246496EB009B152B /* CustomTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C041246496EB009B152B /* CustomTableViewHeaderFooterView.swift */; };
+		8903C04324649B7D009B152B /* PositionSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C03924645813009B152B /* PositionSectionHeaderView.swift */; };
+		8903C0452464BE2E009B152B /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C0442464BE2E009B152B /* RoundedImageView.swift */; };
+		8903C0472464CFE9009B152B /* OverallValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C0462464CFE9009B152B /* OverallValueLabel.swift */; };
+		8903C0492465F3F7009B152B /* PlayerPreviewDisplayContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C0482465F3F7009B152B /* PlayerPreviewDisplayContext.swift */; };
+		8903C04B2465F48D009B152B /* PlayerPreviewDataStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C04A2465F48D009B152B /* PlayerPreviewDataStackView.swift */; };
 		892096372444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */; };
 		892096382444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */; };
 		892096392444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */; };
@@ -100,7 +105,6 @@
 		899BF15F2458548700F68E30 /* NavigationBarProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF15E2458548700F68E30 /* NavigationBarProviding.swift */; };
 		899BF161245854C700F68E30 /* NavigationBarDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF160245854C700F68E30 /* NavigationBarDisplaying.swift */; };
 		899BF1642458691100F68E30 /* FetchingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1632458691100F68E30 /* FetchingViewModel.swift */; };
-		899BF1662458692B00F68E30 /* String+Capitalize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1652458692B00F68E30 /* String+Capitalize.swift */; };
 		899BF16824586BA900F68E30 /* SimpleFetchingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF16724586BA900F68E30 /* SimpleFetchingViewModel.swift */; };
 		899BF16A24586D5C00F68E30 /* GetPlayersResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF16924586D5C00F68E30 /* GetPlayersResponseBody.swift */; };
 		899BF16C24587D3300F68E30 /* Encodable+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF16B24587D3300F68E30 /* Encodable+Dictionary.swift */; };
@@ -190,9 +194,14 @@
 		43648933DE390A6374A456C6 /* Pods_Betterpick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73C23E61CF56173C0675FB28 /* Pods-Betterpick-BetterpickUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickUITests.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		890387D42461C46800533CDA /* DiscoverChildBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverChildBaseViewController.swift; sourceTree = "<group>"; };
-		8903C03924645813009B152B /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SectionHeaderView.swift; path = Betterpick/Common/View/SectionHeaderView.swift; sourceTree = SOURCE_ROOT; };
+		8903C03924645813009B152B /* PositionSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PositionSectionHeaderView.swift; path = Betterpick/Team/View/PositionSectionHeaderView.swift; sourceTree = SOURCE_ROOT; };
 		8903C03B24646517009B152B /* TeamViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamViewController+TableView.swift"; sourceTree = "<group>"; };
 		8903C03F24646B2D009B152B /* SearchResultSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultSectionHeaderView.swift; sourceTree = "<group>"; };
+		8903C041246496EB009B152B /* CustomTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomTableViewHeaderFooterView.swift; path = Betterpick/Common/View/CustomTableViewHeaderFooterView.swift; sourceTree = SOURCE_ROOT; };
+		8903C0442464BE2E009B152B /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoundedImageView.swift; path = Betterpick/Common/View/RoundedImageView.swift; sourceTree = SOURCE_ROOT; };
+		8903C0462464CFE9009B152B /* OverallValueLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallValueLabel.swift; sourceTree = "<group>"; };
+		8903C0482465F3F7009B152B /* PlayerPreviewDisplayContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPreviewDisplayContext.swift; sourceTree = "<group>"; };
+		8903C04A2465F48D009B152B /* PlayerPreviewDataStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPreviewDataStackView.swift; sourceTree = "<group>"; };
 		892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+childAddRemove.swift"; sourceTree = "<group>"; };
 		8920964E2444B92400DF93BB /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		892096572444BED700DF93BB /* TabBarViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -270,7 +279,6 @@
 		899BF15E2458548700F68E30 /* NavigationBarProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarProviding.swift; sourceTree = "<group>"; };
 		899BF160245854C700F68E30 /* NavigationBarDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarDisplaying.swift; sourceTree = "<group>"; };
 		899BF1632458691100F68E30 /* FetchingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FetchingViewModel.swift; path = Betterpick/Common/ViewModel/FetchingViewModel.swift; sourceTree = SOURCE_ROOT; };
-		899BF1652458692B00F68E30 /* String+Capitalize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Capitalize.swift"; path = "Betterpick/Common/Extension/String+Capitalize.swift"; sourceTree = SOURCE_ROOT; };
 		899BF16724586BA900F68E30 /* SimpleFetchingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SimpleFetchingViewModel.swift; path = Betterpick/Common/ViewModel/SimpleFetchingViewModel.swift; sourceTree = SOURCE_ROOT; };
 		899BF16924586D5C00F68E30 /* GetPlayersResponseBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetPlayersResponseBody.swift; path = Betterpick/Common/Networking/ResponseBody/GetPlayersResponseBody.swift; sourceTree = SOURCE_ROOT; };
 		899BF16B24587D3300F68E30 /* Encodable+Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Encodable+Dictionary.swift"; path = "Betterpick/Common/Extension/Encodable+Dictionary.swift"; sourceTree = SOURCE_ROOT; };
@@ -426,7 +434,6 @@
 				892D232F244D431500F0F263 /* ChildCoordinator+SectioningCoordinator.swift */,
 				89F0EBEB24509395000DA92B /* UITableView+Util.swift */,
 				899BF12D2454B49600F68E30 /* UILabel+Style.swift */,
-				899BF1652458692B00F68E30 /* String+Capitalize.swift */,
 				899BF16B24587D3300F68E30 /* Encodable+Dictionary.swift */,
 				89EFF140245CEF9B0047EF8D /* CaseIterable+Util.swift */,
 				89EFF142245CEFB10047EF8D /* Collection+NilInsertions.swift */,
@@ -577,7 +584,8 @@
 				899BF12B245469DB00F68E30 /* LargeNavigationBar.swift */,
 				89EFF128245C36F50047EF8D /* ToolbarPickerView.swift */,
 				89EFF12C245C3B1A0047EF8D /* PickerResponderTableViewCell.swift */,
-				8903C03924645813009B152B /* SectionHeaderView.swift */,
+				8903C041246496EB009B152B /* CustomTableViewHeaderFooterView.swift */,
+				8903C0442464BE2E009B152B /* RoundedImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -782,6 +790,7 @@
 				899BF15124574F5200F68E30 /* Player.swift */,
 				899BF16D245889C000F68E30 /* ExactPlayerPosition.swift */,
 				899BF16F245889CB00F68E30 /* PlayerPosition.swift */,
+				8903C0462464CFE9009B152B /* OverallValueLabel.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -817,6 +826,7 @@
 			isa = PBXGroup;
 			children = (
 				899BF13F24550EE100F68E30 /* Team.swift */,
+				8903C0482465F3F7009B152B /* PlayerPreviewDisplayContext.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -824,7 +834,9 @@
 		899BF14524573F6900F68E30 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8903C03924645813009B152B /* PositionSectionHeaderView.swift */,
 				899BF14624573F8600F68E30 /* PlayerPreviewTableViewCell.swift */,
+				8903C04A2465F48D009B152B /* PlayerPreviewDataStackView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1285,11 +1297,13 @@
 				892B7BF0245F4AE7006FD910 /* RangeSliderTableViewCell.swift in Sources */,
 				89F0EC2B24537699000DA92B /* HTTPParameters.swift in Sources */,
 				89EFF123245B4C660047EF8D /* PlayerFilterViewModel.swift in Sources */,
+				8903C0472464CFE9009B152B /* OverallValueLabel.swift in Sources */,
 				89F0EC3B2453A9A8000DA92B /* BetterpickAPIManagerMock.swift in Sources */,
 				899BF15A2457916800F68E30 /* SearchViewController+TableView.swift in Sources */,
 				89EFF12B245C375E0047EF8D /* ToolbarPickerViewDelegate.swift in Sources */,
 				89EFF134245C46380047EF8D /* PlayerFilterSection.swift in Sources */,
 				89955BE9244BE1CB00B8B59A /* ChildCoordinator.swift in Sources */,
+				8903C042246496EB009B152B /* CustomTableViewHeaderFooterView.swift in Sources */,
 				89EFF11B245B298C0047EF8D /* DiscoverPlayerViewModel.swift in Sources */,
 				892D232C244D3D5500F0F263 /* DiscoverPlayerCoordinator.swift in Sources */,
 				899BF1352455085F00F68E30 /* DiscoverTeamViewController+TableViewDataSource.swift in Sources */,
@@ -1321,6 +1335,7 @@
 				8975EE68244BB5A70052696C /* TabBarGestureHandler.swift in Sources */,
 				89EFF13A245C9A850047EF8D /* PositionPickerHandler.swift in Sources */,
 				892D22FE244C704D00F0F263 /* LargeTitleNavigationController.swift in Sources */,
+				8903C0492465F3F7009B152B /* PlayerPreviewDisplayContext.swift in Sources */,
 				899BF16A24586D5C00F68E30 /* GetPlayersResponseBody.swift in Sources */,
 				899BF13B245508D200F68E30 /* DiscoverTeamViewController+TappableResponderLabelDelegate.swift in Sources */,
 				899BF15D2457AC4D00F68E30 /* DiscoverTeamSeparatorAnimator.swift in Sources */,
@@ -1328,6 +1343,8 @@
 				89EFF1192459CED70047EF8D /* LeagueAndNationalityData.swift in Sources */,
 				899BF1582457913600F68E30 /* SearchViewModel.swift in Sources */,
 				89F0EBEA24507A61000DA92B /* League.swift in Sources */,
+				8903C04B2465F48D009B152B /* PlayerPreviewDataStackView.swift in Sources */,
+				8903C0452464BE2E009B152B /* RoundedImageView.swift in Sources */,
 				899BF1372455089A00F68E30 /* DiscoverTeamViewController+PickerView.swift in Sources */,
 				89F0EC2924537349000DA92B /* HTTPHeader.swift in Sources */,
 				899BF1302454BC3B00F68E30 /* RootViewController.swift in Sources */,
@@ -1354,6 +1371,7 @@
 				89EFF13C245C9B280047EF8D /* PlayerFilterViewController+TableView.swift in Sources */,
 				892D22F9244C6A2E00F0F263 /* Reselectable.swift in Sources */,
 				89EFF125245B5EAD0047EF8D /* PlayerFilterNavigationController.swift in Sources */,
+				8903C04324649B7D009B152B /* PositionSectionHeaderView.swift in Sources */,
 				899BF16824586BA900F68E30 /* SimpleFetchingViewModel.swift in Sources */,
 				899BF11A2453BB2200F68E30 /* FetchingView.swift in Sources */,
 				892D232E244D3DB000F0F263 /* DiscoverPlayerViewController.swift in Sources */,
@@ -1382,14 +1400,12 @@
 				89F0EBEF245098E9000DA92B /* TeamTableViewCell.swift in Sources */,
 				89EFF136245C9A130047EF8D /* PickerHandler.swift in Sources */,
 				892D2309244CE2A300F0F263 /* SearchCoordinator.swift in Sources */,
-				899BF1662458692B00F68E30 /* String+Capitalize.swift in Sources */,
 				89EFF1132459AD5A0047EF8D /* VMViewController.swift in Sources */,
 				899BF1232454523B00F68E30 /* PlayerSelecting.swift in Sources */,
 				892D2304244C76CA00F0F263 /* DiscoverSection.swift in Sources */,
 				892D2330244D431500F0F263 /* ChildCoordinator+SectioningCoordinator.swift in Sources */,
 				8920965D2444C1C600DF93BB /* Tab.swift in Sources */,
 				89EFF121245B4C190047EF8D /* PlayerFilterCoordinator.swift in Sources */,
-				8903C03A24645813009B152B /* SectionHeaderView.swift in Sources */,
 				899BF1152453B8A700F68E30 /* EmptyStatePresenting.swift in Sources */,
 				89B544A4244BE2ED000C1C4B /* DiscoverCoordinator.swift in Sources */,
 				899BF1422455146200F68E30 /* GetClubResponseBody.swift in Sources */,

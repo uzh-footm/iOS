@@ -39,8 +39,8 @@ class DiscoverPlayerViewController: DiscoverChildBaseViewController<DiscoverPlay
     // MARK: - Private
     private func setupTableView() {
         tableView.dataSource = self
-        tableView.estimatedRowHeight = Size.Image.teamLogo + Size.Cell.narrowVerticalMargin * 2
-        tableView.register(PlayerPreviewTableViewCell.self, forCellReuseIdentifier: PlayerPreviewTableViewCell.reuseIdentifier)
+        tableView.estimatedRowHeight = Size.Image.teamLogo + Size.Cell.verticalMargin * 2
+        tableView.register(reusableCell: PlayerPreviewTableViewCell.self)
     }
 
     final override func setup(discoverHeaderView headerView: UIView) {
@@ -52,7 +52,7 @@ class DiscoverPlayerViewController: DiscoverChildBaseViewController<DiscoverPlay
         // Button
         view.add(subview: playerFilterActionButton)
         playerFilterActionButton.centerYAnchor.constraint(equalTo: playerFilterDataInformationLabel.centerYAnchor).isActive = true
-        playerFilterActionButton.heightAnchor.constraint(equalToConstant: Size.iconSize).isActive = true
+        playerFilterActionButton.heightAnchor.constraint(equalToConstant: Size.Image.iconSize).isActive = true
         playerFilterActionButton.widthAnchor.constraint(equalTo: playerFilterActionButton.heightAnchor).isActive = true
         playerFilterActionButton.trailingAnchor.constraint(equalTo: headerView.layoutMarginsGuide.trailingAnchor).isActive = true
 
@@ -95,10 +95,17 @@ extension DiscoverPlayerViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let player = viewModel.player(at: indexPath.row), let cell = tableView.dequeueReusableCell(withIdentifier: PlayerPreviewTableViewCell.reuseIdentifier, for: indexPath) as? PlayerPreviewTableViewCell else {
+        guard let player = viewModel.player(at: indexPath.row), let cell = tableView.dequeue(reusableCell: PlayerPreviewTableViewCell.self, for: indexPath) else {
             return UITableViewCell()
         }
-        cell.configure(from: player)
+        var context: PlayerPreviewDisplayContext = [.showsOvr, .showsClub]
+        if viewModel.playerFilterData.exactPosition == nil {
+            context.insert(.showsExactPosition)
+        }
+        if viewModel.playerFilterData.nationality == nil {
+            context.insert(.showsNationality)
+        }
+        cell.configure(from: player, context: context)
         return cell
     }
 }

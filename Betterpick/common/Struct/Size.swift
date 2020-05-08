@@ -15,28 +15,31 @@ struct Size {
     static let headerHeight: CGFloat = 50
     static let componentWidthRelativeToScreenWidth: CGFloat = 0.8
 
-    static let smallerIconSize: CGFloat = 20
-    static let iconSize: CGFloat = 24
     static let standardMargin: CGFloat = 16
     static let extendedMargin: CGFloat = 18
     static let doubleStandardMargin: CGFloat = 2 * standardMargin
 
     static let toolbarHeight: CGFloat = 35
 
+    struct Label {
+        static let ovrValueWidth: CGFloat = 30
+        static let ovrValueHeight: CGFloat = 18
+    }
+
     struct Image {
+        static let smallerIconSize: CGFloat = 20
+        static let iconSize: CGFloat = 24
         static let tabBarIcon: CGFloat = 30
-        static let indicator: CGFloat = 16
         static let teamLogo: CGFloat = 48
         static let bigTeamLogo: CGFloat = 80
+        static let playerPhoto: CGFloat = 40
     }
 
     struct Cell {
         static let height: CGFloat = 48
-        static let narrowVerticalMargin: CGFloat = 4
-        static let narrowSideMargin: CGFloat = 12
-        static let sideMargin: CGFloat = 16
+        static let tinyVerticalMargin: CGFloat = 2
+        static let verticalMargin: CGFloat = 6
         static let extendedSideMargin: CGFloat = 18
-        static let wideSideMargin: CGFloat = 40
     }
 
     struct TableView {

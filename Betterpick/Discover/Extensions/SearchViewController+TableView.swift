@@ -45,7 +45,7 @@ extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = viewModel.previews(at: indexPath)
         if let player = model as? PlayerPreview, let cell = tableView.dequeue(reusableCell: PlayerPreviewTableViewCell.self, for: indexPath) {
-            cell.configure(from: player)
+            cell.configure(from: player, context: [.showsClub])
             return cell
         }
 

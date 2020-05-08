@@ -44,9 +44,17 @@ class TeamViewModel: FetchingViewModel<GetClubResponseBody, Team> {
         return getPlayersAt(sectionIndex: sectionIndex)?.count ?? 0
     }
 
-    public func titleForPosition(at sectionIndex: Int) -> String {
-        guard let squad = getSquad() else { return "" }
-        return squad[sectionIndex].position.rawValue.uppercased()
+    public func position(at sectionIndex: Int) -> PlayerPosition? {
+        guard let squad = getSquad() else { return nil }
+        return squad[sectionIndex].position
+    }
+
+    public func titleFor(position: PlayerPosition) -> String {
+        var positionText = position.positionText
+        if let squad = getSquad(), let players = squad.first(where: { $0.position == position })?.players, players.count > 1 {
+            positionText += "s"
+        }
+        return positionText.uppercased()
     }
 
     public func player(at indexPath: IndexPath) -> PlayerPreview? {

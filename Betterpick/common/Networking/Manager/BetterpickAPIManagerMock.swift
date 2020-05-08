@@ -19,29 +19,36 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
         League(name: "La Liga", leagueId: "5")
     ]
 
+    let nationalities = [
+        Nationality(name: "Germany", logoURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg")!),
+        Nationality(name: "Slovakia", logoURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/1920px-Flag_of_Slovakia.svg.png")!),
+        Nationality(name: "Greece", logoURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg")!)
+    ]
+
+    let teamTuples = [
+        ("FC Augsburg", "https://www.bundesliga.com/assets/clublogo/fca.png"),
+        ("Bayer Leverkusen", "https://www.bundesliga.com/assets/clublogo/b04.png"),
+        ("FC Bayern München", "https://www.bundesliga.com/assets/clublogo/fcb.png"),
+        ("Borussia Dortmund", "https://www.bundesliga.com/assets/clublogo/bvb.png"),
+        ("Borussia Mönchengladbach", "https://www.bundesliga.com/assets/clublogo/bmg.png"),
+        ("Eintracht Frankfurt", "https://www.bundesliga.com/assets/clublogo/sge.png"),
+        ("Fortuna Düsseldorf", "https://www.bundesliga.com/assets/clublogo/f95.png"),
+        ("Hertha BSC", "https://www.bundesliga.com/assets/clublogo/bsc.png"),
+        ("TSG Hoffenheim", "https://www.bundesliga.com/assets/clublogo/tsg.png"),
+        ("1. FC Köln", "https://www.bundesliga.com/assets/clublogo/koe.png"),
+        ("Mainz 05", "https://www.bundesliga.com/assets/clublogo/m05.png"),
+        ("SC Paderborn", "https://www.bundesliga.com/assets/clublogo/scp.png"),
+        ("RB Leipzig", "https://www.bundesliga.com/assets/clublogo/rbl.png"),
+        ("SC Freiburg", "https://www.bundesliga.com/assets/clublogo/scf.png"),
+        ("Schalke 04", "https://www.bundesliga.com/assets/clublogo/s04.png"),
+        ("Union Berlin", "https://www.bundesliga.com/assets/clublogo/fcu.png"),
+        ("Werder Bremen", "https://www.bundesliga.com/assets/clublogo/svw.png"),
+        ("VfL Wolfsburg", "https://www.bundesliga.com/assets/clublogo/wob.png")
+    ]
+
     let teams: [TeamPreview]
 
     override init(apiHandler: BetterpickAPIHandler = URLSession.shared) {
-        let teamTuples = [
-            ("FC Augsburg", "https://www.bundesliga.com/assets/clublogo/fca.png"),
-            ("Bayer Leverkusen", "https://www.bundesliga.com/assets/clublogo/b04.png"),
-            ("FC Bayern München", "https://www.bundesliga.com/assets/clublogo/fcb.png"),
-            ("Borussia Dortmund", "https://www.bundesliga.com/assets/clublogo/bvb.png"),
-            ("Borussia Mönchengladbach", "https://www.bundesliga.com/assets/clublogo/bmg.png"),
-            ("Eintracht Frankfurt", "https://www.bundesliga.com/assets/clublogo/sge.png"),
-            ("Fortuna Düsseldorf", "https://www.bundesliga.com/assets/clublogo/f95.png"),
-            ("Hertha BSC", "https://www.bundesliga.com/assets/clublogo/bsc.png"),
-            ("TSG Hoffenheim", "https://www.bundesliga.com/assets/clublogo/tsg.png"),
-            ("1. FC Köln", "https://www.bundesliga.com/assets/clublogo/koe.png"),
-            ("Mainz 05", "https://www.bundesliga.com/assets/clublogo/m05.png"),
-            ("SC Paderborn", "https://www.bundesliga.com/assets/clublogo/scp.png"),
-            ("RB Leipzig", "https://www.bundesliga.com/assets/clublogo/rbl.png"),
-            ("SC Freiburg", "https://www.bundesliga.com/assets/clublogo/scf.png"),
-            ("Schalke 04", "https://www.bundesliga.com/assets/clublogo/s04.png"),
-            ("Union Berlin", "https://www.bundesliga.com/assets/clublogo/fcu.png"),
-            ("Werder Bremen", "https://www.bundesliga.com/assets/clublogo/svw.png"),
-            ("VfL Wolfsburg", "https://www.bundesliga.com/assets/clublogo/wob.png")
-        ]
         var teams = [TeamPreview]()
         for (index, (name, photoUrlString)) in teamTuples.enumerated() {
             let team = TeamPreview(teamId: String(index), name: name, logoURL: URL(string: photoUrlString)!)
@@ -65,9 +72,10 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
             "https://cdn.sofifa.com/players/239/085/20_120.png"
         ]
         var playerPreviews = [PlayerPreview]()
+        let ovrBase = [60, 70, 80].randomElement()!
         for index in 0..<Int.random(in: range) {
             let randomPosition = ExactPlayerPosition.allCases.randomElement()!
-            let preview = PlayerPreview(playerId: String(index), name: "\(randomString(length: Int.random(in: 3..<12))) \(randomString(length: Int.random(in: 3..<12)))", photoURL: URL(string: photos.shuffled().first!)!, squadNumber: Int.random(in: 1..<40), position: randomPosition, nation: randomString(length: 10))
+            let preview = PlayerPreview(playerId: String(index), name: "\(randomString(length: Int.random(in: 3..<12))) \(randomString(length: Int.random(in: 3..<12)))", photoURL: URL(string: photos.shuffled().first!)!, squadNumber: Int.random(in: 1..<40), position: randomPosition, nation: nationalities.randomElement()!.name, ovr: Int.random(in: ovrBase...ovrBase+Int.random(in: 0...14)), club: teamTuples.randomElement()!.0)
             playerPreviews.append(preview)
         }
         return playerPreviews
@@ -76,23 +84,18 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
     // MARK: - Inherited
     // MARK: GET /leagues
     override func leagues(completion: @escaping BetterpickAPIManager.Callback<GetLeaguesResponseBody>) {
-        returnSuccessAfter(duration: 1, completion: completion, response: GetLeaguesResponseBody(leagues: leagues))
+        returnSuccessAfter(duration: 0.2, completion: completion, response: GetLeaguesResponseBody(leagues: leagues))
     }
 
     // MARK: GET /nationalities
     override func nationalities(completion: @escaping BetterpickAPIManager.Callback<GetNationalitiesBody>) {
-        let nationalities = [
-            Nationality(name: "Germany", logoURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg")!),
-            Nationality(name: "Slovakia", logoURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flag_of_Slovakia.svg/1920px-Flag_of_Slovakia.svg.png")!),
-            Nationality(name: "Greece", logoURL: URL(string: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Greece.svg")!)
-        ]
         returnSuccessAfter(completion: completion, response: GetNationalitiesBody(nationalities: nationalities))
     }
 
     // MARK: GET /leagues/{leagueID}
     override func league(leagueID: String, completion: @escaping BetterpickAPIManager.Callback<GetLeagueResponseBody>) {
 
-        returnSuccessAfter(duration: 0.5, completion: completion, response: GetLeagueResponseBody(teams: teams))
+        returnSuccessAfter(duration: 0.3, completion: completion, response: GetLeagueResponseBody(teams: teams))
     }
 
     // Generating Random String
@@ -103,7 +106,7 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
 
     // MARK: GET /players/clubs/{clubID}
     override func club(clubID: String, completion: @escaping Callback<GetClubResponseBody>) {
-        returnSuccessAfter(duration: 0.6, completion: completion, response: GetClubResponseBody(players: getPlayers()))
+        returnSuccessAfter(duration: 0.4, completion: completion, response: GetClubResponseBody(players: getPlayers()))
     }
 
     // MARK: GET /players/{playerID}
@@ -117,11 +120,14 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
         let searchResultPlayers = getPlayers(range: 0..<4)
         let searchResultClubs = teams.shuffled().dropLast(Int.random(in: 14...18))
         let searchResult = GetSearchResponseBody(players: searchResultPlayers, clubs: Array(searchResultClubs))
-        returnSuccessAfter(duration: 0.4, completion: completion, response: searchResult)
+        returnSuccessAfter(duration: 0.25, completion: completion, response: searchResult)
     }
 
     override func players(filterData: PlayerFilterData, completion: @escaping BetterpickAPIManager.Callback<GetPlayersResponseBody>) {
-        let result = GetPlayersResponseBody(players: getPlayers())
+        var players = getPlayers()
+        let sortFn: ((Int, Int) -> Bool) = (filterData.sortOrder == .asc) ? (<) : (>)
+        players.sort { sortFn($0.ovr, $1.ovr) }
+        let result = GetPlayersResponseBody(players: players)
         returnSuccessAfter(completion: completion, response: result)
     }
 }
