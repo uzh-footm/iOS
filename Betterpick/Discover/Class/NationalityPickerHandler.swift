@@ -22,6 +22,7 @@ class NationalityPickerHandler: PickerHandler<PlayerFilterViewModel> {
 
     // MARK: - UIPickerViewDelegate
     override func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return viewModel?.nationalities[row].name
+        guard let viewModel = viewModel else { return nil }
+        return viewModel.nationalities[row]?.name ?? "Any"
     }
 }

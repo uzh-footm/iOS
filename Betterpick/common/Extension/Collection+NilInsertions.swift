@@ -11,7 +11,7 @@ import Foundation
 extension Collection {
 
     /// Changes the type of `Element` to `Optional(Element)` and inserts a nil value at the head of the collection
-    static func insertNilToCollection<T: Collection>(_ array: T) -> [T.Element?] where T.Element: CaseIterable {
+    static func insertNilToCollection<T: Collection>(_ array: T) -> [T.Element?] {
         var positions = array.map { Optional($0) }
         positions.insert(nil, at: 0)
         return positions

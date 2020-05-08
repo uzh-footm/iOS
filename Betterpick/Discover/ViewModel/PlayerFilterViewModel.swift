@@ -13,7 +13,7 @@ class PlayerFilterViewModel {
     // MARK: - Properties
     // MARK: Models
     var playerFilterData: PlayerFilterData
-    let nationalities: [Nationality]
+    let nationalities: [Nationality?]
     let positionComponentData = PositionComponentData()
 
     // MARK: Actions
@@ -22,7 +22,7 @@ class PlayerFilterViewModel {
     // MARK: - Initialization
     init(playerFilterData: PlayerFilterData, nationalities: [Nationality]) {
         self.playerFilterData = playerFilterData
-        self.nationalities = nationalities
+        self.nationalities = [Nationality].insertNilToCollection(nationalities)
     }
 
     // MARK: - Public

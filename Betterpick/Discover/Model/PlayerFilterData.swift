@@ -47,16 +47,16 @@ struct PlayerFilterData: Encodable, Equatable {
         if lower == upper {
             return "\(lower)"
         } else {
-            let lowerText: String = lower == PlayerFilterData.minimumOvr ? PlayerFilterData.ovrDefaultText : "\(lower)"
-            let upperText: String = upper == PlayerFilterData.maximumOvr ? PlayerFilterData.ovrDefaultText : "\(upper)"
-            guard lowerText != upperText else { return PlayerFilterData.ovrDefaultText }
+            let lowerText: String = lower == PlayerFilterData.minimumOvr ? PlayerFilterData.defaultAnyValueText : "\(lower)"
+            let upperText: String = upper == PlayerFilterData.maximumOvr ? PlayerFilterData.defaultAnyValueText : "\(upper)"
+            guard lowerText != upperText else { return PlayerFilterData.defaultAnyValueText }
             return "\(lowerText) - \(upperText)"
         }
     }
 
     static var minimumOvr: Int = 40
     static var maximumOvr: Int = 100
-    static let ovrDefaultText = "Any"
+    static let defaultAnyValueText = "Any"
 }
 
 // MARK: - CustomStringConvertible
@@ -75,7 +75,7 @@ extension PlayerFilterData: CustomStringConvertible {
         }
 
         var ovrText = ""
-        if ovrRangeText != PlayerFilterData.ovrDefaultText {
+        if ovrRangeText != PlayerFilterData.defaultAnyValueText {
             ovrText = " (\(ovrRangeText))"
         }
         return "Showing \(sortOrder.bestOrWorst) \(playersText)\(nationOrDot)\(ovrText)"
