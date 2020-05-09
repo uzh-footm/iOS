@@ -45,6 +45,9 @@ class DiscoverChildBaseViewController<VM>: VMViewController<VM>, UITableViewDele
     var fetchingStateView: FetchingView?
     var fetchingStateSuperview: UIView { return tableView }
 
+    // MARK: Cell Heights
+    private var cellHeights: [IndexPath: CGFloat?] = [:]
+
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +81,17 @@ class DiscoverChildBaseViewController<VM>: VMViewController<VM>, UITableViewDele
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // Animate the separator if needed
         separatorAnimator.handleScrollViewDidScroll(scrollView)
+    }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+         cellHeights[indexPath] = cell.frame.height
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if let height = cellHeights[indexPath] {
+            return height ?? UITableView.automaticDimension
+        }
+        return UITableView.automaticDimension
     }
 
     // These are required to be placed in this parent class because of this bug:

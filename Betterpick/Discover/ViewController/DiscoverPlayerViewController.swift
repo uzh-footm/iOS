@@ -44,7 +44,6 @@ class DiscoverPlayerViewController: DiscoverChildBaseViewController<DiscoverPlay
     // MARK: - Private
     private func setupTableView() {
         tableView.dataSource = self
-        tableView.estimatedRowHeight = Size.Image.teamLogo + Size.Cell.verticalMargin * 2
         tableView.register(reusableCell: PlayerPreviewTableViewCell.self)
     }
 
@@ -70,8 +69,9 @@ class DiscoverPlayerViewController: DiscoverChildBaseViewController<DiscoverPlay
         case .fetching:
             addFetchingStateView()
         case .displaying:
-            removeFetchingStateView()
+            tableView.setContentOffset(.zero, animated: false)
             tableView.reloadData()
+            removeFetchingStateView()
         default:
             addFetchingStateView()
         }

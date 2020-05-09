@@ -61,8 +61,7 @@ class DiscoverTeamViewController: DiscoverChildBaseViewController<DiscoverTeamVi
     // MARK: - Private
     private func tableViewSetup() {
         tableView.dataSource = self
-        tableView.estimatedRowHeight = Size.Image.teamLogo + Size.Cell.verticalMargin * 2
-        tableView.register(TeamTableViewCell.self, forCellReuseIdentifier: TeamTableViewCell.reuseIdentifier)
+        tableView.register(reusableCell: TeamTableViewCell.self)
     }
 
     final override func setup(discoverHeaderView headerView: UIView) {
@@ -96,10 +95,9 @@ class DiscoverTeamViewController: DiscoverChildBaseViewController<DiscoverTeamVi
             }
             addFetchingStateView()
         case .displaying:
-            removeFetchingStateView()
-            tableView.reloadData()
-            view.layoutIfNeeded()
             tableView.setContentOffset(.zero, animated: false)
+            tableView.reloadData()
+            removeFetchingStateView()
         case .error:
             addFetchingStateView()
         }
