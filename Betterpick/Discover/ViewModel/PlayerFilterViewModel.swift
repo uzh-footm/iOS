@@ -121,7 +121,7 @@ class PlayerFilterViewModel {
         let diff = abs(maxOvr - minOvr)
         let lowerOvr = minOvr + Int(lower * Double(diff))
         let upperOvr = minOvr + Int(upper * Double(diff))
-        playerFilterData.ovrGreatherThanOrEqual = lowerOvr
+        playerFilterData.ovrGreaterThanOrEqual = lowerOvr
         playerFilterData.ovrLessThanOrEqual = upperOvr
         onOvrRangeUpdate?()
     }

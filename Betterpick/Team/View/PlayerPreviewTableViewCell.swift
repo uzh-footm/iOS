@@ -106,6 +106,7 @@ class PlayerPreviewTableViewCell: UITableViewCell, Reusable {
         }
         playerDataStackView.textData = stackViewTextData
         // OVR
+        overallValueLabel.isHidden = !context.contains(.showsOvr)
         if context.contains(.showsOvr) {
             overallValueLabel.ovr = playerPreview.ovr
         }

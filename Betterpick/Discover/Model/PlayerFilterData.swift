@@ -38,11 +38,11 @@ struct PlayerFilterData: Encodable, Equatable {
     /// depends on position
     var exactPosition: ExactPlayerPosition?
     // MARK: OVR
-    var ovrGreatherThanOrEqual: Int = PlayerFilterData.minimumOvr
+    var ovrGreaterThanOrEqual: Int = PlayerFilterData.minimumOvr
     var ovrLessThanOrEqual: Int = PlayerFilterData.maximumOvr
 
     var ovrRangeText: String {
-        let lower = ovrGreatherThanOrEqual
+        let lower = ovrGreaterThanOrEqual
         let upper = ovrLessThanOrEqual
         if lower == upper {
             return "\(lower)"
@@ -76,7 +76,7 @@ extension PlayerFilterData: CustomStringConvertible {
 
         var ovrText = ""
         if ovrRangeText != PlayerFilterData.defaultAnyValueText {
-            ovrText = " (\(ovrRangeText))"
+            ovrText = " (\(ovrRangeText) OVR)"
         }
         return "Showing \(sortOrder.bestOrWorst) \(playersText)\(nationOrDot)\(ovrText)"
     }

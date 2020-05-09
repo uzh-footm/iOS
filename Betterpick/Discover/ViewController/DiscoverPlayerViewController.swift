@@ -103,12 +103,17 @@ extension DiscoverPlayerViewController: UITableViewDataSource {
         guard let player = viewModel.player(at: indexPath.row), let cell = tableView.dequeue(reusableCell: PlayerPreviewTableViewCell.self, for: indexPath) else {
             return UITableViewCell()
         }
-        var context: PlayerPreviewDisplayContext = [.showsOvr, .showsClub]
+        // Create the display context (always show the club)
+        var context: PlayerPreviewDisplayContext = [.showsClub]
         if viewModel.playerFilterData.exactPosition == nil {
             context.insert(.showsExactPosition)
         }
         if viewModel.playerFilterData.nationality == nil {
             context.insert(.showsNationality)
+        }
+        if viewModel.playerFilterData.ovrGreaterThanOrEqual != viewModel.playerFilterData.ovrLessThanOrEqual {
+            // show the OVR if the GTE + LTE values are matching
+            context.insert(.showsOvr)
         }
         cell.configure(from: player, context: context)
         return cell
