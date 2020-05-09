@@ -25,4 +25,11 @@ class NationalityPickerHandler: PickerHandler<PlayerFilterViewModel> {
         guard let viewModel = viewModel else { return nil }
         return viewModel.nationalities[row]?.name ?? "Any"
     }
+
+    override func reselectPreviouslySelectedRows() {
+        guard let viewModel = viewModel else { return }
+        let nationality = viewModel.playerFilterData.nationality
+        selectedRows[0] = viewModel.nationalities.firstIndex(of: nationality)
+        super.reselectPreviouslySelectedRows()
+    }
 }

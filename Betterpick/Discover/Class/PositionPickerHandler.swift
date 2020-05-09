@@ -35,4 +35,15 @@ class PositionPickerHandler: PickerHandler<PlayerFilterViewModel> {
 
         return nil
     }
+
+    override func reselectPreviouslySelectedRows() {
+        guard let viewModel = viewModel else { return }
+        let position = viewModel.playerFilterData.position
+        selectedRows[0] = viewModel.positionComponentData.positions.firstIndex(of: position)
+
+        let exactPosition = viewModel.playerFilterData.exactPosition
+        selectedRows[1] = viewModel.positionComponentData.exactPositions[position]?.firstIndex(of: exactPosition)
+
+        super.reselectPreviouslySelectedRows()
+    }
 }

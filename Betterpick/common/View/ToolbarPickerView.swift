@@ -70,6 +70,12 @@ class ToolbarPickerView: UIPickerView {
     public func resetSelection(animated: Bool = false) {
         let row = 0
         let component = row
+        fakeUserInteractiveSelect(at: row, inComponent: component, animated: animated)
+    }
+
+    /// Selects the row in a component as if the user did this through the UI.
+    /// - note: calls the delegate `didSelectRow` function directly.
+    public func fakeUserInteractiveSelect(at row: Int, inComponent component: Int, animated: Bool) {
         selectRow(row, inComponent: component, animated: animated)
         delegate?.pickerView?(self, didSelectRow: row, inComponent: component)
     }

@@ -66,4 +66,14 @@ class PickerHandler<ViewModel: AnyObject>: NSObject, UIPickerViewDelegate, UIPic
     var responderInputView: UIView {
         return pickerView ?? UIView()
     }
+
+    // MARK: - Open
+    /// Selects the rows that were selected previously. Use this function if you want to reload the state of the picker view (i.e. after dismissing and presenting the VC that displayed this pickerView)
+    func reselectPreviouslySelectedRows() {
+        let orderedComponents = selectedRows.keys.sorted()
+        for componentIndex in orderedComponents {
+            guard let rowIndex = selectedRows[componentIndex] else { continue }
+            pickerView?.fakeUserInteractiveSelect(at: rowIndex, inComponent: componentIndex, animated: false)
+        }
+    }
 }

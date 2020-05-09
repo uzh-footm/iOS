@@ -80,9 +80,10 @@ class DiscoverChildBaseViewController<VM>: VMViewController<VM>, UITableViewDele
         separatorAnimator.handleScrollViewDidScroll(scrollView)
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-    }
+    // These are required to be placed in this parent class because of this bug:
+    // https://stackoverflow.com/questions/55393027/delegate-methods-in-child-class-sometimes-not-called-with-swift-5-compiler/55393950#55393950
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {}
 
     // MARK: - Open
     /// Override this function to provide subviews and constraints for the header view container that sits at the top of the tableview

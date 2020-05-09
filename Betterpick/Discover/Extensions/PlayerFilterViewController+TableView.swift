@@ -59,6 +59,7 @@ extension PlayerFilterViewController: UITableViewDataSource {
                 cell.textLabel?.text = "Nationality"
                 cell.detailTextLabel?.text = viewModel.detailTextForNationality()
                 nationalityPickerHandler.cell = cell
+                nationalityPickerHandler.reselectPreviouslySelectedRows()
                 nationalityPickerView.toolbarDelegate = self
                 return cell
             case .position:
@@ -66,6 +67,7 @@ extension PlayerFilterViewController: UITableViewDataSource {
                 cell.textLabel?.text = "Position"
                 cell.detailTextLabel?.text = viewModel.detailTextForPosition()
                 positionPickerHandler.cell = cell
+                positionPickerHandler.reselectPreviouslySelectedRows()
                 positionPickerView.toolbarDelegate = self
                 return cell
             case .ovrRange:
