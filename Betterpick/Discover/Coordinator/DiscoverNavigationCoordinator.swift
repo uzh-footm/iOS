@@ -49,8 +49,10 @@ class DiscoverNavigationCoordinator: NavigationCoordinator, TabbedCoordinator {
     func startPlayerDetailFlow(_ playerPreview: PlayerPreview) {
         // Close the search VC if needed
         discoverCoordinator.finishSearchFlow()
-        let playerDetailVM = PlayerDetailViewModel(playerPreview: playerPreview)
+        let nationalities = discoverCoordinator.discoverViewController.viewModel.leagueAndNationalityData.nationalities
+        let playerDetailVM = PlayerDetailViewModel(playerPreview: playerPreview, nationalities: nationalities)
         let playerDetailVC = PlayerDetailViewController(viewModel: playerDetailVM)
+        playerDetailVC.teamSelectingCoordinator = self
         navigationController.pushViewController(playerDetailVC, animated: true)
     }
 }

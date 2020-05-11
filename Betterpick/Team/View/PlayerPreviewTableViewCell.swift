@@ -35,7 +35,7 @@ class PlayerPreviewTableViewCell: UITableViewCell, Reusable {
             contentView.layoutMargins = UIEdgeInsets(top: Size.Cell.verticalMargin, left: Size.Cell.extendedSideMargin, bottom: Size.Cell.verticalMargin, right: 0)
         }
         accessoryType = .disclosureIndicator
-        backgroundColor = .background
+        backgroundColor = .compatibleSecondarySystemGroupedBackground
         playerPhotoImageView.contentMode = .scaleAspectFit
         layout()
     }
@@ -68,14 +68,14 @@ class PlayerPreviewTableViewCell: UITableViewCell, Reusable {
         // OVR label
         contentView.add(subview: overallValueLabel)
         overallValueLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        overallValueLabel.trailingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.trailingAnchor).isActive = true
+        overallValueLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Size.standardMargin).isActive = true
 
         // Label + Data container
         let labelAndDataContainerView = UIView()
         contentView.add(subview: labelAndDataContainerView)
         labelAndDataContainerView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         labelAndDataContainerView.leadingAnchor.constraint(equalTo: playerPhotoImageView.trailingAnchor, constant: Size.Cell.extendedSideMargin/2).isActive = true
-        labelAndDataContainerView.trailingAnchor.constraint(equalTo: overallValueLabel.leadingAnchor, constant: -Size.standardMargin).isActive = true
+        labelAndDataContainerView.trailingAnchor.constraint(equalTo: overallValueLabel.leadingAnchor, constant: -Size.standardMargin/2).isActive = true
 
         // Player Name label
         labelAndDataContainerView.add(subview: playerNameLabel)

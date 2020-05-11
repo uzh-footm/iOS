@@ -103,4 +103,9 @@ class FetchingViewModel<FetchingResponseBody: Decodable, Model> {
             }
         }
     }
+
+    public var model: Model? {
+        guard case .displaying(let model) = state else { return nil }
+        return model
+    }
 }

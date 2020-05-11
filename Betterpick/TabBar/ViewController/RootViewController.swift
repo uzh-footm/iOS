@@ -23,7 +23,7 @@ class RootViewController: VMViewController<RootViewModel>, FetchingStatePresenti
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .background
+        view.backgroundColor = .compatibleSystemBackground
 
         // ViewModel
         viewModel.onStateUpdate = updateViewStateAppearance

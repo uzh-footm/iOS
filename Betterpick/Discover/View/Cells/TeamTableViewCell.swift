@@ -35,7 +35,7 @@ class TeamTableViewCell: UITableViewCell, Reusable {
             contentView.layoutMargins = UIEdgeInsets(top: Size.Cell.tinyVerticalMargin, left: Size.Cell.extendedSideMargin, bottom: Size.Cell.tinyVerticalMargin, right: 0)
         }
         accessoryType = .disclosureIndicator
-        backgroundColor = .background
+        backgroundColor = .compatibleSecondarySystemGroupedBackground
         teamLogoImageView.contentMode = .scaleAspectFit
         layout()
     }
@@ -49,7 +49,10 @@ class TeamTableViewCell: UITableViewCell, Reusable {
     private func layout() {
         contentView.add(subview: teamLogoImageView)
         teamLogoImageView.leadingAnchor.constraint(equalTo: contentView.layoutMarginsGuide.leadingAnchor).isActive = true
-        teamLogoImageView.heightAnchor.constraint(equalToConstant: Size.Image.teamLogo).isActive = true
+        let teamLogoHeightConstraint = teamLogoImageView.heightAnchor.constraint(equalToConstant: Size.Image.teamLogo)
+        // This line makes sure that we prioritize the cellHeightForRow height over this height constant...
+        teamLogoHeightConstraint.priority = .init(900)
+        teamLogoHeightConstraint.isActive = true
         teamLogoImageView.widthAnchor.constraint(equalTo: teamLogoImageView.heightAnchor).isActive = true
         // To make automatic dimension row height on the tableview work correctly
         let imageTopConstraint: NSLayoutConstraint
@@ -74,6 +77,6 @@ class TeamTableViewCell: UITableViewCell, Reusable {
     // MARK: - Public
     public func configure(from teamPreview: TeamPreview) {
         teamNameLabel.text = teamPreview.name
-        teamLogoImageView.sd_setImage(with: teamPreview.logoURL, placeholderImage: #imageLiteral(resourceName: "teams_48pt"), options: [], completed: nil)
+        teamLogoImageView.sd_setImage(with: teamPreview.logo, placeholderImage: nil, options: [], completed: nil)
     }
 }

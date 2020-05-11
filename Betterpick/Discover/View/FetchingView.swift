@@ -26,7 +26,7 @@ class FetchingView: ConstrainableView {
     // MARK: - Inherited
     override func setupSubviews() {
         layout()
-        backgroundColor = .background
+        backgroundColor = .compatibleSystemBackground
         spinnerView.startAnimating()
     }
 

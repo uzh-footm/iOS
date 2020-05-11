@@ -39,7 +39,7 @@ class RangeSlider: UIControl {
         }
     }
 
-    var trackTintColor = UIColor.graySystemFill {
+    var trackTintColor = UIColor.compatibleTertiarySystemFill {
         didSet {
             trackLayer.setNeedsDisplay()
         }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TeamViewModel: FetchingViewModel<GetClubResponseBody, Team> {
+class TeamViewModel: FetchingViewModel<GetClubPlayersResponseBody, Team> {
 
     // MARK: - Properties
     let team: Team
@@ -20,11 +20,11 @@ class TeamViewModel: FetchingViewModel<GetClubResponseBody, Team> {
     }
 
     // MARK: - Inherited
-    override func startFetching(completion: @escaping BetterpickAPIManager.Callback<GetClubResponseBody>) {
-        apiManager.club(clubID: team.teamId, completion: completion)
+    override func startFetching(completion: @escaping BetterpickAPIManager.Callback<GetClubPlayersResponseBody>) {
+        apiManager.clubPlayers(clubID: team.name, completion: completion)
     }
 
-    override func responseBodyToModel(_ responseBody: GetClubResponseBody) -> Team? {
+    override func responseBodyToModel(_ responseBody: GetClubPlayersResponseBody) -> Team? {
         team.squad = Team.createSquad(previews: responseBody.players)
         return team
     }

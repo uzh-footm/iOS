@@ -10,7 +10,6 @@ import Foundation
 
 /// Represents a Team with only the necessary information.
 struct TeamPreview: Codable {
-    let teamId: String
     let name: String
-    let logoURL: URL
+    let logo: URL
 }

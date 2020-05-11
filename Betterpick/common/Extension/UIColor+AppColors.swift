@@ -19,8 +19,12 @@ extension UIColor {
     }
     // swiftlint:enable identifier_name
 
+    private convenience init(same: CGFloat) {
+        self.init(r: same, g: same, b: same)
+    }
+
     /// Return light or dark color based on iOS version and userInterfaceStyle
-    private func from(light: UIColor, dark: UIColor) -> UIColor {
+    private static func from(light: UIColor, dark: UIColor) -> UIColor {
         // if iOS < 13.0 then return a light color
         guard #available(iOS 13, *) else { return light }
 
@@ -35,12 +39,28 @@ extension UIColor {
 
     // MARK: Backgrounds
     // Sub iOS 13.0 backwards compatible colors
-    public static var background: UIColor = {
+    public static var compatibleSystemBackground: UIColor = {
         guard #available(iOS 13, *) else { return #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) }
         return .systemBackground
     }()
 
-    public static var graySystemFill: UIColor = {
+    public static var backgroundAccent: UIColor = {
+        let diff: CGFloat = 6
+        let max: CGFloat = 255
+        return from(light: UIColor(same: max-diff), dark: UIColor(same: 2*diff))
+    }()
+
+    public static var compatibleSystemGroupedBackground: UIColor = {
+        guard #available(iOS 13, *) else { return .groupTableViewBackground }
+        return .systemGroupedBackground
+    }()
+
+    public static var compatibleSecondarySystemGroupedBackground: UIColor = {
+           guard #available(iOS 13, *) else { return .white }
+           return .secondarySystemGroupedBackground
+       }()
+
+    public static var compatibleTertiarySystemFill: UIColor = {
         guard #available(iOS 13, *) else { return #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.9411764706, alpha: 1) }
         return .tertiarySystemFill
     }()

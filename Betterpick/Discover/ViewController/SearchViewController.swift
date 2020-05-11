@@ -27,7 +27,7 @@ class SearchViewController: VMViewController<SearchViewModel> {
         table.keyboardDismissMode = .onDrag
         table.dataSource = self
         table.delegate = self
-        table.backgroundColor = .background
+        table.backgroundColor = .compatibleSystemBackground
         table.sectionFooterHeight = Size.TableView.headerHeight
         table.contentInset.top = Size.TableView.headerHeight
         table.register(cells: [PlayerPreviewTableViewCell.self, TeamTableViewCell.self])
@@ -42,7 +42,7 @@ class SearchViewController: VMViewController<SearchViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .background
+        view.backgroundColor = .compatibleSystemBackground
 
         setupSubviews()
 

@@ -28,7 +28,7 @@ class DiscoverChildBaseViewController<VM>: VMViewController<VM>, UITableViewDele
         tableView.delegate = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.removeLastSeparatorAndDontShowEmptyCells()
-        tableView.backgroundColor = .graySystemFill
+        tableView.backgroundColor = .compatibleSystemGroupedBackground
         tableView.showsHorizontalScrollIndicator = false
         return tableView
     }()

@@ -13,7 +13,7 @@ class MyTeamsViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .background
+        view.backgroundColor = .compatibleSystemBackground
         title = "MyTeams"
     }
 }

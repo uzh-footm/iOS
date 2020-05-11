@@ -33,7 +33,7 @@ class TeamViewController: VMViewController<TeamViewModel>, NavigationBarDisplayi
         let table = UITableView(frame: .zero, style: .grouped)
         table.dataSource = self
         table.delegate = self
-        table.backgroundColor = .graySystemFill
+        table.backgroundColor = .compatibleSystemGroupedBackground
         table.contentInset.top = Size.TableView.headerHeight
         // Removes tableFooterView
         table.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0.5))
@@ -46,7 +46,7 @@ class TeamViewController: VMViewController<TeamViewModel>, NavigationBarDisplayi
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .background
+        view.backgroundColor = .compatibleSystemBackground
         teamLogoImageView.contentMode = .scaleAspectFit
         hideBackBarButtonText()
 

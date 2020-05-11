@@ -1,5 +1,5 @@
 //
-//  GetClubResponseBody.swift
+//  GetClubPlayersResponseBody.swift
 //  Betterpick
 //
 //  Created by David Bielik on 26/04/2020.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct GetClubResponseBody: Decodable {
+struct GetClubPlayersResponseBody: Decodable {
     let players: [PlayerPreview]
 }

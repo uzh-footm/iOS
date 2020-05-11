@@ -96,10 +96,10 @@ class BetterpickAPIManager {
     }
 
     // MARK: GET /players/clubs/{clubID}
-    func club(clubID: String, completion: @escaping Callback<GetClubResponseBody>) {
+    func clubPlayers(clubID: String, completion: @escaping Callback<GetClubPlayersResponseBody>) {
         let endpoint = "/players/clubs/\(clubID)"
         let request = apiRequest(endpoint: endpoint, method: .get, parameters: nil)
-        let requestContext = BetterpickAPIRequestContext(responseBodyType: GetClubResponseBody.self, apiRequest: request)
+        let requestContext = BetterpickAPIRequestContext(responseBodyType: GetClubPlayersResponseBody.self, apiRequest: request)
         perform(requestContext: requestContext, managerCompletion: completion)
     }
 
@@ -126,6 +126,14 @@ class BetterpickAPIManager {
         let parameters = filterData.dictionary as? HTTPParameters
         let request = apiRequest(endpoint: endpoint, method: .get, parameters: parameters)
         let requestContext = BetterpickAPIRequestContext(responseBodyType: GetPlayersResponseBody.self, apiRequest: request)
+        perform(requestContext: requestContext, managerCompletion: completion)
+    }
+
+    // MARK: GET /clubs/{clubID}
+    func club(clubID: String, completion: @escaping Callback<TeamPreview>) {
+        let endpoint = "/clubs/\(clubID)"
+        let request = apiRequest(endpoint: endpoint, method: .get, parameters: nil)
+        let requestContext = BetterpickAPIRequestContext(responseBodyType: TeamPreview.self, apiRequest: request)
         perform(requestContext: requestContext, managerCompletion: completion)
     }
 }

@@ -52,7 +52,7 @@ class DiscoverViewController: VMViewController<DiscoverViewModel>, NavigationBar
         navigationItem.largeTitleDisplayMode = .never
 
         // View Setup
-        view.backgroundColor = .background
+        view.backgroundColor = .compatibleSystemBackground
         titleLabel.text = viewModel.title
 
         // Subview Setup

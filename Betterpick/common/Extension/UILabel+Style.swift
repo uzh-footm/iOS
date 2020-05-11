@@ -22,8 +22,13 @@ extension UILabel {
         case cellCenteredAction
         case cellPrimary
         case cellSecondary
+        // Player
+        case playerFirstName
+        case playerValueText
+        case playerStaticText
         // Special
-        case ovr
+        /// Used with the OverallValueLabel
+        case ovrLabel
     }
 
     convenience init(style: Style) {
@@ -31,6 +36,7 @@ extension UILabel {
         set(style: style)
     }
 
+    // swiftlint:disable function_body_length
     func set(style: Style) {
         numberOfLines = 0
         switch style {
@@ -68,11 +74,24 @@ extension UILabel {
             textColor = .customSecondaryLabel
             font = UIFont.systemFont(ofSize: 13)
             numberOfLines = 1
+        // Player
+        case .playerFirstName:
+            textColor = .customSecondaryLabel
+            font = UIFont.systemFont(ofSize: 18, weight: .medium)
+            numberOfLines = 1
+        case .playerStaticText:
+            textColor = UIColor.customLabel.withAlphaComponent(0.7)
+            font = UIFont.systemFont(ofSize: 14)
+        case .playerValueText:
+            textColor = .customLabel
+            font = UIFont.systemFont(ofSize: 22, weight: .semibold)
+            numberOfLines = 1
         // Special
-        case .ovr:
+        case .ovrLabel:
             textColor = .white
             textAlignment = .center
             font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         }
     }
+    // swiftlint:enable function_body_length
 }

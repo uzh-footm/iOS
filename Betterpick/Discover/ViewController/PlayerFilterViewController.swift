@@ -54,7 +54,7 @@ class PlayerFilterViewController: VMViewController<PlayerFilterViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .graySystemFill
+        view.backgroundColor = .compatibleSystemGroupedBackground
 
         setupPickerViewHiding()
 

@@ -34,13 +34,13 @@ extension NavigationBarProviding where Self: UINavigationController {
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithDefaultBackground()
-            appearance.backgroundColor = .background
+            appearance.backgroundColor = .compatibleSystemBackground
             navigationBar.standardAppearance = appearance
             navigationBar.compactAppearance = appearance
             navigationBar.scrollEdgeAppearance = appearance
         } else {
             navigationBar.shadowImage = nil
-            navigationBar.barTintColor = .background
+            navigationBar.barTintColor = .compatibleSystemBackground
         }
         navigationBar.isTranslucent = false
     }

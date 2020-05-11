@@ -23,7 +23,7 @@ class OverallValueLabel: UILabel {
 
     // MARK: - Private
     private func setup() {
-        set(style: .ovr)
+        set(style: UILabel.Style.ovrLabel)
 
         translatesAutoresizingMaskIntoConstraints = false
         widthAnchor.constraint(equalToConstant: Size.Label.ovrValueWidth).isActive = true

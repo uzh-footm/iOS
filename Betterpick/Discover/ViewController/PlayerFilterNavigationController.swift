@@ -17,12 +17,12 @@ class PlayerFilterNavigationController: UINavigationController, NavigationBarPro
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithDefaultBackground()
-            appearance.backgroundColor = .background
+            appearance.backgroundColor = .compatibleSystemBackground
             navigationBar.standardAppearance = appearance
             navigationBar.compactAppearance = appearance
             navigationBar.scrollEdgeAppearance = appearance
         } else {
-            navigationBar.barTintColor = .background
+            navigationBar.barTintColor = .compatibleSystemBackground
         }
     }
 }

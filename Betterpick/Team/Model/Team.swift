@@ -11,16 +11,14 @@ import Foundation
 class Team {
     typealias Squad = [(position: PlayerPosition, players: [PlayerPreview])]
 
-    let teamId: String
     let name: String
     let logoURL: URL
 
     var squad: Squad?
 
     init(from preview: TeamPreview) {
-        self.teamId = preview.teamId
         self.name = preview.name
-        self.logoURL = preview.logoURL
+        self.logoURL = preview.logo
     }
 
     static func createSquad(previews: [PlayerPreview]) -> Squad {

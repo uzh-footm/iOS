@@ -8,4 +8,4 @@
 
 import Foundation
 
-typealias GetPlayersResponseBody = GetClubResponseBody
+typealias GetPlayersResponseBody = GetClubPlayersResponseBody

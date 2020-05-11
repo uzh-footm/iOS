@@ -69,7 +69,7 @@ class TabBarViewController: UIViewController {
 
         // stackview container
         let buttonsContainerView = UIView()
-        buttonsContainerView.backgroundColor = .background
+        buttonsContainerView.backgroundColor = .compatibleSystemBackground
         view.add(subview: buttonsContainerView)
         buttonsContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         buttonsContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
