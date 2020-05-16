@@ -17,6 +17,7 @@ target 'Betterpick' do
   end
 
   target 'BetterpickUITests' do
+    inherit! :complete
     # Pods for testing
   end
 

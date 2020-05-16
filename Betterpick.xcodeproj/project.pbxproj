@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6DF98116A15AD66250047205 /* Pods_BetterpickTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFEBCD76CA0C3CB8245FCBC6 /* Pods_BetterpickTests.framework */; };
-		87D64E99B1BC0694840064E5 /* Pods_Betterpick_BetterpickUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C2CFEF3D628B84ED40B0938 /* Pods_Betterpick_BetterpickUITests.framework */; };
+		4B86DE64101C04EC23F9F01F /* Pods_Betterpick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E8E3FB5A9F99CFB72FBA66 /* Pods_Betterpick.framework */; };
 		890387D52461C46800533CDA /* DiscoverChildBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890387D42461C46800533CDA /* DiscoverChildBaseViewController.swift */; };
 		8903C03824644226009B152B /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF12E245C3B560047EF8D /* ReusableCell.swift */; };
 		8903C03E24646539009B152B /* TeamViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C03B24646517009B152B /* TeamViewController+TableView.swift */; };
@@ -33,8 +32,6 @@
 		8920965D2444C1C600DF93BB /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920965C2444C1C600DF93BB /* Tab.swift */; };
 		892096662444C6C900DF93BB /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096652444C6C900DF93BB /* UIColor+AppColors.swift */; };
 		8920966B2444E16E00DF93BB /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920966A2444E16E00DF93BB /* HairlineView.swift */; };
-		8920966C2444E16E00DF93BB /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920966A2444E16E00DF93BB /* HairlineView.swift */; };
-		8920966D2444E16E00DF93BB /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920966A2444E16E00DF93BB /* HairlineView.swift */; };
 		8920966F2444E1CF00DF93BB /* ConstrainableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920966E2444E1CF00DF93BB /* ConstrainableView.swift */; };
 		892096702444E1CF00DF93BB /* ConstrainableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920966E2444E1CF00DF93BB /* ConstrainableView.swift */; };
 		892096712444E1CF00DF93BB /* ConstrainableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920966E2444E1CF00DF93BB /* ConstrainableView.swift */; };
@@ -122,9 +119,9 @@
 		89A2A7D0244473BC006149A6 /* Betterpick.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7CE244473BC006149A6 /* Betterpick.xcdatamodeld */; };
 		89A2A7D2244473BE006149A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A2A7D1244473BE006149A6 /* Assets.xcassets */; };
 		89A2A7D5244473BE006149A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A2A7D3244473BE006149A6 /* LaunchScreen.storyboard */; };
-		89A2A7E0244473BE006149A6 /* BetterpickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7DF244473BE006149A6 /* BetterpickTests.swift */; };
 		89A2A7EB244473BE006149A6 /* BetterpickUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7EA244473BE006149A6 /* BetterpickUITests.swift */; };
 		89B544A4244BE2ED000C1C4B /* DiscoverCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */; };
+		89DA2D04246F5B5000964B5C /* TabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DA2D03246F5B5000964B5C /* TabBarViewModelTests.swift */; };
 		89EFF1132459AD5A0047EF8D /* VMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF1122459AD5A0047EF8D /* VMViewController.swift */; };
 		89EFF1152459B0B20047EF8D /* Nationality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF1142459B0B20047EF8D /* Nationality.swift */; };
 		89EFF1172459CEC60047EF8D /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF1162459CEC60047EF8D /* RootViewModel.swift */; };
@@ -169,7 +166,8 @@
 		89F0EC3824538A81000DA92B /* GetLeagueResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC3724538A81000DA92B /* GetLeagueResponseBody.swift */; };
 		89F0EC3B2453A9A8000DA92B /* BetterpickAPIManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC3A2453A9A8000DA92B /* BetterpickAPIManagerMock.swift */; };
 		89F0EC3D2453A9B4000DA92B /* BetterpickAPIManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC3C2453A9B4000DA92B /* BetterpickAPIManagerFactory.swift */; };
-		95A4E7B1AD528E1F49C43A73 /* Pods_Betterpick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43648933DE390A6374A456C6 /* Pods_Betterpick.framework */; };
+		F3E602B3CAB3C22294CA7CE6 /* Pods_BetterpickTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 652AB35D71CBC9F08CBE0501 /* Pods_BetterpickTests.framework */; };
+		F591865613AB1F62105D5230 /* Pods_Betterpick_BetterpickUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51DE7B6B7B5CCC354D78DFD7 /* Pods_Betterpick_BetterpickUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -190,9 +188,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1C2CFEF3D628B84ED40B0938 /* Pods_Betterpick_BetterpickUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick_BetterpickUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C58AA5DAB72233BAF4B9D9F /* Pods-BetterpickUITests.mock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterpickUITests.mock.xcconfig"; path = "Target Support Files/Pods-BetterpickUITests/Pods-BetterpickUITests.mock.xcconfig"; sourceTree = "<group>"; };
+		1D53C3983A96A2A9EE70336E /* Pods-Betterpick-BetterpickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickTests.release.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickTests/Pods-Betterpick-BetterpickTests.release.xcconfig"; sourceTree = "<group>"; };
+		2276EE08FE1B224DA537ABFE /* Pods-BetterpickUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterpickUITests.release.xcconfig"; path = "Target Support Files/Pods-BetterpickUITests/Pods-BetterpickUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2ED29B1CED19EDB878CF31CA /* Pods-Betterpick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.release.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.release.xcconfig"; sourceTree = "<group>"; };
-		43648933DE390A6374A456C6 /* Pods_Betterpick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AC0D1614EAAFDC3406467C4 /* Pods-Betterpick-BetterpickTests.mock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickTests.mock.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickTests/Pods-Betterpick-BetterpickTests.mock.xcconfig"; sourceTree = "<group>"; };
+		51DE7B6B7B5CCC354D78DFD7 /* Pods_Betterpick_BetterpickUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick_BetterpickUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D9C9834D5A1E8980772913 /* Pods-BetterpickUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterpickUITests.debug.xcconfig"; path = "Target Support Files/Pods-BetterpickUITests/Pods-BetterpickUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		625E601EC75351B884C77328 /* Pods-Betterpick-BetterpickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickTests.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickTests/Pods-Betterpick-BetterpickTests.debug.xcconfig"; sourceTree = "<group>"; };
+		652AB35D71CBC9F08CBE0501 /* Pods_BetterpickTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetterpickTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73C23E61CF56173C0675FB28 /* Pods-Betterpick-BetterpickUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickUITests.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		890387D42461C46800533CDA /* DiscoverChildBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverChildBaseViewController.swift; sourceTree = "<group>"; };
 		8903C03924645813009B152B /* PositionSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PositionSectionHeaderView.swift; path = Betterpick/Team/View/PositionSectionHeaderView.swift; sourceTree = SOURCE_ROOT; };
@@ -297,12 +301,12 @@
 		89A2A7D4244473BE006149A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89A2A7D6244473BE006149A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89A2A7DB244473BE006149A6 /* BetterpickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetterpickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		89A2A7DF244473BE006149A6 /* BetterpickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterpickTests.swift; sourceTree = "<group>"; };
 		89A2A7E1244473BE006149A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89A2A7E6244473BE006149A6 /* BetterpickUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetterpickUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A2A7EA244473BE006149A6 /* BetterpickUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterpickUITests.swift; sourceTree = "<group>"; };
 		89A2A7EC244473BE006149A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCoordinator.swift; sourceTree = "<group>"; };
+		89DA2D03246F5B5000964B5C /* TabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModelTests.swift; sourceTree = "<group>"; };
 		89EFF1122459AD5A0047EF8D /* VMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VMViewController.swift; path = Betterpick/Common/ViewController/VMViewController.swift; sourceTree = SOURCE_ROOT; };
 		89EFF1142459B0B20047EF8D /* Nationality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nationality.swift; sourceTree = "<group>"; };
 		89EFF1162459CEC60047EF8D /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
@@ -358,8 +362,8 @@
 		BC477A0B0893D8FED9EA1D3A /* Pods-Betterpick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.debug.xcconfig"; sourceTree = "<group>"; };
 		C1F863D70B87FE751FD53E2A /* Pods-BetterpickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterpickTests.release.xcconfig"; path = "Target Support Files/Pods-BetterpickTests/Pods-BetterpickTests.release.xcconfig"; sourceTree = "<group>"; };
 		CBAB40D4DBF1D81129D7EA19 /* Pods-BetterpickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterpickTests.debug.xcconfig"; path = "Target Support Files/Pods-BetterpickTests/Pods-BetterpickTests.debug.xcconfig"; sourceTree = "<group>"; };
-		CFEBCD76CA0C3CB8245FCBC6 /* Pods_BetterpickTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetterpickTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA3EC0131520B927CD1D915A /* Pods-Betterpick.mock.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.mock.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.mock.xcconfig"; sourceTree = "<group>"; };
+		F3E8E3FB5A9F99CFB72FBA66 /* Pods_Betterpick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51FEF1EF925CDD171DB591B /* Pods-Betterpick-BetterpickUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickUITests.release.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -368,7 +372,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95A4E7B1AD528E1F49C43A73 /* Pods_Betterpick.framework in Frameworks */,
+				4B86DE64101C04EC23F9F01F /* Pods_Betterpick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +380,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DF98116A15AD66250047205 /* Pods_BetterpickTests.framework in Frameworks */,
+				F3E602B3CAB3C22294CA7CE6 /* Pods_BetterpickTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +388,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87D64E99B1BC0694840064E5 /* Pods_Betterpick_BetterpickUITests.framework in Frameworks */,
+				F591865613AB1F62105D5230 /* Pods_Betterpick_BetterpickUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,9 +398,9 @@
 		1B5AAD3F967951A539C6FCA8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1C2CFEF3D628B84ED40B0938 /* Pods_Betterpick_BetterpickUITests.framework */,
-				CFEBCD76CA0C3CB8245FCBC6 /* Pods_BetterpickTests.framework */,
-				43648933DE390A6374A456C6 /* Pods_Betterpick.framework */,
+				F3E8E3FB5A9F99CFB72FBA66 /* Pods_Betterpick.framework */,
+				652AB35D71CBC9F08CBE0501 /* Pods_BetterpickTests.framework */,
+				51DE7B6B7B5CCC354D78DFD7 /* Pods_Betterpick_BetterpickUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -413,6 +417,12 @@
 				EA3EC0131520B927CD1D915A /* Pods-Betterpick.mock.xcconfig */,
 				8B6734A1B309B5745B5F9D2B /* Pods-Betterpick-BetterpickUITests.mock.xcconfig */,
 				BAA279EEE9DF97179BB03126 /* Pods-BetterpickTests.mock.xcconfig */,
+				625E601EC75351B884C77328 /* Pods-Betterpick-BetterpickTests.debug.xcconfig */,
+				3AC0D1614EAAFDC3406467C4 /* Pods-Betterpick-BetterpickTests.mock.xcconfig */,
+				1D53C3983A96A2A9EE70336E /* Pods-Betterpick-BetterpickTests.release.xcconfig */,
+				53D9C9834D5A1E8980772913 /* Pods-BetterpickUITests.debug.xcconfig */,
+				1C58AA5DAB72233BAF4B9D9F /* Pods-BetterpickUITests.mock.xcconfig */,
+				2276EE08FE1B224DA537ABFE /* Pods-BetterpickUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -934,7 +944,7 @@
 		89A2A7DE244473BE006149A6 /* BetterpickTests */ = {
 			isa = PBXGroup;
 			children = (
-				89A2A7DF244473BE006149A6 /* BetterpickTests.swift */,
+				89DA2D00246F53FC00964B5C /* ViewModel */,
 				89A2A7E1244473BE006149A6 /* Info.plist */,
 			);
 			path = BetterpickTests;
@@ -959,6 +969,14 @@
 				89A2A7CE244473BC006149A6 /* Betterpick.xcdatamodeld */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89DA2D00246F53FC00964B5C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				89DA2D03246F5B5000964B5C /* TabBarViewModelTests.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		89F0EBED245098E2000DA92B /* Cells */ = {
@@ -1060,7 +1078,7 @@
 				89A2A7C0244473BC006149A6 /* Frameworks */,
 				89A2A7C1244473BC006149A6 /* Resources */,
 				8908844F24449EA40080CCBF /* ShellScript */,
-				E9C10EC91FE8FF2C5ABE6D80 /* [CP] Embed Pods Frameworks */,
+				6C02CD60EC8723FC92D19EF0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1098,7 +1116,7 @@
 				89A2A7E2244473BE006149A6 /* Sources */,
 				89A2A7E3244473BE006149A6 /* Frameworks */,
 				89A2A7E4244473BE006149A6 /* Resources */,
-				20FF767FA46244DCAC717828 /* [CP] Embed Pods Frameworks */,
+				72B80A31F90F38730D80D559 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1180,21 +1198,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		20FF767FA46244DCAC717828 /* [CP] Embed Pods Frameworks */ = {
+		6C02CD60EC8723FC92D19EF0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6F42B555DC171D639418AE40 /* [CP] Check Pods Manifest.lock */ = {
@@ -1217,6 +1235,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72B80A31F90F38730D80D559 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		792E2BDEB3E8AEF80E290562 /* [CP] Check Pods Manifest.lock */ = {
@@ -1278,23 +1313,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E9C10EC91FE8FF2C5ABE6D80 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1457,12 +1475,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89DA2D04246F5B5000964B5C /* TabBarViewModelTests.swift in Sources */,
 				892096782444EBE500DF93BB /* Size.swift in Sources */,
-				89A2A7E0244473BE006149A6 /* BetterpickTests.swift in Sources */,
 				892096702444E1CF00DF93BB /* ConstrainableView.swift in Sources */,
 				892096382444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */,
 				892096742444E64000DF93BB /* UIView+Add.swift in Sources */,
-				8920966C2444E16E00DF93BB /* HairlineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1475,7 +1492,6 @@
 				892096712444E1CF00DF93BB /* ConstrainableView.swift in Sources */,
 				892096392444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */,
 				892096752444E64000DF93BB /* UIView+Add.swift in Sources */,
-				8920966D2444E16E00DF93BB /* HairlineView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1636,6 +1652,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvdblk.betterpick;
+				PRODUCT_MODULE_NAME = Betterpick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1649,6 +1666,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Betterpick/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1656,6 +1674,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvdblk.betterpick;
+				PRODUCT_MODULE_NAME = Betterpick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1668,6 +1687,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				INFOPLIST_FILE = BetterpickTests/Info.plist;
@@ -1691,6 +1711,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				INFOPLIST_FILE = BetterpickTests/Info.plist;
@@ -1825,6 +1846,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dvdblk.betterpick;
+				PRODUCT_MODULE_NAME = Betterpick;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1837,6 +1859,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				INFOPLIST_FILE = BetterpickTests/Info.plist;
