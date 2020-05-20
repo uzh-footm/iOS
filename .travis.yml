@@ -38,7 +38,7 @@ jobs:
       name: "Deploy iOS App Documentation to GitHub Pages"
       script:
         #- bundle exec fastlane generate_docs
-        - jazzy --config docs/.jazzy.yaml
+        - bundle exec jazzy --config docs/.jazzy.yaml
       after_failure:
         - find /var/folders/z3 -name '*.log' -exec tail -800 {} \;
       deploy:
