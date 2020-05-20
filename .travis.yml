@@ -1,0 +1,27 @@
+# environment setup
+language: swift
+osx_image: xcode11.4
+
+cache:
+  bundler: true
+  directories:
+    - Carthage
+# run jobs on changes to master only
+branches:
+  only:
+    - master
+# prepare dependency managers
+before_install:
+  - gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
+# install dependencies
+install:
+  - bundle install
+  - bunde exec pod install
+# jobs and stages to run
+jobs:
+  include:
+    - stage: "Test"
+      if: branch = develop
+      name: "Unit tests"
+      script:
+        - bundle exec fastlane tests_mock
