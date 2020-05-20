@@ -37,8 +37,6 @@ jobs:
       name: "Deploy iOS App Documentation to GitHub Pages"
       script:
         - bundle exec fastlane generate_docs
-      after_failure:
-        - find /var/folders -name '*.log' -exec cat {} \;
       deploy:
         provider:     pages
         skip-cleanup: true
