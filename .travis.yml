@@ -14,7 +14,8 @@ before_install:
 
   # install dependencies
 install:
-  - bundle install --path vendor/bundle
+  - bundle config set path 'vendor/bundle'
+  - bundle install
   - bundle info jazzy
   - bundle exec pod install
 
