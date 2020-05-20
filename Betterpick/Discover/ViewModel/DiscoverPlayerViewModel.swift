@@ -38,7 +38,7 @@ class DiscoverPlayerViewModel: FetchingViewModel<GetPlayersResponseBody, [Player
     }
 
     override func responseBodyToModel(_ responseBody: GetPlayersResponseBody) -> [PlayerPreview]? {
-        return responseBody.players
+        return responseBody
     }
 
     // MARK: - Public

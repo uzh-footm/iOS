@@ -51,14 +51,12 @@ class PlayerFilterViewModel {
 
     // MARK: - Section: Sort Order
     public func getSortSectionData(at row: Int) -> (text: String, selected: Bool) {
-        let sortOrder = PlayerFilterData.SortOrder.allCases[row]
+        let sortOrder = PlayerFilterData.SortOrder.init(from: row)
         return (sortOrder.description, sortOrder == playerFilterData.sortOrder)
     }
 
     public func selectSortOrder(at row: Int) {
-        if let newSortOrder = PlayerFilterData.SortOrder(rawValue: row) {
-            playerFilterData.sortOrder = newSortOrder
-        }
+        playerFilterData.sortOrder = PlayerFilterData.SortOrder.init(from: row)
     }
 
     // MARK: - Section: Player Information

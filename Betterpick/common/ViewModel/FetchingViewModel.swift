@@ -95,7 +95,7 @@ class FetchingViewModel<FetchingResponseBody: Decodable, Model> {
         state = .fetching
         startFetching { [weak self] result in
             switch result {
-            case .error(let error):
+            case .error(let error, _):
                 self?.state = .error(error)
             case .success(let responseBody):
                 guard let model = self?.responseBodyToModel(responseBody) else { return }

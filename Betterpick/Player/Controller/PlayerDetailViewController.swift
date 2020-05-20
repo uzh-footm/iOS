@@ -172,21 +172,11 @@ class PlayerDetailViewController: VMViewController<PlayerDetailViewModel>, Navig
             removeFetchingStateView()
             tableView.reloadData()
             playerPhotoImageView.sd_setImage(with: player.photo, placeholderImage: nil)
-            coloredPositionLabel.configure(from: player.exactPosition)
+            coloredPositionLabel.configure(from: player.position)
             playerOvrLabel.text = String(player.overall)
             playerFirstNameLabel.text = player.firstName
             playerSurnameLabel.text = player.surname
             nationalityImageView.sd_setImage(with: viewModel.nationalityURL(), placeholderImage: nil)
-            // FIXME: Remove l8r
-//            nationalityImageView.sd_setImage(with: viewModel.nationalityURL(), placeholderImage: nil, options: [], completed: { (image, _, _, _) in
-//                guard let image = image else { return }
-//                DispatchQueue.global(qos: .default).async { [weak self] in
-//                    let strokedImage = image.outlined(color: .customLabel, lineWidth: 40)
-//                    DispatchQueue.main.async {
-//                        self?.nationalityImageView.image = strokedImage
-//                    }
-//                }
-//            })
         case .error:
             addFetchingStateView()
         }

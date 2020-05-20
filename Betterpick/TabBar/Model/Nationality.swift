@@ -13,9 +13,7 @@ struct Nationality: Codable, Equatable {
     let logoURL: URL
 
     private enum Keys: String, CodingKey {
-        // swiftlint:disable identifier_name
         case id
-        // swiftlint:enable identifier_name
         case logo
     }
 

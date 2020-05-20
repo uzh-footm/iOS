@@ -25,7 +25,7 @@ class TeamViewModel: FetchingViewModel<GetClubPlayersResponseBody, Team> {
     }
 
     override func responseBodyToModel(_ responseBody: GetClubPlayersResponseBody) -> Team? {
-        team.squad = Team.createSquad(previews: responseBody.players)
+        team.squad = Team.createSquad(previews: responseBody)
         return team
     }
 

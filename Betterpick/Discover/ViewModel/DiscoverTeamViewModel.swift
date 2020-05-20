@@ -24,7 +24,7 @@ class DiscoverTeamViewModel: FetchingViewModel<GetLeagueResponseBody, League> {
     // MARK: - Private
     override func startFetching(completion: @escaping BetterpickAPIManager.Callback<GetLeagueResponseBody>) {
         guard let selected = selectedLeague else { return }
-        apiManager.league(leagueID: selected.leagueId, completion: completion)
+        apiManager.league(leagueID: selected.id, completion: completion)
     }
 
     override func responseBodyToModel(_ responseBody: GetLeagueResponseBody) -> League? {

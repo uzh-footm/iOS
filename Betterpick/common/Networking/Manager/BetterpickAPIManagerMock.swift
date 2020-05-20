@@ -11,12 +11,12 @@ import Foundation
 class BetterpickAPIManagerMock: BetterpickAPIManager {
 
     let leagues: [League] = [
-        League(name: "Bundesliga", leagueId: "0"),
-        League(name: "2. Bundesliga", leagueId: "1"),
-        League(name: "Premier League", leagueId: "2"),
-        League(name: "EFL Championship", leagueId: "3"),
-        League(name: "Swiss Super League", leagueId: "4"),
-        League(name: "La Liga", leagueId: "5")
+        League(id: "Bundesliga"),
+        League(id: "2. Bundesliga"),
+        League(id: "Premier League"),
+        League(id: "EFL Championship"),
+        League(id: "Swiss Super League"),
+        League(id: "La Liga")
     ]
 
     let nationalities = [
@@ -52,7 +52,7 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
     override init(apiHandler: BetterpickAPIHandler = URLSession.shared) {
         var teams = [TeamPreview]()
         for (name, photoUrlString) in teamTuples {
-            let team = TeamPreview(name: name, logo: URL(string: photoUrlString)!)
+            let team = TeamPreview(id: name, logo: URL(string: photoUrlString)!)
             teams.append(team)
         }
         self.teams = teams
@@ -82,7 +82,7 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
                 ovr = Int.random(in: ovrBase...ovrBase+Int.random(in: 0...14))
             }
             let randomPosition = ExactPlayerPosition.allCases.randomElement()!
-            let preview = PlayerPreview(playerId: String(index), name: "\(randomString(length: Int.random(in: 3..<12))) \(randomString(length: Int.random(in: 3..<12)))", photoURL: URL(string: photos.shuffled().first!)!, squadNumber: Int.random(in: 1..<40), position: randomPosition, nation: nationalities.randomElement()!.name, ovr: ovr, club: teamTuples.randomElement()!.0)
+            let preview = PlayerPreview(id: index, name: "\(randomString(length: Int.random(in: 3..<12))) \(randomString(length: Int.random(in: 3..<12)))", photo: URL(string: photos.shuffled().first!)!, age: Int.random(in: 18..<38), jerseyNumber: Int.random(in: 1..<40), position: randomPosition, nationality: nationalities.randomElement()!.name, overall: ovr, club: teamTuples.randomElement()!.0)
             playerPreviews.append(preview)
         }
         return playerPreviews
@@ -91,12 +91,12 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
     // MARK: - Inherited
     // MARK: GET /leagues
     override func leagues(completion: @escaping BetterpickAPIManager.Callback<GetLeaguesResponseBody>) {
-        returnSuccessAfter(duration: 0.2, completion: completion, response: GetLeaguesResponseBody(leagues: leagues))
+        returnSuccessAfter(duration: 0.2, completion: completion, response: leagues)
     }
 
     // MARK: GET /nationalities
     override func nationalities(completion: @escaping BetterpickAPIManager.Callback<GetNationalitiesBody>) {
-        returnSuccessAfter(completion: completion, response: GetNationalitiesBody(nationalities: nationalities))
+        returnSuccessAfter(completion: completion, response: nationalities)
     }
 
     // MARK: GET /leagues/{leagueID}
@@ -113,12 +113,12 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
 
     // MARK: GET /players/clubs/{clubID}
     override func clubPlayers(clubID: String, completion: @escaping Callback<GetClubPlayersResponseBody>) {
-        returnSuccessAfter(duration: 0.4, completion: completion, response: GetClubPlayersResponseBody(players: getPlayers()))
+        returnSuccessAfter(duration: 0.4, completion: completion, response: getPlayers())
     }
 
     // MARK: GET /players/{playerID}
     override func player(playerID: String, completion: @escaping BetterpickAPIManager.Callback<Player>) {
-        let player = Player(id: 0, name: "L. Messi", age: 35, photo: URL(string: "https://cdn.sofifa.com/players/158/023/20_120.png")!, nationality: "Argentina", overall: 94, club: "FC Barcelona", value: 95000000, wage: 540000, releaseClause: 9999, preferredFoot: "Left", skillMoves: 5, workRate: "Medium/Low", exactPosition: .CF, jerseyNumber: 10, height: "kek", weight: 9, crossing: 85, finishing: 98, headingAccuracy: 83, shortPassing: 90, volleys: 90, dribbling: 97, curve: 96, fkAccuracy: 95, longPassing: 90, ballControl: 98, acceleration: 93, sprintSpeed: 89, agility: 90, reactions: 91, balance: 90, shotPower: 88, jumping: 84, stamina: 80, strength: 85, longshots: 93, aggression: 84, interceptions: 85, positioning: 94, vision: 95, penalties: 94, composure: 98, marking: 93, standingTackle: 88, slidingTackle: 82, gkDiving: 46, gkHandling: 48, gkKicking: 60, gkPositioning: 44, gkReflexes: 41)
+        let player = Player(id: 0, name: "L. Messi", age: 35, photo: URL(string: "https://cdn.sofifa.com/players/158/023/20_120.png")!, nationality: "Argentina", overall: 94, club: "FC Barcelona", value: 95000000, wage: 540000, releaseClause: 9999, preferredFoot: "Left", skillMoves: 5, workRate: "Medium/Low", position: .CF, jerseyNumber: 10, height: "kek", weight: 9, crossing: 85, finishing: 98, headingAccuracy: 83, shortPassing: 90, volleys: 90, dribbling: 97, curve: 96, fkAccuracy: 95, longPassing: 90, ballControl: 98, acceleration: 93, sprintSpeed: 89, agility: 90, reactions: 91, balance: 90, shotPower: 88, jumping: 84, stamina: 80, strength: 85, longshots: 93, aggression: 84, interceptions: 85, positioning: 94, vision: 95, penalties: 94, composure: 98, marking: 93, standingTackle: 88, slidingTackle: 82, gkDiving: 46, gkHandling: 48, gkKicking: 60, gkPositioning: 44, gkReflexes: 41)
         returnSuccessAfter(duration: 0.2, completion: completion, response: player)
     }
 
@@ -133,12 +133,12 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
     override func players(filterData: PlayerFilterData, completion: @escaping BetterpickAPIManager.Callback<GetPlayersResponseBody>) {
         var players = getPlayers(range: 28..<34, ovrRange: filterData.ovrGreaterThanOrEqual...filterData.ovrLessThanOrEqual)
         let sortFn: ((Int, Int) -> Bool) = (filterData.sortOrder == .asc) ? (<) : (>)
-        players.sort { sortFn($0.ovr, $1.ovr) }
-        let result = GetPlayersResponseBody(players: players)
+        players.sort { sortFn($0.overall, $1.overall) }
+        let result = players
         returnSuccessAfter(completion: completion, response: result)
     }
 
     override func club(clubID: String, completion: @escaping BetterpickAPIManager.Callback<TeamPreview>) {
-        returnSuccessAfter(completion: completion, response: TeamPreview(name: "FC Barcelona", logo: URL(string: "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/800px-FC_Barcelona_%28crest%29.svg.png")!))
+        returnSuccessAfter(completion: completion, response: TeamPreview(id: "FC Barcelona", logo: URL(string: "https://upload.wikimedia.org/wikipedia/en/thumb/4/47/FC_Barcelona_%28crest%29.svg/800px-FC_Barcelona_%28crest%29.svg.png")!))
     }
 }

@@ -102,15 +102,15 @@ class PlayerPreviewTableViewCell: UITableViewCell, Reusable {
             stackViewTextData.append(playerPreview.club)
         }
         if context.contains(.showsNationality) {
-            stackViewTextData.append(playerPreview.nation)
+            stackViewTextData.append(playerPreview.nationality)
         }
         playerDataStackView.textData = stackViewTextData
         // OVR
         overallValueLabel.isHidden = !context.contains(.showsOvr)
         if context.contains(.showsOvr) {
-            overallValueLabel.ovr = playerPreview.ovr
+            overallValueLabel.ovr = playerPreview.overall
         }
         // Image
-        playerPhotoImageView.sd_setImage(with: playerPreview.photoURL, placeholderImage: #imageLiteral(resourceName: "baseline_settings_black_48pt"), options: [], completed: nil)
+        playerPhotoImageView.sd_setImage(with: playerPreview.photo, placeholderImage: #imageLiteral(resourceName: "baseline_settings_black_48pt"), options: [], completed: nil)
     }
 }

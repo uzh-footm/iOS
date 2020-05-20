@@ -25,10 +25,10 @@ class RootViewModel: SimpleFetchingViewModel<LeagueAndNationalityData> {
         apiManager.leagues { result in
             defer { requests.leave() }
             switch result {
-            case .error(let error):
+            case .error(let error, _):
                 leaguesError = error
             case .success(let leaguesBody):
-                leagues = leaguesBody.leagues
+                leagues = leaguesBody
             }
         }
         // '/nationalities'
@@ -36,10 +36,10 @@ class RootViewModel: SimpleFetchingViewModel<LeagueAndNationalityData> {
         apiManager.nationalities { result in
             defer { requests.leave() }
             switch result {
-            case .error(let error):
+            case .error(let error, _):
                 nationalitiesError = error
             case .success(let nationalitiesBody):
-                nationalities = nationalitiesBody.nationalities
+                nationalities = nationalitiesBody
             }
         }
 

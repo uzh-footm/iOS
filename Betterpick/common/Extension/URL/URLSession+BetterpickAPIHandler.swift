@@ -47,14 +47,14 @@ extension URLSession: BetterpickAPIHandler {
             switch statusCode {
             case .success:
                 guard let response = try? JSONDecoder().decode(requestContext.responseBodyType, from: data) else {
-                    URLSession.finish(nil, .invalidResponseBody(requestContext.responseBodyType), requestContext: requestContext, completion: completionHandler)
+                    URLSession.finish(nil, .invalidResponseBody(requestContext.responseBodyType, String(bytes: data, encoding: .utf8) ?? ""), requestContext: requestContext, completion: completionHandler)
                     return
                 }
                 URLSession.finish(response, nil, requestContext: requestContext, completion: completionHandler)
             case .noContent:
                 let emptyJsonData = Data([0x7B, 0x7D]) // "{}" empty json data
                 guard let response = try? JSONDecoder().decode(requestContext.responseBodyType, from: emptyJsonData) else {
-                    URLSession.finish(nil, .invalidResponseBody(requestContext.responseBodyType), requestContext: requestContext, completion: completionHandler)
+                    URLSession.finish(nil, .invalidResponseBody(requestContext.responseBodyType, String(bytes: data, encoding: .utf8) ?? ""), requestContext: requestContext, completion: completionHandler)
                     return
                 }
                 URLSession.finish(response, nil, requestContext: requestContext, completion: completionHandler)

@@ -9,7 +9,6 @@
 import Foundation
 
 // Disable Swiftlint for the ID property
-// swiftlint:disable identifier_name
 struct Player: Decodable {
     let id: Int
     let name: String
@@ -24,14 +23,14 @@ struct Player: Decodable {
     let preferredFoot: String
     let skillMoves: Int
     let workRate: String
-    let exactPosition: ExactPlayerPosition
+    let position: ExactPlayerPosition
     let jerseyNumber: Int
     let height: String
     let weight: Int
 
     // MARK: - Computed
-    var position: PlayerPosition {
-        return PlayerPosition(exact: exactPosition)
+    var roughPosition: PlayerPosition {
+        return PlayerPosition(exact: position)
     }
 
     var firstName: String? {

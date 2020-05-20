@@ -24,6 +24,7 @@
 		8903C054246707F2009B152B /* OverallValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C0462464CFE9009B152B /* OverallValueLabel.swift */; };
 		8903C05524672291009B152B /* PlayerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1482457415600F68E30 /* PlayerDetailViewModel.swift */; };
 		8903C05924677FA9009B152B /* UIImage+Outline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C05824677FA9009B152B /* UIImage+Outline.swift */; };
+		891A508624759763002865ED /* APIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891A508524759763002865ED /* APIIntegrationTests.swift */; };
 		892096372444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */; };
 		892096382444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */; };
 		892096392444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */; };
@@ -208,6 +209,7 @@
 		8903C0482465F3F7009B152B /* PlayerPreviewDisplayContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPreviewDisplayContext.swift; sourceTree = "<group>"; };
 		8903C04A2465F48D009B152B /* PlayerPreviewDataStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPreviewDataStackView.swift; sourceTree = "<group>"; };
 		8903C05824677FA9009B152B /* UIImage+Outline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIImage+Outline.swift"; path = "Betterpick/Common/Extension/UIImage+Outline.swift"; sourceTree = SOURCE_ROOT; };
+		891A508524759763002865ED /* APIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIIntegrationTests.swift; sourceTree = "<group>"; };
 		892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+childAddRemove.swift"; sourceTree = "<group>"; };
 		8920964E2444B92400DF93BB /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		892096572444BED700DF93BB /* TabBarViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -467,6 +469,14 @@
 				8903C0462464CFE9009B152B /* OverallValueLabel.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		891A50842475974E002865ED /* APIIntegration */ = {
+			isa = PBXGroup;
+			children = (
+				891A508524759763002865ED /* APIIntegrationTests.swift */,
+			);
+			path = APIIntegration;
 			sourceTree = "<group>";
 		};
 		892096342444AF3500DF93BB /* Extension */ = {
@@ -944,6 +954,7 @@
 		89A2A7DE244473BE006149A6 /* BetterpickTests */ = {
 			isa = PBXGroup;
 			children = (
+				891A50842475974E002865ED /* APIIntegration */,
 				89DA2D00246F53FC00964B5C /* ViewModel */,
 				89A2A7E1244473BE006149A6 /* Info.plist */,
 			);
@@ -1140,13 +1151,16 @@
 				TargetAttributes = {
 					89A2A7C2244473BC006149A6 = {
 						CreatedOnToolsVersion = 11.4;
+						ProvisioningStyle = Automatic;
 					};
 					89A2A7DA244473BE006149A6 = {
 						CreatedOnToolsVersion = 11.4;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 89A2A7C2244473BC006149A6;
 					};
 					89A2A7E5244473BE006149A6 = {
 						CreatedOnToolsVersion = 11.4;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 89A2A7C2244473BC006149A6;
 					};
 				};
@@ -1478,6 +1492,7 @@
 				89DA2D04246F5B5000964B5C /* TabBarViewModelTests.swift in Sources */,
 				892096782444EBE500DF93BB /* Size.swift in Sources */,
 				892096702444E1CF00DF93BB /* ConstrainableView.swift in Sources */,
+				891A508624759763002865ED /* APIIntegrationTests.swift in Sources */,
 				892096382444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */,
 				892096742444E64000DF93BB /* UIView+Add.swift in Sources */,
 			);

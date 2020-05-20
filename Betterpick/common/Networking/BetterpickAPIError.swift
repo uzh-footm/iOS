@@ -13,7 +13,7 @@ enum BetterpickAPIError: Error, CustomStringConvertible {
     case urlResponseNotCreated
     case responseDataIsNil
     case invalidStatusCode(Int)
-    case invalidResponseBody(Decodable.Type)
+    case invalidResponseBody(Decodable.Type, String)
     case urlSession(error: Error)
 
     public var description: String {
@@ -22,7 +22,7 @@ enum BetterpickAPIError: Error, CustomStringConvertible {
         case .urlResponseNotCreated: return "Url response couldn't be created"
         case .responseDataIsNil: return "Response data was nil"
         case .invalidStatusCode(let statusCode): return "Invalid status code: \(statusCode)"
-        case .invalidResponseBody(let bodyType): return "Couldn't match response body with \(bodyType)"
+        case .invalidResponseBody(let bodyType, let actualData): return "Couldn't match \(actualData) with \(bodyType)"
         case .urlSession(let underlyingError): return "URLSession error: \(underlyingError)"
         }
     }

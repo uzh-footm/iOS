@@ -9,13 +9,15 @@
 import Foundation
 
 class League: Codable {
-    let name: String
-    let leagueId: String
+    let id: String
+
+    var name: String {
+        return id
+    }
 
     var teams: [TeamPreview]?
 
-    init(name: String, leagueId: String) {
-        self.name = name
-        self.leagueId = leagueId
+    init(id: String) {
+        self.id = id
     }
 }

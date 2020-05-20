@@ -10,7 +10,7 @@ import Foundation
 
 struct PlayerFilterData: Encodable, Equatable {
 
-    enum SortOrder: Int, Encodable, CaseIterable, CustomStringConvertible {
+    enum SortOrder: String, Encodable, CaseIterable, CustomStringConvertible {
         case desc
         case asc
 
@@ -57,6 +57,24 @@ struct PlayerFilterData: Encodable, Equatable {
     static var minimumOvr: Int = 40
     static var maximumOvr: Int = 100
     static let defaultAnyValueText = "Any"
+
+    var parameters: HTTPParameters {
+        var params = HTTPParameters()
+        params["sort"] = sortOrder.rawValue
+        if let nationality = nationality {
+            params["nationality"] = nationality.name
+        }
+        if let position = position {
+            if let exactPosition = exactPosition {
+                params["position"] = exactPosition.rawValue
+            } else {
+                params["position"] = position.exactPositions.map({ $0.rawValue }).joined(separator: ",")
+            }
+        }
+        params["ovrGte"] = String(ovrGreaterThanOrEqual)
+        params["ovrLte"] = String(ovrLessThanOrEqual)
+        return params
+    }
 }
 
 // MARK: - CustomStringConvertible

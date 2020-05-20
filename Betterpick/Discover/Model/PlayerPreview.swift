@@ -9,13 +9,14 @@
 import Foundation
 
 struct PlayerPreview: Decodable {
-    let playerId: String
+    let id: Int
     let name: String
-    let photoURL: URL
-    let squadNumber: Int
+    let photo: URL
+    let age: Int
+    let jerseyNumber: Int
     let position: ExactPlayerPosition
-    let nation: String
-    let ovr: Int
+    let nationality: String
+    let overall: Int
     let club: String
 
     var roughPosition: PlayerPosition {
