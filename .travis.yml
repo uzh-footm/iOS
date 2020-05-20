@@ -11,7 +11,7 @@ before_install:
   # install dependencies
 install:
   - bundle install
-  - bunde exec pod install
+  - bundle exec pod install
 
 # jobs and stages to run
 jobs:
