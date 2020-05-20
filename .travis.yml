@@ -37,8 +37,15 @@ jobs:
     - stage: deploy/docs
       name: "Deploy iOS App Documentation to GitHub Pages"
       script:
-        - bundle exec fastlane generate_docs
+        #- bundle exec fastlane generate_docs
+        - jazzy --config docs/.jazzy.yaml
       after_failure:
         - find /var/folders/z3 -name '*.log' -exec tail -800 {} \;
+      deploy:
+        provider:     pages
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN
+        keep-history: true
+        local-dir:    docs/src
       on:
         branch: develop
