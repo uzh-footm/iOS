@@ -54,6 +54,16 @@
                </Test>
             </SkippedTests>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "891A508C2475D583002865ED"
+               BuildableName = "BetterpickScreenshots.xctest"
+               BlueprintName = "BetterpickScreenshots"
+               ReferencedContainer = "container:Betterpick.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
