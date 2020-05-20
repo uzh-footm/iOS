@@ -4,3 +4,7 @@ disabled_rules:
 cyclomatic_complexity:
   ignores_case_statements: true
   warning: 12
+
+identifier_name:
+  excluded:
+    - id
