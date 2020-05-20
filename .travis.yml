@@ -21,7 +21,6 @@ install:
 jobs:
   include:
     - stage: "Test"
-      if: branch = develop
       name: "Unit tests"
       script:
         - bundle exec fastlane tests_mock
