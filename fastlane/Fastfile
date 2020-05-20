@@ -28,4 +28,9 @@ platform :ios do
   lane :tests do
     run_tests(scheme: "Betterpick")
   end
+
+  desc "Documentation generation via Jazzy"
+  lane :generate_docs do
+    jazzy(config: "docs/.jazzy.yaml")
+  end
 end

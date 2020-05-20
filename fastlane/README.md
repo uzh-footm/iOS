@@ -26,6 +26,11 @@ Runs tests for the target that uses BetterpickAPIManagerMock
 fastlane ios tests
 ```
 Runs tests
+### ios generate_docs
+```
+fastlane ios generate_docs
+```
+Documentation generation via Jazzy
 
 ----
 
