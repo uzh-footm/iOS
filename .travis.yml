@@ -38,7 +38,7 @@ jobs:
       script:
         - bundle exec fastlane generate_docs
       after_failure:
-        - find /var/folders/z3 -name '*.log' -exec tail -200 {} \;
+        - find /var/folders/z3 -name '*.log' -exec tail -800 {} \;
       deploy:
         provider:     pages
         skip-cleanup: true
