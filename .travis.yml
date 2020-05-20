@@ -13,6 +13,7 @@ before_install:
   # install dependencies
 install:
   - bundle install
+  - bundle info jazzy
   - bundle exec pod install
 
 stages:
@@ -33,6 +34,8 @@ jobs:
       name: "Deploy iOS App Documentation to GitHub Pages"
       script:
         - bundle exec fastlane generate_docs
+      after_failure:
+        - find /var/folders -name '*.log' -exec cat {} \;
       deploy:
         provider:     pages
         skip-cleanup: true
