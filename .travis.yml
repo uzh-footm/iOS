@@ -40,8 +40,8 @@ jobs:
       script:
         - bundle exec jazzy
       after_failure:
-        - sleep 4
-        - find /var/folders/z3 -name '*.log' -exec tail -300 {} \;
+        - sleep 20
+        - find /var/folders/z3 -name '*.log' -exec cat {} \;
       deploy:
         provider:     pages
         skip-cleanup: true
