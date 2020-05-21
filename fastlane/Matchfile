@@ -5,7 +5,8 @@ storage_mode("git")
 # The default type, can be: appstore, adhoc, enterprise or development
 type("development") 
 
-app_identifier(["com.dvdblk.betterpick"])
+#app_identifier(["com.dvdblk.betterpick", "com.dvdblk.betterpick.beta.mock", "com.dvdblk.betterpick.beta"])
+app_identifier(["com.dvdblk.betterpick", "com.dvdblk.betterpick.*"])
 
 # Your Apple Developer Portal username
-username("betterpick.appstoreconnect@dvdblk.com") 
+username("david.bielik1@gmail.com") 

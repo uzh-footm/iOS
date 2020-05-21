@@ -102,7 +102,7 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
     // MARK: GET /leagues/{leagueID}
     override func league(leagueID: String, completion: @escaping BetterpickAPIManager.Callback<GetLeagueResponseBody>) {
 
-        returnSuccessAfter(duration: 0.3, completion: completion, response: GetLeagueResponseBody(teams: teams))
+        returnSuccessAfter(duration: 0.3, completion: completion, response: teams)
     }
 
     // Generating Random String

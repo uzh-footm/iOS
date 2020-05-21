@@ -10,3 +10,6 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 #include "Pods/Target Support Files/Pods-Betterpick/Pods-Betterpick.release.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER=com.dvdblk.betterpick
+PRODUCT_NAME=Betterpick

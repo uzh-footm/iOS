@@ -17,7 +17,7 @@ default_platform(:ios)
 
 platform :ios do
   desc "Runs tests for the target that uses BetterpickAPIManagerMock"
-  lane :tests_mock do
+  lane :tests_mocks do
     run_tests(
       scheme: "Betterpick Mock",
       devices: ["iPhone 11 Pro"],
@@ -32,5 +32,12 @@ platform :ios do
   desc "Documentation generation via Jazzy"
   lane :generate_docs do
     jazzy(config: "docs/.jazzy.yaml")
+  end
+
+  desc "Testflight Beta mocks"
+  lane :beta_mocks do
+    sync_code_signing(type: "appstore")
+    build_app(scheme: "Betterpick MockBeta")
+    upload_to_testflight
   end
 end

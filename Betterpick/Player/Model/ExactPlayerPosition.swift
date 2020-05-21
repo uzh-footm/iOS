@@ -20,19 +20,27 @@ enum ExactPlayerPosition: String, CaseIterable, Codable {
     case RB
     // Middle
     case CM
+    case LCM
     case LDM
     case LAM
+    case RCM
     case RDM
     case RAM
     case CDM
     case CAM
     case LM
     case RM
+    case LWB
+    case RWB
     // Attack
     case ST
     case CF
     case LW
     case RW
+    case RS
+    case LS
+    case LF
+    case RF
 
     // MARK: - ExactPositions
     static var goalkeeper: [ExactPlayerPosition] {
@@ -44,10 +52,10 @@ enum ExactPlayerPosition: String, CaseIterable, Codable {
     }
 
     static var middle: [ExactPlayerPosition] {
-        return [.CM, .LDM, .LAM, .RDM, .RAM, .CDM, .CAM, .LM, .RM]
+        return [.CM, .LCM, .LDM, .LAM, .RCM, .RDM, .RAM, .CDM, .CAM, .LM, .RM, .LWB, .RWB]
     }
 
     static var attack: [ExactPlayerPosition] {
-        return [.ST, .CF, .LW, .RW]
+        return [.ST, .CF, .LW, .RW, .RS, .LS, .LF, .RF]
     }
 }

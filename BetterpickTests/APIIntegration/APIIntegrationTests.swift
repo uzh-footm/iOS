@@ -83,7 +83,7 @@ class APIIntegrationTests: XCTestCase {
     }
 
     func testGetClubPlayers() {
-        let club = "RC Celta"
+        let club = "CD Everton de Viña del Mar"
         let requestSuccessExpectation = expectation(description: "Request should return 200.")
 
         apiManager.clubPlayers(clubID: club, completion: commonCompletion(expectation: requestSuccessExpectation))
@@ -113,11 +113,11 @@ class APIIntegrationTests: XCTestCase {
 
         apiManager.players(filterData: PlayerFilterData(), completion: commonCompletion(expectation: requestSuccessExpectation))
 
-        wait(for: [requestSuccessExpectation], timeout: 4)
+        wait(for: [requestSuccessExpectation], timeout: 10)
     }
 
     func testGetClub() {
-        let clubID = "RC Celta"
+        let clubID = "CD Everton de Viña del Mar"
         let requestSuccessExpectation = expectation(description: "Request should return 200.")
 
         apiManager.club(clubID: clubID, completion: commonCompletion(expectation: requestSuccessExpectation))

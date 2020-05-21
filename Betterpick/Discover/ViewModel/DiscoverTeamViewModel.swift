@@ -29,7 +29,7 @@ class DiscoverTeamViewModel: FetchingViewModel<GetLeagueResponseBody, League> {
 
     override func responseBodyToModel(_ responseBody: GetLeagueResponseBody) -> League? {
         guard let selected = selectedLeague else { return nil }
-        selected.teams = responseBody.teams
+        selected.teams = responseBody
         return selected
     }
 

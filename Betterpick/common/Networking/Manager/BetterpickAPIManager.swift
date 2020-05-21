@@ -87,9 +87,9 @@ class BetterpickAPIManager {
         perform(requestContext: requestContext, managerCompletion: completion)
     }
 
-    // MARK: GET /leagues/{leagueID}
+    // MARK: GET /clubs/league/{leagueID}
     func league(leagueID: String, completion: @escaping Callback<GetLeagueResponseBody>) {
-        let endpoint = "/leagues/\(leagueID.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")"
+        let endpoint = "/clubs/league/\(leagueID.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")"
         let request = apiRequest(endpoint: endpoint, method: .get, parameters: nil)
         let requestContext = BetterpickAPIRequestContext(responseBodyType: GetLeagueResponseBody.self, apiRequest: request)
         perform(requestContext: requestContext, managerCompletion: completion)
@@ -120,9 +120,9 @@ class BetterpickAPIManager {
         perform(requestContext: requestContext, managerCompletion: completion)
     }
 
-    // MARK: GET /players/search
+    // MARK: GET /players
     func players(filterData: PlayerFilterData, completion: @escaping Callback<GetPlayersResponseBody>) {
-        let endpoint = "/players/search"
+        let endpoint = "/players"
         let parameters = filterData.parameters
         let request = apiRequest(endpoint: endpoint, method: .get, parameters: parameters)
         let requestContext = BetterpickAPIRequestContext(responseBodyType: GetPlayersResponseBody.self, apiRequest: request)
@@ -131,7 +131,7 @@ class BetterpickAPIManager {
 
     // MARK: GET /clubs/{clubID}
     func club(clubID: String, completion: @escaping Callback<TeamPreview>) {
-        let endpoint = "/clubs/\(clubID)"
+        let endpoint = "/clubs/\(clubID.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")"
         let request = apiRequest(endpoint: endpoint, method: .get, parameters: nil)
         let requestContext = BetterpickAPIRequestContext(responseBodyType: TeamPreview.self, apiRequest: request)
         perform(requestContext: requestContext, managerCompletion: completion)

@@ -8,6 +8,4 @@
 
 import Foundation
 
-struct GetLeagueResponseBody: Decodable {
-    let teams: [TeamPreview]
-}
+typealias GetLeagueResponseBody = [TeamPreview]

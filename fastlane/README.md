@@ -16,9 +16,9 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
-### ios tests_mock
+### ios tests_mocks
 ```
-fastlane ios tests_mock
+fastlane ios tests_mocks
 ```
 Runs tests for the target that uses BetterpickAPIManagerMock
 ### ios tests
@@ -31,6 +31,11 @@ Runs tests
 fastlane ios generate_docs
 ```
 Documentation generation via Jazzy
+### ios beta_mocks
+```
+fastlane ios beta_mocks
+```
+Testflight Beta mocks
 
 ----
 
