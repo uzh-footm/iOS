@@ -126,6 +126,6 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
     }
 
     override func club(clubID: String, completion: @escaping BetterpickAPIManager.Callback<TeamPreview>) {
-        returnSuccessAfter(completion: completion, response: TeamPreview(id: "FC Barcelona", logo: URL(string: "https://cdn.sofifa.com/teams/241/light_240.png")!))
+        returnSuccessAfter(completion: completion, response: TeamPreview(id: "FC Barcelona", logo: URL(string: "https://cdn.sofifa.org/teams/2/light/241.png")!))
     }
 }
