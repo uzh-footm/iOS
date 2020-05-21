@@ -9,6 +9,9 @@ cache:
       
     cocoapods: true
 
+rvm:
+  - 2.7.1
+
 before_install:
     # Make sure we use the bundler version that is provided in the Gemfile.lock file
   - gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
