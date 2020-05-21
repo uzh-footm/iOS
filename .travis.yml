@@ -38,7 +38,7 @@ jobs:
     - stage: deploy/docs
       name: "Deploy iOS App Documentation to GitHub Pages"
       script:
-        - bundle exec jazzy
+        - bundle exec fastlane generate_docs
       after_failure:
         - sleep 20
         - find /var/folders/z3 -name '*.log' -exec cat {} \;
