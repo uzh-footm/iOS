@@ -46,6 +46,9 @@ extension UILabel {
         case .secondary:
             textColor = .customSecondaryLabel
             font = UIFont.systemFont(ofSize: 14)
+            numberOfLines = 1
+            adjustsFontSizeToFitWidth = true
+            minimumScaleFactor = 0.5
         case .largeTitle:
             textColor = .customLabel
             font = UIFont.systemFont(ofSize: 34, weight: .bold)

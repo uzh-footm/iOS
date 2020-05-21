@@ -34,7 +34,7 @@ struct Size {
         /// TabBarIcon sizes
         static let tabBarIcon: CGFloat = 30
         /// Size of the teamLogo in a `UITableViewCell`
-        static let teamLogo: CGFloat = 48
+        static let teamLogo: CGFloat = 40
         /// Size of the team logo in Team detail
         static let bigTeamLogo: CGFloat = 80
         /// Size of the player photo in a `UITableViewCell`
@@ -44,8 +44,7 @@ struct Size {
     }
 
     struct Cell {
-        static let height: CGFloat = 44
-        static let tinyVerticalMargin: CGFloat = 2
+        static let height: CGFloat = 40
         static let verticalMargin: CGFloat = 6
         static let extendedSideMargin: CGFloat = 18
     }

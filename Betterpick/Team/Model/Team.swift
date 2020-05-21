@@ -18,7 +18,7 @@ class Team {
 
     init(from preview: TeamPreview) {
         self.name = preview.name
-        self.logoURL = preview.logo
+        self.logoURL = preview.actualLogo
     }
 
     static func createSquad(previews: [PlayerPreview]) -> Squad {

@@ -32,7 +32,7 @@ class TeamTableViewCell: UITableViewCell, Reusable {
     // MARK: Inherited
     func setup() {
         if #available(iOS 13, *) {} else {
-            contentView.layoutMargins = UIEdgeInsets(top: Size.Cell.tinyVerticalMargin, left: Size.Cell.extendedSideMargin, bottom: Size.Cell.tinyVerticalMargin, right: 0)
+            contentView.layoutMargins = UIEdgeInsets(top: Size.Cell.verticalMargin, left: Size.Cell.extendedSideMargin, bottom: Size.Cell.verticalMargin, right: 0)
         }
         accessoryType = .disclosureIndicator
         backgroundColor = .compatibleSecondarySystemGroupedBackground
@@ -58,8 +58,8 @@ class TeamTableViewCell: UITableViewCell, Reusable {
         let imageTopConstraint: NSLayoutConstraint
         let imageBottomConstraint: NSLayoutConstraint
         if #available(iOS 13, *) {
-            imageTopConstraint = teamLogoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Size.Cell.tinyVerticalMargin)
-            imageBottomConstraint = teamLogoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Size.Cell.tinyVerticalMargin)
+            imageTopConstraint = teamLogoImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Size.Cell.verticalMargin)
+            imageBottomConstraint = teamLogoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Size.Cell.verticalMargin)
         } else {
             imageTopConstraint = teamLogoImageView.topAnchor.constraint(equalTo: contentView.layoutMarginsGuide.topAnchor)
             imageBottomConstraint = teamLogoImageView.bottomAnchor.constraint(equalTo: contentView.layoutMarginsGuide.bottomAnchor)
@@ -77,6 +77,6 @@ class TeamTableViewCell: UITableViewCell, Reusable {
     // MARK: - Public
     public func configure(from teamPreview: TeamPreview) {
         teamNameLabel.text = teamPreview.name
-        teamLogoImageView.sd_setImage(with: teamPreview.logo, placeholderImage: nil, options: [], completed: nil)
+        teamLogoImageView.sd_setImage(with: teamPreview.actualLogo, placeholderImage: nil, options: [], completed: nil)
     }
 }

@@ -28,7 +28,6 @@ extension URLSession: BetterpickAPIHandler {
     func perform<ResponseBody: Decodable>(requestContext: BetterpickAPIRequestContext<ResponseBody>, completionHandler: @escaping CompletionCallback<ResponseBody>) {
         // Create a task
         let task = dataTask(with: requestContext.apiRequest) { data, urlResponse, maybeError in
-             print(requestContext.apiRequest.url, String(bytes: data!, encoding: .utf8) ?? "")
             if let error = maybeError {
                 URLSession.finish(nil, .urlSession(error: error), requestContext: requestContext, completion: completionHandler)
                 return
