@@ -5,8 +5,6 @@ osx_image: xcode11.4
 
 cache:
     bundler: true
-    directories:
-      
     cocoapods: true
 
 rvm:
@@ -42,7 +40,8 @@ jobs:
       script:
         - bundle exec fastlane generate_docs
       after_failure:
-        - find /var/folders/z3 -name '*.log' -exec tail -100 {} \;
+        - sleep 4
+        - find /var/folders/z3 -name '*.log' -exec tail -300 {} \;
       deploy:
         provider:     pages
         skip-cleanup: true
