@@ -5,4 +5,4 @@ ruby '~> 2.7.1'
 gem "fastlane"
 gem "cocoapods"
 gem "xcode-install"
-gem "jazzy", "0.13.2"
+gem "jazzy"
