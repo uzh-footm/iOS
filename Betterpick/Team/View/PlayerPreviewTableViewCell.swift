@@ -111,6 +111,7 @@ class PlayerPreviewTableViewCell: UITableViewCell, Reusable {
             overallValueLabel.ovr = playerPreview.overall
         }
         // Image
-        playerPhotoImageView.sd_setImage(with: playerPreview.photo, placeholderImage: #imageLiteral(resourceName: "baseline_settings_black_48pt"), options: [], completed: nil)
+        playerPhotoImageView.sd_setImage(with: playerPreview.actualPhoto, placeholderImage: #imageLiteral(resourceName: "player_default_photo"), options: [], completed: nil)
     }
 }
+
