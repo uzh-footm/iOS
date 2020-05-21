@@ -24,7 +24,7 @@ class BetterpickUITests: XCTestCase {
     }
 
     func testExample() throws {
-        
+
     }
 
     func testLaunchPerformance() throws {

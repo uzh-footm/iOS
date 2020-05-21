@@ -19,15 +19,15 @@ class BetterpickScreenshots: XCTestCase {
         let app = XCUIApplication()
         setupSnapshot(app)
         app.launch()
-        
+
         // Discover - Teams
         XCUIApplication().segmentedControls.buttons["Teams"].tap()
         snapshot("01DiscoverTeamsScreen")
-        
+
         // Team
         app.tables.cells.element(boundBy: 3).tap()
         snapshot("02TeamScreen")
-        
+
         // Player
         app.tables.cells.element(boundBy: 2).tap()
         snapshot("03PlayerDetailScreen")
