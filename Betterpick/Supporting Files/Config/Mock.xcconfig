@@ -12,5 +12,5 @@
 #include "Pods/Target Support Files/Pods-Betterpick/Pods-Betterpick.mock.xcconfig"
 
 SWIFT_ACTIVE_COMPILATION_CONDITIONS=API_MOCK
-PRODUCT_NAME=BetterpickMock
+PRODUCT_NAME=Betterpick Mock
 PRODUCT_BUNDLE_IDENTIFIER=com.dvdblk.betterpick.mock

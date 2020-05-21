@@ -313,7 +313,7 @@
 		899BF16D245889C000F68E30 /* ExactPlayerPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExactPlayerPosition.swift; sourceTree = "<group>"; };
 		899BF16F245889CB00F68E30 /* PlayerPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPosition.swift; sourceTree = "<group>"; };
 		899BF17124589CE200F68E30 /* GetNationalitiesBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GetNationalitiesBody.swift; path = Betterpick/Common/Networking/ResponseBody/GetNationalitiesBody.swift; sourceTree = SOURCE_ROOT; };
-		89A2A7C3244473BC006149A6 /* Betterpick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Betterpick.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89A2A7C3244473BC006149A6 /* BetterpickDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterpickDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A2A7C6244473BC006149A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89A2A7C8244473BC006149A6 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		89A2A7CA244473BC006149A6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -986,7 +986,7 @@
 		89A2A7C4244473BC006149A6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				89A2A7C3244473BC006149A6 /* Betterpick.app */,
+				89A2A7C3244473BC006149A6 /* BetterpickDebug.app */,
 				89A2A7DB244473BE006149A6 /* BetterpickTests.xctest */,
 				89A2A7E6244473BE006149A6 /* BetterpickUITests.xctest */,
 				891A508D2475D583002865ED /* BetterpickScreenshots.xctest */,
@@ -1177,7 +1177,7 @@
 			);
 			name = Betterpick;
 			productName = Betterpick;
-			productReference = 89A2A7C3244473BC006149A6 /* Betterpick.app */;
+			productReference = 89A2A7C3244473BC006149A6 /* BetterpickDebug.app */;
 			productType = "com.apple.product-type.application";
 		};
 		89A2A7DA244473BE006149A6 /* BetterpickTests */ = {
@@ -1816,9 +1816,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dvdblk.betterpick;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_MODULE_NAME = Betterpick;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2018,9 +2018,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dvdblk.betterpick;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_MODULE_NAME = Betterpick;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2040,9 +2040,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dvdblk.betterpick;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_MODULE_NAME = Betterpick;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2212,9 +2212,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dvdblk.betterpick;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
 				PRODUCT_MODULE_NAME = Betterpick;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
