@@ -8,18 +8,7 @@ cache:
     cocoapods: true
 
 before_install:
-  - gem update --system
-  - gem --version
-  - ruby --version
-  # Make sure we use the bundler version that is provided in the Gemfile.lock file
-  - gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
-
-# install dependencies
-install:
-  - bundle config set path 'vendor/bundle'
-  - bundle install
-  - bundle info jazzy
-  - bundle exec pod install
+  - gem install jazzy
 
 stages:
   - test
@@ -39,7 +28,7 @@ jobs:
       name: "Deploy iOS App Documentation to GitHub Pages"
       script:
         #- bundle exec fastlane generate_docs
-        - bundle exec jazzy --config docs/.jazzy.yaml
+        - jazzy --config docs/.jazzy.yaml
       after_failure:
         - find /var/folders/z3 -name '*.log' -exec tail -800 {} \;
       deploy:
