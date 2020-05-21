@@ -191,7 +191,13 @@ extension PlayerDetailViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return Size.Cell.height
+        let section = viewModel.getSection(at: indexPath.section)
+        switch section {
+        case .team:
+            return Size.Cell.teamHeight
+        case .skillSection:
+            return Size.Cell.height
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

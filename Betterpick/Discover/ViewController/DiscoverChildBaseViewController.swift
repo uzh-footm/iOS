@@ -97,6 +97,7 @@ class DiscoverChildBaseViewController<VM>: VMViewController<VM>, UITableViewDele
     // These are required to be placed in this parent class because of this bug:
     // https://stackoverflow.com/questions/55393027/delegate-methods-in-child-class-sometimes-not-called-with-swift-5-compiler/55393950#55393950
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {}
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat { return UITableView.automaticDimension }
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {}
 
     // MARK: - Open

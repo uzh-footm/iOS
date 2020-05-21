@@ -109,6 +109,10 @@ class DiscoverTeamViewController: DiscoverChildBaseViewController<DiscoverTeamVi
         guard let teams = viewModel.currentLeague?.teams else { return }
         coordinator?.select(team: teams[indexPath.row])
     }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return Size.Cell.teamHeight
+    }
 
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         view.endEditing(true)

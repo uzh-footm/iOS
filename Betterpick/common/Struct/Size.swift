@@ -45,6 +45,7 @@ struct Size {
 
     struct Cell {
         static let height: CGFloat = 40
+        static let teamHeight: CGFloat = 52
         static let verticalMargin: CGFloat = 6
         static let extendedSideMargin: CGFloat = 18
     }
