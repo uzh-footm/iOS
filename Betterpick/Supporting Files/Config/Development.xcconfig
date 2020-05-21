@@ -1,5 +1,5 @@
 //
-//  Debug.xcconfig
+//  Development.xcconfig
 //  Betterpick
 //
 //  Created by David Bielik on 25/04/2020.
@@ -11,5 +11,5 @@
 
 #include "Pods/Target Support Files/Pods-Betterpick/Pods-Betterpick.debug.xcconfig"
 
-PRODUCT_NAME=BetterpickDebug
-PRODUCT_BUNDLE_IDENTIFIER=com.dvdblk.betterpick.debug
+PRODUCT_NAME=Betterpick Dev
+PRODUCT_BUNDLE_IDENTIFIER=com.dvdblk.betterpick.development

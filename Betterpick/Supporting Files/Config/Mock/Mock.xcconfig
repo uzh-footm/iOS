@@ -9,7 +9,7 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-#include "Pods/Target Support Files/Pods-Betterpick/Pods-Betterpick.mock.xcconfig"
+#include "Pods/Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock.debug.xcconfig"
 
 SWIFT_ACTIVE_COMPILATION_CONDITIONS=API_MOCK
 PRODUCT_NAME=Betterpick Mock

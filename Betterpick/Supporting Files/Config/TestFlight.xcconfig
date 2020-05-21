@@ -1,0 +1,15 @@
+//
+//  TestFlight.xcconfig
+//  Betterpick
+//
+//  Created by David Bielik on 22/05/2020.
+//  Copyright © 2020 dvdblk. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Pods/Target Support Files/Pods-Betterpick/Pods-Betterpick.testflight.xcconfig"
+
+PRODUCT_NAME=Betterpick TF
+PRODUCT_BUNDLE_IDENTIFIER=com.dvdblk.betterpick.testflight

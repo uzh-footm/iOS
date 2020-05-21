@@ -22,4 +22,8 @@ target 'Betterpick' do
   target 'BetterpickScreenshots' do
   end
 
+  target 'Betterpick Mock' do
+    inherit! :complete
+  end
+
 end

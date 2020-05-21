@@ -51,7 +51,7 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "MockBeta"
+      buildConfiguration = "TestFlight"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
@@ -70,7 +70,7 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "MockBeta"
+      buildConfiguration = "TestFlight"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -91,7 +91,7 @@
       </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "MockBeta"
+      buildConfiguration = "TestFlight"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -108,10 +108,10 @@
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "MockBeta">
+      buildConfiguration = "TestFlight">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "MockBeta"
+      buildConfiguration = "TestFlight"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
