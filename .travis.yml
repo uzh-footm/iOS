@@ -47,4 +47,4 @@ jobs:
         local-dir:    docs/src
         on:
           all_branches: true
-      if: branch = develop
+      if: branch = release
