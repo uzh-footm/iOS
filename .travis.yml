@@ -1,5 +1,5 @@
 # environment setup
-language: swift
+language: ruby
 os: osx
 osx_image: xcode11.4
 
