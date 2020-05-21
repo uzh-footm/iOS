@@ -7,9 +7,6 @@ cache:
     bundler: true
     cocoapods: true
 
-rvm:
-  - 2.7.1
-
 before_install:
     # Make sure we use the bundler version that is provided in the Gemfile.lock file
   - gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
@@ -38,6 +35,9 @@ jobs:
     - stage: deploy/docs
       name: "Deploy iOS App Documentation to GitHub Pages"
       script:
+        - export EXPANDED_CODE_SIGN_IDENTITY=""
+        - export EXPANDED_CODE_SIGN_IDENTITY_NAME=""
+        - export EXPANDED_PROVISIONING_PROFILE=""
         - bundle exec jazzy --xcodebuild-arguments -scheme,Betterpick,-workspace,Betterpick.xcworkspace,CODE_SIGN_IDENTITY="",CODE_SIGNING_REQUIRED=NO,CODE_SIGNING_ALLOWED=NO
       after_failure:
         - sleep 20
