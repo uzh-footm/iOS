@@ -127,6 +127,8 @@
 		89B544A4244BE2ED000C1C4B /* DiscoverCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */; };
 		89B6157A2477FA4900E6BE21 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B615792477FA4900E6BE21 /* Config.swift */; };
 		89B6157B2477FA4900E6BE21 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B615792477FA4900E6BE21 /* Config.swift */; };
+		89B6157C247835C400E6BE21 /* APIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891A508524759763002865ED /* APIIntegrationTests.swift */; };
+		89B6157D2478366000E6BE21 /* TabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DA2D03246F5B5000964B5C /* TabBarViewModelTests.swift */; };
 		89D478D624775D8E005546C4 /* ImageURLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D478D524775D8E005546C4 /* ImageURLProcessor.swift */; };
 		89D478D724775D8E005546C4 /* ImageURLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D478D524775D8E005546C4 /* ImageURLProcessor.swift */; };
 		89E24182247749AF00F1B51E /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920964E2444B92400DF93BB /* TabBarViewModel.swift */; };
@@ -1750,6 +1752,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B6157D2478366000E6BE21 /* TabBarViewModelTests.swift in Sources */,
+				89B6157C247835C400E6BE21 /* APIIntegrationTests.swift in Sources */,
 				893A617B2477EE1E00CE1CD0 /* BetterpickTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2365,7 +2369,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				INFOPLIST_FILE = "$(SRCROOT)/Betterpick/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -2388,7 +2392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Betterpick/Supporting Files/Info.plist";
@@ -2454,7 +2458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				INFOPLIST_FILE = "$(SRCROOT)/Betterpick/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -2477,7 +2481,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				INFOPLIST_FILE = "$(SRCROOT)/Betterpick/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -2500,7 +2504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Betterpick/Supporting Files/Info.plist";
@@ -2586,7 +2590,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 21;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				INFOPLIST_FILE = "$(SRCROOT)/Betterpick/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;

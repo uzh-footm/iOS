@@ -19,8 +19,8 @@ class APIIntegrationTests: XCTestCase {
     func commonCompletion<T>(expectation: XCTestExpectation) -> BetterpickAPIManager.Callback<T> {
         return { (response) in
             switch response {
-            case .error(let error, let underlyingError):
-                print("Request error \(error) | underlying \(underlyingError)")
+            case .error(let error):
+                print("Request error \(error)")
             case .success:
                 expectation.fulfill()
             }
@@ -43,7 +43,7 @@ class APIIntegrationTests: XCTestCase {
         failedExpectation.isInverted = true
 
         let completion: BetterpickAPIManager.Callback<String> = commonCompletion(expectation: failedExpectation)
-        completion(.error(.server, .unknown))
+        completion(.error(.unknown))
 
         wait(for: [failedExpectation], timeout: 0.5)
     }
@@ -71,7 +71,7 @@ class APIIntegrationTests: XCTestCase {
 
         manager.leagues { (response) in
             switch response {
-            case .error(let error, _):
+            case .error(let error):
                 print("Error \(error)")
             case .success(let leagues):
                 guard let firstLeague = leagues.first else { break }
