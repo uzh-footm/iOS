@@ -7,11 +7,9 @@ cache:
     bundler: true
     cocoapods: true
     directories:
-      - "vendor/bundle"
+      - "./vendor/bundle"
 
 before_install:
-  - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
-  - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, BRANCH=$BRANCH"
     # Make sure we use the bundler version that is provided in the Gemfile.lock file
   - gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
 
@@ -24,16 +22,16 @@ install:
 stages:
   # Test stage
   # Allow only if the type is a pull request and the branch is 'feature/...'
-  - name: test
+  - name: Test
     if: type = pull_request AND branch IN (develop, master)
   # Deploy new release stage
   # Allow only if the type is a PR and the branch is 'release/...'
-  - name: deploy_new_release
+  - name: Release
     if: type = pull_request AND branch = master
   # Deploy docs stage
   # Allow only if we push to master
   # TODO: Add check for: commit_message =~ ^[Release].*$
-  - name: deploy_docs
+  - name: Deploy Documentation
     if: type = push AND branch = master
 
 
@@ -43,7 +41,7 @@ jobs:
   include:
     ###################### master ######################
     ### Docs deployment
-    - stage: deploy_docs
+    - stage: Deploy Documentation
       name: "Deploy iOS App Documentation from master to GitHub Pages"
       script:
         - bundle exec fastlane generate_docs
@@ -58,26 +56,26 @@ jobs:
         keep-history: true
         local-dir:    docs/src
 
-    ###################### feature/ PR ######################
     ### Tests
-    - stage: test
-      name: "iOS App unit tests"
+    - stage: Test
+      name: "UI & Unit tests"
       script:
         - bundle exec fastlane tests
+      after_failure:
+        - cat $SCAN_DERIVED_DATA_PATH/Build/Intermediates.noindex/Betterpick.build/Debug-iphonesimulator/Betterpick.build/*
 
-    ###################### release/ PR ######################
     ### New Release Deployment
-    - stage: deploy_new_release
+    - stage: Release
       ## Screenshots
       script:
         - bundle exec fastlane deploy_screenshots
       name: "Generate Screenshots"
       ## TF Upload
-      script:
+    - script:
         - bundle exec fastlane deploy_beta_mocks
       name: "TestFlight Upload"
       ## Documentation generation
-      script:
+    - script:
         - bundle exec fastlane generate_and_commit_documentation
       name: "Generate Documentation"
       
