@@ -7,6 +7,3 @@ type("development")
 
 #app_identifier(["com.dvdblk.betterpick", "com.dvdblk.betterpick.beta.mock", "com.dvdblk.betterpick.beta"])
 app_identifier(["com.dvdblk.betterpick", "com.dvdblk.betterpick.*"])
-
-# Your Apple Developer Portal username
-username("david.bielik1@gmail.com") 

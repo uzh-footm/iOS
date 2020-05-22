@@ -99,11 +99,19 @@ class APIIntegrationTests: XCTestCase {
 
         wait(for: [requestSuccessExpectation], timeout: 4)
     }
-
-    func testGetSearch() {
+    
+    func testGetSearchPlayers() {
         let requestSuccessExpectation = expectation(description: "Request should return 200.")
 
-        apiManager.search(name: "Messi", completion: commonCompletion(expectation: requestSuccessExpectation))
+        apiManager.searchPlayers(name: "Messi", completion: commonCompletion(expectation: requestSuccessExpectation))
+
+        wait(for: [requestSuccessExpectation], timeout: 4)
+    }
+    
+    func testGetSearchClubs() {
+        let requestSuccessExpectation = expectation(description: "Request should return 200.")
+
+        apiManager.searchClubs(name: "Barcelona", completion: commonCompletion(expectation: requestSuccessExpectation))
 
         wait(for: [requestSuccessExpectation], timeout: 4)
     }
@@ -117,7 +125,7 @@ class APIIntegrationTests: XCTestCase {
     }
 
     func testGetClub() {
-        let clubID = "CD Everton de Viña del Mar"
+        let clubID = "Borussia Dortmund"
         let requestSuccessExpectation = expectation(description: "Request should return 200.")
 
         apiManager.club(clubID: clubID, completion: commonCompletion(expectation: requestSuccessExpectation))

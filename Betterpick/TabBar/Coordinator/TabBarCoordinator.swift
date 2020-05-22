@@ -38,8 +38,8 @@ class TabBarCoordinator: SectioningCoordinator {
         case .discover:
             let leagueAndNationality = tabBarViewController.viewModel.leagueAndNationalityData
             childCoordinator = DiscoverNavigationCoordinator(data: leagueAndNationality)
-        case .myTeams:
-            childCoordinator = MyTeamsNavigationCoordinator()
+        //case .myTeams:
+        //    childCoordinator = MyTeamsNavigationCoordinator()
         case .settings:
             let settingsVC = SettingsViewController()
             childCoordinator = SettingsCoordinator(settingsViewController: settingsVC)

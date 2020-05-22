@@ -31,11 +31,13 @@ Runs tests
 fastlane ios generate_docs
 ```
 Documentation generation via Jazzy
-### ios testflight_mocks
+### ios beta_mocks
 ```
-fastlane ios testflight_mocks
+fastlane ios beta_mocks
 ```
-Testflight mocks
+Build and upload a new build of Betterpick Mock TF to TestFlight
+
+This action will also bump the build number
 
 ----
 
