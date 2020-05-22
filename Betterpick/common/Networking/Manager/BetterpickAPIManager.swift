@@ -111,16 +111,25 @@ class BetterpickAPIManager {
         perform(requestContext: requestContext, managerCompletion: completion)
     }
 
-    // MARK: GET /search?name={name}
-    func search(name: String, completion: @escaping Callback<GetSearchResponseBody>) {
-        let endpoint = "/search"
-        let parameters = ["name": name]
-        let request = apiRequest(endpoint: endpoint, method: .get, parameters: parameters)
-        let requestContext = BetterpickAPIRequestContext(responseBodyType: GetSearchResponseBody.self, apiRequest: request)
+    private func commonSearch<T: Decodable>(resultType: String, name: String, completion: @escaping Callback<T>) {
+        let endpoint = resultType + "/search/" + name
+        let request = apiRequest(endpoint: endpoint, method: .get, parameters: nil)
+        let requestContext = BetterpickAPIRequestContext(responseBodyType: T.self, apiRequest: request)
         perform(requestContext: requestContext, managerCompletion: completion)
     }
 
+    // MARK: GET /clubs/search/{name}
+    func searchClubs(name: String, completion: @escaping Callback<GetClubsSearchResponseBody>) {
+        commonSearch(resultType: "/clubs", name: name, completion: completion)
+    }
+
+    // MARK: GET /players/search/{name}
+    func searchPlayers(name: String, completion: @escaping Callback<GetPlayersSearchResponseBody>) {
+        commonSearch(resultType: "/players", name: name, completion: completion)
+    }
+
     // MARK: GET /players
+    /// Filter between players with `PlayerFilterData`
     func players(filterData: PlayerFilterData, completion: @escaping Callback<GetPlayersResponseBody>) {
         let endpoint = "/players"
         let parameters = filterData.parameters

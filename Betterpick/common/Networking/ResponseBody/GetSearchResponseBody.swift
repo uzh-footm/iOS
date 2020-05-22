@@ -8,7 +8,5 @@
 
 import Foundation
 
-struct GetSearchResponseBody: Decodable {
-    let players: [PlayerPreview]?
-    let clubs: [TeamPreview]?
-}
+typealias GetClubsSearchResponseBody = [TeamPreview]
+typealias GetPlayersSearchResponseBody = [PlayerPreview]

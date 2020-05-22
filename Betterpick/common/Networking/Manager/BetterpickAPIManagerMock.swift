@@ -110,13 +110,6 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
     }
 
     // MARK: GET /search?name=...
-    override func search(name: String, completion: @escaping BetterpickAPIManager.Callback<GetSearchResponseBody>) {
-        let searchResultPlayers = getPlayers(range: 0..<4)
-        let searchResultClubs = teams.shuffled().dropLast(Int.random(in: 14...18))
-        let searchResult = GetSearchResponseBody(players: searchResultPlayers, clubs: Array(searchResultClubs))
-        returnSuccessAfter(duration: 0.25, completion: completion, response: searchResult)
-    }
-
     override func players(filterData: PlayerFilterData, completion: @escaping BetterpickAPIManager.Callback<GetPlayersResponseBody>) {
         var players = getPlayers(range: 28..<34, ovrRange: filterData.ovrGreaterThanOrEqual...filterData.ovrLessThanOrEqual)
         let sortFn: ((Int, Int) -> Bool) = (filterData.sortOrder == .asc) ? (<) : (>)

@@ -29,11 +29,56 @@ class SearchViewModel {
     }
 
     func search() {
-        let currentSearchText = searchText
-        apiManager.search(name: searchText) { [weak self] result in
-            guard let strongSelf = self, strongSelf.searchText == currentSearchText else { return }
-            guard case .success(let searchResponse) = result else { return }
-            strongSelf.searchResult = SearchResult(getSearchResponse: searchResponse)
+        // Don't seearch if the text is empty
+        guard !searchText.isEmpty else { return }
+        let searchTextBeforeRequests = searchText
+        let requests = DispatchGroup()
+        var players: [PlayerPreview]?
+        var clubs: [TeamPreview]?
+        var playersError: Error?
+        var clubsError: Error?
+        
+        requests.enter()
+        apiManager.searchPlayers(name: searchText) { result in
+            defer { requests.leave() }
+            switch result {
+            case .error(let error, _):
+                playersError = error
+            case .success(let playersBody):
+                players = playersBody
+            }
+        }
+
+        requests.enter()
+        apiManager.searchClubs(name: searchText) { result in
+            defer { requests.leave() }
+            switch result {
+            case .error(let error, _):
+                clubsError = error
+            case .success(let clubsBody):
+                clubs = clubsBody
+            }
+        }
+
+        requests.notify(queue: .global(qos: .default)) { [weak self] in
+            DispatchQueue.main.async {
+                guard let strongSelf = self, strongSelf.searchText == searchTextBeforeRequests else { return }
+                guard let players = players else {
+                    if let error = playersError {
+                        // FIXME: do smth
+                        strongSelf.searchResult = SearchResult(players: [], clubs: [])
+                    }
+                    return
+                }
+                guard let clubs = clubs else {
+                    if let error = clubsError {
+                        // FIXME: do smth
+                        strongSelf.searchResult = SearchResult(players: [], clubs: [])
+                    }
+                    return
+                }
+                strongSelf.searchResult = SearchResult(players: players, clubs: clubs)
+            }
         }
     }
 
@@ -43,13 +88,13 @@ class SearchViewModel {
     }
 
     func playerPreview(at row: Int) -> PlayerPreview? {
-        guard let searchResult = searchResult, let players = searchResult.players else { return nil }
-        return players[row]
+        guard let searchResult = searchResult else { return nil }
+        return searchResult.players[row]
     }
 
     func clubPreview(at row: Int) -> TeamPreview? {
-        guard let searchResult = searchResult, let clubs = searchResult.clubs else { return nil }
-        return clubs[row]
+        guard let searchResult = searchResult else { return nil }
+        return searchResult.clubs[row]
     }
 
     func previews(at section: Int) -> [Decodable]? {
