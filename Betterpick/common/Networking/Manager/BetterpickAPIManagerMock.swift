@@ -117,6 +117,16 @@ class BetterpickAPIManagerMock: BetterpickAPIManager {
         let result = players
         returnSuccessAfter(completion: completion, response: result)
     }
+    
+    override func searchClubs(name: String, completion: @escaping BetterpickAPIManager.Callback<GetClubsSearchResponseBody>) {
+        let searchResultClubs = teams.shuffled().dropLast(Int.random(in: 14...18))
+        returnSuccessAfter(completion: completion, response: Array(searchResultClubs))
+    }
+    
+    override func searchPlayers(name: String, completion: @escaping BetterpickAPIManager.Callback<GetPlayersSearchResponseBody>) {
+        let searchResultPlayers = getPlayers(range: 0..<4)
+        returnSuccessAfter(duration: 0.25, completion: completion, response: searchResultPlayers)
+    }
 
     override func club(clubID: String, completion: @escaping BetterpickAPIManager.Callback<TeamPreview>) {
         returnSuccessAfter(completion: completion, response: TeamPreview(id: "FC Barcelona", logo: URL(string: "https://cdn.sofifa.org/teams/2/light/241.png")!))
