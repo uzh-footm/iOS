@@ -39,7 +39,7 @@ jobs:
         github-token: $GITHUB_TOKEN
         keep-history: true
         local-dir:    docs/src
-      if: type = push AND env(BRANCH) = master
+      if: type = push AND env(TRAVIS_BRANCH) = master
 
     ###################### feature/ PR ######################
     ### Tests
@@ -47,7 +47,7 @@ jobs:
       name: "iOS App unit tests"
       script:
         - bundle exec fastlane tests
-      if: type = pull_request AND env(BRANCH) =~ ^feature\/.*$
+      if: type = pull_request AND env(TRAVIS_PULL_REQUEST_BRANCH) =~ ^feature\/.*$
 
     ###################### release/ PR ######################
     ### Testflight Mocks Deployment
@@ -68,5 +68,5 @@ jobs:
       script:
         - bundle exec fastlane generate_and_commit_documentation
       name: "Generate Documentation"
-      if: type = pull_request AND env(BRANCH) =~ ^release\/.*$
+      if: type = pull_request AND env(TRAVIS_PULL_REQUEST_BRANCH) =~ ^release\/.*$
       
