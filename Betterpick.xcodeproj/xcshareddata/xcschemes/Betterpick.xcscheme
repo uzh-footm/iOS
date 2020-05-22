@@ -33,14 +33,14 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "89A2A7DA244473BE006149A6"
+               BlueprintIdentifier = "893A61772477EE1E00CE1CD0"
                BuildableName = "BetterpickTests.xctest"
                BlueprintName = "BetterpickTests"
                ReferencedContainer = "container:Betterpick.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "89A2A7E5244473BE006149A6"
@@ -53,7 +53,7 @@
             skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "891A508C2475D583002865ED"
+               BlueprintIdentifier = "893A61672477DA3700CE1CD0"
                BuildableName = "BetterpickScreenshots.xctest"
                BlueprintName = "BetterpickScreenshots"
                ReferencedContainer = "container:Betterpick.xcodeproj">

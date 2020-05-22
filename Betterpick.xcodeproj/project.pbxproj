@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5AD71E4A0D28588C705D3008 /* Pods_BetterpickTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94C03EA364238F977C211BCC /* Pods_BetterpickTests.framework */; };
-		6CEEC9682E8671BD9DA10096 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
-		879CF907544429BEC706B869 /* Pods_Betterpick_Betterpick_Mock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A226FB63D54EB728BB7B368A /* Pods_Betterpick_Betterpick_Mock.framework */; };
+		13213B013BD2C283861E452E /* Pods_Betterpick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FB1F4AA0DA3FEB7D24594E /* Pods_Betterpick.framework */; };
+		36FFD18471336FF9E25205DE /* Pods_Betterpick_BetterpickScreenshots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC55C12DE69B309D15AD7C7 /* Pods_Betterpick_BetterpickScreenshots.framework */; };
+		49BD3AC89CBBFBE395B26151 /* Pods_Betterpick_BetterpickUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4415D13ECC8F1B164F1EDB /* Pods_Betterpick_BetterpickUITests.framework */; };
+		87E7BC3914ED9C59286FC5F9 /* Pods_Betterpick_Betterpick_Mock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AD32FBBE03CB5F583AF3A5 /* Pods_Betterpick_Betterpick_Mock.framework */; };
 		890387D52461C46800533CDA /* DiscoverChildBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890387D42461C46800533CDA /* DiscoverChildBaseViewController.swift */; };
 		8903C03824644226009B152B /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF12E245C3B560047EF8D /* ReusableCell.swift */; };
 		8903C03E24646539009B152B /* TeamViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C03B24646517009B152B /* TeamViewController+TableView.swift */; };
@@ -26,9 +27,7 @@
 		8903C054246707F2009B152B /* OverallValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C0462464CFE9009B152B /* OverallValueLabel.swift */; };
 		8903C05524672291009B152B /* PlayerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1482457415600F68E30 /* PlayerDetailViewModel.swift */; };
 		8903C05924677FA9009B152B /* UIImage+Outline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C05824677FA9009B152B /* UIImage+Outline.swift */; };
-		891A508624759763002865ED /* APIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891A508524759763002865ED /* APIIntegrationTests.swift */; };
 		892096372444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */; };
-		892096382444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */; };
 		892096392444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */; };
 		8920964F2444B92400DF93BB /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920964E2444B92400DF93BB /* TabBarViewModel.swift */; };
 		892096582444BED700DF93BB /* TabBarViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096572444BED700DF93BB /* TabBarViewControllerDelegate.swift */; };
@@ -36,13 +35,10 @@
 		892096662444C6C900DF93BB /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096652444C6C900DF93BB /* UIColor+AppColors.swift */; };
 		8920966B2444E16E00DF93BB /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920966A2444E16E00DF93BB /* HairlineView.swift */; };
 		8920966F2444E1CF00DF93BB /* ConstrainableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920966E2444E1CF00DF93BB /* ConstrainableView.swift */; };
-		892096702444E1CF00DF93BB /* ConstrainableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920966E2444E1CF00DF93BB /* ConstrainableView.swift */; };
 		892096712444E1CF00DF93BB /* ConstrainableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920966E2444E1CF00DF93BB /* ConstrainableView.swift */; };
 		892096732444E64000DF93BB /* UIView+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096722444E64000DF93BB /* UIView+Add.swift */; };
-		892096742444E64000DF93BB /* UIView+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096722444E64000DF93BB /* UIView+Add.swift */; };
 		892096752444E64000DF93BB /* UIView+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096722444E64000DF93BB /* UIView+Add.swift */; };
 		892096772444EBE500DF93BB /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096762444EBE500DF93BB /* Size.swift */; };
-		892096782444EBE500DF93BB /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096762444EBE500DF93BB /* Size.swift */; };
 		892096792444EBE500DF93BB /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096762444EBE500DF93BB /* Size.swift */; };
 		8920967B2444F44100DF93BB /* TabbedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920967A2444F44100DF93BB /* TabbedCoordinator.swift */; };
 		8920967D2444F4F400DF93BB /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920967C2444F4F400DF93BB /* TabBarCoordinator.swift */; };
@@ -79,6 +75,7 @@
 		893A6163247783B300CE1CD0 /* FetchingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1632458691100F68E30 /* FetchingViewModel.swift */; };
 		893A616B2477DA3700CE1CD0 /* BetterpickScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893A616A2477DA3700CE1CD0 /* BetterpickScreenshots.swift */; };
 		893A61732477DA6B00CE1CD0 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891A50982475D833002865ED /* SnapshotHelper.swift */; };
+		893A617B2477EE1E00CE1CD0 /* BetterpickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893A617A2477EE1E00CE1CD0 /* BetterpickTests.swift */; };
 		8975EE62244BB2100052696C /* TabPressActionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE61244BB2100052696C /* TabPressActionData.swift */; };
 		8975EE66244BB2710052696C /* TabBarPressGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE65244BB2710052696C /* TabBarPressGestureRecognizer.swift */; };
 		8975EE68244BB5A70052696C /* TabBarGestureHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE67244BB5A70052696C /* TabBarGestureHandler.swift */; };
@@ -130,7 +127,6 @@
 		89B544A4244BE2ED000C1C4B /* DiscoverCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */; };
 		89D478D624775D8E005546C4 /* ImageURLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D478D524775D8E005546C4 /* ImageURLProcessor.swift */; };
 		89D478D724775D8E005546C4 /* ImageURLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D478D524775D8E005546C4 /* ImageURLProcessor.swift */; };
-		89DA2D04246F5B5000964B5C /* TabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DA2D03246F5B5000964B5C /* TabBarViewModelTests.swift */; };
 		89E24182247749AF00F1B51E /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920964E2444B92400DF93BB /* TabBarViewModel.swift */; };
 		89E24183247749AF00F1B51E /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF129245456B400F68E30 /* TeamViewController.swift */; };
 		89E24184247749AF00F1B51E /* Betterpick.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7CE244473BC006149A6 /* Betterpick.xcdatamodeld */; };
@@ -320,9 +316,7 @@
 		89F0EC36245387FB000DA92B /* BetterpickAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC12245360A1000DA92B /* BetterpickAPIManager.swift */; };
 		89F0EC3824538A81000DA92B /* GetLeagueResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC3724538A81000DA92B /* GetLeagueResponseBody.swift */; };
 		89F0EC3D2453A9B4000DA92B /* BetterpickAPIManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC3C2453A9B4000DA92B /* BetterpickAPIManagerFactory.swift */; };
-		9C69116325DCF0070F40128C /* Pods_Betterpick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C545882A0E0F4B2980AF02C /* Pods_Betterpick.framework */; };
-		ADD357A45242FE62C25A2FDC /* Pods_Betterpick_BetterpickUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E22A305830AB024BAE92A609 /* Pods_Betterpick_BetterpickUITests.framework */; };
-		DD57856C3894F3695479F7C7 /* Pods_Betterpick_BetterpickScreenshots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EE165147B2C2A2090A41AB /* Pods_Betterpick_BetterpickScreenshots.framework */; };
+		9BBBE08B7953BEDCEFE26AEF /* Pods_Betterpick_BetterpickTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77D8D6C0727F66BE480254BF /* Pods_Betterpick_BetterpickTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -333,7 +327,7 @@
 			remoteGlobalIDString = 89E2417F247749AF00F1B51E;
 			remoteInfo = "Betterpick Mock";
 		};
-		89A2A7DC244473BE006149A6 /* PBXContainerItemProxy */ = {
+		893A617D2477EE1E00CE1CD0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 89A2A7BB244473BB006149A6 /* Project object */;
 			proxyType = 1;
@@ -347,18 +341,28 @@
 			remoteGlobalIDString = 89A2A7C2244473BC006149A6;
 			remoteInfo = Betterpick;
 		};
+		89A7C7D82477F0B40068FD17 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89A2A7BB244473BB006149A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89E2417F247749AF00F1B51E;
+			remoteInfo = "Betterpick Mock";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		006B0C09C3458E4F9562F54F /* Pods-Betterpick-BetterpickUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickUITests.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		056B2563AEC504B917E6D4BE /* Pods-BetterpickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterpickTests.debug.xcconfig"; path = "Target Support Files/Pods-BetterpickTests/Pods-BetterpickTests.debug.xcconfig"; sourceTree = "<group>"; };
-		179634A5FFEB7AF8BF6572BA /* Pods-BetterpickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterpickTests.release.xcconfig"; path = "Target Support Files/Pods-BetterpickTests/Pods-BetterpickTests.release.xcconfig"; sourceTree = "<group>"; };
-		3C9BFE4BF80D2301FD9B671B /* Pods-BetterpickTests.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetterpickTests.testflight.xcconfig"; path = "Target Support Files/Pods-BetterpickTests/Pods-BetterpickTests.testflight.xcconfig"; sourceTree = "<group>"; };
-		4AC8CC12E9E5CE74B08A3569 /* Pods-Betterpick-Betterpick Mock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-Betterpick Mock.release.xcconfig"; path = "Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock.release.xcconfig"; sourceTree = "<group>"; };
-		63763805908B1E04F38DEEA2 /* Pods-Betterpick-Betterpick Mock.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-Betterpick Mock.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock.testflight.xcconfig"; sourceTree = "<group>"; };
-		67F7B0767FB85F95A62C9AF9 /* Pods-Betterpick-BetterpickScreenshots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickScreenshots.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots.debug.xcconfig"; sourceTree = "<group>"; };
-		828E11684BBDF54951F558FE /* Pods-Betterpick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.release.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.release.xcconfig"; sourceTree = "<group>"; };
-		83CA1B4ECC70AEB3157729C3 /* Pods-Betterpick-BetterpickScreenshots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickScreenshots.release.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots.release.xcconfig"; sourceTree = "<group>"; };
+		00FB1F4AA0DA3FEB7D24594E /* Pods_Betterpick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13541F63126AB51F89B045CA /* Pods-Betterpick-Betterpick Mock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-Betterpick Mock.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock.debug.xcconfig"; sourceTree = "<group>"; };
+		17630DC12BCB98C0B5F8A58C /* Pods-Betterpick-BetterpickScreenshots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickScreenshots.release.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots.release.xcconfig"; sourceTree = "<group>"; };
+		1AFA6D4C2423B63176B0FAC3 /* Pods-Betterpick-BetterpickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickTests.release.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickTests/Pods-Betterpick-BetterpickTests.release.xcconfig"; sourceTree = "<group>"; };
+		1C4415D13ECC8F1B164F1EDB /* Pods_Betterpick_BetterpickUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick_BetterpickUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E3FEE4AE4F197CC9D8DC533 /* Pods-Betterpick-BetterpickUITests.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickUITests.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests.testflight.xcconfig"; sourceTree = "<group>"; };
+		2163F32AB18A31E6738BCB79 /* Pods-Betterpick.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.testflight.xcconfig"; sourceTree = "<group>"; };
+		4FC55C12DE69B309D15AD7C7 /* Pods_Betterpick_BetterpickScreenshots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick_BetterpickScreenshots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B9AEFB9446986B0AEAC56C6 /* Pods-Betterpick-Betterpick Mock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-Betterpick Mock.release.xcconfig"; path = "Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock.release.xcconfig"; sourceTree = "<group>"; };
+		6C1A9C7DB70960B7812F92BB /* Pods-Betterpick-BetterpickTests.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickTests.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickTests/Pods-Betterpick-BetterpickTests.testflight.xcconfig"; sourceTree = "<group>"; };
+		6CFFD6C3758109298E91E322 /* Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig"; sourceTree = "<group>"; };
+		77D8D6C0727F66BE480254BF /* Pods_Betterpick_BetterpickTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick_BetterpickTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		890387D42461C46800533CDA /* DiscoverChildBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverChildBaseViewController.swift; sourceTree = "<group>"; };
 		8903C03924645813009B152B /* PositionSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PositionSectionHeaderView.swift; path = Betterpick/Team/View/PositionSectionHeaderView.swift; sourceTree = SOURCE_ROOT; };
 		8903C03B24646517009B152B /* TeamViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamViewController+TableView.swift"; sourceTree = "<group>"; };
@@ -416,6 +420,9 @@
 		893A61682477DA3700CE1CD0 /* BetterpickScreenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetterpickScreenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		893A616A2477DA3700CE1CD0 /* BetterpickScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterpickScreenshots.swift; sourceTree = "<group>"; };
 		893A616C2477DA3700CE1CD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		893A61782477EE1E00CE1CD0 /* BetterpickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetterpickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		893A617A2477EE1E00CE1CD0 /* BetterpickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterpickTests.swift; sourceTree = "<group>"; };
+		893A617C2477EE1E00CE1CD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8975EE61244BB2100052696C /* TabPressActionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPressActionData.swift; sourceTree = "<group>"; };
 		8975EE65244BB2710052696C /* TabBarPressGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPressGestureRecognizer.swift; sourceTree = "<group>"; };
 		8975EE67244BB5A70052696C /* TabBarGestureHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarGestureHandler.swift; sourceTree = "<group>"; };
@@ -467,7 +474,6 @@
 		89A2A7D1244473BE006149A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89A2A7D4244473BE006149A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89A2A7D6244473BE006149A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		89A2A7DB244473BE006149A6 /* BetterpickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetterpickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A2A7E1244473BE006149A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89A2A7E6244473BE006149A6 /* BetterpickUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetterpickUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A2A7EA244473BE006149A6 /* BetterpickUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterpickUITests.swift; sourceTree = "<group>"; };
@@ -527,17 +533,14 @@
 		89F0EC432453AEF0000DA92B /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		89F0EC442453AEF8000DA92B /* Mock.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Mock.xcconfig; sourceTree = "<group>"; };
 		89F0EC452453AF05000DA92B /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		8C545882A0E0F4B2980AF02C /* Pods_Betterpick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93043B86024D719BD99B2152 /* Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig"; sourceTree = "<group>"; };
-		9372BE7421C578FB13242080 /* Pods-Betterpick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.debug.xcconfig"; sourceTree = "<group>"; };
-		94C03EA364238F977C211BCC /* Pods_BetterpickTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetterpickTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9EBC2BCB922F180F48E8EF40 /* Pods-Betterpick.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.testflight.xcconfig"; sourceTree = "<group>"; };
-		A226FB63D54EB728BB7B368A /* Pods_Betterpick_Betterpick_Mock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick_Betterpick_Mock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBF0AF8AA2DA782791EB559C /* Pods-Betterpick-Betterpick Mock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-Betterpick Mock.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock.debug.xcconfig"; sourceTree = "<group>"; };
-		D271EAFA876F86D59F52146B /* Pods-Betterpick-BetterpickUITests.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickUITests.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests.testflight.xcconfig"; sourceTree = "<group>"; };
-		E22A305830AB024BAE92A609 /* Pods_Betterpick_BetterpickUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick_BetterpickUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9EE165147B2C2A2090A41AB /* Pods_Betterpick_BetterpickScreenshots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick_BetterpickScreenshots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1C011A883557373E3E2706E /* Pods-Betterpick-BetterpickUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickUITests.release.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8C95D545CFD9AC33BCFBA26E /* Pods-Betterpick-BetterpickUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickUITests.release.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A5862E41173F10B488D0D26A /* Pods-Betterpick-BetterpickScreenshots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickScreenshots.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots.debug.xcconfig"; sourceTree = "<group>"; };
+		AF4F53E40CF2EA9D7CEAF36E /* Pods-Betterpick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.debug.xcconfig"; sourceTree = "<group>"; };
+		B56FAA17997B328A2D858093 /* Pods-Betterpick-BetterpickUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickUITests.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DA04AB5255B8184230BD095D /* Pods-Betterpick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.release.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.release.xcconfig"; sourceTree = "<group>"; };
+		E142E02BBD687CD53C30D34D /* Pods-Betterpick-BetterpickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickTests.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickTests/Pods-Betterpick-BetterpickTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E4AD32FBBE03CB5F583AF3A5 /* Pods_Betterpick_Betterpick_Mock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick_Betterpick_Mock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8336F0FE788612AEA6D6E5A /* Pods-Betterpick-Betterpick Mock.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-Betterpick Mock.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock.testflight.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -545,7 +548,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD57856C3894F3695479F7C7 /* Pods_Betterpick_BetterpickScreenshots.framework in Frameworks */,
+				36FFD18471336FF9E25205DE /* Pods_Betterpick_BetterpickScreenshots.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		893A61752477EE1E00CE1CD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BBBE08B7953BEDCEFE26AEF /* Pods_Betterpick_BetterpickTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,16 +564,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6CEEC9682E8671BD9DA10096 /* BuildFile in Frameworks */,
-				9C69116325DCF0070F40128C /* Pods_Betterpick.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		89A2A7D8244473BE006149A6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5AD71E4A0D28588C705D3008 /* Pods_BetterpickTests.framework in Frameworks */,
+				13213B013BD2C283861E452E /* Pods_Betterpick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,7 +572,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADD357A45242FE62C25A2FDC /* Pods_Betterpick_BetterpickUITests.framework in Frameworks */,
+				49BD3AC89CBBFBE395B26151 /* Pods_Betterpick_BetterpickUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,31 +580,43 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				879CF907544429BEC706B869 /* Pods_Betterpick_Betterpick_Mock.framework in Frameworks */,
+				87E7BC3914ED9C59286FC5F9 /* Pods_Betterpick_Betterpick_Mock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0860AC2260830491EF9C1BE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00FB1F4AA0DA3FEB7D24594E /* Pods_Betterpick.framework */,
+				E4AD32FBBE03CB5F583AF3A5 /* Pods_Betterpick_Betterpick_Mock.framework */,
+				4FC55C12DE69B309D15AD7C7 /* Pods_Betterpick_BetterpickScreenshots.framework */,
+				77D8D6C0727F66BE480254BF /* Pods_Betterpick_BetterpickTests.framework */,
+				1C4415D13ECC8F1B164F1EDB /* Pods_Betterpick_BetterpickUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6CB9C89FC58A2B044499C37B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9372BE7421C578FB13242080 /* Pods-Betterpick.debug.xcconfig */,
-				9EBC2BCB922F180F48E8EF40 /* Pods-Betterpick.testflight.xcconfig */,
-				828E11684BBDF54951F558FE /* Pods-Betterpick.release.xcconfig */,
-				67F7B0767FB85F95A62C9AF9 /* Pods-Betterpick-BetterpickScreenshots.debug.xcconfig */,
-				93043B86024D719BD99B2152 /* Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig */,
-				83CA1B4ECC70AEB3157729C3 /* Pods-Betterpick-BetterpickScreenshots.release.xcconfig */,
-				006B0C09C3458E4F9562F54F /* Pods-Betterpick-BetterpickUITests.debug.xcconfig */,
-				D271EAFA876F86D59F52146B /* Pods-Betterpick-BetterpickUITests.testflight.xcconfig */,
-				F1C011A883557373E3E2706E /* Pods-Betterpick-BetterpickUITests.release.xcconfig */,
-				056B2563AEC504B917E6D4BE /* Pods-BetterpickTests.debug.xcconfig */,
-				3C9BFE4BF80D2301FD9B671B /* Pods-BetterpickTests.testflight.xcconfig */,
-				179634A5FFEB7AF8BF6572BA /* Pods-BetterpickTests.release.xcconfig */,
-				BBF0AF8AA2DA782791EB559C /* Pods-Betterpick-Betterpick Mock.debug.xcconfig */,
-				63763805908B1E04F38DEEA2 /* Pods-Betterpick-Betterpick Mock.testflight.xcconfig */,
-				4AC8CC12E9E5CE74B08A3569 /* Pods-Betterpick-Betterpick Mock.release.xcconfig */,
+				AF4F53E40CF2EA9D7CEAF36E /* Pods-Betterpick.debug.xcconfig */,
+				2163F32AB18A31E6738BCB79 /* Pods-Betterpick.testflight.xcconfig */,
+				DA04AB5255B8184230BD095D /* Pods-Betterpick.release.xcconfig */,
+				13541F63126AB51F89B045CA /* Pods-Betterpick-Betterpick Mock.debug.xcconfig */,
+				F8336F0FE788612AEA6D6E5A /* Pods-Betterpick-Betterpick Mock.testflight.xcconfig */,
+				5B9AEFB9446986B0AEAC56C6 /* Pods-Betterpick-Betterpick Mock.release.xcconfig */,
+				A5862E41173F10B488D0D26A /* Pods-Betterpick-BetterpickScreenshots.debug.xcconfig */,
+				6CFFD6C3758109298E91E322 /* Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig */,
+				17630DC12BCB98C0B5F8A58C /* Pods-Betterpick-BetterpickScreenshots.release.xcconfig */,
+				E142E02BBD687CD53C30D34D /* Pods-Betterpick-BetterpickTests.debug.xcconfig */,
+				6C1A9C7DB70960B7812F92BB /* Pods-Betterpick-BetterpickTests.testflight.xcconfig */,
+				1AFA6D4C2423B63176B0FAC3 /* Pods-Betterpick-BetterpickTests.release.xcconfig */,
+				B56FAA17997B328A2D858093 /* Pods-Betterpick-BetterpickUITests.debug.xcconfig */,
+				1E3FEE4AE4F197CC9D8DC533 /* Pods-Betterpick-BetterpickUITests.testflight.xcconfig */,
+				8C95D545CFD9AC33BCFBA26E /* Pods-Betterpick-BetterpickUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -986,6 +1000,15 @@
 			path = BetterpickScreenshots;
 			sourceTree = "<group>";
 		};
+		893A61792477EE1E00CE1CD0 /* BetterpickTests */ = {
+			isa = PBXGroup;
+			children = (
+				893A617A2477EE1E00CE1CD0 /* BetterpickTests.swift */,
+				893A617C2477EE1E00CE1CD0 /* Info.plist */,
+			);
+			path = BetterpickTests;
+			sourceTree = "<group>";
+		};
 		8975EE60244BB0340052696C /* Struct */ = {
 			isa = PBXGroup;
 			children = (
@@ -1118,9 +1141,10 @@
 				89A2A7DE244473BE006149A6 /* BetterpickTests */,
 				89A2A7E9244473BE006149A6 /* BetterpickUITests */,
 				893A61692477DA3700CE1CD0 /* BetterpickScreenshots */,
+				893A61792477EE1E00CE1CD0 /* BetterpickTests */,
 				89A2A7C4244473BC006149A6 /* Products */,
 				6CB9C89FC58A2B044499C37B /* Pods */,
-				DC57E9FDCA49593422D7E65B /* Frameworks */,
+				0860AC2260830491EF9C1BE2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1128,10 +1152,10 @@
 			isa = PBXGroup;
 			children = (
 				89A2A7C3244473BC006149A6 /* Betterpick Dev.app */,
-				89A2A7DB244473BE006149A6 /* BetterpickTests.xctest */,
 				89A2A7E6244473BE006149A6 /* BetterpickUITests.xctest */,
 				89E2421E247749AF00F1B51E /* Betterpick Mock.app */,
 				893A61682477DA3700CE1CD0 /* BetterpickScreenshots.xctest */,
+				893A61782477EE1E00CE1CD0 /* BetterpickTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1279,18 +1303,6 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
-		DC57E9FDCA49593422D7E65B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E9EE165147B2C2A2090A41AB /* Pods_Betterpick_BetterpickScreenshots.framework */,
-				E22A305830AB024BAE92A609 /* Pods_Betterpick_BetterpickUITests.framework */,
-				94C03EA364238F977C211BCC /* Pods_BetterpickTests.framework */,
-				A226FB63D54EB728BB7B368A /* Pods_Betterpick_Betterpick_Mock.framework */,
-				8C545882A0E0F4B2980AF02C /* Pods_Betterpick.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1298,11 +1310,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 893A616F2477DA3700CE1CD0 /* Build configuration list for PBXNativeTarget "BetterpickScreenshots" */;
 			buildPhases = (
-				2E1211F960D508665118AB60 /* [CP] Check Pods Manifest.lock */,
+				356484EBF2287F29933A1FFA /* [CP] Check Pods Manifest.lock */,
 				893A61642477DA3700CE1CD0 /* Sources */,
 				893A61652477DA3700CE1CD0 /* Frameworks */,
 				893A61662477DA3700CE1CD0 /* Resources */,
-				1DCA291F6011DF43FA366B3E /* [CP] Embed Pods Frameworks */,
+				070A18C4622E996E1BEA8CEE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1314,16 +1326,37 @@
 			productReference = 893A61682477DA3700CE1CD0 /* BetterpickScreenshots.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		893A61772477EE1E00CE1CD0 /* BetterpickTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 893A617F2477EE1E00CE1CD0 /* Build configuration list for PBXNativeTarget "BetterpickTests" */;
+			buildPhases = (
+				7EBA9DBB55AFCF268CEE1C37 /* [CP] Check Pods Manifest.lock */,
+				893A61742477EE1E00CE1CD0 /* Sources */,
+				893A61752477EE1E00CE1CD0 /* Frameworks */,
+				893A61762477EE1E00CE1CD0 /* Resources */,
+				0A4B120E9065DF76072F7F11 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				893A617E2477EE1E00CE1CD0 /* PBXTargetDependency */,
+				89A7C7D92477F0B40068FD17 /* PBXTargetDependency */,
+			);
+			name = BetterpickTests;
+			productName = BetterpickTests;
+			productReference = 893A61782477EE1E00CE1CD0 /* BetterpickTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		89A2A7C2244473BC006149A6 /* Betterpick */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89A2A7EF244473BE006149A6 /* Build configuration list for PBXNativeTarget "Betterpick" */;
 			buildPhases = (
-				DCBACA95F072367393115D86 /* [CP] Check Pods Manifest.lock */,
+				C5C0E58F6CBC3DDF54A0A57D /* [CP] Check Pods Manifest.lock */,
 				89A2A7BF244473BC006149A6 /* Sources */,
 				89A2A7C0244473BC006149A6 /* Frameworks */,
 				89A2A7C1244473BC006149A6 /* Resources */,
 				8908844F24449EA40080CCBF /* ShellScript */,
-				A74A3E17C7CB1AE3FA62FA76 /* [CP] Embed Pods Frameworks */,
+				25ACDED83457CC6A7C02A2EC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1334,34 +1367,15 @@
 			productReference = 89A2A7C3244473BC006149A6 /* Betterpick Dev.app */;
 			productType = "com.apple.product-type.application";
 		};
-		89A2A7DA244473BE006149A6 /* BetterpickTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 89A2A7F2244473BE006149A6 /* Build configuration list for PBXNativeTarget "BetterpickTests" */;
-			buildPhases = (
-				D8969231AE56D3759E4DF371 /* [CP] Check Pods Manifest.lock */,
-				89A2A7D7244473BE006149A6 /* Sources */,
-				89A2A7D8244473BE006149A6 /* Frameworks */,
-				89A2A7D9244473BE006149A6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				89A2A7DD244473BE006149A6 /* PBXTargetDependency */,
-			);
-			name = BetterpickTests;
-			productName = BetterpickTests;
-			productReference = 89A2A7DB244473BE006149A6 /* BetterpickTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		89A2A7E5244473BE006149A6 /* BetterpickUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89A2A7F5244473BE006149A6 /* Build configuration list for PBXNativeTarget "BetterpickUITests" */;
 			buildPhases = (
-				D4782BD7CC11EC536943F4CB /* [CP] Check Pods Manifest.lock */,
+				4B453A745C9D77DE8D66AAAA /* [CP] Check Pods Manifest.lock */,
 				89A2A7E2244473BE006149A6 /* Sources */,
 				89A2A7E3244473BE006149A6 /* Frameworks */,
 				89A2A7E4244473BE006149A6 /* Resources */,
-				2800A01BE772F59605FD260B /* [CP] Embed Pods Frameworks */,
+				385CEA7060AE4B06BA9461BE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1377,12 +1391,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89E2421A247749AF00F1B51E /* Build configuration list for PBXNativeTarget "Betterpick Mock" */;
 			buildPhases = (
-				89E24180247749AF00F1B51E /* [CP] Check Pods Manifest.lock */,
+				3A043B42FBA405AF7BC40476 /* [CP] Check Pods Manifest.lock */,
 				89E24181247749AF00F1B51E /* Sources */,
 				89E24213247749AF00F1B51E /* Frameworks */,
 				89E24215247749AF00F1B51E /* Resources */,
 				89E24218247749AF00F1B51E /* ShellScript */,
-				89E24219247749AF00F1B51E /* [CP] Embed Pods Frameworks */,
+				7F2A49258BC027627FBE6247 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1407,14 +1421,13 @@
 						CreatedOnToolsVersion = 11.4.1;
 						TestTargetID = 89E2417F247749AF00F1B51E;
 					};
+					893A61772477EE1E00CE1CD0 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 89A2A7C2244473BC006149A6;
+					};
 					89A2A7C2244473BC006149A6 = {
 						CreatedOnToolsVersion = 11.4;
 						ProvisioningStyle = Automatic;
-					};
-					89A2A7DA244473BE006149A6 = {
-						CreatedOnToolsVersion = 11.4;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 89A2A7C2244473BC006149A6;
 					};
 					89A2A7E5244473BE006149A6 = {
 						CreatedOnToolsVersion = 11.4;
@@ -1438,7 +1451,7 @@
 			targets = (
 				89A2A7C2244473BC006149A6 /* Betterpick */,
 				89E2417F247749AF00F1B51E /* Betterpick Mock */,
-				89A2A7DA244473BE006149A6 /* BetterpickTests */,
+				893A61772477EE1E00CE1CD0 /* BetterpickTests */,
 				89A2A7E5244473BE006149A6 /* BetterpickUITests */,
 				893A61672477DA3700CE1CD0 /* BetterpickScreenshots */,
 			);
@@ -1453,19 +1466,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		893A61762477EE1E00CE1CD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		89A2A7C1244473BC006149A6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				89A2A7D2244473BE006149A6 /* Assets.xcassets in Resources */,
 				89A2A7D5244473BE006149A6 /* LaunchScreen.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		89A2A7D9244473BE006149A6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1488,7 +1501,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1DCA291F6011DF43FA366B3E /* [CP] Embed Pods Frameworks */ = {
+		070A18C4622E996E1BEA8CEE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1505,24 +1518,41 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2800A01BE772F59605FD260B /* [CP] Embed Pods Frameworks */ = {
+		0A4B120E9065DF76072F7F11 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickTests/Pods-Betterpick-BetterpickTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickTests/Pods-Betterpick-BetterpickTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickTests/Pods-Betterpick-BetterpickTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2E1211F960D508665118AB60 /* [CP] Check Pods Manifest.lock */ = {
+		25ACDED83457CC6A7C02A2EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		356484EBF2287F29933A1FFA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1544,24 +1574,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8908844F24449EA40080CCBF /* ShellScript */ = {
+		385CEA7060AE4B06BA9461BE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
-		89E24180247749AF00F1B51E /* [CP] Check Pods Manifest.lock */ = {
+		3A043B42FBA405AF7BC40476 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1583,58 +1613,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		89E24218247749AF00F1B51E /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
-		};
-		89E24219247749AF00F1B51E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A74A3E17C7CB1AE3FA62FA76 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D4782BD7CC11EC536943F4CB /* [CP] Check Pods Manifest.lock */ = {
+		4B453A745C9D77DE8D66AAAA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1656,7 +1635,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D8969231AE56D3759E4DF371 /* [CP] Check Pods Manifest.lock */ = {
+		7EBA9DBB55AFCF268CEE1C37 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1671,14 +1650,65 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BetterpickTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Betterpick-BetterpickTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DCBACA95F072367393115D86 /* [CP] Check Pods Manifest.lock */ = {
+		7F2A49258BC027627FBE6247 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8908844F24449EA40080CCBF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		89E24218247749AF00F1B51E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		C5C0E58F6CBC3DDF54A0A57D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1709,6 +1739,14 @@
 			files = (
 				893A616B2477DA3700CE1CD0 /* BetterpickScreenshots.swift in Sources */,
 				893A61732477DA6B00CE1CD0 /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		893A61742477EE1E00CE1CD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				893A617B2477EE1E00CE1CD0 /* BetterpickTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1862,19 +1900,6 @@
 				89A2A7CB244473BC006149A6 /* Coordinator.swift in Sources */,
 				892D2312244D0AE900F0F263 /* ActionButton.swift in Sources */,
 				89F0EC1D24536483000DA92B /* BetterpickAPIError.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		89A2A7D7244473BE006149A6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				89DA2D04246F5B5000964B5C /* TabBarViewModelTests.swift in Sources */,
-				892096782444EBE500DF93BB /* Size.swift in Sources */,
-				892096702444E1CF00DF93BB /* ConstrainableView.swift in Sources */,
-				891A508624759763002865ED /* APIIntegrationTests.swift in Sources */,
-				892096382444B12E00DF93BB /* UIViewController+childAddRemove.swift in Sources */,
-				892096742444E64000DF93BB /* UIView+Add.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2052,15 +2077,20 @@
 			target = 89E2417F247749AF00F1B51E /* Betterpick Mock */;
 			targetProxy = 893A616D2477DA3700CE1CD0 /* PBXContainerItemProxy */;
 		};
-		89A2A7DD244473BE006149A6 /* PBXTargetDependency */ = {
+		893A617E2477EE1E00CE1CD0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 89A2A7C2244473BC006149A6 /* Betterpick */;
-			targetProxy = 89A2A7DC244473BE006149A6 /* PBXContainerItemProxy */;
+			targetProxy = 893A617D2477EE1E00CE1CD0 /* PBXContainerItemProxy */;
 		};
 		89A2A7E8244473BE006149A6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 89A2A7C2244473BC006149A6 /* Betterpick */;
 			targetProxy = 89A2A7E7244473BE006149A6 /* PBXContainerItemProxy */;
+		};
+		89A7C7D92477F0B40068FD17 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89E2417F247749AF00F1B51E /* Betterpick Mock */;
+			targetProxy = 89A7C7D82477F0B40068FD17 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2078,7 +2108,7 @@
 /* Begin XCBuildConfiguration section */
 		893A61702477DA3700CE1CD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 67F7B0767FB85F95A62C9AF9 /* Pods-Betterpick-BetterpickScreenshots.debug.xcconfig */;
+			baseConfigurationReference = A5862E41173F10B488D0D26A /* Pods-Betterpick-BetterpickScreenshots.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
@@ -2099,7 +2129,7 @@
 		};
 		893A61712477DA3700CE1CD0 /* TestFlight */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93043B86024D719BD99B2152 /* Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig */;
+			baseConfigurationReference = 6CFFD6C3758109298E91E322 /* Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
@@ -2120,7 +2150,7 @@
 		};
 		893A61722477DA3700CE1CD0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83CA1B4ECC70AEB3157729C3 /* Pods-Betterpick-BetterpickScreenshots.release.xcconfig */;
+			baseConfigurationReference = 17630DC12BCB98C0B5F8A58C /* Pods-Betterpick-BetterpickScreenshots.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
@@ -2136,6 +2166,72 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "Betterpick Mock";
+			};
+			name = Release;
+		};
+		893A61802477EE1E00CE1CD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E142E02BBD687CD53C30D34D /* Pods-Betterpick-BetterpickTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6QH7E4QW2D;
+				INFOPLIST_FILE = BetterpickTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dvdblk.BetterpickTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Betterpick Dev.app/Betterpick Dev";
+			};
+			name = Debug;
+		};
+		893A61812477EE1E00CE1CD0 /* TestFlight */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C1A9C7DB70960B7812F92BB /* Pods-Betterpick-BetterpickTests.testflight.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6QH7E4QW2D;
+				INFOPLIST_FILE = BetterpickTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dvdblk.BetterpickTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Betterpick Dev.app/Betterpick Dev";
+			};
+			name = TestFlight;
+		};
+		893A61822477EE1E00CE1CD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AFA6D4C2423B63176B0FAC3 /* Pods-Betterpick-BetterpickTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6QH7E4QW2D;
+				INFOPLIST_FILE = BetterpickTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dvdblk.BetterpickTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Betterpick Dev.app/Betterpick Dev";
 			};
 			name = Release;
 		};
@@ -2263,7 +2359,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				INFOPLIST_FILE = "$(SRCROOT)/Betterpick/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -2272,7 +2368,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
-				PRODUCT_MODULE_NAME = Betterpick;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
 				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2286,7 +2382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Betterpick/Supporting Files/Info.plist";
@@ -2296,7 +2392,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
-				PRODUCT_MODULE_NAME = Betterpick;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
 				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2304,57 +2400,9 @@
 			};
 			name = Release;
 		};
-		89A2A7F3244473BE006149A6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 056B2563AEC504B917E6D4BE /* Pods-BetterpickTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6QH7E4QW2D;
-				INFOPLIST_FILE = BetterpickTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dvdblk.BetterpickTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Betterpick Dev.app/Betterpick Dev";
-			};
-			name = Debug;
-		};
-		89A2A7F4244473BE006149A6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 179634A5FFEB7AF8BF6572BA /* Pods-BetterpickTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6QH7E4QW2D;
-				INFOPLIST_FILE = BetterpickTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dvdblk.BetterpickTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Betterpick Dev.app/Betterpick Dev";
-			};
-			name = Release;
-		};
 		89A2A7F6244473BE006149A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 006B0C09C3458E4F9562F54F /* Pods-Betterpick-BetterpickUITests.debug.xcconfig */;
+			baseConfigurationReference = B56FAA17997B328A2D858093 /* Pods-Betterpick-BetterpickUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -2375,7 +2423,7 @@
 		};
 		89A2A7F7244473BE006149A6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1C011A883557373E3E2706E /* Pods-Betterpick-BetterpickUITests.release.xcconfig */;
+			baseConfigurationReference = 8C95D545CFD9AC33BCFBA26E /* Pods-Betterpick-BetterpickUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -2400,7 +2448,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				INFOPLIST_FILE = "$(SRCROOT)/Betterpick/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -2409,7 +2457,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
-				PRODUCT_MODULE_NAME = Betterpick;
+				PRODUCT_MODULE_NAME = BetterpickMock;
 				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2423,7 +2471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				INFOPLIST_FILE = "$(SRCROOT)/Betterpick/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -2432,7 +2480,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
-				PRODUCT_MODULE_NAME = Betterpick;
+				PRODUCT_MODULE_NAME = BetterpickMock;
 				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2446,7 +2494,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Betterpick/Supporting Files/Info.plist";
@@ -2456,7 +2504,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
-				PRODUCT_MODULE_NAME = Betterpick;
+				PRODUCT_MODULE_NAME = BetterpickMock;
 				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2532,7 +2580,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 19;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				INFOPLIST_FILE = "$(SRCROOT)/Betterpick/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -2541,7 +2589,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PRODUCT_BUNDLE_IDENTIFIER)";
-				PRODUCT_MODULE_NAME = Betterpick;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME)";
 				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2549,33 +2597,9 @@
 			};
 			name = TestFlight;
 		};
-		89F0EC402453AEBE000DA92B /* TestFlight */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C9BFE4BF80D2301FD9B671B /* Pods-BetterpickTests.testflight.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6QH7E4QW2D;
-				INFOPLIST_FILE = BetterpickTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dvdblk.BetterpickTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Betterpick Dev.app/Betterpick Dev";
-			};
-			name = TestFlight;
-		};
 		89F0EC412453AEBE000DA92B /* TestFlight */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D271EAFA876F86D59F52146B /* Pods-Betterpick-BetterpickUITests.testflight.xcconfig */;
+			baseConfigurationReference = 1E3FEE4AE4F197CC9D8DC533 /* Pods-Betterpick-BetterpickUITests.testflight.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -2607,6 +2631,16 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		893A617F2477EE1E00CE1CD0 /* Build configuration list for PBXNativeTarget "BetterpickTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				893A61802477EE1E00CE1CD0 /* Debug */,
+				893A61812477EE1E00CE1CD0 /* TestFlight */,
+				893A61822477EE1E00CE1CD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		89A2A7BE244473BB006149A6 /* Build configuration list for PBXProject "Betterpick" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2623,16 +2657,6 @@
 				89A2A7F0244473BE006149A6 /* Debug */,
 				89F0EC3F2453AEBE000DA92B /* TestFlight */,
 				89A2A7F1244473BE006149A6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		89A2A7F2244473BE006149A6 /* Build configuration list for PBXNativeTarget "BetterpickTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				89A2A7F3244473BE006149A6 /* Debug */,
-				89F0EC402453AEBE000DA92B /* TestFlight */,
-				89A2A7F4244473BE006149A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

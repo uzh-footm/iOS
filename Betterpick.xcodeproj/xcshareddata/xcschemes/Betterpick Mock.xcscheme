@@ -32,11 +32,16 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "893A61552477713800CE1CD0"
-               BuildableName = "BetterpickScreenshots2.xctest"
-               BlueprintName = "BetterpickScreenshots2"
+               BlueprintIdentifier = "893A61772477EE1E00CE1CD0"
+               BuildableName = "BetterpickTests.xctest"
+               BlueprintName = "BetterpickTests"
                ReferencedContainer = "container:Betterpick.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "APIIntegrationTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

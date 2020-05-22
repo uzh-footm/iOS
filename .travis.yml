@@ -25,19 +25,21 @@ stages:
 # jobs and stages to run
 jobs:
   include:
-    # Tests
+    ### Tests
     - stage: test
       name: "iOS App unit tests"
       script:
-        - bundle exec fastlane tests_mock
+        - bundle exec fastlane tests
       if: type = pull_request
-    # Docs deployment
+
+    ### Docs deployment
     - stage: deploy/docs
-      name: "Deploy iOS App Documentation to GitHub Pages"
+      name: "Deploy iOS App Documentation from master to GitHub Pages"
       script:
         - bundle exec fastlane generate_docs
       after_failure:
-        - sleep 20
+        # Sleep to recover full logs
+        - sleep 4
         - find /var/folders/z3 -name '*.log' -exec cat {} \;
       deploy:
         provider:     pages
@@ -47,4 +49,4 @@ jobs:
         local-dir:    docs/src
         on:
           all_branches: true
-      if: branch = release
+      if: branch = master

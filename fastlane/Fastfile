@@ -16,6 +16,8 @@
 default_platform(:ios)
 
 platform :ios do
+
+  ######################### TESTING #########################
   desc "Runs tests for the target that uses BetterpickAPIManagerMock"
   lane :tests_mocks do
     run_tests(
@@ -29,11 +31,13 @@ platform :ios do
     run_tests(scheme: "Betterpick")
   end
 
+  ######################### DOCUMENTATION #########################
   desc "Documentation generation via Jazzy"
   lane :generate_docs do
     jazzy(config: "docs/.jazzy.yaml")
   end
 
+  ######################### TESTFLIGHT #########################
   desc "Build and upload a new build of Betterpick Mock TF to TestFlight"
   desc "This action will also bump the build number"
   lane :beta_mocks do

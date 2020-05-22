@@ -10,7 +10,7 @@ target 'Betterpick' do
   pod 'SwiftLint', '0.39.2'
 
   target 'BetterpickTests' do
-    inherit! :search_paths
+    inherit! :complete
     # Pods for testing
   end
 
