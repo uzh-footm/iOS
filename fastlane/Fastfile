@@ -28,13 +28,16 @@ platform :ios do
   lane :tests_mocks do
     run_tests(
       scheme: "Betterpick Mock",
-      devices: ["iPhone 11 Pro"],
+      devices: ["iPhone 11 Pro"]
     )
   end
 
   desc "Runs tests"
   lane :tests do
-    run_tests(scheme: "Betterpick")
+    run_tests(
+      scheme: "Betterpick",
+      devices: ["iPhone 11 Pro"]
+    )
   end
 
   ######################### DOCUMENTATION #########################
@@ -70,6 +73,18 @@ platform :ios do
 
     git_commit(
       path: "./assets/screenshots/", 
+      message: ENV["BP_FL_GIT_PREFIX"] + " Add Screenshots"
+    )
+
+    push_to_git_remote
+  end
+
+  desc "Generate and commit new documentation"
+  lane :generate_and_commit_documentation do
+    generate_docs
+
+    git_commit(
+      path: "./docs/src/", 
       message: ENV["BP_FL_GIT_PREFIX"] + " Add Screenshots"
     )
 
@@ -114,5 +129,7 @@ platform :ios do
       title: "[Release] " + release_branch_name,
       body: "Testing automated PRs with Fastlane. 🚀 \n Disregard this PR."
     )
+    
+    sh("git checkout develop")
   end
 end

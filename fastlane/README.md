@@ -43,6 +43,11 @@ This action will also bump the build number
 fastlane ios deploy_screenshots
 ```
 Create and deploy a new set of screenshots.
+### ios generate_and_commit_documentation
+```
+fastlane ios generate_and_commit_documentation
+```
+Generate and commit new documentation
 ### ios pr_release
 ```
 fastlane ios pr_release

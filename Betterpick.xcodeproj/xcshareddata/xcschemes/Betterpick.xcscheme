@@ -38,6 +38,11 @@
                BlueprintName = "BetterpickTests"
                ReferencedContainer = "container:Betterpick.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "APIIntegrationTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO">

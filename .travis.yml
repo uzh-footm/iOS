@@ -18,20 +18,10 @@ install:
   - bundle info jazzy
   - bundle exec pod install
 
-stages:
-  - test
-  - deploy/docs
-
 # jobs and stages to run
 jobs:
   include:
-    ### Tests
-    - stage: test
-      name: "iOS App unit tests"
-      script:
-        - bundle exec fastlane tests
-      if: type = pull_request AND branch =~ ^(feature\/).*$
-
+    ###################### master ######################
     ### Docs deployment
     - stage: deploy/docs
       name: "Deploy iOS App Documentation from master to GitHub Pages"
@@ -51,6 +41,15 @@ jobs:
           all_branches: true
       if: branch = master
 
+    ###################### feature/ PR ######################
+    ### Tests
+    - stage: test
+      name: "iOS App unit tests"
+      script:
+        - bundle exec fastlane tests
+      if: type = pull_request AND branch =~ ^(feature\/).*$
+
+    ###################### release/ PR ######################
     ### Testflight Mocks Deployment
     - stage: "deploy/testflight_mocks"
       ## Tests
@@ -60,10 +59,14 @@ jobs:
       ## Screenshots
       script:
         - bundle exec fastlane deploy_screenshots
-      name: "Screenshots"
+      name: "Generate Screenshots"
       ## TF Upload
       script:
         - bundle exec fastlane deploy_beta_mocks
       name: "TestFlight Upload"
+      ## Documentation generation
+      script:
+        - bundle exec fastlane generate_and_commit_documentation
+      name: "Generate Documentation"
       if: type = pull_request AND branch =~ ^(release\/).*$
       
