@@ -60,7 +60,7 @@ jobs:
     - stage: Test
       name: "UI & Unit tests"
       script:
-        - bundle exec fastlane tests
+        - bundle exec fastlane tests_mocks
       after_failure:
         - cat /Users/travis/Library/Developer/Xcode/DerivedData/Betterpick-cswmbpqoqkjrbsetljjetwhmkdcr/Build/Intermediates.noindex/Betterpick.build/Debug-iphonesimulator/Betterpick.build/Script-8908844F24449EA40080CCBF.sh
 
@@ -70,12 +70,12 @@ jobs:
       script:
         - bundle exec fastlane deploy_screenshots
       name: "Generate Screenshots"
-      ## TF Upload
-    - script:
-        - bundle exec fastlane deploy_beta_mocks
-      name: "TestFlight Upload"
       ## Documentation generation
     - script:
         - bundle exec fastlane generate_and_commit_documentation
       name: "Generate Documentation"
+      ## TF Upload
+    - script:
+        - bundle exec fastlane deploy_beta_mocks
+      name: "TestFlight Upload"
       
