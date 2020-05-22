@@ -29,7 +29,7 @@ stages:
   # Test stage
   # Allow only if the type is a pull request and the branch is 'feature/...'
   - name: test
-    if: type = pull_request AND env(TRAVIS_PULL_REQUEST_BRANCH) =~ ^feature\/.*$
+    if: type = pull_request
   # Deploy new release stage
   # Allow only if the type is a PR and the branch is 'release/...'
   - name: deploy_new_release
