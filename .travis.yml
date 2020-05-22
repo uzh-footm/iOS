@@ -30,7 +30,7 @@ jobs:
       name: "iOS App unit tests"
       script:
         - bundle exec fastlane tests
-      if: type = pull_request
+      if: type = pull_request AND branch =~ ^(feature\/).*$
 
     ### Docs deployment
     - stage: deploy/docs
@@ -50,3 +50,20 @@ jobs:
         on:
           all_branches: true
       if: branch = master
+
+    ### Testflight Mocks Deployment
+    - stage: "deploy/testflight_mocks"
+      ## Tests
+      name: "Unit & UI Tests"
+      script:
+        - bundle exec fastlane tests 
+      ## Screenshots
+      script:
+        - bundle exec fastlane deploy_screenshots
+      name: "Screenshots"
+      ## TF Upload
+      script:
+        - bundle exec fastlane deploy_beta_mocks
+      name: "TestFlight Upload"
+      if: type = pull_request AND branch =~ ^(release\/).*$
+      

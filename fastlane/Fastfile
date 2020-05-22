@@ -16,6 +16,12 @@
 default_platform(:ios)
 
 platform :ios do
+  before_all do |lane, options|
+    ENV["MATCH_USERNAME"] = ENV["FASTLANE_USER"]
+    ENV["PILOT_USERNAME"] = ENV["FASTLANE_USER"]
+    ENV["BP_XCODE_PROJ_NAME"] = "Betterpick.xcodeproj"
+    ENV["BP_FL_GIT_PREFIX"] = "[fastlane]"
+  end
 
   ######################### TESTING #########################
   desc "Runs tests for the target that uses BetterpickAPIManagerMock"
@@ -44,7 +50,6 @@ platform :ios do
     sync_code_signing(
       type: "appstore"
     )
-    increment_build_number
     build_app(
       scheme: "Betterpick Mock TF",
       output_directory: "build/",
@@ -53,6 +58,60 @@ platform :ios do
     upload_to_testflight(
       apple_id: "1514718778",
       skip_waiting_for_build_processing: true
+    )
+  end
+
+  ##############################################################
+  ######################### DEPLOYMENT #########################
+  ##############################################################
+  desc "Create and deploy a new set of screenshots."
+  lane :deploy_screenshots do
+    snapshot
+
+    git_commit(
+      path: "./assets/screenshots/", 
+      message: ENV["BP_FL_GIT_PREFIX"] + " Add Screenshots"
+    )
+
+    push_to_git_remote
+  end
+
+  desc "Create a new Release Pull Request on GitHub."
+  desc "Increments the build number and creates a new release branch from develop."
+  desc "Release branch name is dependent on the app version and build number."
+  lane :pr_release do
+    # Make sure we're on develop branch
+    ensure_git_branch(
+      branch: '^develop$'
+    )
+    # Make sure we're free to commit new stuff
+    ensure_git_status_clean
+    # Bump the build number
+    increment_build_number
+    # Get Version and Build Number
+    version = get_version_number(
+      xcodeproj: ENV["BP_XCODE_PROJ_NAME"]
+    )
+
+    build_number = get_build_number(
+      xcodeproj: ENV["BP_XCODE_PROJ_NAME"]
+    )
+    # Checkout new branch
+    release_branch_name = "v" + version + "b" + build_number
+    sh("git checkout -b release/" + release_branch_name)
+    
+    git_commit(
+      path: "./*", 
+      message: ENV["BP_FL_GIT_PREFIX"] + " Bump App Version"
+    )
+
+    push_to_git_remote
+
+    create_pull_request(
+      api_token: ENV["GITHUB_TOKEN"],
+      repo: "uzh-footm/iOS",
+      title: "[Release] " + branch,
+      body: "Testing automated PRs with Fastlane. 🚀 \n Disregard this PR."
     )
   end
 end
