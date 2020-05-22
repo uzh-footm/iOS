@@ -31,11 +31,11 @@ Runs tests
 fastlane ios generate_docs
 ```
 Documentation generation via Jazzy
-### ios beta_mocks
+### ios testflight_mocks
 ```
-fastlane ios beta_mocks
+fastlane ios testflight_mocks
 ```
-Testflight Beta mocks
+Testflight mocks
 
 ----
 

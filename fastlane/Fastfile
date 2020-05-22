@@ -34,10 +34,14 @@ platform :ios do
     jazzy(config: "docs/.jazzy.yaml")
   end
 
-  desc "Testflight Beta mocks"
-  lane :beta_mocks do
+  desc "Testflight mocks"
+  lane :testflight_mocks do
     sync_code_signing(type: "appstore")
-    build_app(scheme: "Betterpick MockBeta")
+    build_app(
+      scheme: "Betterpick Mock",
+      output_directory: "build/",
+      build_path: "build/"
+    )
     upload_to_testflight
   end
 end
