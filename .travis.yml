@@ -62,7 +62,7 @@ jobs:
       script:
         - bundle exec fastlane tests
       after_failure:
-        - cat $SCAN_DERIVED_DATA_PATH/Build/Intermediates.noindex/Betterpick.build/Debug-iphonesimulator/Betterpick.build/*
+        - cat /Users/travis/Library/Developer/Xcode/DerivedData/Betterpick-cswmbpqoqkjrbsetljjetwhmkdcr/Build/Intermediates.noindex/Betterpick.build/Debug-iphonesimulator/Betterpick.build/Script-8908844F24449EA40080CCBF.sh
 
     ### New Release Deployment
     - stage: Release
