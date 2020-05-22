@@ -6,6 +6,8 @@ osx_image: xcode11.4
 cache:
     bundler: true
     cocoapods: true
+    directories:
+      - "vendor/bundle"
 
 before_install:
   - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
@@ -17,23 +19,22 @@ before_install:
 install:
   - bundle config set path 'vendor/bundle'
   - bundle install
-  - bundle info jazzy
   - bundle exec pod install
 
 stages:
+  # Test stage
+  # Allow only if the type is a pull request and the branch is 'feature/...'
+  - name: test
+    if: type = pull_request AND branch IN (develop, master)
+  # Deploy new release stage
+  # Allow only if the type is a PR and the branch is 'release/...'
+  - name: deploy_new_release
+    if: type = pull_request AND branch = master
   # Deploy docs stage
   # Allow only if we push to master
   # TODO: Add check for: commit_message =~ ^[Release].*$
   - name: deploy_docs
     if: type = push AND branch = master
-  # Test stage
-  # Allow only if the type is a pull request and the branch is 'feature/...'
-  - name: test
-    if: type = pull_request AND env(TRAVIS_PULL_REQUEST_BRANCH) =~ ^feature\/.*$
-  # Deploy new release stage
-  # Allow only if the type is a PR and the branch is 'release/...'
-  - name: deploy_new_release
-    if: type = pull_request AND env(TRAVIS_PULL_REQUEST_BRANCH) =~ ^release\/.*$
 
 
 
@@ -67,10 +68,6 @@ jobs:
     ###################### release/ PR ######################
     ### New Release Deployment
     - stage: deploy_new_release
-      ## Tests
-      name: "Unit & UI Tests"
-      script:
-        - bundle exec fastlane tests 
       ## Screenshots
       script:
         - bundle exec fastlane deploy_screenshots
