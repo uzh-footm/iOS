@@ -29,6 +29,7 @@ extension UILabel {
         // Special
         /// Used with the OverallValueLabel
         case ovrLabel
+        case creditsLabel
     }
 
     convenience init(style: Style) {
@@ -94,6 +95,12 @@ extension UILabel {
             textColor = .white
             textAlignment = .center
             font = UIFont.systemFont(ofSize: 14, weight: .semibold)
+        case .creditsLabel:
+            textColor = .customSecondaryLabel
+            font = UIFont.systemFont(ofSize: 11)
+            numberOfLines = 1
+            adjustsFontSizeToFitWidth = true
+            minimumScaleFactor = 0.5
         }
     }
     // swiftlint:enable function_body_length

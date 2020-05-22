@@ -85,8 +85,9 @@ class TappableLabel: UILabel {
     }
 
     private func setLinkedAttributedText(text: String, link: String, color: UIColor) {
+        let defaultFont = font ?? UIFont.systemFont(ofSize: Size.Font.default)
         let attributedString = NSMutableAttributedString(string: text, attributes: [
-            NSAttributedString.Key.font: font ?? UIFont.systemFont(ofSize: Size.Font.default),
+            NSAttributedString.Key.font: defaultFont,
             NSAttributedString.Key.foregroundColor: UIColor.customSecondaryLabel
         ])
         let rangeOfLinkedText = attributedString.mutableString.range(of: link)
@@ -94,7 +95,7 @@ class TappableLabel: UILabel {
         guard rangeOfLinkedText.location != NSNotFound else { return }
         hypertextRange = rangeOfLinkedText
         attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: rangeOfLinkedText)
-        let actionFont = UIFont.systemFont(ofSize: Size.Font.action, weight: .semibold)
+        let actionFont = UIFont.systemFont(ofSize: defaultFont.pointSize + 2, weight: .semibold)
         attributedString.addAttribute(NSAttributedString.Key.font, value: actionFont, range: rangeOfLinkedText)
         attributedText = attributedString
     }

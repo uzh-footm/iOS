@@ -125,6 +125,8 @@
 		89A2A7D5244473BE006149A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A2A7D3244473BE006149A6 /* LaunchScreen.storyboard */; };
 		89A2A7EB244473BE006149A6 /* BetterpickUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7EA244473BE006149A6 /* BetterpickUITests.swift */; };
 		89B544A4244BE2ED000C1C4B /* DiscoverCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */; };
+		89B6157A2477FA4900E6BE21 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B615792477FA4900E6BE21 /* Config.swift */; };
+		89B6157B2477FA4900E6BE21 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B615792477FA4900E6BE21 /* Config.swift */; };
 		89D478D624775D8E005546C4 /* ImageURLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D478D524775D8E005546C4 /* ImageURLProcessor.swift */; };
 		89D478D724775D8E005546C4 /* ImageURLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D478D524775D8E005546C4 /* ImageURLProcessor.swift */; };
 		89E24182247749AF00F1B51E /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920964E2444B92400DF93BB /* TabBarViewModel.swift */; };
@@ -479,6 +481,7 @@
 		89A2A7EA244473BE006149A6 /* BetterpickUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterpickUITests.swift; sourceTree = "<group>"; };
 		89A2A7EC244473BE006149A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCoordinator.swift; sourceTree = "<group>"; };
+		89B615792477FA4900E6BE21 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		89D478D524775D8E005546C4 /* ImageURLProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLProcessor.swift; sourceTree = "<group>"; };
 		89DA2D03246F5B5000964B5C /* TabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModelTests.swift; sourceTree = "<group>"; };
 		89E2421E247749AF00F1B51E /* Betterpick Mock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Betterpick Mock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -827,6 +830,7 @@
 			children = (
 				892096762444EBE500DF93BB /* Size.swift */,
 				89D478D524775D8E005546C4 /* ImageURLProcessor.swift */,
+				89B615792477FA4900E6BE21 /* Config.swift */,
 			);
 			path = Struct;
 			sourceTree = "<group>";
@@ -1855,6 +1859,7 @@
 				892D22F9244C6A2E00F0F263 /* Reselectable.swift in Sources */,
 				89EFF125245B5EAD0047EF8D /* PlayerFilterNavigationController.swift in Sources */,
 				8903C04324649B7D009B152B /* PositionSectionHeaderView.swift in Sources */,
+				89B6157A2477FA4900E6BE21 /* Config.swift in Sources */,
 				899BF16824586BA900F68E30 /* SimpleFetchingViewModel.swift in Sources */,
 				899BF11A2453BB2200F68E30 /* FetchingView.swift in Sources */,
 				89EFF13E245C9B620047EF8D /* PlayerFIlterViewController+ToolbarPickerViewDelegate.swift in Sources */,
@@ -1988,6 +1993,7 @@
 				89E241C1247749AF00F1B51E /* PositionPickerHandler.swift in Sources */,
 				89E241C2247749AF00F1B51E /* LargeTitleNavigationController.swift in Sources */,
 				89E241C3247749AF00F1B51E /* PlayerPreviewDisplayContext.swift in Sources */,
+				89B6157B2477FA4900E6BE21 /* Config.swift in Sources */,
 				89E241C4247749AF00F1B51E /* GetPlayersResponseBody.swift in Sources */,
 				89E241C5247749AF00F1B51E /* DiscoverTeamViewController+TappableResponderLabelDelegate.swift in Sources */,
 				89E241C6247749AF00F1B51E /* DiscoverTeamSeparatorAnimator.swift in Sources */,
