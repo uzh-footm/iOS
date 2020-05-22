@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13213B013BD2C283861E452E /* Pods_Betterpick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00FB1F4AA0DA3FEB7D24594E /* Pods_Betterpick.framework */; };
-		36FFD18471336FF9E25205DE /* Pods_Betterpick_BetterpickScreenshots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FC55C12DE69B309D15AD7C7 /* Pods_Betterpick_BetterpickScreenshots.framework */; };
-		49BD3AC89CBBFBE395B26151 /* Pods_Betterpick_BetterpickUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C4415D13ECC8F1B164F1EDB /* Pods_Betterpick_BetterpickUITests.framework */; };
-		87E7BC3914ED9C59286FC5F9 /* Pods_Betterpick_Betterpick_Mock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4AD32FBBE03CB5F583AF3A5 /* Pods_Betterpick_Betterpick_Mock.framework */; };
+		462169E433502AFA7A5F1926 /* Pods_Betterpick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D82C33CCEF93436CA52947 /* Pods_Betterpick.framework */; };
+		674655C0532E417F313D514B /* Pods_Betterpick_BetterpickScreenshots.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7EA351EE8828CF5C61AA70B /* Pods_Betterpick_BetterpickScreenshots.framework */; };
+		764CB3AFC4D7FF5EA42797E9 /* Pods_Betterpick_BetterpickUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71820181CC6C5665E9BF3ECD /* Pods_Betterpick_BetterpickUITests.framework */; };
+		7A86913BAFB6EE7383AAA52D /* Pods_Betterpick_Betterpick_Mock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1A8ED4A31E2104BDC7BDEB /* Pods_Betterpick_Betterpick_Mock.framework */; };
 		890387D52461C46800533CDA /* DiscoverChildBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890387D42461C46800533CDA /* DiscoverChildBaseViewController.swift */; };
 		8903C03824644226009B152B /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF12E245C3B560047EF8D /* ReusableCell.swift */; };
 		8903C03E24646539009B152B /* TeamViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C03B24646517009B152B /* TeamViewController+TableView.swift */; };
@@ -75,7 +75,6 @@
 		893A6163247783B300CE1CD0 /* FetchingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1632458691100F68E30 /* FetchingViewModel.swift */; };
 		893A616B2477DA3700CE1CD0 /* BetterpickScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893A616A2477DA3700CE1CD0 /* BetterpickScreenshots.swift */; };
 		893A61732477DA6B00CE1CD0 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891A50982475D833002865ED /* SnapshotHelper.swift */; };
-		893A617B2477EE1E00CE1CD0 /* BetterpickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893A617A2477EE1E00CE1CD0 /* BetterpickTests.swift */; };
 		8975EE62244BB2100052696C /* TabPressActionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE61244BB2100052696C /* TabPressActionData.swift */; };
 		8975EE66244BB2710052696C /* TabBarPressGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE65244BB2710052696C /* TabBarPressGestureRecognizer.swift */; };
 		8975EE68244BB5A70052696C /* TabBarGestureHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE67244BB5A70052696C /* TabBarGestureHandler.swift */; };
@@ -277,6 +276,153 @@
 		89E24216247749AF00F1B51E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89A2A7D1244473BE006149A6 /* Assets.xcassets */; };
 		89E24217247749AF00F1B51E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A2A7D3244473BE006149A6 /* LaunchScreen.storyboard */; };
 		89E2422024774A1300F1B51E /* BetterpickAPIManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC3A2453A9A8000DA92B /* BetterpickAPIManagerMock.swift */; };
+		89ECA9892478984B00CA2BFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7C6244473BC006149A6 /* AppDelegate.swift */; };
+		89ECA98A2478984B00CA2BFB /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920965C2444C1C600DF93BB /* Tab.swift */; };
+		89ECA98B2478984B00CA2BFB /* Nationality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF1142459B0B20047EF8D /* Nationality.swift */; };
+		89ECA98C2478984B00CA2BFB /* LeagueAndNationalityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF1182459CED70047EF8D /* LeagueAndNationalityData.swift */; };
+		89ECA98D2478984B00CA2BFB /* TabBarStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096942445152200DF93BB /* TabBarStackView.swift */; };
+		89ECA98E2478984B00CA2BFB /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920964E2444B92400DF93BB /* TabBarViewModel.swift */; };
+		89ECA98F2478984B00CA2BFB /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF1162459CEC60047EF8D /* RootViewModel.swift */; };
+		89ECA9902478984B00CA2BFB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7C8244473BC006149A6 /* TabBarViewController.swift */; };
+		89ECA9912478984B00CA2BFB /* TabBarViewController+ChildViewControllerContainerProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D231F244D346500F0F263 /* TabBarViewController+ChildViewControllerContainerProviding.swift */; };
+		89ECA9922478984B00CA2BFB /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF12F2454BC3B00F68E30 /* RootViewController.swift */; };
+		89ECA9932478984B00CA2BFB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7CC244473BC006149A6 /* AppCoordinator.swift */; };
+		89ECA9942478984B00CA2BFB /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920967C2444F4F400DF93BB /* TabBarCoordinator.swift */; };
+		89ECA9952478984B00CA2BFB /* TabBarPressGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE65244BB2710052696C /* TabBarPressGestureRecognizer.swift */; };
+		89ECA9962478984B00CA2BFB /* TabBarGestureHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE67244BB5A70052696C /* TabBarGestureHandler.swift */; };
+		89ECA9972478984B00CA2BFB /* TabBarGestureHandler+UIGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE69244BC66C0052696C /* TabBarGestureHandler+UIGestureRecognizerDelegate.swift */; };
+		89ECA9982478984B00CA2BFB /* TabPressActionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8975EE61244BB2100052696C /* TabPressActionData.swift */; };
+		89ECA9992478984B00CA2BFB /* TabbedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920967A2444F44100DF93BB /* TabbedCoordinator.swift */; };
+		89ECA99A2478984B00CA2BFB /* TabBarViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096572444BED700DF93BB /* TabBarViewControllerDelegate.swift */; };
+		89ECA99B2478984B00CA2BFB /* Reselectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D22F8244C6A2E00F0F263 /* Reselectable.swift */; };
+		89ECA99C2478984B00CA2BFB /* DiscoverSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2303244C76CA00F0F263 /* DiscoverSection.swift */; };
+		89ECA99D2478984B00CA2BFB /* TeamPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2317244D20CF00F0F263 /* TeamPreview.swift */; };
+		89ECA99E2478984B00CA2BFB /* PlayerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1242454525400F68E30 /* PlayerPreview.swift */; };
+		89ECA99F2478984B00CA2BFB /* League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2319244D20D700F0F263 /* League.swift */; };
+		89ECA9A02478984B00CA2BFB /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1532457910B00F68E30 /* SearchResult.swift */; };
+		89ECA9A12478984B00CA2BFB /* PlayerFilterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF11C245B29A10047EF8D /* PlayerFilterData.swift */; };
+		89ECA9A22478984B00CA2BFB /* PlayerFilterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF133245C46380047EF8D /* PlayerFilterSection.swift */; };
+		89ECA9A32478984B00CA2BFB /* PositionComponentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF144245CF0300047EF8D /* PositionComponentData.swift */; };
+		89ECA9A42478984B00CA2BFB /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EBEE245098E9000DA92B /* TeamTableViewCell.swift */; };
+		89ECA9A52478984B00CA2BFB /* RangeSliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF148245DAEDB0047EF8D /* RangeSliderTableViewCell.swift */; };
+		89ECA9A62478984B00CA2BFB /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D230B244CEFEB00F0F263 /* CustomTextField.swift */; };
+		89ECA9A72478984B00CA2BFB /* FetchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1192453BB2200F68E30 /* FetchingView.swift */; };
+		89ECA9A82478984B00CA2BFB /* SearchResultSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C03F24646B2D009B152B /* SearchResultSectionHeaderView.swift */; };
+		89ECA9A92478984B00CA2BFB /* DiscoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D22FF244C73BB00F0F263 /* DiscoverViewModel.swift */; };
+		89ECA9AA2478984B00CA2BFB /* DiscoverTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2315244D1FDA00F0F263 /* DiscoverTeamViewModel.swift */; };
+		89ECA9AB2478984B00CA2BFB /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1572457913600F68E30 /* SearchViewModel.swift */; };
+		89ECA9AC2478984B00CA2BFB /* DiscoverPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF11A245B298B0047EF8D /* DiscoverPlayerViewModel.swift */; };
+		89ECA9AD2478984B00CA2BFB /* PlayerFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF122245B4C660047EF8D /* PlayerFilterViewModel.swift */; };
+		89ECA9AE2478984B00CA2BFB /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096822444FA8A00DF93BB /* DiscoverViewController.swift */; };
+		89ECA9AF2478984B00CA2BFB /* DiscoverTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2313244D1F9B00F0F263 /* DiscoverTeamViewController.swift */; };
+		89ECA9B02478984B00CA2BFB /* DiscoverPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D232D244D3DB000F0F263 /* DiscoverPlayerViewController.swift */; };
+		89ECA9B12478984B00CA2BFB /* DiscoverChildBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890387D42461C46800533CDA /* DiscoverChildBaseViewController.swift */; };
+		89ECA9B22478984B00CA2BFB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2306244CE26600F0F263 /* SearchViewController.swift */; };
+		89ECA9B32478984B00CA2BFB /* PlayerFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF11E245B4BED0047EF8D /* PlayerFilterViewController.swift */; };
+		89ECA9B42478984B00CA2BFB /* PlayerFilterNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF124245B5EAD0047EF8D /* PlayerFilterNavigationController.swift */; };
+		89ECA9B52478984B00CA2BFB /* DiscoverNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096852445081B00DF93BB /* DiscoverNavigationCoordinator.swift */; };
+		89ECA9B62478984B00CA2BFB /* DiscoverCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */; };
+		89ECA9B72478984B00CA2BFB /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2308244CE2A300F0F263 /* SearchCoordinator.swift */; };
+		89ECA9B82478984B00CA2BFB /* DiscoverTeamCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D231D244D2ACF00F0F263 /* DiscoverTeamCoordinator.swift */; };
+		89ECA9B92478984B00CA2BFB /* DiscoverPlayerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D232B244D3D5500F0F263 /* DiscoverPlayerCoordinator.swift */; };
+		89ECA9BA2478984B00CA2BFB /* PlayerFilterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF120245B4C190047EF8D /* PlayerFilterCoordinator.swift */; };
+		89ECA9BB2478984B00CA2BFB /* DiscoverTeamSeparatorAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1322455083000F68E30 /* DiscoverTeamSeparatorAnimator.swift */; };
+		89ECA9BC2478984B00CA2BFB /* PickerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF135245C9A130047EF8D /* PickerHandler.swift */; };
+		89ECA9BD2478984B00CA2BFB /* NationalityPickerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF137245C9A280047EF8D /* NationalityPickerHandler.swift */; };
+		89ECA9BE2478984B00CA2BFB /* PositionPickerHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF139245C9A850047EF8D /* PositionPickerHandler.swift */; };
+		89ECA9BF2478984B00CA2BFB /* TeamSelecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1202454523400F68E30 /* TeamSelecting.swift */; };
+		89ECA9C02478984B00CA2BFB /* PlayerSelecting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1222454523B00F68E30 /* PlayerSelecting.swift */; };
+		89ECA9C12478984B00CA2BFB /* NavigationBarProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF15E2458548700F68E30 /* NavigationBarProviding.swift */; };
+		89ECA9C22478984B00CA2BFB /* NavigationBarDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF160245854C700F68E30 /* NavigationBarDisplaying.swift */; };
+		89ECA9C32478984B00CA2BFB /* DiscoverViewController+ChildViewControllerContainerProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2329244D379D00F0F263 /* DiscoverViewController+ChildViewControllerContainerProviding.swift */; };
+		89ECA9C42478984B00CA2BFB /* DiscoverTeamViewController+TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1342455085F00F68E30 /* DiscoverTeamViewController+TableViewDataSource.swift */; };
+		89ECA9C52478984B00CA2BFB /* DiscoverTeamViewController+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1362455089A00F68E30 /* DiscoverTeamViewController+PickerView.swift */; };
+		89ECA9C62478984B00CA2BFB /* DiscoverTeamViewController+TappableResponderLabelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF13A245508D200F68E30 /* DiscoverTeamViewController+TappableResponderLabelDelegate.swift */; };
+		89ECA9C72478984B00CA2BFB /* SearchViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1592457916800F68E30 /* SearchViewController+TableView.swift */; };
+		89ECA9C82478984B00CA2BFB /* PlayerFilterViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF13B245C9B280047EF8D /* PlayerFilterViewController+TableView.swift */; };
+		89ECA9C92478984B00CA2BFB /* PlayerFIlterViewController+ToolbarPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF13D245C9B620047EF8D /* PlayerFIlterViewController+ToolbarPickerViewDelegate.swift */; };
+		89ECA9CA2478984B00CA2BFB /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF13F24550EE100F68E30 /* Team.swift */; };
+		89ECA9CB2478984B00CA2BFB /* PlayerPreviewDisplayContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C0482465F3F7009B152B /* PlayerPreviewDisplayContext.swift */; };
+		89ECA9CC2478984B00CA2BFB /* PositionSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C03924645813009B152B /* PositionSectionHeaderView.swift */; };
+		89ECA9CD2478984B00CA2BFB /* PlayerPreviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF14624573F8600F68E30 /* PlayerPreviewTableViewCell.swift */; };
+		89ECA9CE2478984B00CA2BFB /* PlayerPreviewDataStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C04A2465F48D009B152B /* PlayerPreviewDataStackView.swift */; };
+		89ECA9CF2478984B00CA2BFB /* TeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF13D24550ED300F68E30 /* TeamViewModel.swift */; };
+		89ECA9D02478984B00CA2BFB /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF129245456B400F68E30 /* TeamViewController.swift */; };
+		89ECA9D12478984B00CA2BFB /* TeamCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF14D2457435700F68E30 /* TeamCoordinator.swift */; };
+		89ECA9D22478984B00CA2BFB /* TeamViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C03B24646517009B152B /* TeamViewController+TableView.swift */; };
+		89ECA9D32478984B00CA2BFB /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF16F245889CB00F68E30 /* PlayerPosition.swift */; };
+		89ECA9D42478984B00CA2BFB /* ExactPlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF16D245889C000F68E30 /* ExactPlayerPosition.swift */; };
+		89ECA9D52478984B00CA2BFB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF15124574F5200F68E30 /* Player.swift */; };
+		89ECA9D62478984B00CA2BFB /* OverallValueLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C0462464CFE9009B152B /* OverallValueLabel.swift */; };
+		89ECA9D72478984B00CA2BFB /* PlayerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1482457415600F68E30 /* PlayerDetailViewModel.swift */; };
+		89ECA9D82478984B00CA2BFB /* PlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF14A2457417900F68E30 /* PlayerDetailViewController.swift */; };
+		89ECA9D92478984B00CA2BFB /* MyTeamsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920968B24450D6C00DF93BB /* MyTeamsCoordinator.swift */; };
+		89ECA9DA2478984B00CA2BFB /* MyTeamsNavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D22FA244C6D7300F0F263 /* MyTeamsNavigationCoordinator.swift */; };
+		89ECA9DB2478984B00CA2BFB /* MyTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920968D24450D7B00DF93BB /* MyTeamsViewController.swift */; };
+		89ECA9DC2478984B00CA2BFB /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920968F24450D8900DF93BB /* SettingsCoordinator.swift */; };
+		89ECA9DD2478984B00CA2BFB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920969124450D9200DF93BB /* SettingsViewController.swift */; };
+		89ECA9DE2478984B00CA2BFB /* BetterpickAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC12245360A1000DA92B /* BetterpickAPIManager.swift */; };
+		89ECA9DF2478984B00CA2BFB /* BetterpickAPIManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC3A2453A9A8000DA92B /* BetterpickAPIManagerMock.swift */; };
+		89ECA9E02478984B00CA2BFB /* BetterpickAPIManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC3C2453A9B4000DA92B /* BetterpickAPIManagerFactory.swift */; };
+		89ECA9E12478984B00CA2BFB /* BetterpickAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC1424536184000DA92B /* BetterpickAPIHandler.swift */; };
+		89ECA9E22478984B00CA2BFB /* BetterpickAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC1C24536483000DA92B /* BetterpickAPIError.swift */; };
+		89ECA9E32478984B00CA2BFB /* BetterpickAPIStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC21245372F0000DA92B /* BetterpickAPIStatusCode.swift */; };
+		89ECA9E42478984B00CA2BFB /* BetterpickAPIRequestContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC18245362F5000DA92B /* BetterpickAPIRequestContext.swift */; };
+		89ECA9E52478984B00CA2BFB /* BetterpickAPIRequestErrorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC1A245363E9000DA92B /* BetterpickAPIRequestErrorContext.swift */; };
+		89ECA9E62478984B00CA2BFB /* BetterpickAPIResponseContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC1F245365C3000DA92B /* BetterpickAPIResponseContext.swift */; };
+		89ECA9E72478984B00CA2BFB /* GetLeaguesResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC332453825E000DA92B /* GetLeaguesResponseBody.swift */; };
+		89ECA9E82478984B00CA2BFB /* GetLeagueResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC3724538A81000DA92B /* GetLeagueResponseBody.swift */; };
+		89ECA9E92478984B00CA2BFB /* GetClubPlayersResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1412455146200F68E30 /* GetClubPlayersResponseBody.swift */; };
+		89ECA9EA2478984B00CA2BFB /* GetSearchResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF15B2457951400F68E30 /* GetSearchResponseBody.swift */; };
+		89ECA9EB2478984B00CA2BFB /* GetPlayersResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF16924586D5C00F68E30 /* GetPlayersResponseBody.swift */; };
+		89ECA9EC2478984B00CA2BFB /* GetNationalitiesBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF17124589CE200F68E30 /* GetNationalitiesBody.swift */; };
+		89ECA9ED2478984B00CA2BFB /* HTTPStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC2424537323000DA92B /* HTTPStatusCode.swift */; };
+		89ECA9EE2478984B00CA2BFB /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC2624537336000DA92B /* HTTPMethod.swift */; };
+		89ECA9EF2478984B00CA2BFB /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC2824537349000DA92B /* HTTPHeader.swift */; };
+		89ECA9F02478984B00CA2BFB /* HTTPParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC2A24537699000DA92B /* HTTPParameters.swift */; };
+		89ECA9F12478984B00CA2BFB /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF146245D8E380047EF8D /* RangeSlider.swift */; };
+		89ECA9F22478984B00CA2BFB /* HairlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920966A2444E16E00DF93BB /* HairlineView.swift */; };
+		89ECA9F32478984B00CA2BFB /* ConstrainableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920966E2444E1CF00DF93BB /* ConstrainableView.swift */; };
+		89ECA9F42478984B00CA2BFB /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2311244D0AE900F0F263 /* ActionButton.swift */; };
+		89ECA9F52478984B00CA2BFB /* TappableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D231B244D235500F0F263 /* TappableLabel.swift */; };
+		89ECA9F62478984B00CA2BFB /* TappablePickerResponderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF11B2454443300F68E30 /* TappablePickerResponderLabel.swift */; };
+		89ECA9F72478984B00CA2BFB /* LargeNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF12B245469DB00F68E30 /* LargeNavigationBar.swift */; };
+		89ECA9F82478984B00CA2BFB /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF128245C36F50047EF8D /* ToolbarPickerView.swift */; };
+		89ECA9F92478984B00CA2BFB /* PickerResponderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF12C245C3B1A0047EF8D /* PickerResponderTableViewCell.swift */; };
+		89ECA9FA2478984B00CA2BFB /* CustomTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C041246496EB009B152B /* CustomTableViewHeaderFooterView.swift */; };
+		89ECA9FB2478984B00CA2BFB /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C0442464BE2E009B152B /* RoundedImageView.swift */; };
+		89ECA9FC2478984B00CA2BFB /* FetchingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1632458691100F68E30 /* FetchingViewModel.swift */; };
+		89ECA9FD2478984B00CA2BFB /* SimpleFetchingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF16724586BA900F68E30 /* SimpleFetchingViewModel.swift */; };
+		89ECA9FE2478984B00CA2BFB /* LargeTitleNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D22FD244C704D00F0F263 /* LargeTitleNavigationController.swift */; };
+		89ECA9FF2478984B00CA2BFB /* VMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF1122459AD5A0047EF8D /* VMViewController.swift */; };
+		89ECAA002478984B00CA2BFB /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096762444EBE500DF93BB /* Size.swift */; };
+		89ECAA012478984B00CA2BFB /* ImageURLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D478D524775D8E005546C4 /* ImageURLProcessor.swift */; };
+		89ECAA022478984B00CA2BFB /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B615792477FA4900E6BE21 /* Config.swift */; };
+		89ECAA032478984B00CA2BFB /* ChildViewControllerContainerProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2324244D355300F0F263 /* ChildViewControllerContainerProviding.swift */; };
+		89ECAA042478984B00CA2BFB /* EmptyStatePresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1142453B8A700F68E30 /* EmptyStatePresenting.swift */; };
+		89ECAA052478984B00CA2BFB /* CustomResponderViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF126245C36D30047EF8D /* CustomResponderViewDelegate.swift */; };
+		89ECAA062478984B00CA2BFB /* ToolbarPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF12A245C375E0047EF8D /* ToolbarPickerViewDelegate.swift */; };
+		89ECAA072478984B00CA2BFB /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF130245C3C910047EF8D /* Reusable.swift */; };
+		89ECAA082478984B00CA2BFB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7CA244473BC006149A6 /* Coordinator.swift */; };
+		89ECAA092478984B00CA2BFB /* ChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89955BE8244BE1CB00B8B59A /* ChildCoordinator.swift */; };
+		89ECAA0A2478984B00CA2BFB /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89955BE6244BDED000B8B59A /* NavigationCoordinator.swift */; };
+		89ECAA0B2478984B00CA2BFB /* SectioningCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2321244D351D00F0F263 /* SectioningCoordinator.swift */; };
+		89ECAA0C2478984B00CA2BFB /* SectionedCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D2326244D357C00F0F263 /* SectionedCoordinator.swift */; };
+		89ECAA0D2478984B00CA2BFB /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF12E245C3B560047EF8D /* ReusableCell.swift */; };
+		89ECAA0E2478984B00CA2BFB /* UIView+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096722444E64000DF93BB /* UIView+Add.swift */; };
+		89ECAA0F2478984B00CA2BFB /* UIView+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF1172453B9A500F68E30 /* UIView+Embed.swift */; };
+		89ECAA102478984B00CA2BFB /* URLSession+BetterpickAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC16245361A9000DA92B /* URLSession+BetterpickAPIHandler.swift */; };
+		89ECAA112478984B00CA2BFB /* URL+Append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC2C24537826000DA92B /* URL+Append.swift */; };
+		89ECAA122478984B00CA2BFB /* URLRequest+Add.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC2F24537CE6000DA92B /* URLRequest+Add.swift */; };
+		89ECAA132478984B00CA2BFB /* UIViewController+childAddRemove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096362444B12E00DF93BB /* UIViewController+childAddRemove.swift */; };
+		89ECAA142478984B00CA2BFB /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892096652444C6C900DF93BB /* UIColor+AppColors.swift */; };
+		89ECAA152478984B00CA2BFB /* ChildCoordinator+SectioningCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892D232F244D431500F0F263 /* ChildCoordinator+SectioningCoordinator.swift */; };
+		89ECAA162478984B00CA2BFB /* UITableView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EBEB24509395000DA92B /* UITableView+Util.swift */; };
+		89ECAA172478984B00CA2BFB /* UILabel+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF12D2454B49600F68E30 /* UILabel+Style.swift */; };
+		89ECAA182478984B00CA2BFB /* Encodable+Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF16B24587D3300F68E30 /* Encodable+Dictionary.swift */; };
+		89ECAA192478984B00CA2BFB /* CaseIterable+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF140245CEF9B0047EF8D /* CaseIterable+Util.swift */; };
+		89ECAA1A2478984B00CA2BFB /* Collection+NilInsertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF142245CEFB10047EF8D /* Collection+NilInsertions.swift */; };
+		89ECAA1B2478984B00CA2BFB /* UIImage+Outline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8903C05824677FA9009B152B /* UIImage+Outline.swift */; };
 		89EFF1132459AD5A0047EF8D /* VMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF1122459AD5A0047EF8D /* VMViewController.swift */; };
 		89EFF1152459B0B20047EF8D /* Nationality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF1142459B0B20047EF8D /* Nationality.swift */; };
 		89EFF1172459CEC60047EF8D /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EFF1162459CEC60047EF8D /* RootViewModel.swift */; };
@@ -320,7 +466,7 @@
 		89F0EC36245387FB000DA92B /* BetterpickAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC12245360A1000DA92B /* BetterpickAPIManager.swift */; };
 		89F0EC3824538A81000DA92B /* GetLeagueResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC3724538A81000DA92B /* GetLeagueResponseBody.swift */; };
 		89F0EC3D2453A9B4000DA92B /* BetterpickAPIManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89F0EC3C2453A9B4000DA92B /* BetterpickAPIManagerFactory.swift */; };
-		9BBBE08B7953BEDCEFE26AEF /* Pods_Betterpick_BetterpickTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77D8D6C0727F66BE480254BF /* Pods_Betterpick_BetterpickTests.framework */; };
+		9E3A6D60E73CF734D45A1413 /* Pods_Betterpick_BetterpickTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C9C98CE5820DE33687C7344 /* Pods_Betterpick_BetterpickTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -355,18 +501,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00FB1F4AA0DA3FEB7D24594E /* Pods_Betterpick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		13541F63126AB51F89B045CA /* Pods-Betterpick-Betterpick Mock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-Betterpick Mock.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock.debug.xcconfig"; sourceTree = "<group>"; };
-		17630DC12BCB98C0B5F8A58C /* Pods-Betterpick-BetterpickScreenshots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickScreenshots.release.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots.release.xcconfig"; sourceTree = "<group>"; };
-		1AFA6D4C2423B63176B0FAC3 /* Pods-Betterpick-BetterpickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickTests.release.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickTests/Pods-Betterpick-BetterpickTests.release.xcconfig"; sourceTree = "<group>"; };
-		1C4415D13ECC8F1B164F1EDB /* Pods_Betterpick_BetterpickUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick_BetterpickUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E3FEE4AE4F197CC9D8DC533 /* Pods-Betterpick-BetterpickUITests.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickUITests.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests.testflight.xcconfig"; sourceTree = "<group>"; };
-		2163F32AB18A31E6738BCB79 /* Pods-Betterpick.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.testflight.xcconfig"; sourceTree = "<group>"; };
-		4FC55C12DE69B309D15AD7C7 /* Pods_Betterpick_BetterpickScreenshots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick_BetterpickScreenshots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B9AEFB9446986B0AEAC56C6 /* Pods-Betterpick-Betterpick Mock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-Betterpick Mock.release.xcconfig"; path = "Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock.release.xcconfig"; sourceTree = "<group>"; };
-		6C1A9C7DB70960B7812F92BB /* Pods-Betterpick-BetterpickTests.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickTests.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickTests/Pods-Betterpick-BetterpickTests.testflight.xcconfig"; sourceTree = "<group>"; };
-		6CFFD6C3758109298E91E322 /* Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig"; sourceTree = "<group>"; };
-		77D8D6C0727F66BE480254BF /* Pods_Betterpick_BetterpickTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick_BetterpickTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02CDE7A34D051C405E74E1C9 /* Pods-Betterpick-BetterpickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickTests.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickTests/Pods-Betterpick-BetterpickTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0DC26BA85FE924BD5F028410 /* Pods-Betterpick-Betterpick Mock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-Betterpick Mock.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock.debug.xcconfig"; sourceTree = "<group>"; };
+		1475D13334B421199ABAC8C7 /* Pods-Betterpick-BetterpickUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickUITests.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		429E989CCD79454D91F6518C /* Pods-Betterpick-BetterpickTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickTests.release.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickTests/Pods-Betterpick-BetterpickTests.release.xcconfig"; sourceTree = "<group>"; };
+		42D819810984C3F7F1BA439A /* Pods-Betterpick-Betterpick Mock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-Betterpick Mock.release.xcconfig"; path = "Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock.release.xcconfig"; sourceTree = "<group>"; };
+		4CB9A82B68687057A86376CA /* Pods-Betterpick-BetterpickUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickUITests.release.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4CFA0ED6B71180E74E29752A /* Pods-Betterpick-Betterpick Mock.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-Betterpick Mock.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock.testflight.xcconfig"; sourceTree = "<group>"; };
+		5548C1145B7BCEB5388C87DC /* Pods-Betterpick-BetterpickUITests.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickUITests.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests.testflight.xcconfig"; sourceTree = "<group>"; };
+		5B1A8ED4A31E2104BDC7BDEB /* Pods_Betterpick_Betterpick_Mock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick_Betterpick_Mock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		64F8CA05BDFA9F6B0A021405 /* Pods-Betterpick-BetterpickScreenshots.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickScreenshots.release.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots.release.xcconfig"; sourceTree = "<group>"; };
+		6D737691D0F4AF7055911BBF /* Pods-Betterpick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.debug.xcconfig"; sourceTree = "<group>"; };
+		71820181CC6C5665E9BF3ECD /* Pods_Betterpick_BetterpickUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick_BetterpickUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		890387D42461C46800533CDA /* DiscoverChildBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverChildBaseViewController.swift; sourceTree = "<group>"; };
 		8903C03924645813009B152B /* PositionSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PositionSectionHeaderView.swift; path = Betterpick/Team/View/PositionSectionHeaderView.swift; sourceTree = SOURCE_ROOT; };
 		8903C03B24646517009B152B /* TeamViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TeamViewController+TableView.swift"; sourceTree = "<group>"; };
@@ -425,8 +571,6 @@
 		893A616A2477DA3700CE1CD0 /* BetterpickScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterpickScreenshots.swift; sourceTree = "<group>"; };
 		893A616C2477DA3700CE1CD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		893A61782477EE1E00CE1CD0 /* BetterpickTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetterpickTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		893A617A2477EE1E00CE1CD0 /* BetterpickTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterpickTests.swift; sourceTree = "<group>"; };
-		893A617C2477EE1E00CE1CD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8975EE61244BB2100052696C /* TabPressActionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPressActionData.swift; sourceTree = "<group>"; };
 		8975EE65244BB2710052696C /* TabBarPressGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPressGestureRecognizer.swift; sourceTree = "<group>"; };
 		8975EE67244BB5A70052696C /* TabBarGestureHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarGestureHandler.swift; sourceTree = "<group>"; };
@@ -538,14 +682,14 @@
 		89F0EC432453AEF0000DA92B /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		89F0EC442453AEF8000DA92B /* Mock.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Mock.xcconfig; sourceTree = "<group>"; };
 		89F0EC452453AF05000DA92B /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		8C95D545CFD9AC33BCFBA26E /* Pods-Betterpick-BetterpickUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickUITests.release.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests.release.xcconfig"; sourceTree = "<group>"; };
-		A5862E41173F10B488D0D26A /* Pods-Betterpick-BetterpickScreenshots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickScreenshots.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots.debug.xcconfig"; sourceTree = "<group>"; };
-		AF4F53E40CF2EA9D7CEAF36E /* Pods-Betterpick.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.debug.xcconfig"; sourceTree = "<group>"; };
-		B56FAA17997B328A2D858093 /* Pods-Betterpick-BetterpickUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickUITests.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		DA04AB5255B8184230BD095D /* Pods-Betterpick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.release.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.release.xcconfig"; sourceTree = "<group>"; };
-		E142E02BBD687CD53C30D34D /* Pods-Betterpick-BetterpickTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickTests.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickTests/Pods-Betterpick-BetterpickTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E4AD32FBBE03CB5F583AF3A5 /* Pods_Betterpick_Betterpick_Mock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick_Betterpick_Mock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8336F0FE788612AEA6D6E5A /* Pods-Betterpick-Betterpick Mock.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-Betterpick Mock.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock.testflight.xcconfig"; sourceTree = "<group>"; };
+		930A2A77291F542F771BB02A /* Pods-Betterpick-BetterpickTests.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickTests.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickTests/Pods-Betterpick-BetterpickTests.testflight.xcconfig"; sourceTree = "<group>"; };
+		94A9A51230FBA57C1FF48794 /* Pods-Betterpick-BetterpickScreenshots.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickScreenshots.debug.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots.debug.xcconfig"; sourceTree = "<group>"; };
+		9C9C98CE5820DE33687C7344 /* Pods_Betterpick_BetterpickTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick_BetterpickTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8D82C33CCEF93436CA52947 /* Pods_Betterpick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2189E87F4F09CBFF5ECEE62 /* Pods-Betterpick.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.testflight.xcconfig"; sourceTree = "<group>"; };
+		C7EA351EE8828CF5C61AA70B /* Pods_Betterpick_BetterpickScreenshots.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Betterpick_BetterpickScreenshots.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6BCA319F88B49B1925DFFA4 /* Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig"; path = "Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig"; sourceTree = "<group>"; };
+		E9D348FB54B6CF8730CBB4BE /* Pods-Betterpick.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Betterpick.release.xcconfig"; path = "Target Support Files/Pods-Betterpick/Pods-Betterpick.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -553,7 +697,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36FFD18471336FF9E25205DE /* Pods_Betterpick_BetterpickScreenshots.framework in Frameworks */,
+				674655C0532E417F313D514B /* Pods_Betterpick_BetterpickScreenshots.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,7 +705,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BBBE08B7953BEDCEFE26AEF /* Pods_Betterpick_BetterpickTests.framework in Frameworks */,
+				9E3A6D60E73CF734D45A1413 /* Pods_Betterpick_BetterpickTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -569,7 +713,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13213B013BD2C283861E452E /* Pods_Betterpick.framework in Frameworks */,
+				462169E433502AFA7A5F1926 /* Pods_Betterpick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,7 +721,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49BD3AC89CBBFBE395B26151 /* Pods_Betterpick_BetterpickUITests.framework in Frameworks */,
+				764CB3AFC4D7FF5EA42797E9 /* Pods_Betterpick_BetterpickUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,43 +729,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87E7BC3914ED9C59286FC5F9 /* Pods_Betterpick_Betterpick_Mock.framework in Frameworks */,
+				7A86913BAFB6EE7383AAA52D /* Pods_Betterpick_Betterpick_Mock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0860AC2260830491EF9C1BE2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				00FB1F4AA0DA3FEB7D24594E /* Pods_Betterpick.framework */,
-				E4AD32FBBE03CB5F583AF3A5 /* Pods_Betterpick_Betterpick_Mock.framework */,
-				4FC55C12DE69B309D15AD7C7 /* Pods_Betterpick_BetterpickScreenshots.framework */,
-				77D8D6C0727F66BE480254BF /* Pods_Betterpick_BetterpickTests.framework */,
-				1C4415D13ECC8F1B164F1EDB /* Pods_Betterpick_BetterpickUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		6CB9C89FC58A2B044499C37B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AF4F53E40CF2EA9D7CEAF36E /* Pods-Betterpick.debug.xcconfig */,
-				2163F32AB18A31E6738BCB79 /* Pods-Betterpick.testflight.xcconfig */,
-				DA04AB5255B8184230BD095D /* Pods-Betterpick.release.xcconfig */,
-				13541F63126AB51F89B045CA /* Pods-Betterpick-Betterpick Mock.debug.xcconfig */,
-				F8336F0FE788612AEA6D6E5A /* Pods-Betterpick-Betterpick Mock.testflight.xcconfig */,
-				5B9AEFB9446986B0AEAC56C6 /* Pods-Betterpick-Betterpick Mock.release.xcconfig */,
-				A5862E41173F10B488D0D26A /* Pods-Betterpick-BetterpickScreenshots.debug.xcconfig */,
-				6CFFD6C3758109298E91E322 /* Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig */,
-				17630DC12BCB98C0B5F8A58C /* Pods-Betterpick-BetterpickScreenshots.release.xcconfig */,
-				E142E02BBD687CD53C30D34D /* Pods-Betterpick-BetterpickTests.debug.xcconfig */,
-				6C1A9C7DB70960B7812F92BB /* Pods-Betterpick-BetterpickTests.testflight.xcconfig */,
-				1AFA6D4C2423B63176B0FAC3 /* Pods-Betterpick-BetterpickTests.release.xcconfig */,
-				B56FAA17997B328A2D858093 /* Pods-Betterpick-BetterpickUITests.debug.xcconfig */,
-				1E3FEE4AE4F197CC9D8DC533 /* Pods-Betterpick-BetterpickUITests.testflight.xcconfig */,
-				8C95D545CFD9AC33BCFBA26E /* Pods-Betterpick-BetterpickUITests.release.xcconfig */,
+				6D737691D0F4AF7055911BBF /* Pods-Betterpick.debug.xcconfig */,
+				B2189E87F4F09CBFF5ECEE62 /* Pods-Betterpick.testflight.xcconfig */,
+				E9D348FB54B6CF8730CBB4BE /* Pods-Betterpick.release.xcconfig */,
+				0DC26BA85FE924BD5F028410 /* Pods-Betterpick-Betterpick Mock.debug.xcconfig */,
+				4CFA0ED6B71180E74E29752A /* Pods-Betterpick-Betterpick Mock.testflight.xcconfig */,
+				42D819810984C3F7F1BA439A /* Pods-Betterpick-Betterpick Mock.release.xcconfig */,
+				94A9A51230FBA57C1FF48794 /* Pods-Betterpick-BetterpickScreenshots.debug.xcconfig */,
+				E6BCA319F88B49B1925DFFA4 /* Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig */,
+				64F8CA05BDFA9F6B0A021405 /* Pods-Betterpick-BetterpickScreenshots.release.xcconfig */,
+				02CDE7A34D051C405E74E1C9 /* Pods-Betterpick-BetterpickTests.debug.xcconfig */,
+				930A2A77291F542F771BB02A /* Pods-Betterpick-BetterpickTests.testflight.xcconfig */,
+				429E989CCD79454D91F6518C /* Pods-Betterpick-BetterpickTests.release.xcconfig */,
+				1475D13334B421199ABAC8C7 /* Pods-Betterpick-BetterpickUITests.debug.xcconfig */,
+				5548C1145B7BCEB5388C87DC /* Pods-Betterpick-BetterpickUITests.testflight.xcconfig */,
+				4CB9A82B68687057A86376CA /* Pods-Betterpick-BetterpickUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1006,15 +1138,6 @@
 			path = BetterpickScreenshots;
 			sourceTree = "<group>";
 		};
-		893A61792477EE1E00CE1CD0 /* BetterpickTests */ = {
-			isa = PBXGroup;
-			children = (
-				893A617A2477EE1E00CE1CD0 /* BetterpickTests.swift */,
-				893A617C2477EE1E00CE1CD0 /* Info.plist */,
-			);
-			path = BetterpickTests;
-			sourceTree = "<group>";
-		};
 		8975EE60244BB0340052696C /* Struct */ = {
 			isa = PBXGroup;
 			children = (
@@ -1147,10 +1270,9 @@
 				89A2A7DE244473BE006149A6 /* BetterpickTests */,
 				89A2A7E9244473BE006149A6 /* BetterpickUITests */,
 				893A61692477DA3700CE1CD0 /* BetterpickScreenshots */,
-				893A61792477EE1E00CE1CD0 /* BetterpickTests */,
 				89A2A7C4244473BC006149A6 /* Products */,
 				6CB9C89FC58A2B044499C37B /* Pods */,
-				0860AC2260830491EF9C1BE2 /* Frameworks */,
+				F31D43F254CB71C5BE6CE9E8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1309,6 +1431,18 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		F31D43F254CB71C5BE6CE9E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8D82C33CCEF93436CA52947 /* Pods_Betterpick.framework */,
+				5B1A8ED4A31E2104BDC7BDEB /* Pods_Betterpick_Betterpick_Mock.framework */,
+				C7EA351EE8828CF5C61AA70B /* Pods_Betterpick_BetterpickScreenshots.framework */,
+				9C9C98CE5820DE33687C7344 /* Pods_Betterpick_BetterpickTests.framework */,
+				71820181CC6C5665E9BF3ECD /* Pods_Betterpick_BetterpickUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1316,11 +1450,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 893A616F2477DA3700CE1CD0 /* Build configuration list for PBXNativeTarget "BetterpickScreenshots" */;
 			buildPhases = (
-				356484EBF2287F29933A1FFA /* [CP] Check Pods Manifest.lock */,
+				8E88D2C500D5D56B6E2B160E /* [CP] Check Pods Manifest.lock */,
 				893A61642477DA3700CE1CD0 /* Sources */,
 				893A61652477DA3700CE1CD0 /* Frameworks */,
 				893A61662477DA3700CE1CD0 /* Resources */,
-				070A18C4622E996E1BEA8CEE /* [CP] Embed Pods Frameworks */,
+				70ABA851B80F56FF87A17895 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1336,11 +1470,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 893A617F2477EE1E00CE1CD0 /* Build configuration list for PBXNativeTarget "BetterpickTests" */;
 			buildPhases = (
-				7EBA9DBB55AFCF268CEE1C37 /* [CP] Check Pods Manifest.lock */,
+				1F42EB55593D772AB0BD55B5 /* [CP] Check Pods Manifest.lock */,
 				893A61742477EE1E00CE1CD0 /* Sources */,
 				893A61752477EE1E00CE1CD0 /* Frameworks */,
 				893A61762477EE1E00CE1CD0 /* Resources */,
-				0A4B120E9065DF76072F7F11 /* [CP] Embed Pods Frameworks */,
+				1081C4033776835A9AE12C12 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1357,12 +1491,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89A2A7EF244473BE006149A6 /* Build configuration list for PBXNativeTarget "Betterpick" */;
 			buildPhases = (
-				C5C0E58F6CBC3DDF54A0A57D /* [CP] Check Pods Manifest.lock */,
+				2E987385AF9F27B9F5FA8B95 /* [CP] Check Pods Manifest.lock */,
 				89A2A7BF244473BC006149A6 /* Sources */,
 				89A2A7C0244473BC006149A6 /* Frameworks */,
 				89A2A7C1244473BC006149A6 /* Resources */,
 				8908844F24449EA40080CCBF /* ShellScript */,
-				25ACDED83457CC6A7C02A2EC /* [CP] Embed Pods Frameworks */,
+				FE7D29430BA907AF45C180BB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1377,11 +1511,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89A2A7F5244473BE006149A6 /* Build configuration list for PBXNativeTarget "BetterpickUITests" */;
 			buildPhases = (
-				4B453A745C9D77DE8D66AAAA /* [CP] Check Pods Manifest.lock */,
+				CA576F28ED5BDBBAB1F51CFE /* [CP] Check Pods Manifest.lock */,
 				89A2A7E2244473BE006149A6 /* Sources */,
 				89A2A7E3244473BE006149A6 /* Frameworks */,
 				89A2A7E4244473BE006149A6 /* Resources */,
-				385CEA7060AE4B06BA9461BE /* [CP] Embed Pods Frameworks */,
+				C79DAEB5A70E8AAA136D69DB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1397,12 +1531,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 89E2421A247749AF00F1B51E /* Build configuration list for PBXNativeTarget "Betterpick Mock" */;
 			buildPhases = (
-				3A043B42FBA405AF7BC40476 /* [CP] Check Pods Manifest.lock */,
+				C68308F536CEFF2096F7AA43 /* [CP] Check Pods Manifest.lock */,
 				89E24181247749AF00F1B51E /* Sources */,
 				89E24213247749AF00F1B51E /* Frameworks */,
 				89E24215247749AF00F1B51E /* Resources */,
 				89E24218247749AF00F1B51E /* ShellScript */,
-				7F2A49258BC027627FBE6247 /* [CP] Embed Pods Frameworks */,
+				0E09D3C8DAE145D174B10365 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1429,7 +1563,6 @@
 					};
 					893A61772477EE1E00CE1CD0 = {
 						CreatedOnToolsVersion = 11.4.1;
-						TestTargetID = 89A2A7C2244473BC006149A6;
 					};
 					89A2A7C2244473BC006149A6 = {
 						CreatedOnToolsVersion = 11.4;
@@ -1507,24 +1640,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		070A18C4622E996E1BEA8CEE /* [CP] Embed Pods Frameworks */ = {
+		0E09D3C8DAE145D174B10365 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		0A4B120E9065DF76072F7F11 /* [CP] Embed Pods Frameworks */ = {
+		1081C4033776835A9AE12C12 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1541,107 +1674,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickTests/Pods-Betterpick-BetterpickTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		25ACDED83457CC6A7C02A2EC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		356484EBF2287F29933A1FFA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Betterpick-BetterpickScreenshots-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		385CEA7060AE4B06BA9461BE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3A043B42FBA405AF7BC40476 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Betterpick-Betterpick Mock-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4B453A745C9D77DE8D66AAAA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Betterpick-BetterpickUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7EBA9DBB55AFCF268CEE1C37 /* [CP] Check Pods Manifest.lock */ = {
+		1F42EB55593D772AB0BD55B5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1663,21 +1696,43 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7F2A49258BC027627FBE6247 /* [CP] Embed Pods Frameworks */ = {
+		2E987385AF9F27B9F5FA8B95 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Betterpick-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick-Betterpick Mock/Pods-Betterpick-Betterpick Mock-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70ABA851B80F56FF87A17895 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickScreenshots/Pods-Betterpick-BetterpickScreenshots-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8908844F24449EA40080CCBF /* ShellScript */ = {
@@ -1714,7 +1769,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
-		C5C0E58F6CBC3DDF54A0A57D /* [CP] Check Pods Manifest.lock */ = {
+		8E88D2C500D5D56B6E2B160E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1729,11 +1784,89 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Betterpick-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Betterpick-BetterpickScreenshots-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C68308F536CEFF2096F7AA43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Betterpick-Betterpick Mock-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C79DAEB5A70E8AAA136D69DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick-BetterpickUITests/Pods-Betterpick-BetterpickUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA576F28ED5BDBBAB1F51CFE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Betterpick-BetterpickUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE7D29430BA907AF45C180BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Betterpick/Pods-Betterpick-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1752,9 +1885,155 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89ECA9892478984B00CA2BFB /* AppDelegate.swift in Sources */,
+				89ECA98A2478984B00CA2BFB /* Tab.swift in Sources */,
+				89ECA98B2478984B00CA2BFB /* Nationality.swift in Sources */,
+				89ECA98C2478984B00CA2BFB /* LeagueAndNationalityData.swift in Sources */,
+				89ECA98D2478984B00CA2BFB /* TabBarStackView.swift in Sources */,
+				89ECA98E2478984B00CA2BFB /* TabBarViewModel.swift in Sources */,
+				89ECA98F2478984B00CA2BFB /* RootViewModel.swift in Sources */,
+				89ECA9902478984B00CA2BFB /* TabBarViewController.swift in Sources */,
+				89ECA9912478984B00CA2BFB /* TabBarViewController+ChildViewControllerContainerProviding.swift in Sources */,
+				89ECA9922478984B00CA2BFB /* RootViewController.swift in Sources */,
+				89ECA9932478984B00CA2BFB /* AppCoordinator.swift in Sources */,
+				89ECA9942478984B00CA2BFB /* TabBarCoordinator.swift in Sources */,
+				89ECA9952478984B00CA2BFB /* TabBarPressGestureRecognizer.swift in Sources */,
+				89ECA9962478984B00CA2BFB /* TabBarGestureHandler.swift in Sources */,
+				89ECA9972478984B00CA2BFB /* TabBarGestureHandler+UIGestureRecognizerDelegate.swift in Sources */,
+				89ECA9982478984B00CA2BFB /* TabPressActionData.swift in Sources */,
+				89ECA9992478984B00CA2BFB /* TabbedCoordinator.swift in Sources */,
+				89ECA99A2478984B00CA2BFB /* TabBarViewControllerDelegate.swift in Sources */,
+				89ECA99B2478984B00CA2BFB /* Reselectable.swift in Sources */,
+				89ECA99C2478984B00CA2BFB /* DiscoverSection.swift in Sources */,
+				89ECA99D2478984B00CA2BFB /* TeamPreview.swift in Sources */,
+				89ECA99E2478984B00CA2BFB /* PlayerPreview.swift in Sources */,
+				89ECA99F2478984B00CA2BFB /* League.swift in Sources */,
+				89ECA9A02478984B00CA2BFB /* SearchResult.swift in Sources */,
+				89ECA9A12478984B00CA2BFB /* PlayerFilterData.swift in Sources */,
+				89ECA9A22478984B00CA2BFB /* PlayerFilterSection.swift in Sources */,
+				89ECA9A32478984B00CA2BFB /* PositionComponentData.swift in Sources */,
+				89ECA9A42478984B00CA2BFB /* TeamTableViewCell.swift in Sources */,
+				89ECA9A52478984B00CA2BFB /* RangeSliderTableViewCell.swift in Sources */,
+				89ECA9A62478984B00CA2BFB /* CustomTextField.swift in Sources */,
+				89ECA9A72478984B00CA2BFB /* FetchingView.swift in Sources */,
+				89ECA9A82478984B00CA2BFB /* SearchResultSectionHeaderView.swift in Sources */,
+				89ECA9A92478984B00CA2BFB /* DiscoverViewModel.swift in Sources */,
+				89ECA9AA2478984B00CA2BFB /* DiscoverTeamViewModel.swift in Sources */,
+				89ECA9AB2478984B00CA2BFB /* SearchViewModel.swift in Sources */,
+				89ECA9AC2478984B00CA2BFB /* DiscoverPlayerViewModel.swift in Sources */,
+				89ECA9AD2478984B00CA2BFB /* PlayerFilterViewModel.swift in Sources */,
+				89ECA9AE2478984B00CA2BFB /* DiscoverViewController.swift in Sources */,
+				89ECA9AF2478984B00CA2BFB /* DiscoverTeamViewController.swift in Sources */,
+				89ECA9B02478984B00CA2BFB /* DiscoverPlayerViewController.swift in Sources */,
+				89ECA9B12478984B00CA2BFB /* DiscoverChildBaseViewController.swift in Sources */,
+				89ECA9B22478984B00CA2BFB /* SearchViewController.swift in Sources */,
+				89ECA9B32478984B00CA2BFB /* PlayerFilterViewController.swift in Sources */,
+				89ECA9B42478984B00CA2BFB /* PlayerFilterNavigationController.swift in Sources */,
+				89ECA9B52478984B00CA2BFB /* DiscoverNavigationCoordinator.swift in Sources */,
+				89ECA9B62478984B00CA2BFB /* DiscoverCoordinator.swift in Sources */,
+				89ECA9B72478984B00CA2BFB /* SearchCoordinator.swift in Sources */,
+				89ECA9B82478984B00CA2BFB /* DiscoverTeamCoordinator.swift in Sources */,
+				89ECA9B92478984B00CA2BFB /* DiscoverPlayerCoordinator.swift in Sources */,
+				89ECA9BA2478984B00CA2BFB /* PlayerFilterCoordinator.swift in Sources */,
+				89ECA9BB2478984B00CA2BFB /* DiscoverTeamSeparatorAnimator.swift in Sources */,
+				89ECA9BC2478984B00CA2BFB /* PickerHandler.swift in Sources */,
+				89ECA9BD2478984B00CA2BFB /* NationalityPickerHandler.swift in Sources */,
+				89ECA9BE2478984B00CA2BFB /* PositionPickerHandler.swift in Sources */,
+				89ECA9BF2478984B00CA2BFB /* TeamSelecting.swift in Sources */,
+				89ECA9C02478984B00CA2BFB /* PlayerSelecting.swift in Sources */,
+				89ECA9C12478984B00CA2BFB /* NavigationBarProviding.swift in Sources */,
+				89ECA9C22478984B00CA2BFB /* NavigationBarDisplaying.swift in Sources */,
+				89ECA9C32478984B00CA2BFB /* DiscoverViewController+ChildViewControllerContainerProviding.swift in Sources */,
+				89ECA9C42478984B00CA2BFB /* DiscoverTeamViewController+TableViewDataSource.swift in Sources */,
+				89ECA9C52478984B00CA2BFB /* DiscoverTeamViewController+PickerView.swift in Sources */,
+				89ECA9C62478984B00CA2BFB /* DiscoverTeamViewController+TappableResponderLabelDelegate.swift in Sources */,
+				89ECA9C72478984B00CA2BFB /* SearchViewController+TableView.swift in Sources */,
+				89ECA9C82478984B00CA2BFB /* PlayerFilterViewController+TableView.swift in Sources */,
+				89ECA9C92478984B00CA2BFB /* PlayerFIlterViewController+ToolbarPickerViewDelegate.swift in Sources */,
+				89ECA9CA2478984B00CA2BFB /* Team.swift in Sources */,
+				89ECA9CB2478984B00CA2BFB /* PlayerPreviewDisplayContext.swift in Sources */,
+				89ECA9CC2478984B00CA2BFB /* PositionSectionHeaderView.swift in Sources */,
+				89ECA9CD2478984B00CA2BFB /* PlayerPreviewTableViewCell.swift in Sources */,
+				89ECA9CE2478984B00CA2BFB /* PlayerPreviewDataStackView.swift in Sources */,
+				89ECA9CF2478984B00CA2BFB /* TeamViewModel.swift in Sources */,
+				89ECA9D02478984B00CA2BFB /* TeamViewController.swift in Sources */,
+				89ECA9D12478984B00CA2BFB /* TeamCoordinator.swift in Sources */,
+				89ECA9D22478984B00CA2BFB /* TeamViewController+TableView.swift in Sources */,
+				89ECA9D32478984B00CA2BFB /* PlayerPosition.swift in Sources */,
+				89ECA9D42478984B00CA2BFB /* ExactPlayerPosition.swift in Sources */,
+				89ECA9D52478984B00CA2BFB /* Player.swift in Sources */,
+				89ECA9D62478984B00CA2BFB /* OverallValueLabel.swift in Sources */,
+				89ECA9D72478984B00CA2BFB /* PlayerDetailViewModel.swift in Sources */,
+				89ECA9D82478984B00CA2BFB /* PlayerDetailViewController.swift in Sources */,
+				89ECA9D92478984B00CA2BFB /* MyTeamsCoordinator.swift in Sources */,
+				89ECA9DA2478984B00CA2BFB /* MyTeamsNavigationCoordinator.swift in Sources */,
+				89ECA9DB2478984B00CA2BFB /* MyTeamsViewController.swift in Sources */,
+				89ECA9DC2478984B00CA2BFB /* SettingsCoordinator.swift in Sources */,
+				89ECA9DD2478984B00CA2BFB /* SettingsViewController.swift in Sources */,
+				89ECA9DE2478984B00CA2BFB /* BetterpickAPIManager.swift in Sources */,
+				89ECA9DF2478984B00CA2BFB /* BetterpickAPIManagerMock.swift in Sources */,
+				89ECA9E02478984B00CA2BFB /* BetterpickAPIManagerFactory.swift in Sources */,
+				89ECA9E12478984B00CA2BFB /* BetterpickAPIHandler.swift in Sources */,
+				89ECA9E22478984B00CA2BFB /* BetterpickAPIError.swift in Sources */,
+				89ECA9E32478984B00CA2BFB /* BetterpickAPIStatusCode.swift in Sources */,
+				89ECA9E42478984B00CA2BFB /* BetterpickAPIRequestContext.swift in Sources */,
+				89ECA9E52478984B00CA2BFB /* BetterpickAPIRequestErrorContext.swift in Sources */,
+				89ECA9E62478984B00CA2BFB /* BetterpickAPIResponseContext.swift in Sources */,
+				89ECA9E72478984B00CA2BFB /* GetLeaguesResponseBody.swift in Sources */,
+				89ECA9E82478984B00CA2BFB /* GetLeagueResponseBody.swift in Sources */,
+				89ECA9E92478984B00CA2BFB /* GetClubPlayersResponseBody.swift in Sources */,
+				89ECA9EA2478984B00CA2BFB /* GetSearchResponseBody.swift in Sources */,
+				89ECA9EB2478984B00CA2BFB /* GetPlayersResponseBody.swift in Sources */,
+				89ECA9EC2478984B00CA2BFB /* GetNationalitiesBody.swift in Sources */,
+				89ECA9ED2478984B00CA2BFB /* HTTPStatusCode.swift in Sources */,
+				89ECA9EE2478984B00CA2BFB /* HTTPMethod.swift in Sources */,
+				89ECA9EF2478984B00CA2BFB /* HTTPHeader.swift in Sources */,
+				89ECA9F02478984B00CA2BFB /* HTTPParameters.swift in Sources */,
+				89ECA9F12478984B00CA2BFB /* RangeSlider.swift in Sources */,
+				89ECA9F22478984B00CA2BFB /* HairlineView.swift in Sources */,
+				89ECA9F32478984B00CA2BFB /* ConstrainableView.swift in Sources */,
+				89ECA9F42478984B00CA2BFB /* ActionButton.swift in Sources */,
+				89ECA9F52478984B00CA2BFB /* TappableLabel.swift in Sources */,
+				89ECA9F62478984B00CA2BFB /* TappablePickerResponderLabel.swift in Sources */,
+				89ECA9F72478984B00CA2BFB /* LargeNavigationBar.swift in Sources */,
+				89ECA9F82478984B00CA2BFB /* ToolbarPickerView.swift in Sources */,
+				89ECA9F92478984B00CA2BFB /* PickerResponderTableViewCell.swift in Sources */,
+				89ECA9FA2478984B00CA2BFB /* CustomTableViewHeaderFooterView.swift in Sources */,
+				89ECA9FB2478984B00CA2BFB /* RoundedImageView.swift in Sources */,
+				89ECA9FC2478984B00CA2BFB /* FetchingViewModel.swift in Sources */,
+				89ECA9FD2478984B00CA2BFB /* SimpleFetchingViewModel.swift in Sources */,
+				89ECA9FE2478984B00CA2BFB /* LargeTitleNavigationController.swift in Sources */,
+				89ECA9FF2478984B00CA2BFB /* VMViewController.swift in Sources */,
+				89ECAA002478984B00CA2BFB /* Size.swift in Sources */,
+				89ECAA012478984B00CA2BFB /* ImageURLProcessor.swift in Sources */,
+				89ECAA022478984B00CA2BFB /* Config.swift in Sources */,
+				89ECAA032478984B00CA2BFB /* ChildViewControllerContainerProviding.swift in Sources */,
+				89ECAA042478984B00CA2BFB /* EmptyStatePresenting.swift in Sources */,
+				89ECAA052478984B00CA2BFB /* CustomResponderViewDelegate.swift in Sources */,
+				89ECAA062478984B00CA2BFB /* ToolbarPickerViewDelegate.swift in Sources */,
+				89ECAA072478984B00CA2BFB /* Reusable.swift in Sources */,
+				89ECAA082478984B00CA2BFB /* Coordinator.swift in Sources */,
+				89ECAA092478984B00CA2BFB /* ChildCoordinator.swift in Sources */,
+				89ECAA0A2478984B00CA2BFB /* NavigationCoordinator.swift in Sources */,
+				89ECAA0B2478984B00CA2BFB /* SectioningCoordinator.swift in Sources */,
+				89ECAA0C2478984B00CA2BFB /* SectionedCoordinator.swift in Sources */,
+				89ECAA0D2478984B00CA2BFB /* ReusableCell.swift in Sources */,
+				89ECAA0E2478984B00CA2BFB /* UIView+Add.swift in Sources */,
+				89ECAA0F2478984B00CA2BFB /* UIView+Embed.swift in Sources */,
+				89ECAA102478984B00CA2BFB /* URLSession+BetterpickAPIHandler.swift in Sources */,
+				89ECAA112478984B00CA2BFB /* URL+Append.swift in Sources */,
+				89ECAA122478984B00CA2BFB /* URLRequest+Add.swift in Sources */,
+				89ECAA132478984B00CA2BFB /* UIViewController+childAddRemove.swift in Sources */,
+				89ECAA142478984B00CA2BFB /* UIColor+AppColors.swift in Sources */,
+				89ECAA152478984B00CA2BFB /* ChildCoordinator+SectioningCoordinator.swift in Sources */,
+				89ECAA162478984B00CA2BFB /* UITableView+Util.swift in Sources */,
+				89ECAA172478984B00CA2BFB /* UILabel+Style.swift in Sources */,
+				89ECAA182478984B00CA2BFB /* Encodable+Dictionary.swift in Sources */,
+				89ECAA192478984B00CA2BFB /* CaseIterable+Util.swift in Sources */,
+				89ECAA1A2478984B00CA2BFB /* Collection+NilInsertions.swift in Sources */,
+				89ECAA1B2478984B00CA2BFB /* UIImage+Outline.swift in Sources */,
 				89B6157D2478366000E6BE21 /* TabBarViewModelTests.swift in Sources */,
 				89B6157C247835C400E6BE21 /* APIIntegrationTests.swift in Sources */,
-				893A617B2477EE1E00CE1CD0 /* BetterpickTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2118,7 +2397,7 @@
 /* Begin XCBuildConfiguration section */
 		893A61702477DA3700CE1CD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5862E41173F10B488D0D26A /* Pods-Betterpick-BetterpickScreenshots.debug.xcconfig */;
+			baseConfigurationReference = 94A9A51230FBA57C1FF48794 /* Pods-Betterpick-BetterpickScreenshots.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
@@ -2139,7 +2418,7 @@
 		};
 		893A61712477DA3700CE1CD0 /* TestFlight */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CFFD6C3758109298E91E322 /* Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig */;
+			baseConfigurationReference = E6BCA319F88B49B1925DFFA4 /* Pods-Betterpick-BetterpickScreenshots.testflight.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
@@ -2160,7 +2439,7 @@
 		};
 		893A61722477DA3700CE1CD0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17630DC12BCB98C0B5F8A58C /* Pods-Betterpick-BetterpickScreenshots.release.xcconfig */;
+			baseConfigurationReference = 64F8CA05BDFA9F6B0A021405 /* Pods-Betterpick-BetterpickScreenshots.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
@@ -2181,9 +2460,8 @@
 		};
 		893A61802477EE1E00CE1CD0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E142E02BBD687CD53C30D34D /* Pods-Betterpick-BetterpickTests.debug.xcconfig */;
+			baseConfigurationReference = 02CDE7A34D051C405E74E1C9 /* Pods-Betterpick-BetterpickTests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				INFOPLIST_FILE = BetterpickTests/Info.plist;
@@ -2197,15 +2475,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Betterpick Dev.app/Betterpick Dev";
 			};
 			name = Debug;
 		};
 		893A61812477EE1E00CE1CD0 /* TestFlight */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C1A9C7DB70960B7812F92BB /* Pods-Betterpick-BetterpickTests.testflight.xcconfig */;
+			baseConfigurationReference = 930A2A77291F542F771BB02A /* Pods-Betterpick-BetterpickTests.testflight.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				INFOPLIST_FILE = BetterpickTests/Info.plist;
@@ -2219,15 +2495,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Betterpick Dev.app/Betterpick Dev";
 			};
 			name = TestFlight;
 		};
 		893A61822477EE1E00CE1CD0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AFA6D4C2423B63176B0FAC3 /* Pods-Betterpick-BetterpickTests.release.xcconfig */;
+			baseConfigurationReference = 429E989CCD79454D91F6518C /* Pods-Betterpick-BetterpickTests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6QH7E4QW2D;
 				INFOPLIST_FILE = BetterpickTests/Info.plist;
@@ -2241,7 +2515,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Betterpick Dev.app/Betterpick Dev";
 			};
 			name = Release;
 		};
@@ -2418,7 +2691,7 @@
 		};
 		89A2A7F6244473BE006149A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B56FAA17997B328A2D858093 /* Pods-Betterpick-BetterpickUITests.debug.xcconfig */;
+			baseConfigurationReference = 1475D13334B421199ABAC8C7 /* Pods-Betterpick-BetterpickUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -2439,7 +2712,7 @@
 		};
 		89A2A7F7244473BE006149A6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C95D545CFD9AC33BCFBA26E /* Pods-Betterpick-BetterpickUITests.release.xcconfig */;
+			baseConfigurationReference = 4CB9A82B68687057A86376CA /* Pods-Betterpick-BetterpickUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -2618,7 +2891,7 @@
 		};
 		89F0EC412453AEBE000DA92B /* TestFlight */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E3FEE4AE4F197CC9D8DC533 /* Pods-Betterpick-BetterpickUITests.testflight.xcconfig */;
+			baseConfigurationReference = 5548C1145B7BCEB5388C87DC /* Pods-Betterpick-BetterpickUITests.testflight.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
