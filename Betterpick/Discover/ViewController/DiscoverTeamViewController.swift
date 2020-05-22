@@ -98,8 +98,9 @@ class DiscoverTeamViewController: DiscoverChildBaseViewController<DiscoverTeamVi
             tableView.setContentOffset(.zero, animated: false)
             tableView.reloadData()
             removeFetchingStateView()
-        case .error:
+        case .error(let error):
             addFetchingStateView()
+            showErrorState(error: error)
         }
     }
 
@@ -109,7 +110,7 @@ class DiscoverTeamViewController: DiscoverChildBaseViewController<DiscoverTeamVi
         guard let teams = viewModel.currentLeague?.teams else { return }
         coordinator?.select(team: teams[indexPath.row])
     }
-    
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Size.Cell.teamHeight
     }

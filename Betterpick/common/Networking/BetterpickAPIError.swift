@@ -26,4 +26,34 @@ enum BetterpickAPIError: Error, CustomStringConvertible {
         case .urlSession(let underlyingError): return "URLSession error: \(underlyingError)"
         }
     }
+
+    enum UserFriendly: Error {
+        case userNetwork
+        case server
+
+        init(betterpickAPIError: BetterpickAPIError) {
+            switch betterpickAPIError {
+            case .invalidStatusCode, .invalidResponseBody, .responseDataIsNil, .urlResponseNotCreated, .unknown:
+                self = .server
+            case .urlSession:
+                self = .userNetwork
+            }
+        }
+    }
+
+    var userFriendlyMessage: String {
+        let errorCode = "BetterpickErrorCode"
+        switch self {
+        case .unknown: return "Unknown error occured."
+        case .urlResponseNotCreated: return "\(errorCode) 50"
+        case .responseDataIsNil: return "\(errorCode) 51"
+        case .invalidStatusCode(let statusCode): return "\(errorCode) 52 (\(statusCode))"
+        case .invalidResponseBody: return "\(errorCode) 53"
+        case .urlSession(let error):
+            if let error = error as NSError?, error.domain == NSURLErrorDomain {
+                return "\(errorCode) 54, URLSession \(error.code)"
+            }
+            return "\(errorCode) 54"
+        }
+    }
 }

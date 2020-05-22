@@ -25,7 +25,7 @@ class BetterpickScreenshots: XCTestCase {
         snapshot("01DiscoverTeamsScreen")
 
         // Team
-        app.tables.cells.element(boundBy: 3).tap()
+        app.tables.cells.element(boundBy: 7).tap()
         snapshot("02TeamScreen")
 
         // Player

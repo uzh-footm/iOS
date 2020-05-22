@@ -37,15 +37,17 @@ platform :ios do
   desc "Build and upload a new build of Betterpick Mock TF to TestFlight"
   desc "This action will also bump the build number"
   lane :beta_mocks do
-    sync_code_signing(type: "appstore")
+    sync_code_signing(
+      type: "appstore"
+    )
     increment_build_number
     build_app(
-      scheme: "Betterpick Mock",
+      scheme: "Betterpick Mock TF",
       output_directory: "build/",
       build_path: "build/"
     )
     upload_to_testflight(
-      apple_id: "1514602147", 
+      apple_id: "1514718778",
       skip_waiting_for_build_processing: true
     )
   end

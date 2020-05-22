@@ -8,13 +8,22 @@
 
 import Foundation
 
+protocol FetchingViewModelProtocol {
+    associatedtype ResponseBody: Decodable
+    associatedtype Model
+
+    var state: FetchingViewModel<ResponseBody, Model>.ViewState { get }
+
+    func start()
+}
+
 /// Represents ViewModels that fetch some resource (`FetchingResponseBody`) and then transform it into a displayable `Model`.
-class FetchingViewModel<FetchingResponseBody: Decodable, Model> {
+class FetchingViewModel<FetchingResponseBody: Decodable, Model>: FetchingViewModelProtocol {
 
     enum ViewState {
         case fetching
         case displaying(Model)
-        case error(Error)
+        case error(BetterpickAPIError)
     }
 
     // MARK: - Properties
@@ -95,7 +104,7 @@ class FetchingViewModel<FetchingResponseBody: Decodable, Model> {
         state = .fetching
         startFetching { [weak self] result in
             switch result {
-            case .error(let error, _):
+            case .error(let error):
                 self?.state = .error(error)
             case .success(let responseBody):
                 guard let model = self?.responseBodyToModel(responseBody) else { return }

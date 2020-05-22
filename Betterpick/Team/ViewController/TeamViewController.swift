@@ -97,8 +97,9 @@ class TeamViewController: VMViewController<TeamViewModel>, NavigationBarDisplayi
             teamNameLabel.text = model.name
             removeFetchingStateView()
             tableView.reloadData()
-        default:
+        case .error(let error):
             addFetchingStateView()
+            showErrorState(error: error)
         }
     }
 }

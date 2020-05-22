@@ -13,13 +13,8 @@ class BetterpickAPIManager {
     typealias Callback<ResponseBody: Decodable> = (ManagerResult<ResponseBody>) -> Void
 
     // MARK: - Result Values
-    enum ManagerResultError: Error {
-        case userNetwork
-        case server
-    }
-
     enum ManagerResult<ResponseBody: Decodable> {
-        case error(ManagerResultError, BetterpickAPIError)
+        case error(BetterpickAPIError)
         case success(ResponseBody)
     }
 
@@ -53,12 +48,7 @@ class BetterpickAPIManager {
         return { responseContext in
             switch responseContext {
             case .error(let context):
-                switch context.error {
-                case .invalidStatusCode, .invalidResponseBody, .responseDataIsNil, .urlResponseNotCreated, .unknown:
-                    managerCompletion(.error(.server, context.error))
-                case .urlSession:
-                    managerCompletion(.error(.userNetwork, context.error))
-                }
+                managerCompletion(.error(context.error))
             case .response(let body):
                 managerCompletion(.success(body))
             }

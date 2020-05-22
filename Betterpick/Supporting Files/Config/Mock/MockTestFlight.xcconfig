@@ -13,4 +13,4 @@
 
 SWIFT_ACTIVE_COMPILATION_CONDITIONS=API_MOCK
 PRODUCT_NAME=Betterpick Mock TF
-PRODUCT_BUNDLE_IDENTIFIER=com.dvdblk.betterpick.mock.testflight
+PRODUCT_BUNDLE_IDENTIFIER=com.dvdblk.betterpick.mock.tf

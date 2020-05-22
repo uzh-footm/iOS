@@ -18,14 +18,14 @@ class RootViewModel: SimpleFetchingViewModel<LeagueAndNationalityData> {
         let requests = DispatchGroup()
         var leagues: [League]?
         var nationalities: [Nationality]?
-        var leaguesError: Error?
-        var nationalitiesError: Error?
+        var leaguesError: BetterpickAPIError?
+        var nationalitiesError: BetterpickAPIError?
         // '/leagues'
         requests.enter()
         apiManager.leagues { result in
             defer { requests.leave() }
             switch result {
-            case .error(let error, _):
+            case .error(let error):
                 leaguesError = error
             case .success(let leaguesBody):
                 leagues = leaguesBody
@@ -36,7 +36,7 @@ class RootViewModel: SimpleFetchingViewModel<LeagueAndNationalityData> {
         apiManager.nationalities { result in
             defer { requests.leave() }
             switch result {
-            case .error(let error, _):
+            case .error(let error):
                 nationalitiesError = error
             case .success(let nationalitiesBody):
                 nationalities = nationalitiesBody

@@ -20,3 +20,16 @@ class VMViewController<ViewModel>: UIViewController {
 
     required init?(coder: NSCoder) { fatalError("VMViewController init from coder not implemented") }
 }
+
+extension VMViewController where ViewModel: FetchingViewModelProtocol {
+
+    func showErrorState(error: BetterpickAPIError) {
+        let errorAlert = UIAlertController(title: "Network Error", message: error.userFriendlyMessage, preferredStyle: .alert)
+
+        errorAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [weak self] _ in
+            self?.viewModel.start()
+        }))
+
+        present(errorAlert, animated: true, completion: nil)
+    }
+}

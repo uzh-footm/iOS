@@ -72,8 +72,9 @@ class DiscoverPlayerViewController: DiscoverChildBaseViewController<DiscoverPlay
             tableView.setContentOffset(.zero, animated: false)
             tableView.reloadData()
             removeFetchingStateView()
-        default:
+        case .error(let error):
             addFetchingStateView()
+            showErrorState(error: error)
         }
     }
 

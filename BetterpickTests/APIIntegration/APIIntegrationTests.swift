@@ -99,7 +99,7 @@ class APIIntegrationTests: XCTestCase {
 
         wait(for: [requestSuccessExpectation], timeout: 4)
     }
-    
+
     func testGetSearchPlayers() {
         let requestSuccessExpectation = expectation(description: "Request should return 200.")
 
@@ -107,7 +107,7 @@ class APIIntegrationTests: XCTestCase {
 
         wait(for: [requestSuccessExpectation], timeout: 4)
     }
-    
+
     func testGetSearchClubs() {
         let requestSuccessExpectation = expectation(description: "Request should return 200.")
 

@@ -34,7 +34,10 @@ class RootViewController: VMViewController<RootViewModel>, FetchingStatePresenti
     // MARK: - Private
     private func updateViewStateAppearance() {
         switch viewModel.state {
-        case .fetching, .error:
+        case .error(let error):
+            addFetchingStateView()
+            showErrorState(error: error)
+        case .fetching:
             addFetchingStateView()
         case .displaying:
             removeFetchingStateView()

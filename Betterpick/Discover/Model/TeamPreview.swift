@@ -16,14 +16,14 @@ struct TeamPreview: Codable {
     var name: String {
         return id
     }
-    
+
     /// The base CDN URL used for SOFIFA clubs logo fetching
     private static let sofifaClubLogoBaseURL: URL = URL(string: "https://cdn.sofifa.com/teams/")!
     private static let sofifaClubLogoSuffix = "light_240.png"
-    
+
     var actualLogo: URL {
         let logoID = logo.deletingPathExtension().lastPathComponent
-        
+
         return TeamPreview.sofifaClubLogoBaseURL.appendingPathComponent(logoID).appendingPathComponent(TeamPreview.sofifaClubLogoSuffix)
     }
 }

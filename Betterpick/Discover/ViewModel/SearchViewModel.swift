@@ -37,12 +37,12 @@ class SearchViewModel {
         var clubs: [TeamPreview]?
         var playersError: Error?
         var clubsError: Error?
-        
+
         requests.enter()
         apiManager.searchPlayers(name: searchText) { result in
             defer { requests.leave() }
             switch result {
-            case .error(let error, _):
+            case .error(let error):
                 playersError = error
             case .success(let playersBody):
                 players = playersBody
@@ -53,7 +53,7 @@ class SearchViewModel {
         apiManager.searchClubs(name: searchText) { result in
             defer { requests.leave() }
             switch result {
-            case .error(let error, _):
+            case .error(let error):
                 clubsError = error
             case .success(let clubsBody):
                 clubs = clubsBody

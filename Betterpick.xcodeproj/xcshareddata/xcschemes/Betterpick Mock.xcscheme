@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "89E2417F247749AF00F1B51E"
-               BuildableName = "Betterpick Mock.app"
+               BuildableName = "Betterpick.app"
                BlueprintName = "Betterpick Mock"
                ReferencedContainer = "container:Betterpick.xcodeproj">
             </BuildableReference>
@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "893A61552477713800CE1CD0"
+               BuildableName = "BetterpickScreenshots2.xctest"
+               BlueprintName = "BetterpickScreenshots2"
+               ReferencedContainer = "container:Betterpick.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -45,7 +55,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "89E2417F247749AF00F1B51E"
-            BuildableName = "Betterpick Mock.app"
+            BuildableName = "Betterpick.app"
             BlueprintName = "Betterpick Mock"
             ReferencedContainer = "container:Betterpick.xcodeproj">
          </BuildableReference>
@@ -62,7 +72,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "89E2417F247749AF00F1B51E"
-            BuildableName = "Betterpick Mock.app"
+            BuildableName = "Betterpick.app"
             BlueprintName = "Betterpick Mock"
             ReferencedContainer = "container:Betterpick.xcodeproj">
          </BuildableReference>

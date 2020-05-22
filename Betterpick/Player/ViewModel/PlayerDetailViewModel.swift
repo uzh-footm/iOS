@@ -72,14 +72,14 @@ class PlayerDetailViewModel: SimpleFetchingViewModel<PlayerDetailModel> {
         let requests = DispatchGroup()
         var player: Player?
         var club: TeamPreview?
-        var playerError: Error?
-        var clubError: Error?
+        var playerError: BetterpickAPIError?
+        var clubError: BetterpickAPIError?
 
         requests.enter()
         apiManager.player(playerID: String(playerPreview.id)) { result in
             defer { requests.leave() }
             switch result {
-            case .error(let error, _):
+            case .error(let error):
                 playerError = error
             case .success(let playerBody):
                 player = playerBody
@@ -90,7 +90,7 @@ class PlayerDetailViewModel: SimpleFetchingViewModel<PlayerDetailModel> {
         apiManager.club(clubID: playerPreview.club) { result in
             defer { requests.leave() }
             switch result {
-            case .error(let error, _):
+            case .error(let error):
                 clubError = error
             case .success(let clubBody):
                 club = clubBody

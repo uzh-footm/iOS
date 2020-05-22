@@ -114,4 +114,3 @@ class PlayerPreviewTableViewCell: UITableViewCell, Reusable {
         playerPhotoImageView.sd_setImage(with: playerPreview.actualPhoto, placeholderImage: #imageLiteral(resourceName: "player_default_photo"), options: [], completed: nil)
     }
 }
-

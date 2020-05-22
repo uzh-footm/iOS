@@ -177,8 +177,9 @@ class PlayerDetailViewController: VMViewController<PlayerDetailViewModel>, Navig
             playerFirstNameLabel.text = player.firstName
             playerSurnameLabel.text = player.surname
             nationalityImageView.sd_setImage(with: viewModel.nationalityURL(), placeholderImage: nil)
-        case .error:
+        case .error(let error):
             addFetchingStateView()
+            showErrorState(error: error)
         }
     }
 }
