@@ -16,11 +16,6 @@ or alternatively using `brew cask install fastlane`
 
 # Available Actions
 ## iOS
-### ios pr_release
-```
-fastlane ios pr_release
-```
-Create GitHub PR from release to master
 ### ios tests_mocks
 ```
 fastlane ios tests_mocks
@@ -43,16 +38,20 @@ fastlane ios beta_mocks
 Build and upload a new build of Betterpick Mock TF to TestFlight
 
 This action will also bump the build number
-### ios deploy_beta_mocks
-```
-fastlane ios deploy_beta_mocks
-```
-Deploy a new testflight version while committing the results.
 ### ios deploy_screenshots
 ```
 fastlane ios deploy_screenshots
 ```
 Create and deploy a new set of screenshots.
+### ios pr_release
+```
+fastlane ios pr_release
+```
+Create a new Release Pull Request on GitHub.
+
+Increments the build number and creates a new release branch from develop.
+
+Release branch name is dependent on the app version and build number.
 
 ----
 

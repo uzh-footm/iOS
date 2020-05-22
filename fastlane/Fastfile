@@ -90,7 +90,8 @@ platform :ios do
     increment_build_number
     # Get Version and Build Number
     version = get_version_number(
-      xcodeproj: ENV["BP_XCODE_PROJ_NAME"]
+      xcodeproj: ENV["BP_XCODE_PROJ_NAME"],
+      target: "Betterpick"
     )
 
     build_number = get_build_number(
