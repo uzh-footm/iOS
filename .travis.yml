@@ -8,11 +8,8 @@ cache:
     cocoapods: true
 
 before_install:
-  - echo $TRAVIS_COMMIT
-  - echo $TRAVIS_TAG
-  - echo $TRAVIS_BRANCH
-  - echo $TRAVIS_BUILD_NUMBER
-  - echo $TRAVIS_REPO_SLUG
+  - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
+  - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, PR=$PR, BRANCH=$BRANCH"
     # Make sure we use the bundler version that is provided in the Gemfile.lock file
   - gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
 
@@ -42,7 +39,7 @@ jobs:
         github-token: $GITHUB_TOKEN
         keep-history: true
         local-dir:    docs/src
-      if: branch = master
+      if: type = push AND env(BRANCH) = master
 
     ###################### feature/ PR ######################
     ### Tests
@@ -50,7 +47,7 @@ jobs:
       name: "iOS App unit tests"
       script:
         - bundle exec fastlane tests
-      if: type = pull_request AND branch =~ ^feature\/.*$
+      if: type = pull_request AND env(BRANCH) =~ ^feature\/.*$
 
     ###################### release/ PR ######################
     ### Testflight Mocks Deployment
@@ -71,5 +68,5 @@ jobs:
       script:
         - bundle exec fastlane generate_and_commit_documentation
       name: "Generate Documentation"
-      if: type = pull_request AND branch =~ ^release\/.*$
+      if: type = pull_request AND env(BRANCH) =~ ^release\/.*$
       
