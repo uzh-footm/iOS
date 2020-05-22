@@ -127,7 +127,7 @@ platform :ios do
       api_token: ENV["GITHUB_TOKEN"],
       repo: "uzh-footm/iOS",
       #title: "[Release] " + release_branch_name,
-      title: "[Release] Testing"
+      title: "[Release] Testing",
       body: "Testing automated PRs with Fastlane. 🚀 \n Disregard this PR."
     )
     
