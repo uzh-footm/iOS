@@ -14,37 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "89A2A7C2244473BC006149A6"
-               BuildableName = "Betterpick.app"
-               BlueprintName = "Betterpick"
-               ReferencedContainer = "container:Betterpick.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "NO"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "89A2A7E5244473BE006149A6"
-               BuildableName = "BetterpickUITests.xctest"
-               BlueprintName = "BetterpickUITests"
-               ReferencedContainer = "container:Betterpick.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "NO"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "891A508C2475D583002865ED"
-               BuildableName = "BetterpickScreenshots.xctest"
-               BlueprintName = "BetterpickScreenshots"
+               BlueprintIdentifier = "89E2417F247749AF00F1B51E"
+               BuildableName = "Betterpick Mock.app"
+               BlueprintName = "Betterpick Mock"
                ReferencedContainer = "container:Betterpick.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -57,16 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       codeCoverageEnabled = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "89A2A7DA244473BE006149A6"
-               BuildableName = "BetterpickTests.xctest"
-               BlueprintName = "BetterpickTests"
-               ReferencedContainer = "container:Betterpick.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -83,9 +45,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "89A2A7C2244473BC006149A6"
-            BuildableName = "Betterpick.app"
-            BlueprintName = "Betterpick"
+            BlueprintIdentifier = "89E2417F247749AF00F1B51E"
+            BuildableName = "Betterpick Mock.app"
+            BlueprintName = "Betterpick Mock"
             ReferencedContainer = "container:Betterpick.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -100,9 +62,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "89A2A7C2244473BC006149A6"
-            BuildableName = "Betterpick.app"
-            BlueprintName = "Betterpick"
+            BlueprintIdentifier = "89E2417F247749AF00F1B51E"
+            BuildableName = "Betterpick Mock.app"
+            BlueprintName = "Betterpick Mock"
             ReferencedContainer = "container:Betterpick.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
