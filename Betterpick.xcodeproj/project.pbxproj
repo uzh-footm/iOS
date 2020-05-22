@@ -126,6 +126,8 @@
 		89A2A7D5244473BE006149A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89A2A7D3244473BE006149A6 /* LaunchScreen.storyboard */; };
 		89A2A7EB244473BE006149A6 /* BetterpickUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A2A7EA244473BE006149A6 /* BetterpickUITests.swift */; };
 		89B544A4244BE2ED000C1C4B /* DiscoverCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */; };
+		89D478D624775D8E005546C4 /* ImageURLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D478D524775D8E005546C4 /* ImageURLProcessor.swift */; };
+		89D478D724775D8E005546C4 /* ImageURLProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D478D524775D8E005546C4 /* ImageURLProcessor.swift */; };
 		89DA2D04246F5B5000964B5C /* TabBarViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DA2D03246F5B5000964B5C /* TabBarViewModelTests.swift */; };
 		89E24182247749AF00F1B51E /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8920964E2444B92400DF93BB /* TabBarViewModel.swift */; };
 		89E24183247749AF00F1B51E /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899BF129245456B400F68E30 /* TeamViewController.swift */; };
@@ -471,6 +473,7 @@
 		89A2A7EA244473BE006149A6 /* BetterpickUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterpickUITests.swift; sourceTree = "<group>"; };
 		89A2A7EC244473BE006149A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89B544A3244BE2ED000C1C4B /* DiscoverCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCoordinator.swift; sourceTree = "<group>"; };
+		89D478D524775D8E005546C4 /* ImageURLProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLProcessor.swift; sourceTree = "<group>"; };
 		89DA2D03246F5B5000964B5C /* TabBarViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModelTests.swift; sourceTree = "<group>"; };
 		89E2421E247749AF00F1B51E /* Betterpick Mock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Betterpick Mock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E64B192476C54F00B5644B /* MockTestFlight.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = MockTestFlight.xcconfig; sourceTree = "<group>"; };
@@ -819,6 +822,7 @@
 			isa = PBXGroup;
 			children = (
 				892096762444EBE500DF93BB /* Size.swift */,
+				89D478D524775D8E005546C4 /* ImageURLProcessor.swift */,
 			);
 			path = Struct;
 			sourceTree = "<group>";
@@ -1852,6 +1856,7 @@
 				899BF1152453B8A700F68E30 /* EmptyStatePresenting.swift in Sources */,
 				89B544A4244BE2ED000C1C4B /* DiscoverCoordinator.swift in Sources */,
 				899BF1422455146200F68E30 /* GetClubPlayersResponseBody.swift in Sources */,
+				89D478D624775D8E005546C4 /* ImageURLProcessor.swift in Sources */,
 				899BF161245854C700F68E30 /* NavigationBarDisplaying.swift in Sources */,
 				89A2A7C7244473BC006149A6 /* AppDelegate.swift in Sources */,
 				89A2A7CB244473BC006149A6 /* Coordinator.swift in Sources */,
@@ -1892,6 +1897,7 @@
 				89E24182247749AF00F1B51E /* TabBarViewModel.swift in Sources */,
 				89E24183247749AF00F1B51E /* TeamViewController.swift in Sources */,
 				89E24184247749AF00F1B51E /* Betterpick.xcdatamodeld in Sources */,
+				89D478D724775D8E005546C4 /* ImageURLProcessor.swift in Sources */,
 				89E24185247749AF00F1B51E /* ReusableCell.swift in Sources */,
 				89E24186247749AF00F1B51E /* RootViewModel.swift in Sources */,
 				89E24187247749AF00F1B51E /* Team.swift in Sources */,

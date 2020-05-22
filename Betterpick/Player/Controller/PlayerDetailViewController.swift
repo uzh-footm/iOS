@@ -171,7 +171,7 @@ class PlayerDetailViewController: VMViewController<PlayerDetailViewModel>, Navig
             let player = model.player
             removeFetchingStateView()
             tableView.reloadData()
-            playerPhotoImageView.sd_setImage(with: viewModel.playerPreview.actualPhoto, placeholderImage: #imageLiteral(resourceName: "player_default_photo"))
+            playerPhotoImageView.sd_setImage(with: model.player.actualPhoto, placeholderImage: #imageLiteral(resourceName: "player_default_photo"))
             coloredPositionLabel.configure(from: player.position)
             playerOvrLabel.text = String(player.overall)
             playerFirstNameLabel.text = player.firstName

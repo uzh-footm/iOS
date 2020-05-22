@@ -45,6 +45,11 @@ struct Player: Decodable {
         names.removeFirst()
         return names.joined(separator: " ")
     }
+    
+    /// Returns a working FIFA 20 dataset URL for the player photos.
+    var actualPhoto: URL {
+        return ImageURLProcessor.playerPhoto(photoURL: photo)
+    }
 
     // MARK: - Skills
     let crossing: Int
