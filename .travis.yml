@@ -20,12 +20,29 @@ install:
   - bundle info jazzy
   - bundle exec pod install
 
+stages:
+  # Deploy docs stage
+  # Allow only if we push to master
+  # TODO: Add check for: commit_message =~ ^[Release].*$
+  - name: deploy_docs
+    if: type = push AND env(TRAVIS_BRANCH) = master
+  # Test stage
+  # Allow only if the type is a pull request and the branch is 'feature/...'
+  - name: test
+    if: type = pull_request AND env(TRAVIS_PULL_REQUEST_BRANCH) =~ ^feature\/.*$
+  # Deploy new release stage
+  # Allow only if the type is a PR and the branch is 'release/...'
+  - name: deploy_new_release
+    if: type = pull_request AND env(TRAVIS_PULL_REQUEST_BRANCH) =~ ^release\/.*$
+
+
+
 # jobs and stages to run
 jobs:
   include:
     ###################### master ######################
     ### Docs deployment
-    - stage: deploy/docs
+    - stage: deploy_docs
       name: "Deploy iOS App Documentation from master to GitHub Pages"
       script:
         - bundle exec fastlane generate_docs
@@ -39,7 +56,6 @@ jobs:
         github-token: $GITHUB_TOKEN
         keep-history: true
         local-dir:    docs/src
-      if: type = push AND env(TRAVIS_BRANCH) = master
 
     ###################### feature/ PR ######################
     ### Tests
@@ -47,11 +63,10 @@ jobs:
       name: "iOS App unit tests"
       script:
         - bundle exec fastlane tests
-      if: type = pull_request AND env(TRAVIS_PULL_REQUEST_BRANCH) =~ ^feature\/.*$
 
     ###################### release/ PR ######################
-    ### Testflight Mocks Deployment
-    - stage: "deploy/testflight_mocks"
+    ### New Release Deployment
+    - stage: deploy_new_release
       ## Tests
       name: "Unit & UI Tests"
       script:
@@ -68,5 +83,4 @@ jobs:
       script:
         - bundle exec fastlane generate_and_commit_documentation
       name: "Generate Documentation"
-      if: type = pull_request AND env(TRAVIS_PULL_REQUEST_BRANCH) =~ ^release\/.*$
       
