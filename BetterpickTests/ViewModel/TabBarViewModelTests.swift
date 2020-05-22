@@ -44,7 +44,7 @@ class TabBarViewModelTests: XCTestCase {
     func testTabChangeCallback() {
         let viewModel = tabBarViewModel
 
-        let newTab = Tab.myTeams
+        let newTab = Tab.settings
         let newTabExpectation = expectation(description: "onTabChange should be called back with \(newTab)")
         viewModel.onTabChange = { callbackTab in
             if callbackTab == newTab {
