@@ -1,23 +1,163 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
-
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
-
 default_platform(:ios)
 
 platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
+  before_all do |lane, options|
+    ENV["MATCH_USERNAME"] = ENV["FASTLANE_USER"]
+    ENV["PILOT_USERNAME"] = ENV["FASTLANE_USER"]
+    ENV["BP_XCODE_PROJ_NAME"] = "Betterpick.xcodeproj"
+    ENV["BP_MAIN_TARGET_NAME"] = "Betterpick"
+    ENV["BP_FL_GIT_PREFIX"] = "[fastlane]"
+  end
+
+  private_lane :get_release_version_string do
+    version = get_version_number(
+      xcodeproj: ENV["BP_XCODE_PROJ_NAME"],
+      target: ENV["BP_MAIN_TARGET_NAME"]
+    )
+
+    build_number = get_build_number(
+      xcodeproj: ENV["BP_XCODE_PROJ_NAME"]
+    )
+    
+    # Save new branch name
+    ENV["RELEASE_VERSION_STRING"] = "v" + version + "b" + build_number
+  end
+
+  ######################### TESTING #########################
+  desc "Runs tests for the target that uses BetterpickAPIManagerMock"
+  lane :tests_mocks do
+    run_tests(
+      scheme: "Betterpick Mock",
+      devices: ["iPhone 11 Pro"],
+      clean: true
+    )
+  end
+
+  desc "Runs tests"
+  lane :tests do
+    run_tests(
+      scheme: "Betterpick",
+      devices: ["iPhone 11 Pro"],
+      clean: true
+    )
+  end
+
+  ######################### DOCUMENTATION #########################
+  desc "Documentation generation via Jazzy"
+  lane :generate_docs do
+    jazzy(config: "docs/.jazzy.yaml")
+  end
+
+  ######################### TESTFLIGHT #########################
+  desc "Build and upload a new build of Betterpick Mock TF to TestFlight"
+  desc "This action will also bump the build number"
+  lane :beta_mocks do
+    sync_code_signing(
+      type: "appstore"
+    )
+    build_app(
+      scheme: "Betterpick Mock TF",
+      output_directory: "build/",
+      build_path: "build/"
+    )
+    upload_to_testflight(
+      apple_id: "1514718778",
+      skip_waiting_for_build_processing: true
+    )
+  end
+
+  ##############################################################
+  ########################### RELEASE ##########################
+  ##############################################################
+  desc "Create a new Release Pull Request on GitHub."
+  desc "Increments the build number and creates a new release branch from develop."
+  desc "Release branch name is dependent on the app version and build number."
+  lane :pr_release do
+    # Make sure we're on develop branch
+    ensure_git_branch(
+      branch: '^develop$'
+    )
+    # Make sure we're free to commit new stuff
+    ensure_git_status_clean
+    # Bump the build number
+    increment_build_number
+
+    # Checkout new branch
+    get_version_number(
+      xcodeproj: ENV["BP_XCODE_PROJ_NAME"],
+      target: ENV["BP_MAIN_TARGET_NAME"]
+    )
+    
+    get_release_version_string
+
+    sh("git checkout -b release/" + ENV["RELEASE_VERSION_STRING"])
+    
+    git_commit(
+      path: "./*", 
+      message: ENV["BP_FL_GIT_PREFIX"] + " Bump App Version"
+    )
+
+    push_to_git_remote
+
+    create_pull_request(
+      api_token: ENV["GITHUB_TOKEN"],
+      repo: "uzh-footm/iOS",
+      #title: "[Release] " + ENV["RELEASE_VERSION_STRING"],
+      title: "[Release] Testing",
+      body: "Testing automated PRs with Fastlane. 🚀 \n Disregard this PR."
+    )
+    
+    sh("git checkout develop")
+  end
+
+  ##############################################################
+  ############################# CI #############################
+  ##############################################################
+  desc "Create and deploy a new set of screenshots."
+  lane :deploy_screenshots do
+    ensure_is_ci
+
+    snapshot
+
+    git_commit(
+      path: "./assets/screenshots/", 
+      message: ENV["BP_FL_GIT_PREFIX"] + " Add Screenshots"
+    )
+
+    push_to_git_remote(
+      remote_branch: ENV["BRANCH"]
+    )
+  end
+
+  desc "Generate and commit new documentation"
+  lane :generate_and_commit_documentation do
+    ensure_is_ci
+
+    generate_docs
+
+    git_commit(
+      path: "./docs/src/", 
+      message: ENV["BP_FL_GIT_PREFIX"] + " Add Documentation"
+    )
+
+    push_to_git_remote(
+      remote_branch: ENV["BRANCH"]
+    )
+  end
+
+  desc "Create tag for a new Release"
+  lane :tag_release do
+    ensure_is_ci
+
+    # Ensure we're on master
+    ensure_git_branch
+
+    get_release_version_string
+
+    add_git_tag(
+      tag: ENV["RELEASE_VERSION_STRING"]
+    )
+
+    push_to_git_remote
   end
 end
