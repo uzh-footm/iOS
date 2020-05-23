@@ -147,8 +147,10 @@ platform :ios do
 
     puts brnch
 
-    puts ENV["TRAVIS_PULL_REQUEST_BRANCH"]
+    puts ENV["BRANCH"]
 
-    push_to_git_remote
+    push_to_git_remote(
+      local_branch: ENV["BRANCH"]
+    )
   end
 end

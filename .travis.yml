@@ -10,9 +10,16 @@ cache:
       - "./vendor/bundle"
 
 before_install:
+  # Git Setup
   - git config --global user.name "travis-ci"
   - git config --global user.email travisci.bp@dvdblk.com
+  # Correct Git branch environment variable
+  # https://unhashable.com/getting-the-current-branch-name-during-a-pull-request-in-travis-ci/
+  - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
+  - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, BRANCH=$BRANCH"
+  # GitHub Authentication
   - git remote set-url origin https://uzh-footm:${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}
+
 
   # install dependencies
 install:
