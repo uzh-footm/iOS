@@ -12,6 +12,8 @@ cache:
 
 
 before_install:
+  # Dependencies
+  - brew install git-lfs
   # Git Setup
   - git config --global user.name "travis-ci"
   - git config --global user.email travisci.bp@dvdblk.com
