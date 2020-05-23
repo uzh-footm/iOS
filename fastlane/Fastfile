@@ -119,7 +119,7 @@ platform :ios do
   desc "Create and deploy a new set of screenshots."
   lane :deploy_screenshots do
     ensure_is_ci
-    ensure_git_status_clean
+
     get_release_version_string
 
     sh("git checkout --track origin/release/" + ENV["RELEASE_VERSION_STRING"])
@@ -143,7 +143,7 @@ platform :ios do
   desc "Generate and commit new documentation"
   lane :generate_and_commit_documentation do
     ensure_is_ci
-    ensure_git_status_clean
+
     get_release_version_string
     
     sh("git checkout --track origin/release/" + ENV["RELEASE_VERSION_STRING"])
