@@ -78,7 +78,9 @@ platform :ios do
       message: ENV["BP_FL_GIT_PREFIX"] + " Add Screenshots"
     )
 
-    push_to_git_remote
+    push_to_git_remote(
+      remote_branch: ENV["BRANCH"]
+    )
   end
 
   desc "Generate and commit new documentation"
@@ -90,7 +92,9 @@ platform :ios do
       message: ENV["BP_FL_GIT_PREFIX"] + " Add Screenshots"
     )
 
-    push_to_git_remote
+    push_to_git_remote(
+      remote_branch: ENV["BRANCH"]
+    )
   end
 
   desc "Create a new Release Pull Request on GitHub."
@@ -143,6 +147,10 @@ platform :ios do
 
   desc "Travis testing"
   lane :travis_test do
+    unless is_ci
+      UI.error "This lane needs to run on a CI server."
+    end
+
     brnch = git_branch
 
     puts brnch
@@ -150,7 +158,7 @@ platform :ios do
     puts ENV["BRANCH"]
 
     push_to_git_remote(
-      local_branch: ENV["BRANCH"]
+      remote_branch: ENV["BRANCH"]
     )
   end
 end
