@@ -140,4 +140,11 @@ platform :ios do
   lane :tag_release do
 
   end
+
+  desc "Travis testing"
+  lane :travis_test do
+    brnch = git_branch
+
+    puts brnch
+  end
 end

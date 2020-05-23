@@ -21,7 +21,7 @@ install:
   - bundle exec pod install
 
 stages:
-  - name: Info
+  - Info
   # Test stage
   # Allow only if the type is a pull request and the branch is 'feature/...'
   - name: Test
@@ -47,7 +47,10 @@ jobs:
         - touch tempfile123
         - git add tempfile123
         - git commit -m "travis test commit"
+        - git status
+        - git branch -a
         - git push origin --tags
+        - bundle exec fastlane travis_test
 
     ###################### master ######################
     ### Docs deployment
@@ -59,8 +62,6 @@ jobs:
         github-token: $GITHUB_TOKEN
         keep-history: true
         local-dir:    docs/src
-    - script:
-        - 
 
     ### Tests
     - stage: Test
