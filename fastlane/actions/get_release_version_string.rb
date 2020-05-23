@@ -31,26 +31,26 @@ module Fastlane
       end
 
       def self.details
-        "This action should be used whenever the proper format of the version is needed. For instance, when there is a new 'release/' branch or a release tag."
+        "This action should be used whenever the proper format of the version is needed. For instance, when there is a new 'release/' branch or a release tag"
       end
 
       def self.available_options
         [
           FastlaneCore::ConfigItem.new(key: :xcodeproj,
-                                       description: "The Xcode project used to fetch the version + build number.",
+                                       description: "The Xcode project used to fetch the version + build number",
                                        verify_block: proc do |value|
                                           UI.user_error!("No Xcode project name for GetReleaseVersionStringAction given, pass using `xcodeproj_name: 'name'`") unless (value and not value.empty?)
                                           UI.user_error!("Couldn't find project '#{value}'") unless File.exist?(value)
                                        end),
           FastlaneCore::ConfigItem.new(key: :target,
-                                       description: "The Target which is used to get the App version.",
+                                       description: "The Target which is used to get the App version",
                                        is_string: true)
         ]
       end
 
       def self.output
         [
-          ['RELEASE_VERSION_STRING', 'This value contains the release version string.']
+          ['RELEASE_VERSION_STRING', 'This value contains the release version string']
         ]
       end
 

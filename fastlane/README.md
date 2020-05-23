@@ -38,6 +38,15 @@ fastlane ios beta_mocks
 Build and upload a new build of Betterpick Mock TF to TestFlight
 
 This action will also bump the build number
+### ios pr_release
+```
+fastlane ios pr_release
+```
+Create a new Release Pull Request on GitHub.
+
+Increments the build number and creates a new release branch from develop.
+
+Release branch name is dependent on the app version and build number.
 ### ios deploy_screenshots
 ```
 fastlane ios deploy_screenshots
@@ -48,15 +57,11 @@ Create and deploy a new set of screenshots.
 fastlane ios generate_and_commit_documentation
 ```
 Generate and commit new documentation
-### ios pr_release
+### ios tag_release
 ```
-fastlane ios pr_release
+fastlane ios tag_release
 ```
-Create a new Release Pull Request on GitHub.
-
-Increments the build number and creates a new release branch from develop.
-
-Release branch name is dependent on the app version and build number.
+Create tag for a new Release
 
 ----
 
