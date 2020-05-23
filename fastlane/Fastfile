@@ -146,5 +146,9 @@ platform :ios do
     brnch = git_branch
 
     puts brnch
+
+    puts ENV["TRAVIS_PULL_REQUEST_BRANCH"]
+
+    push_to_git_remote
   end
 end
