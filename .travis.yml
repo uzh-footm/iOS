@@ -38,7 +38,7 @@ stages:
   # Deploy new release stage
   # Allow only if the type is a 'PR' and the base_branch is 'master'
   - name: Prepare new Release
-    if: type = pull_request AND branch = master AND NOT commit_message =~ ^\[fastlane\].*$
+    if: type = pull_request AND branch = master AND NOT (commit_message =~ ^\[fastlane\].*$)
   # Deploy docs stage
   # Allow only if the type is a 'push' and the branch is 'master'
   - name: Deploy Documentation
@@ -60,7 +60,7 @@ jobs:
         - stage: Prepare new Release
         ## Prepare New Release
         script:
-          #- bundle exec fastlane deploy_screenshots
+          - bundle exec fastlane deploy_screenshots
           - bundle exec fastlane generate_and_commit_documentation
           - bundle exec fastlane deploy_beta_mocks
         name: "Screenshots -> Docs -> AppStore"
