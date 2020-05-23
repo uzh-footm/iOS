@@ -1,18 +1,3 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
-
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
-
 default_platform(:ios)
 
 platform :ios do
@@ -20,6 +5,7 @@ platform :ios do
     ENV["MATCH_USERNAME"] = ENV["FASTLANE_USER"]
     ENV["PILOT_USERNAME"] = ENV["FASTLANE_USER"]
     ENV["BP_XCODE_PROJ_NAME"] = "Betterpick.xcodeproj"
+    ENV["BP_MAIN_TARGET_NAME"] = "Betterpick"
     ENV["BP_FL_GIT_PREFIX"] = "[fastlane]"
   end
 
@@ -67,32 +53,8 @@ platform :ios do
   end
 
   ##############################################################
-  ######################### DEPLOYMENT #########################
+  ########################### RELEASE ##########################
   ##############################################################
-  desc "Create and deploy a new set of screenshots."
-  lane :deploy_screenshots do
-    snapshot
-
-    git_commit(
-      path: "./assets/screenshots/", 
-      message: ENV["BP_FL_GIT_PREFIX"] + " Add Screenshots"
-    )
-
-    push_to_git_remote
-  end
-
-  desc "Generate and commit new documentation"
-  lane :generate_and_commit_documentation do
-    generate_docs
-
-    git_commit(
-      path: "./docs/src/", 
-      message: ENV["BP_FL_GIT_PREFIX"] + " Add Screenshots"
-    )
-
-    push_to_git_remote
-  end
-
   desc "Create a new Release Pull Request on GitHub."
   desc "Increments the build number and creates a new release branch from develop."
   desc "Release branch name is dependent on the app version and build number."
@@ -105,17 +67,12 @@ platform :ios do
     ensure_git_status_clean
     # Bump the build number
     increment_build_number
-    # Get Version and Build Number
-    version = get_version_number(
-      xcodeproj: ENV["BP_XCODE_PROJ_NAME"],
-      target: "Betterpick"
-    )
 
-    build_number = get_build_number(
-      xcodeproj: ENV["BP_XCODE_PROJ_NAME"]
-    )
     # Checkout new branch
-    release_branch_name = "v" + version + "b" + build_number
+    release_branch_name = get_release_version_string(
+      xcodeproj: ENV["BP_XCODE_PROJ_NAME"],
+      target: ENV["BP_MAIN_TARGET_NAME"]
+    )
     sh("git checkout -b release/" + release_branch_name)
     
     git_commit(
@@ -134,5 +91,59 @@ platform :ios do
     )
     
     sh("git checkout develop")
+  end
+
+  ##############################################################
+  ############################# CI #############################
+  ##############################################################
+  desc "Create and deploy a new set of screenshots."
+  lane :deploy_screenshots do
+    ensure_is_ci
+
+    snapshot
+
+    git_commit(
+      path: "./assets/screenshots/", 
+      message: ENV["BP_FL_GIT_PREFIX"] + " Add Screenshots"
+    )
+
+    push_to_git_remote(
+      remote_branch: ENV["BRANCH"]
+    )
+  end
+
+  desc "Generate and commit new documentation"
+  lane :generate_and_commit_documentation do
+    ensure_is_ci
+
+    generate_docs
+
+    git_commit(
+      path: "./docs/src/", 
+      message: ENV["BP_FL_GIT_PREFIX"] + " Add Documentation"
+    )
+
+    push_to_git_remote(
+      remote_branch: ENV["BRANCH"]
+    )
+  end
+
+  desc "Create tag for a new Release"
+  lane :tag_release do
+    ensure_is_ci
+
+    # Ensure we're on master
+    ensure_git_branch
+
+    release_version_string = get_release_version_string(
+      xcodeproj: ENV["BP_XCODE_PROJ_NAME"],
+      target: ENV["BP_MAIN_TARGET_NAME"]
+    )
+
+    add_git_tag(
+      tag: release_version_string
+    )
+
+    push_to_git_remote
   end
 end

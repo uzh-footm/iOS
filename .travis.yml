@@ -3,15 +3,25 @@ language: swift
 os: osx
 osx_image: xcode11.4
 
+
 cache:
     bundler: true
     cocoapods: true
     directories:
       - "./vendor/bundle"
 
+
 before_install:
-    # Make sure we use the bundler version that is provided in the Gemfile.lock file
-  - gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
+  # Git Setup
+  - git config --global user.name "travis-ci"
+  - git config --global user.email travisci.bp@dvdblk.com
+  # Correct Git branch environment variable
+  # https://unhashable.com/getting-the-current-branch-name-during-a-pull-request-in-travis-ci/
+  - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
+  - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, BRANCH=$BRANCH"
+  # GitHub Authentication
+  - git remote set-url origin https://uzh-footm:${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}
+
 
   # install dependencies
 install:
@@ -19,53 +29,35 @@ install:
   - bundle install
   - bundle exec pod install
 
+
 stages:
   # Test stage
-  # Allow only if the type is a pull request and the branch is 'feature/...'
+  # Allow only if the type is a 'pull_request' and the base_branch is 'master'
   - name: Test
     if: type = pull_request AND branch IN (develop, master)
   # Deploy new release stage
-  # Allow only if the type is a PR and the branch is 'release/...'
-  - name: Release
+  # Allow only if the type is a 'PR' and the base_branch is 'master'
+  - name: Prepare new Release
     if: type = pull_request AND branch = master
   # Deploy docs stage
-  # Allow only if we push to master
-  # TODO: Add check for: commit_message =~ ^[Release].*$
+  # Allow only if the type is a 'push' and the branch is 'master'
   - name: Deploy Documentation
     if: type = push AND branch = master
-
+  # Create new release tag
+  # Allow only if the type is a 'push', branch is 'master', commit_message starts with '[Release]'
+  - name: Finalize New Release
+    if: type = push AND branch = master AND commit_message =~ ^[Release].*$
 
 
 # jobs and stages to run
 jobs:
   include:
-    ###################### master ######################
-    ### Docs deployment
-    - stage: Deploy Documentation
-      name: "Deploy iOS App Documentation from master to GitHub Pages"
-      script:
-        - bundle exec fastlane generate_docs
-      after_failure:
-        # Sleep to recover full logs
-        - sleep 4
-        - find /var/folders/z3 -name '*.log' -exec cat {} \;
-      deploy:
-        provider:     pages
-        skip-cleanup: true
-        github-token: $GITHUB_TOKEN
-        keep-history: true
-        local-dir:    docs/src
-
-    ### Tests
     - stage: Test
       name: "UI & Unit tests"
       script:
         - bundle exec fastlane tests_mocks
-      after_failure:
-        - cat /Users/travis/Library/Developer/Xcode/DerivedData/Betterpick-cswmbpqoqkjrbsetljjetwhmkdcr/Build/Intermediates.noindex/Betterpick.build/Debug-iphonesimulator/Betterpick.build/Script-8908844F24449EA40080CCBF.sh
 
-    ### New Release Deployment
-    - stage: Release
+    - stage: Prepare new Release
       ## Screenshots
       script:
         - bundle exec fastlane deploy_screenshots
@@ -78,4 +70,17 @@ jobs:
     - script:
         - bundle exec fastlane deploy_beta_mocks
       name: "TestFlight Upload"
-      
+    
+    - stage: Deploy Documentation
+      name: "Deploy iOS App Documentation from master to GitHub Pages"
+      deploy:
+        provider:     pages
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN
+        keep-history: true
+        local-dir:    docs/src
+
+    - stage: Finalize New Release
+      name: "Creates a new Release tag"
+      script:
+        - bundle exec fastlane tag_release
