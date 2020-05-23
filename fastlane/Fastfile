@@ -9,6 +9,20 @@ platform :ios do
     ENV["BP_FL_GIT_PREFIX"] = "[fastlane]"
   end
 
+  private_lane :get_release_version_string do
+    version = get_version_number(
+      xcodeproj: ENV["BP_XCODE_PROJ_NAME"],
+      target: ENV["BP_MAIN_TARGET_NAME"]
+    )
+
+    build_number = get_build_number(
+      xcodeproj: ENV["BP_XCODE_PROJ_NAME"]
+    )
+    
+    # Save new branch name
+    ENV["RELEASE_VERSION_STRING"] = "v" + version + "b" + build_number
+  end
+
   ######################### TESTING #########################
   desc "Runs tests for the target that uses BetterpickAPIManagerMock"
   lane :tests_mocks do
@@ -69,11 +83,14 @@ platform :ios do
     increment_build_number
 
     # Checkout new branch
-    release_branch_name = get_release_version_string(
+    get_version_number(
       xcodeproj: ENV["BP_XCODE_PROJ_NAME"],
       target: ENV["BP_MAIN_TARGET_NAME"]
     )
-    sh("git checkout -b release/" + release_branch_name)
+    
+    get_release_version_string
+
+    sh("git checkout -b release/" + ENV["RELEASE_VERSION_STRING"])
     
     git_commit(
       path: "./*", 
@@ -85,7 +102,7 @@ platform :ios do
     create_pull_request(
       api_token: ENV["GITHUB_TOKEN"],
       repo: "uzh-footm/iOS",
-      #title: "[Release] " + release_branch_name,
+      #title: "[Release] " + ENV["RELEASE_VERSION_STRING"],
       title: "[Release] Testing",
       body: "Testing automated PRs with Fastlane. 🚀 \n Disregard this PR."
     )
@@ -135,13 +152,10 @@ platform :ios do
     # Ensure we're on master
     ensure_git_branch
 
-    release_version_string = get_release_version_string(
-      xcodeproj: ENV["BP_XCODE_PROJ_NAME"],
-      target: ENV["BP_MAIN_TARGET_NAME"]
-    )
+    get_release_version_string
 
     add_git_tag(
-      tag: release_version_string
+      tag: ENV["RELEASE_VERSION_STRING"]
     )
 
     push_to_git_remote
