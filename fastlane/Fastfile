@@ -94,7 +94,7 @@ platform :ios do
     
     git_commit(
       path: "./*", 
-      message: ENV["BP_FL_GIT_PREFIX"] + " Bump App Version"
+      message: "Bump App Version"
     )
 
     push_to_git_remote
