@@ -20,7 +20,8 @@ before_install:
   - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
   - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, BRANCH=$BRANCH"
   # GitHub Authentication
-  - git remote set-url origin https://uzh-footm:${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}
+  - echo -e "machine github.com\n  login $GITHUB_TOKEN" > ~/.netrc
+  - git lfs pull
 
 
   # install dependencies
@@ -39,13 +40,9 @@ stages:
   # Allow only if the type is a 'PR' and the base_branch is 'master'
   - name: Prepare new Release
     if: type = pull_request AND branch = master AND NOT (commit_message =~ ^\[fastlane\].*$)
-  # Deploy docs stage
-  # Allow only if the type is a 'push' and the branch is 'master'
-  - name: Deploy Documentation
-    if: type = push AND branch = master
   # Create new release tag
   # Allow only if the type is a 'push', branch is 'master', commit_message starts with '[Release]'
-  - name: Finalize New Release
+  - name: Finalize new Release
     if: type = push AND branch = master AND commit_message =~ ^\[Release\].*$
 
 
@@ -58,23 +55,23 @@ jobs:
         - bundle exec fastlane tests_mocks
 
     - stage: Prepare new Release
-      ## Prepare New Release
       script:
         - bundle exec fastlane deploy_screenshots
+      name: "Screenshots"
+    - script:
         - bundle exec fastlane generate_and_commit_documentation
-        - bundle exec fastlane deploy_beta_mocks
-      name: "Screenshots -> Docs -> AppStore"
+      name: "Documentation"
+    - script:
+        - bundle exec fastlane beta_mocks
+      name: "TestFlight"
     
-    - stage: Deploy Documentation
-      name: "Deploy iOS App Documentation from master to GitHub Pages"
+    - stage: Finalize new Release
+      name: "Creates a new Release tag"
+      script:
+        - bundle exec fastlane tag_release
       deploy:
         provider:     pages
         skip-cleanup: true
         github-token: $GITHUB_TOKEN
         keep-history: true
         local-dir:    docs/src
-
-    - stage: Finalize New Release
-      name: "Creates a new Release tag"
-      script:
-        - bundle exec fastlane tag_release

@@ -92,9 +92,13 @@ platform :ios do
 
     sh("git checkout -b release/" + ENV["RELEASE_VERSION_STRING"])
     
+    path = "Betterpick*"
+    git_add(
+      path: path
+    )
     git_commit(
-      path: "./*", 
-      message: ENV["BP_FL_GIT_PREFIX"] + " Bump App Version"
+      path: path, 
+      message: "Bump App Version"
     )
 
     push_to_git_remote
@@ -115,11 +119,19 @@ platform :ios do
   desc "Create and deploy a new set of screenshots."
   lane :deploy_screenshots do
     ensure_is_ci
+    ensure_git_status_clean
+    get_release_version_string
+
+    sh("git checkout --track origin/release/" + ENV["RELEASE_VERSION_STRING"])
 
     snapshot
 
+    path = "./assets/screenshots/"
+    git_add(
+      path: path
+    )
     git_commit(
-      path: "./assets/screenshots/", 
+      path: path, 
       message: ENV["BP_FL_GIT_PREFIX"] + " Add Screenshots"
     )
 
@@ -131,11 +143,19 @@ platform :ios do
   desc "Generate and commit new documentation"
   lane :generate_and_commit_documentation do
     ensure_is_ci
+    ensure_git_status_clean
+    get_release_version_string
+    
+    sh("git checkout --track origin/release/" + ENV["RELEASE_VERSION_STRING"])
 
     generate_docs
 
+    path = "./docs/src/"
+    git_add(
+      path: path
+    )
     git_commit(
-      path: "./docs/src/", 
+      path: path, 
       message: ENV["BP_FL_GIT_PREFIX"] + " Add Documentation",
       allow_nothing_to_commit: true
     )
