@@ -135,4 +135,9 @@ platform :ios do
     
     sh("git checkout develop")
   end
+
+  desc "Create tag for a new Release"
+  lane :tag_release do
+
+  end
 end
