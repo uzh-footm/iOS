@@ -8,12 +8,12 @@ module Fastlane
       def self.run(params)
         # Get Version and Build Number
         version = other_action.get_version_number(
-          xcodeproj: xcodeproj,
-          target: target
+          xcodeproj: params[:xcodeproj],
+          target: params[:target]
         )
 
         build_number = other_action.get_build_number(
-          xcodeproj: xcodeproj
+          xcodeproj: params[:xcodeproj]
         )
         
         # Return new branch name
@@ -37,13 +37,12 @@ module Fastlane
       def self.available_options
         [
           FastlaneCore::ConfigItem.new(key: :xcodeproj,
-                                       description: "The Xcode project used to fetch the version + build number",
+                                       description: "The Xcode project used to fetch the version and build number",
                                        verify_block: proc do |value|
                                           UI.user_error!("No Xcode project name for GetReleaseVersionStringAction given, pass using `xcodeproj_name: 'name'`") unless (value and not value.empty?)
-                                          UI.user_error!("Couldn't find project '#{value}'") unless File.exist?(value)
                                        end),
           FastlaneCore::ConfigItem.new(key: :target,
-                                       description: "The Target which is used to get the App version",
+                                       description: "The target which is used to get the App version in a project",
                                        is_string: true)
         ]
       end
