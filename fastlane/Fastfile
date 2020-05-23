@@ -137,7 +137,8 @@ platform :ios do
 
     git_commit(
       path: "./docs/src/", 
-      message: ENV["BP_FL_GIT_PREFIX"] + " Add Documentation"
+      message: ENV["BP_FL_GIT_PREFIX"] + " Add Documentation",
+      allow_nothing_to_commit: true
     )
 
     push_to_git_remote(
