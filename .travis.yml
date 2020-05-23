@@ -57,13 +57,13 @@ jobs:
       script:
         - bundle exec fastlane tests_mocks
 
-        - stage: Prepare new Release
-        ## Prepare New Release
-        script:
-          - bundle exec fastlane deploy_screenshots
-          - bundle exec fastlane generate_and_commit_documentation
-          - bundle exec fastlane deploy_beta_mocks
-        name: "Screenshots -> Docs -> AppStore"
+    - stage: Prepare new Release
+      ## Prepare New Release
+      script:
+        - bundle exec fastlane deploy_screenshots
+        - bundle exec fastlane generate_and_commit_documentation
+        - bundle exec fastlane deploy_beta_mocks
+      name: "Screenshots -> Docs -> AppStore"
     
     - stage: Deploy Documentation
       name: "Deploy iOS App Documentation from master to GitHub Pages"
