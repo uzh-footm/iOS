@@ -10,9 +10,9 @@ cache:
       - "./vendor/bundle"
 
 before_install:
+  - git config --global user.name "travis-ci"
+  - git config --global user.email travisci.bp@dvdblk.com
   - git remote set-url origin https://uzh-footm:${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}
-    # Make sure we use the bundler version that is provided in the Gemfile.lock file
-  - gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
 
   # install dependencies
 install:
@@ -44,9 +44,10 @@ jobs:
     - stage: Info
       name: "Just a test"
       script:
-        - touch tempfile
-        - bundle exec fastlane git_commit path:tempfile message:"fastlane test commit"
-        - bundle exec fastlane push_to_git_remote
+        - touch tempfile123
+        - git add tempfile123
+        - git commit -m "travis test commit"
+        - git push origin --tags
 
     ###################### master ######################
     ### Docs deployment
