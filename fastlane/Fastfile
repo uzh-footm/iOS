@@ -115,7 +115,7 @@ platform :ios do
   ##############################################################
   desc "Create and deploy a new set of screenshots."
   lane :deploy_screenshots do
-    ensure_is_ci
+    #ensure_is_ci
 
     snapshot
 

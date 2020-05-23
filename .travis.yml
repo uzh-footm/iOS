@@ -33,12 +33,11 @@ install:
 stages:
   # Test stage
   # Allow only if the type is a 'pull_request' and the base_branch is 'master'
-  - name: Test
-    if: type = pull_request AND branch IN (develop, master)
+  #
   # Deploy new release stage
   # Allow only if the type is a 'PR' and the base_branch is 'master'
   - name: Prepare new Release
-    if: type = pull_request AND branch = master
+    if: type = pull_request AND branch = master AND NOT commit_message =~ ^\[fastlane\].*$
   # Deploy docs stage
   # Allow only if the type is a 'push' and the branch is 'master'
   - name: Deploy Documentation
@@ -46,30 +45,21 @@ stages:
   # Create new release tag
   # Allow only if the type is a 'push', branch is 'master', commit_message starts with '[Release]'
   - name: Finalize New Release
-    if: type = push AND branch = master AND commit_message =~ ^[Release].*$
+    if: type = push AND branch = master AND commit_message =~ ^\[Release\].*$
 
 
 # jobs and stages to run
 jobs:
   include:
-    - stage: Test
-      name: "UI & Unit tests"
-      script:
-        - bundle exec fastlane tests_mocks
+   #
 
     - stage: Prepare new Release
-      ## Screenshots
+      ## Prepare New Release
       script:
-        - bundle exec fastlane deploy_screenshots
-      name: "Generate Screenshots"
-      ## Documentation generation
-    - script:
+        #- bundle exec fastlane deploy_screenshots
         - bundle exec fastlane generate_and_commit_documentation
-      name: "Generate Documentation"
-      ## TF Upload
-    - script:
         - bundle exec fastlane deploy_beta_mocks
-      name: "TestFlight Upload"
+      name: "Screenshots -> Docs -> AppStore"
     
     - stage: Deploy Documentation
       name: "Deploy iOS App Documentation from master to GitHub Pages"

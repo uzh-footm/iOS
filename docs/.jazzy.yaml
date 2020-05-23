@@ -14,4 +14,4 @@ xcodebuild_arguments:
     - -workspace 
     - Betterpick.xcworkspace
     - [CODE_SIGN_IDENTITY=,CODE_SIGNING_REQUIRED=NO,CODE_SIGNING_ALLOWED=NO]
-min_acl: private
+min_acl: internal
