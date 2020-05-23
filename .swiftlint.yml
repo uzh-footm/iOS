@@ -8,3 +8,8 @@ cyclomatic_complexity:
 identifier_name:
   excluded:
     - id
+
+# paths to ignore during linting.
+excluded: 
+  - Carthage
+  - Pods
