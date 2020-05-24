@@ -122,6 +122,7 @@ platform :ios do
 
     get_release_version_string
 
+    sh("git fetch --all")
     sh("git checkout --track origin/release/" + ENV["RELEASE_VERSION_STRING"])
 
     snapshot
@@ -146,6 +147,7 @@ platform :ios do
 
     get_release_version_string
     
+    sh("git fetch --all")
     sh("git checkout --track origin/release/" + ENV["RELEASE_VERSION_STRING"])
 
     generate_docs
