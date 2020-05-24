@@ -61,12 +61,12 @@ jobs:
     - stage: Prepare new Release
       script:
         - bundle exec fastlane prepare_new_release
-      name: "Documentation and Screenshots"
+      name: "Generate documentation and screenshots"
     
     - stage: Upload new Release
       script:
         - bundle exec fastlane beta_mocks
-      name: "TestFlight"
+      name: "Upload to TestFlight"
 
     - stage: Finalize new Release
       name: "Creates a new Release tag"
