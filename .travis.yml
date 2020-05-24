@@ -37,7 +37,7 @@ stages:
   # Test stage
   # Allow only if the type is a 'pull_request' and the base_branch is 'master'
   - name: Test
-    if: type = pull_request AND branch IN (develop, master) AND NOT (commit_message =~ ^fastlane.*$)
+    if: type = pull_request AND branch IN (develop, master) AND NOT (commit_message =~ ^\[fastlane\].*$)
   # Deploy new release stage
   # Allow only if the type is a 'PR' and the base_branch is 'master'
   - name: Prepare new Release
@@ -45,7 +45,7 @@ stages:
   # Create new release tag
   # Allow only if the type is a 'push', branch is 'master', commit_message starts with '[Release]'
   - name: Upload new Release
-    if: type = pull_request AND branch = master AND commit_message =~ /^fastlane\: Allow release.*$/
+    if: type = pull_request AND branch = master AND commit_message =~ /^\[fastlane\] Allow release.*$/
   - name: Finalize new Release
     if: type = push AND branch = master AND commit_message =~ ^\[Release\].*$
 
