@@ -1,0 +1,80 @@
+# environment setup
+language: swift
+os: osx
+osx_image: xcode11.4
+
+
+cache:
+    bundler: true
+    cocoapods: true
+    directories:
+      - "./vendor/bundle"
+
+
+before_install:
+  # Dependencies
+  - brew install git-lfs
+  # Git Setup
+  - git config --global user.name "travis-ci"
+  - git config --global user.email travisci.bp@dvdblk.com
+  # Correct Git branch environment variable
+  # https://unhashable.com/getting-the-current-branch-name-during-a-pull-request-in-travis-ci/
+  - export BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
+  - echo "TRAVIS_BRANCH=$TRAVIS_BRANCH, BRANCH=$BRANCH"
+  # GitHub Authentication
+  - echo -e "machine github.com\n  login $GITHUB_TOKEN" > ~/.netrc
+  - git lfs pull
+
+
+  # install dependencies
+install:
+  - bundle config set path 'vendor/bundle'
+  - bundle install
+  - bundle exec pod install
+
+
+stages:
+  # Test stage
+  # Allow only if the type is a 'pull_request' and the base_branch is 'master'
+  - name: Test
+    if: type = pull_request AND branch IN (develop, master) AND NOT (commit_message =~ ^\[fastlane\].*$)
+  # Deploy new release stage
+  # Allow only if the type is a 'PR' and the base_branch is 'master'
+  - name: Prepare new Release
+    if: type = pull_request AND branch = master AND commit_message =~ /^Prepare release.*$/
+  # Create new release tag
+  # Allow only if the type is a 'push', branch is 'master', commit_message starts with '[Release]'
+  - name: Upload new Release
+    if: type = pull_request AND branch = master AND commit_message =~ /^\[fastlane\] Allow release.*$/
+  - name: Finalize new Release
+    if: type = push AND branch = master AND commit_message =~ ^\[Release\].*$
+
+
+# jobs and stages to run
+jobs:
+  include:
+    - stage: Test
+      name: "UI & Unit tests"
+      script:
+        - bundle exec fastlane tests_mocks
+
+    - stage: Prepare new Release
+      script:
+        - bundle exec fastlane prepare_new_release
+      name: "Generate documentation and screenshots"
+    
+    - stage: Upload new Release
+      script:
+        - bundle exec fastlane beta_mocks
+      name: "Upload to TestFlight"
+
+    - stage: Finalize new Release
+      name: "Creates a new Release tag"
+      script:
+        - bundle exec fastlane tag_release
+      deploy:
+        provider:     pages
+        skip-cleanup: true
+        github-token: $GITHUB_TOKEN
+        keep-history: true
+        local-dir:    docs/src

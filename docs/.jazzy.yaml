@@ -1,0 +1,17 @@
+#module: Betterpick
+author: David Bielik
+title: Betterpick iOS Documentation
+author_url: https://dvdblk.com
+github_url: https://github.com/uzh-footm/iOS
+hide_documentation_coverage: true
+#documentation: Extra/*.md
+#abstract: Sections/*.md
+#docset_playground_url: https://repl.it/F9J7/1
+output: src
+xcodebuild_arguments: 
+    - -scheme 
+    - Betterpick
+    - -workspace 
+    - Betterpick.xcworkspace
+    - [CODE_SIGN_IDENTITY=,CODE_SIGNING_REQUIRED=NO,CODE_SIGNING_ALLOWED=NO]
+min_acl: internal
