@@ -1,15 +1,6 @@
-disabled_rules:
-    - line_length
-
-cyclomatic_complexity:
-  ignores_case_statements: true
-  warning: 12
-
-identifier_name:
-  excluded:
-    - id
-
-# paths to ignore during linting.
-excluded: 
-  - Carthage
-  - Pods
+line_length:
+  warning: 120
+  ignores_function_declarations: true
+  ignores_comments: true
+  ignores_interpolated_strings: true
+  ignores_urls: true

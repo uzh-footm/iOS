@@ -1,191 +1,23 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
 default_platform(:ios)
 
 platform :ios do
-  before_all do |lane, options|
-    ENV["MATCH_USERNAME"] = ENV["FASTLANE_USER"]
-    ENV["PILOT_USERNAME"] = ENV["FASTLANE_USER"]
-    ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = ENV["FASTLANE_PASSWORD"]
-    ENV["BP_XCODE_PROJ_NAME"] = "Betterpick.xcodeproj"
-    ENV["BP_MAIN_TARGET_NAME"] = "Betterpick"
-    ENV["BP_FL_GIT_PREFIX"] = "[fastlane]"
-    ENV["MATCH_KEYCHAIN_NAME"] = "travis-ci"
-    ENV["MATCH_KEYCHAIN_PASSWORD"] = ENV["MATCH_KEYCHAIN_NAME"]
-  end
-
-  private_lane :get_release_version_string do
-    version = get_version_number(
-      xcodeproj: ENV["BP_XCODE_PROJ_NAME"],
-      target: ENV["BP_MAIN_TARGET_NAME"]
-    )
-
-    build_number = get_build_number(
-      xcodeproj: ENV["BP_XCODE_PROJ_NAME"]
-    )
-    
-    # Save new branch name
-    ENV["RELEASE_VERSION_STRING"] = "v" + version + "b" + build_number
-  end
-
-  ######################### TESTING #########################
-  desc "Runs tests for the target that uses BetterpickAPIManagerMock"
-  lane :tests_mocks do
-    run_tests(
-      scheme: "Betterpick Mock",
-      devices: ["iPhone 11 Pro"],
-      clean: true
-    )
-  end
-
-  desc "Runs tests"
-  lane :tests do
-    run_tests(
-      scheme: "Betterpick",
-      devices: ["iPhone 11 Pro"],
-      clean: true
-    )
-  end
-
-  ######################### DOCUMENTATION #########################
-  desc "Documentation generation via Jazzy"
-  lane :generate_docs do
-    jazzy(config: "docs/.jazzy.yaml")
-  end
-
-  ######################### TESTFLIGHT #########################
-  desc "Build and upload a new build of Betterpick Mock TF to TestFlight"
-  desc "This action will also bump the build number"
-  lane :beta_mocks do
-    # https://github.com/fastlane/fastlane/issues/7104
-    create_keychain(
-      name: ENV["MATCH_KEYCHAIN_NAME"],
-      password: ENV["MATCH_KEYCHAIN_PASSWORD"],
-      default_keychain: true,
-      unlock: true,
-      timeout: 3600,
-      add_to_search_list: true
-    )
-    sync_code_signing(
-      type: "appstore",
-      readonly: true,
-      keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
-      keychain_password: ENV["MATCH_KEYCHAIN_PASSWORD"]
-    )
-    build_app(
-      scheme: "Betterpick Mock TF",
-      output_directory: "build/",
-      build_path: "build/"
-    )
-    upload_to_testflight(
-      apple_id: "1514718778",
-      skip_waiting_for_build_processing: true
-    )
-  end
-
-  ##############################################################
-  ########################### RELEASE ##########################
-  ##############################################################
-  desc "Create a new Release Pull Request on GitHub."
-  desc "Increments the build number and creates a new release branch from develop."
-  desc "Release branch name is dependent on the app version and build number."
-  lane :pr_release do
-    # Make sure we're on develop branch
-    ensure_git_branch(
-      branch: '^develop$'
-    )
-    # Make sure we're free to commit new stuff
-    ensure_git_status_clean
-    # Bump the build number
-    increment_build_number
-
-    # Checkout new branch
-    get_version_number(
-      xcodeproj: ENV["BP_XCODE_PROJ_NAME"],
-      target: ENV["BP_MAIN_TARGET_NAME"]
-    )
-    
-    get_release_version_string
-
-    sh("git checkout -b release/" + ENV["RELEASE_VERSION_STRING"])
-    
-    path = "Betterpick*"
-    git_add(
-      path: path
-    )
-    git_commit(
-      path: path, 
-      message: "Prepare release " + ENV["RELEASE_VERSION_STRING"]
-    )
-
-    push_to_git_remote
-
-    create_pull_request(
-      api_token: ENV["GITHUB_TOKEN"],
-      repo: "uzh-footm/iOS",
-      title: "[Release] " + ENV["RELEASE_VERSION_STRING"],
-      body: "Automated PR via Fastlane. 🚀"
-    )
-    
-    sh("git checkout develop")
-  end
-
-  ##############################################################
-  ############################# CI #############################
-  ##############################################################
-  desc "Create and deploy a new set of screenshots."
-  desc "Update the documentation"
-  lane :prepare_new_release do
-    ensure_is_ci
-
-    get_release_version_string
-
-    sh("git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*")
-    sh("git fetch --all")
-    sh("git checkout --track origin/release/" + ENV["RELEASE_VERSION_STRING"])
-
-    # Docs
-    generate_docs
-
-    path = "./docs/src/"
-    git_add(
-      path: path
-    )
-    git_commit(
-      path: path, 
-      message: ENV["BP_FL_GIT_PREFIX"] + " Add Documentation"
-    )
-
-    # Screenshots
-    snapshot
-
-    path = "./assets/screenshots/"
-    git_add(
-      path: path
-    )
-    git_commit(
-      path: path, 
-      message: ENV["BP_FL_GIT_PREFIX"] + " Add Screenshots"
-    )
-
-    sh("git", "commit", "--allow-empty", "-m", ENV["BP_FL_GIT_PREFIX"] + " Allow release " + ENV["RELEASE_VERSION_STRING"])
-
-    push_to_git_remote(
-      remote_branch: ENV["BRANCH"]
-    )
-  end
-
-  desc "Create tag for a new Release"
-  lane :tag_release do
-    ensure_is_ci
-
-    # Ensure we're on master
-    ensure_git_branch
-
-    get_release_version_string
-
-    add_git_tag(
-      tag: ENV["RELEASE_VERSION_STRING"]
-    )
-
-    push_to_git_remote
+  desc "Description of what the lane does"
+  lane :custom_lane do
+    # add actions here: https://docs.fastlane.tools/actions
   end
 end

@@ -1,8 +1,0 @@
-git_url("https://github.com/uzh-footm/iOS-CertificateAndProfileData.git")
-
-storage_mode("git")
-
-# The default type, can be: appstore, adhoc, enterprise or development
-type("development") 
-
-app_identifier(["com.dvdblk.betterpick", "com.dvdblk.betterpick.*", "com.dvdblk.betterpick.mock.tf"])
