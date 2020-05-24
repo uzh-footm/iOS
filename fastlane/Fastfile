@@ -4,6 +4,7 @@ platform :ios do
   before_all do |lane, options|
     ENV["MATCH_USERNAME"] = ENV["FASTLANE_USER"]
     ENV["PILOT_USERNAME"] = ENV["FASTLANE_USER"]
+    ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = ENV["FASTLANE_PASSWORD"]
     ENV["BP_XCODE_PROJ_NAME"] = "Betterpick.xcodeproj"
     ENV["BP_MAIN_TARGET_NAME"] = "Betterpick"
     ENV["BP_FL_GIT_PREFIX"] = "[fastlane]"
@@ -53,7 +54,8 @@ platform :ios do
   desc "This action will also bump the build number"
   lane :beta_mocks do
     sync_code_signing(
-      type: "appstore"
+      type: "appstore",
+      readonly: true
     )
     build_app(
       scheme: "Betterpick Mock TF",
@@ -122,7 +124,8 @@ platform :ios do
 
     get_release_version_string
 
-    sh("git fetch origin refs/heads/master:refs/remotes/origin/master")
+    sh("git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*")
+    sh("git fetch --all")
     sh("git checkout --track origin/release/" + ENV["RELEASE_VERSION_STRING"])
 
     snapshot
@@ -147,7 +150,8 @@ platform :ios do
 
     get_release_version_string
     
-    sh("git fetch origin refs/heads/master:refs/remotes/origin/master")
+    sh("git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*")
+    sh("git fetch --all")
     sh("git checkout --track origin/release/" + ENV["RELEASE_VERSION_STRING"])
 
     generate_docs
