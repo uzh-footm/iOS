@@ -43,13 +43,7 @@
                 <a href="Classes/BetterpickAPIManager.html">BetterpickAPIManager</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/BetterpickAPIManager/ManagerResultError.html">– ManagerResultError</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Classes/BetterpickAPIManager/ManagerResult.html">– ManagerResult</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/BetterpickAPIManagerMock.html">BetterpickAPIManagerMock</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/ColoredPositionLabel.html">ColoredPositionLabel</a>
@@ -259,9 +253,6 @@
                 <a href="Classes/TappableLabel.html">TappableLabel</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/TappableLabel/Animation.html">– Animation</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Classes/TappablePickerResponderLabel.html">TappablePickerResponderLabel</a>
               </li>
               <li class="nav-group-task">
@@ -292,6 +283,9 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Enums/BetterpickAPIError.html">BetterpickAPIError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/BetterpickAPIError/UserFriendly.html">– UserFriendly</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/BetterpickAPIResponseContext.html">BetterpickAPIResponseContext</a>
@@ -342,6 +336,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/KeyPath.html">KeyPath</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/String.html">String</a>
               </li>
               <li class="nav-group-task">
                 <a href="Extensions/UIColor.html">UIColor</a>
@@ -397,6 +394,9 @@
                 <a href="Protocols/FetchingStatePresenting.html">FetchingStatePresenting</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/FetchingViewModelProtocol.html">FetchingViewModelProtocol</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/NavigationBarDisplaying.html">NavigationBarDisplaying</a>
               </li>
               <li class="nav-group-task">
@@ -441,22 +441,22 @@
                 <a href="Structs/BetterpickAPIRequestErrorContext.html">BetterpickAPIRequestErrorContext</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/GetLeagueResponseBody.html">GetLeagueResponseBody</a>
+                <a href="Structs/Config.html">Config</a>
               </li>
               <li class="nav-group-task">
-                <a href="Structs/GetSearchResponseBody.html">GetSearchResponseBody</a>
+                <a href="Structs/Config/BundleKey.html">– BundleKey</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/HTTPHeader.html">HTTPHeader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/ImageURLProcessor.html">ImageURLProcessor</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/LeagueAndNationalityData.html">LeagueAndNationalityData</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/Nationality.html">Nationality</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Structs/Nationality/Keys.html">– Keys</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/Player.html">Player</a>
@@ -518,6 +518,12 @@
                 <a href="Typealiases.html#/s:10Betterpick26GetClubPlayersResponseBodya">GetClubPlayersResponseBody</a>
               </li>
               <li class="nav-group-task">
+                <a href="Typealiases.html#/s:10Betterpick26GetClubsSearchResponseBodya">GetClubsSearchResponseBody</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:10Betterpick21GetLeagueResponseBodya">GetLeagueResponseBody</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Typealiases.html#/s:10Betterpick22GetLeaguesResponseBodya">GetLeaguesResponseBody</a>
               </li>
               <li class="nav-group-task">
@@ -525,6 +531,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Typealiases.html#/s:10Betterpick22GetPlayersResponseBodya">GetPlayersResponseBody</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:10Betterpick28GetPlayersSearchResponseBodya">GetPlayersSearchResponseBody</a>
               </li>
               <li class="nav-group-task">
                 <a href="Typealiases.html#/s:10Betterpick14HTTPParametersa">HTTPParameters</a>
@@ -555,17 +564,141 @@
         <section>
           <section class="section">
             
-            <h1 id='ios-app' class='heading'>iOS App</h1>
-<h2 id='requirements' class='heading'>Requirements</h2>
+            <h1 id='betterpick-for-ios-a-href-https-travis-ci-com-uzh-footm-ios-img-src-https-travis-ci-com-uzh-footm-ios-svg-branch-develop-alt-build-status-a' class='heading'>Betterpick for iOS <a href="https://travis-ci.com/uzh-footm/iOS"><img src="https://travis-ci.com/uzh-footm/iOS.svg?branch=develop" alt="Build Status"></a></h1>
 
-<p><a href="https://guides.cocoapods.org/using/getting-started.html">Install cocoapods</a>. Then run this command in the root folder of this repo:</p>
-<pre class="highlight plaintext"><code>pod install
+<p>Welcome to the open source iOS application that lets you browse players and clubs from FIFA19.</p>
+<h2 id='getting-started' class='heading'>Getting Started</h2>
+
+<ol>
+<li>Install <a href="https://developer.apple.com/xcode/downloads/">Xcode</a> from Apple.</li>
+<li>Install <a href="https://guides.cocoapods.org/using/getting-started.html">cocoapods</a>.</li>
+<li>Install dependencies (run this in the root folder of the repo)
+<code>
+pod install
+</code></li>
+<li>Open <code>Betterpick.xcworkspace</code></li>
+<li>Take a look at the <code>AppDelegate.application(application:didFinishLaunchingWithOptions:)</code> func where things kick off :)</li>
+<li>(Optional) build and run <code>Betterpick Mock</code> target to preview the app with hardcoded mock data.</li>
+</ol>
+<h2 id='project-info' class='heading'>Project Info</h2>
+
+<table><thead>
+<tr>
+<th style="text-align: center">iOS Deployment Target</th>
+<th style="text-align: center">Architecture</th>
+<th style="text-align: center">Autolayout</th>
+<th style="text-align: center">UnitTests</th>
+<th style="text-align: center">UITests</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">11.0+</td>
+<td style="text-align: center">MVVM-C</td>
+<td style="text-align: center">Code (no storyboards) ✅</td>
+<td style="text-align: center">✅</td>
+<td style="text-align: center">❌</td>
+</tr>
+</tbody></table>
+<h3 id='features' class='heading'>Features</h3>
+
+<ul>
+<li>[x] Browse FIFA Clubs from all competitions (leagues).</li>
+<li>[x] Browse between FIFA players with various filtering options (OVR range, nationality, position&hellip;)</li>
+<li>[x] Show player and team details</li>
+<li>[x] Search players / clubs by name</li>
+<li>[ ] Create custom teams</li>
+</ul>
+<h3 id='project-structure' class='heading'>Project Structure</h3>
+<pre class="highlight shell"><code>├── Betterpick
+│   ├── AppDelegate.swift                <span class="c"># App entrypoint</span>
+│   ├── Discover                         <span class="c"># constructs related to the Discover screen</span>
+│   │   ├── Class
+│   │   ├── Coordinator
+│   │   ├── Extensions
+│   │   ├── Model
+│   │   ├── Protocol
+│   │   ├── View
+│   │   ├── ViewController
+│   │   └── ViewModel
+│   ├── MyTeams
+│   ├── Player
+│   ├── Settings
+│   ├── Supporting Files                 <span class="c"># configs, .plist, Xcode assets</span>
+│   ├── TabBar                           <span class="c"># The root ViewControllers and TabBar related stuff</span>
+│   ├── Team
+│   └── common                           <span class="c"># constructs that are reused across multiple screens</span>
+├── assets
+│   └── screenshots                      <span class="c"># the screenshots</span>
+├── docs
+│   └── src                              <span class="c"># generated HTML docs by Jazzy</span>
+└── fastlane
+    ├── Appfile
+    ├── Fastfile                         <span class="c"># Main fastlane setup file</span>
+    ├── Matchfile
+    ├── Snapfile
+    └── actions                          <span class="c"># custom fastlane actions</span>
 </code></pre>
+<h3 id='documentation' class='heading'>Documentation</h3>
+
+<p>Documentation is available via <a href="https://uzh-footm.github.io/iOS/">GitHub Pages</a>. Updated on each new app release.</p>
+<h3 id='tools-and-3rd-party-software' class='heading'>Tools and 3rd party software</h3>
+
+<ul>
+<li><a href="https://fastlane.tools">fastlane.tools</a> 🚀 - responsible for automating common tasks, such as:
+
+<ul>
+<li>testing - starts the UI and Unit tests on the main target
+<code>bash 
+$ bundle exec fastlane tests
+</code></li>
+<li>creating new releases
+<code>bash
+$ bundle exec fastlane pr_release 
+</code></li>
+</ul></li>
+<li><a href="https://github.com/realm/jazzy">Jazzy</a> 🎺 - generates the project documentation</li>
+<li><a href="https://github.com/realm/SwiftLint">SwiftLint</a></li>
+<li><a href="https://github.com/SDWebImage/SDWebImage">SDWebImage</a></li>
+<li><a href="http://travis-ci.com">Travis-CI</a> 🤖 for continuous integration (running time-consuming lanes such as deployment to the App Store / TestFlight)</li>
+</ul>
+<h2 id='screenshots' class='heading'>Screenshots</h2>
+
+<table>
+  <tr>
+    <td>Discover Teams</td>
+    <td>Team Detail</td>
+    <td>Player Detail</td>
+  </tr>
+  <tr>
+    <td><img src="assets/screenshots/en-US/iPhone 11 Pro-01DiscoverTeamsScreen.png" width=270 height=584></td>
+    <td><img src="assets/screenshots/en-US/iPhone 11 Pro-02TeamScreen.png" width=270 height=584></td>
+    <td><img src="assets/screenshots/en-US/iPhone 11 Pro-03PlayerDetailScreen.png" width=270 height=584></td>
+  </tr>
+ </table>
+<h2 id='contributing' class='heading'>Contributing</h2>
+
+<p>This project is intended to be an educational resource for either our team and also anyone looking for a small-sized iOS project with:</p>
+
+<ul>
+<li>MVVM-C architecture</li>
+<li>Autolayout done without storyboards and any autolayout DSL. Pure UIKit.</li>
+<li>Custom UI components (e.g <a href="Betterpick/TabBar/View/TabBarStackView.swift"><code><a href="Classes/TappableLabel.html">TappableLabel</a></code></a>, <a href="Betterpick/common/View/TappableLabel.swift"><code><a href="Classes/TabBarStackView.html">TabBarStackView</a></code></a>, &hellip;)</li>
+<li>Fastlane scripts that work on/with Travis</li>
+</ul>
+
+<p>Please use issues and pull requests accordingly. Generally speaking, you would want to make a pull request from and to the develop branch. </p>
+
+<p>TestFlight invites are open.</p>
+<h2 id='license' class='heading'>LICENSE</h2>
+
+<p>MIT</p>
+
+<p>Finally, if you made it here and this project has helped you in any way, please let me know via <a href="http://twitter.com/dvdblk1337">Twitter</a>. 🙂</p>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://dvdblk.com" target="_blank" rel="external">David Bielik</a>. All rights reserved. (Last updated: 2020-05-21)</p>
+          <p>&copy; 2020 <a class="link" href="https://dvdblk.com" target="_blank" rel="external">David Bielik</a>. All rights reserved. (Last updated: 2020-05-24)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.12.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
