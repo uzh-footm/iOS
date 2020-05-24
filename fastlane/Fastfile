@@ -180,7 +180,7 @@ platform :ios do
     # Checkout master
     sh("git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*")
     sh("git fetch --all")
-    sh("git checkout --track origin/master")
+    sh("git checkout master")
 
     get_release_version_string
 
