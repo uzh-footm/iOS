@@ -12,6 +12,8 @@ cache:
 
 
 before_install:
+  # Dependencies
+  - brew install git-lfs
   # Git Setup
   - git config --global user.name "travis-ci"
   - git config --global user.email travisci.bp@dvdblk.com
@@ -35,7 +37,7 @@ stages:
   # Test stage
   # Allow only if the type is a 'pull_request' and the base_branch is 'master'
   - name: Test
-    if: type = pull_request AND branch IN (develop, master)
+    if: type = pull_request AND branch IN (develop, master) AND NOT (commit_message =~ ^\[fastlane\].*$)
   # Deploy new release stage
   # Allow only if the type is a 'PR' and the base_branch is 'master'
   - name: Prepare new Release
@@ -56,11 +58,8 @@ jobs:
 
     - stage: Prepare new Release
       script:
-        - bundle exec fastlane deploy_screenshots
-      name: "Screenshots"
-    - script:
-        - bundle exec fastlane generate_and_commit_documentation
-      name: "Documentation"
+        - bundle exec fastlane prepare_new_release
+      name: "Documentation and Screenshots"
     - script:
         - bundle exec fastlane beta_mocks
       name: "TestFlight"

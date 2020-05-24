@@ -4,9 +4,12 @@ platform :ios do
   before_all do |lane, options|
     ENV["MATCH_USERNAME"] = ENV["FASTLANE_USER"]
     ENV["PILOT_USERNAME"] = ENV["FASTLANE_USER"]
+    ENV["FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD"] = ENV["FASTLANE_PASSWORD"]
     ENV["BP_XCODE_PROJ_NAME"] = "Betterpick.xcodeproj"
     ENV["BP_MAIN_TARGET_NAME"] = "Betterpick"
     ENV["BP_FL_GIT_PREFIX"] = "[fastlane]"
+    ENV["MATCH_KEYCHAIN_NAME"] = "travis-ci"
+    ENV["MATCH_KEYCHAIN_PASSWORD"] = ENV["MATCH_KEYCHAIN_NAME"]
   end
 
   private_lane :get_release_version_string do
@@ -52,8 +55,20 @@ platform :ios do
   desc "Build and upload a new build of Betterpick Mock TF to TestFlight"
   desc "This action will also bump the build number"
   lane :beta_mocks do
+    # https://github.com/fastlane/fastlane/issues/7104
+    create_keychain(
+      name: ENV["MATCH_KEYCHAIN_NAME"],
+      password: ENV["MATCH_KEYCHAIN_PASSWORD"],
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      add_to_search_list: true
+    )
     sync_code_signing(
-      type: "appstore"
+      type: "appstore",
+      readonly: true,
+      keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
+      keychain_password: ENV["MATCH_KEYCHAIN_PASSWORD"]
     )
     build_app(
       scheme: "Betterpick Mock TF",
@@ -117,37 +132,17 @@ platform :ios do
   ############################# CI #############################
   ##############################################################
   desc "Create and deploy a new set of screenshots."
-  lane :deploy_screenshots do
+  desc "Update the documentation"
+  lane :prepare_new_release do
     ensure_is_ci
-    ensure_git_status_clean
+
     get_release_version_string
 
+    sh("git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*")
+    sh("git fetch --all")
     sh("git checkout --track origin/release/" + ENV["RELEASE_VERSION_STRING"])
 
-    snapshot
-
-    path = "./assets/screenshots/"
-    git_add(
-      path: path
-    )
-    git_commit(
-      path: path, 
-      message: ENV["BP_FL_GIT_PREFIX"] + " Add Screenshots"
-    )
-
-    push_to_git_remote(
-      remote_branch: ENV["BRANCH"]
-    )
-  end
-
-  desc "Generate and commit new documentation"
-  lane :generate_and_commit_documentation do
-    ensure_is_ci
-    ensure_git_status_clean
-    get_release_version_string
-    
-    sh("git checkout --track origin/release/" + ENV["RELEASE_VERSION_STRING"])
-
+    # Docs
     generate_docs
 
     path = "./docs/src/"
@@ -158,6 +153,18 @@ platform :ios do
       path: path, 
       message: ENV["BP_FL_GIT_PREFIX"] + " Add Documentation",
       allow_nothing_to_commit: true
+    )
+
+    # Screenshots
+    snapshot
+
+    path = "./assets/screenshots/"
+    git_add(
+      path: path
+    )
+    git_commit(
+      path: path, 
+      message: ENV["BP_FL_GIT_PREFIX"] + " Add Screenshots"
     )
 
     push_to_git_remote(

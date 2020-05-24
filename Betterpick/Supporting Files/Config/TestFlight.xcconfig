@@ -12,4 +12,4 @@
 #include "Pods/Target Support Files/Pods-Betterpick/Pods-Betterpick.testflight.xcconfig"
 
 PRODUCT_NAME=Betterpick TF
-PRODUCT_BUNDLE_IDENTIFIER=com.dvdblk.betterpick
+PRODUCT_BUNDLE_IDENTIFIER=com.dvdblk.betterpick.tf
