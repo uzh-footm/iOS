@@ -56,7 +56,8 @@ jobs:
     - stage: Test
       name: "UI & Unit tests"
       script:
-        - bundle exec fastlane tests_mocks
+        #- bundle exec fastlane tests_mocks
+        - echo "Skipping tests"
 
     - stage: Prepare new Release
       script:
@@ -65,7 +66,8 @@ jobs:
     
     - stage: Upload new Release
       script:
-        - bundle exec fastlane beta_mocks
+       # - bundle exec fastlane beta_mocks
+       - echo "Skipping upload"
       name: "TestFlight"
 
     - stage: Finalize new Release
