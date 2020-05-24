@@ -47,16 +47,13 @@ Create a new Release Pull Request on GitHub.
 Increments the build number and creates a new release branch from develop.
 
 Release branch name is dependent on the app version and build number.
-### ios deploy_screenshots
+### ios prepare_new_release
 ```
-fastlane ios deploy_screenshots
+fastlane ios prepare_new_release
 ```
 Create and deploy a new set of screenshots.
-### ios generate_and_commit_documentation
-```
-fastlane ios generate_and_commit_documentation
-```
-Generate and commit new documentation
+
+Update the documentation
 ### ios tag_release
 ```
 fastlane ios tag_release
