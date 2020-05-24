@@ -8,6 +8,8 @@ platform :ios do
     ENV["BP_XCODE_PROJ_NAME"] = "Betterpick.xcodeproj"
     ENV["BP_MAIN_TARGET_NAME"] = "Betterpick"
     ENV["BP_FL_GIT_PREFIX"] = "[fastlane]"
+    ENV["MATCH_KEYCHAIN_NAME"] = "travis-ci"
+    ENV["MATCH_KEYCHAIN_PASSWORD"] = ENV["MATCH_KEYCHAIN_NAME"]
   end
 
   private_lane :get_release_version_string do
