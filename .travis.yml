@@ -37,13 +37,15 @@ stages:
   # Test stage
   # Allow only if the type is a 'pull_request' and the base_branch is 'master'
   - name: Test
-    if: type = pull_request AND branch IN (develop, master)
+    if: type = pull_request AND branch IN (develop, master) AND NOT (commit_message =~ ^fastlane.*$)
   # Deploy new release stage
   # Allow only if the type is a 'PR' and the base_branch is 'master'
   - name: Prepare new Release
-    if: type = pull_request AND branch = master
+    if: type = pull_request AND branch = master AND commit_message =~ /^Prepare release.*$/
   # Create new release tag
   # Allow only if the type is a 'push', branch is 'master', commit_message starts with '[Release]'
+  - name: Upload new Release
+    if: type = pull_request AND branch = master AND commit_message =~ /^fastlane\: Allow release.*$/
   - name: Finalize new Release
     if: type = push AND branch = master AND commit_message =~ ^\[Release\].*$
 
@@ -60,10 +62,12 @@ jobs:
       script:
         - bundle exec fastlane prepare_new_release
       name: "Documentation and Screenshots"
-    - script:
+    
+    - stage: Upload new Release
+      script:
         - bundle exec fastlane beta_mocks
       name: "TestFlight"
-    
+
     - stage: Finalize new Release
       name: "Creates a new Release tag"
       script:
