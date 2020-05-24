@@ -54,8 +54,7 @@ platform :ios do
   desc "This action will also bump the build number"
   lane :beta_mocks do
     sync_code_signing(
-      type: "appstore",
-      readonly: true
+      type: "appstore"
     )
     build_app(
       scheme: "Betterpick Mock TF",
@@ -119,7 +118,8 @@ platform :ios do
   ############################# CI #############################
   ##############################################################
   desc "Create and deploy a new set of screenshots."
-  lane :deploy_screenshots do
+  desc "Update the documentation"
+  lane :prepare_new_release do
     ensure_is_ci
 
     get_release_version_string
@@ -128,32 +128,7 @@ platform :ios do
     sh("git fetch --all")
     sh("git checkout --track origin/release/" + ENV["RELEASE_VERSION_STRING"])
 
-    snapshot
-
-    path = "./assets/screenshots/"
-    git_add(
-      path: path
-    )
-    git_commit(
-      path: path, 
-      message: ENV["BP_FL_GIT_PREFIX"] + " Add Screenshots"
-    )
-
-    push_to_git_remote(
-      remote_branch: ENV["BRANCH"]
-    )
-  end
-
-  desc "Generate and commit new documentation"
-  lane :generate_and_commit_documentation do
-    ensure_is_ci
-
-    get_release_version_string
-    
-    sh("git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*")
-    sh("git fetch --all")
-    sh("git checkout --track origin/release/" + ENV["RELEASE_VERSION_STRING"])
-
+    # Docs
     generate_docs
 
     path = "./docs/src/"
@@ -164,6 +139,18 @@ platform :ios do
       path: path, 
       message: ENV["BP_FL_GIT_PREFIX"] + " Add Documentation",
       allow_nothing_to_commit: true
+    )
+
+    # Screenshots
+    snapshot
+
+    path = "./assets/screenshots/"
+    git_add(
+      path: path
+    )
+    git_commit(
+      path: path, 
+      message: ENV["BP_FL_GIT_PREFIX"] + " Add Screenshots"
     )
 
     push_to_git_remote(
