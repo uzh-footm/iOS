@@ -60,7 +60,7 @@ jobs:
     - stage: Prepare new Release
       script:
         - bundle exec fastlane prepare_new_release
-      name: "Screenshots & Docs"
+      name: "Documentation and Screenshots"
     - script:
         - bundle exec fastlane beta_mocks
       name: "TestFlight"
