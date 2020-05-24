@@ -53,9 +53,20 @@ platform :ios do
   desc "Build and upload a new build of Betterpick Mock TF to TestFlight"
   desc "This action will also bump the build number"
   lane :beta_mocks do
+    # https://github.com/fastlane/fastlane/issues/7104
+    create_keychain(
+      name: ENV["MATCH_KEYCHAIN_NAME"],
+      password: ENV["MATCH_KEYCHAIN_PASSWORD"],
+      default_keychain: true,
+      unlock: true,
+      timeout: 3600,
+      add_to_search_list: true
+    )
     sync_code_signing(
       type: "appstore",
-      readonly: true
+      readonly: true,
+      keychain_name: ENV["MATCH_KEYCHAIN_NAME"],
+      keychain_password: ENV["MATCH_KEYCHAIN_PASSWORD"]
     )
     build_app(
       scheme: "Betterpick Mock TF",
