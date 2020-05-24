@@ -142,7 +142,7 @@ platform :ios do
     sh("git fetch --all")
     sh("git checkout --track origin/release/" + ENV["RELEASE_VERSION_STRING"])
 
-    sh("git", "commit" "--allow-empty", -m, ENV["BP_FL_GIT_PREFIX"] + " Allow release " + ENV["RELEASE_VERSION_STRING"])
+    sh("git", "commit" "--allow-empty", "-m", ENV["BP_FL_GIT_PREFIX"] + " Allow release " + ENV["RELEASE_VERSION_STRING"])
 
     push_to_git_remote(
       remote_branch: ENV["BRANCH"]
